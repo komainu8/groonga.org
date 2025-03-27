@@ -742,15 +742,6 @@ following functions.</p>
 </dd></dl>
 
 <dl class="c function">
-<dt class="sig sig-object c" id="c.grn_plugin_mutex_open">
-<a class="reference internal" href="#c.grn_plugin_mutex" title="grn_plugin_mutex"><span class="n"><span class="pre">grn_plugin_mutex</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_plugin_mutex_open</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_plugin_mutex_open" title="Link to this definition">#</a><br /></dt>
-<dd><p>grn_plugin_mutex_open() returns a pointer to a new object of
-grn_plugin_mutex. Memory for the new object is obtained with
-GRN_PLUGIN_MALLOC(). grn_plugin_mutex_open() returns NULL if sufficient
-memory is not available.</p>
-</dd></dl>
-
-<dl class="c function">
 <dt class="sig sig-object c" id="c.grn_plugin_mutex_close">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_plugin_mutex_close</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <a class="reference internal" href="#c.grn_plugin_mutex" title="grn_plugin_mutex"><span class="n"><span class="pre">grn_plugin_mutex</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">mutex</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_plugin_mutex_close" title="Link to this definition">#</a><br /></dt>
 <dd><p>grn_plugin_mutex_close() finalizes an object of grn_plugin_mutex and then
