@@ -68,6 +68,11 @@ class ReleaseTask
       define_generate_blog_task
       define_version_update_task
     end
+
+    desc "Release"
+    task release: [
+      "release:version:update"
+    ]
   end
 
   private
