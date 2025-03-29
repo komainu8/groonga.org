@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.4. Ubuntu &#8212; Groonga v15.0.4 documentation</title>
+    <title>2.4. Ubuntu &#8212; Groonga v15.0.5 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=d897bb43"></script>
+    <script src="../_static/documentation_options.js?v=bc586b07"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="2.3. Debian GNU/Linux" href="debian.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.0.4" />
+  <meta name="docsearch:version" content="15.0.5" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.4 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.4 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.5 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.5 documentation - Home"/>
   
   
 </a></div>
@@ -414,8 +414,26 @@
 <h1><span class="section-number">2.4. </span>Ubuntu<a class="headerlink" href="#ubuntu" title="Link to this heading">#</a></h1>
 <p>このセクションではUbuntu上でGroonga関連のdebパッケージをインストールする方法を説明します。これらのパッケージは <code class="docutils literal notranslate"><span class="pre">apt</span></code> でインストールできます。</p>
 <p>32-bit用と64-bit用のパッケージを配布していますが、サーバ用途には64-bitパッケージを利用することをオススメします。32-bit用パッケージはテスト用か開発用にだけ使って下さい。32-bit用パッケージを使った場合は、中程度のサイズのデータでもメモリ不足エラーになることがあります。</p>
+<section id="register-groonga-apt-repository">
+<h2><span class="section-number">2.4.1. </span>GroongaのAPTリポジトリー登録<a class="headerlink" href="#register-groonga-apt-repository" title="Link to this heading">#</a></h2>
+<section id="apt-repository-packages-groonga-org">
+<h3><span class="section-number">2.4.1.1. </span>APTリポジトリー（<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>）<a class="headerlink" href="#apt-repository-packages-groonga-org" title="Link to this heading">#</a></h3>
+<p>Groongaパッケージは、Groonga APTリポジトリー（<a class="reference external" href="https://packages.groonga.org">https://packages.groonga.org</a>）にて配布されています。</p>
+<p><code class="docutils literal notranslate"><span class="pre">groonga-apt-source</span></code>をインストールすることで、Groonga APTリポジトリーを登録できます。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-V<span class="w"> </span>ca-certificates<span class="w"> </span>lsb-release<span class="w"> </span>wget
+wget<span class="w"> </span>https://packages.groonga.org/ubuntu/groonga-apt-source-latest-<span class="k">$(</span>lsb_release<span class="w"> </span>--codename<span class="w"> </span>--short<span class="k">)</span>.deb
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-V<span class="w"> </span>./groonga-apt-source-latest-<span class="k">$(</span>lsb_release<span class="w"> </span>--codename<span class="w"> </span>--short<span class="k">)</span>.deb
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+</pre></div>
+</div>
+</section>
 <section id="ppa-personal-package-archive">
-<h2><span class="section-number">2.4.1. </span>PPA（Personal Package Archive）<a class="headerlink" href="#ppa-personal-package-archive" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">2.4.1.2. </span>PPA（Personal Package Archive）<a class="headerlink" href="#ppa-personal-package-archive" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>PPAは非推奨となります。ご利用の場合は、Groonga APTリポジトリー（<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>）の利用を強くお勧めします。なぜなら、Groonga APTリポジトリーではApache Arrowが有効な状態でビルドされたパッケージが提供されており、これにより並列オフラインインデックス構築などの追加機能が利用可能になるためです。</p>
+</div>
 <p>Ubuntu用のGroongaのAPTリポジトリーはLaunchpad上のPPA（Personal Package Archive）を使っています。このPPAからAPTでGroongaをインストールできます。</p>
 <p>サポートしているUbuntuのバージョンは次の通りです。</p>
 <ul class="simple">
@@ -432,6 +450,10 @@ sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>-y<span cl
 sudo<span class="w"> </span>apt<span class="w"> </span>update
 </pre></div>
 </div>
+</section>
+</section>
+<section id="groonga-package">
+<h2><span class="section-number">2.4.2. </span><code class="docutils literal notranslate"><span class="pre">groonga</span></code>パッケージ<a class="headerlink" href="#groonga-package" title="Link to this heading">#</a></h2>
 <p>インストールします。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>-V<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>groonga
 </pre></div>
@@ -446,21 +468,33 @@ sudo<span class="w"> </span>apt<span class="w"> </span>update
 </ul>
 <p>詳細は <a class="reference internal" href="../server.html"><span class="doc">サーバー</span></a> を参照してください。</p>
 </div>
+</section>
+<section id="groonga-tokenizer-mecab-package">
+<h2><span class="section-number">2.4.3. </span><code class="docutils literal notranslate"><span class="pre">groonga-tokenizer-mecab</span></code>パッケージ<a class="headerlink" href="#groonga-tokenizer-mecab-package" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://taku910.github.io/mecab/">MeCab</a>をトークナイザーとして使いたいときは、<code class="docutils literal notranslate"><span class="pre">groonga-tokenizer-mecab</span></code>パッケージをインストールしてください。</p>
 <p><code class="docutils literal notranslate"><span class="pre">groonga-tokenizer-mecab</span></code>パッケージをインストールします。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>-V<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>groonga-tokenizer-mecab
 </pre></div>
 </div>
+</section>
+<section id="groonga-token-filter-stem-package">
+<h2><span class="section-number">2.4.4. </span><code class="docutils literal notranslate"><span class="pre">groonga-token-filter-stem</span></code>パッケージ<a class="headerlink" href="#groonga-token-filter-stem-package" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">TokenFilterStem</span></code>をトークンフィルターとして使いたいときは<code class="docutils literal notranslate"><span class="pre">groonga-token-filter-stem</span></code>パッケージをインストールします。</p>
 <p><code class="docutils literal notranslate"><span class="pre">groonga-token-filter-stem</span></code>パッケージをインストールします。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>-V<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>groonga-token-filter-stem
 </pre></div>
 </div>
+</section>
+<section id="groonga-munin-plugins-package">
+<h2><span class="section-number">2.4.5. </span><code class="docutils literal notranslate"><span class="pre">groonga-munin-plugins</span></code> package<a class="headerlink" href="#groonga-munin-plugins-package" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="http://munin-monitoring.org/">Munin</a>プラグインを提供するパッケージもあります。MuninでGroongaの状態をモニターしたい場合は、<code class="docutils literal notranslate"><span class="pre">groonga-munin-plugins</span></code>パッケージをインストールします。</p>
 <p><code class="docutils literal notranslate"><span class="pre">groonga-munin-plugins</span></code>パッケージをインストールします。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>-V<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>groonga-munin-plugins
 </pre></div>
 </div>
+</section>
+<section id="groonga-normalizer-mysql-package">
+<h2><span class="section-number">2.4.6. </span><code class="docutils literal notranslate"><span class="pre">groonga-normalizer-mysql</span></code> package<a class="headerlink" href="#groonga-normalizer-mysql-package" title="Link to this heading">#</a></h2>
 <p>MySQL互換のノーマライザーをGroongaのプラグインとして提供するパッケージがあります。MySQL互換のノーマライザーを使うには<code class="docutils literal notranslate"><span class="pre">groonga-normalizer-mysql</span></code>パッケージをインストールします。</p>
 <p><code class="docutils literal notranslate"><span class="pre">groonga-normalizer-mysql</span></code>パッケージをインストールします。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>-V<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>groonga-normalizer-mysql
@@ -468,7 +502,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>update
 </div>
 </section>
 <section id="build-from-source">
-<h2><span class="section-number">2.4.2. </span>ソースからビルド<a class="headerlink" href="#build-from-source" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.4.7. </span>ソースからビルド<a class="headerlink" href="#build-from-source" title="Link to this heading">#</a></h2>
 <p>ソースからビルドする方法は開発者向けの内容になっています。</p>
 <p>詳細は <a class="reference internal" href="cmake.html"><span class="doc">その他: CMakeを使ってビルド</span></a> を参照してください。</p>
 </section>
@@ -521,8 +555,17 @@ sudo<span class="w"> </span>apt<span class="w"> </span>update
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ppa-personal-package-archive">2.4.1. PPA（Personal Package Archive）</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-from-source">2.4.2. ソースからビルド</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-groonga-apt-repository">2.4.1. GroongaのAPTリポジトリー登録</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apt-repository-packages-groonga-org">2.4.1.1. APTリポジトリー（packages.groonga.org）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ppa-personal-package-archive">2.4.1.2. PPA（Personal Package Archive）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groonga-package">2.4.2. <code class="docutils literal notranslate"><span class="pre">groonga</span></code>パッケージ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groonga-tokenizer-mecab-package">2.4.3. <code class="docutils literal notranslate"><span class="pre">groonga-tokenizer-mecab</span></code>パッケージ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groonga-token-filter-stem-package">2.4.4. <code class="docutils literal notranslate"><span class="pre">groonga-token-filter-stem</span></code>パッケージ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groonga-munin-plugins-package">2.4.5. <code class="docutils literal notranslate"><span class="pre">groonga-munin-plugins</span></code> package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groonga-normalizer-mysql-package">2.4.6. <code class="docutils literal notranslate"><span class="pre">groonga-normalizer-mysql</span></code> package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-from-source">2.4.7. ソースからビルド</a></li>
 </ul>
   </nav></div>
 

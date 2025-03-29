@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>お知らせ - 15系 &#8212; Groonga v15.0.4 documentation</title>
+    <title>お知らせ - 15系 &#8212; Groonga v15.0.5 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=d897bb43"></script>
+    <script src="../_static/documentation_options.js?v=bc586b07"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=4755f45a"></script>
@@ -62,7 +62,7 @@
     <link rel="search" title="検索" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.0.4" />
+  <meta name="docsearch:version" content="15.0.5" />
   </head>
   
   
@@ -128,8 +128,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.4 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.4 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.5 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.5 documentation - Home"/>
   
   
 </a></div>
@@ -398,11 +398,25 @@
   <section class="tex2jax_ignore mathjax_ignore" id="news-15-series">
 <h1>お知らせ - 15系<a class="headerlink" href="#news-15-series" title="Link to this heading">#</a></h1>
 <!-- prettier-ignore-start -->
-<section id="release-15-0-3-2025-03-10">
-<span id="release-15-0-3"></span><h2>15.0.3リリース - 2025-03-10<a class="headerlink" href="#release-15-0-3-2025-03-10" title="Link to this heading">#</a></h2>
+<section id="release-15-0-4-2025-03-29">
+<span id="release-15-0-4"></span><h2>15.0.4リリース - 2025-03-29<a class="headerlink" href="#release-15-0-4-2025-03-29" title="Link to this heading">#</a></h2>
 <!-- prettier-ignore-end -->
 <section id="improvements">
 <h3>改良<a class="headerlink" href="#improvements" title="Link to this heading">#</a></h3>
+<section id="clarified-x-1-and-x-1-0-semantics">
+<h4><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1.0</span></code>のセマンティクスを明確にした<a class="headerlink" href="#clarified-x-1-and-x-1-0-semantics" title="Link to this heading">#</a></h4>
+<p>多くの言語では<code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1.0</span></code>は<code class="docutils literal notranslate"><span class="pre">-X</span></code>を返します。しかし、Groongaは<code class="docutils literal notranslate"><span class="pre">X</span></code>が非負性数のときは<code class="docutils literal notranslate"><span class="pre">-X</span></code>を返さないことがありました。</p>
+<p>このリリースからは<code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1.0</span></code>は常に<code class="docutils literal notranslate"><span class="pre">-X</span></code>を返します。</p>
+<p>これは後方非互換な変更ですが、この挙動に依存しているユーザーはいないはずです。</p>
+<!-- prettier-ignore-start -->
+</section>
+</section>
+</section>
+<section id="release-15-0-3-2025-03-10">
+<span id="release-15-0-3"></span><h2>15.0.3リリース - 2025-03-10<a class="headerlink" href="#release-15-0-3-2025-03-10" title="Link to this heading">#</a></h2>
+<!-- prettier-ignore-end -->
+<section id="id1">
+<h3>改良<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <section id="offline-index-construction-added-support-for-parallel-construction-with-table-hash-key-lexicon">
 <h4><a class="reference internal" href="../reference/indexing.html#offline-index-construction"><span class="std std-ref">静的なインデックス構築方法</span></a>: 語彙表が<a class="reference internal" href="../reference/tables.html#table-hash-key"><span class="std std-ref">TABLE_HASH_KEY</span></a>の場合でも並列構築をサポート<a class="headerlink" href="#offline-index-construction-added-support-for-parallel-construction-with-table-hash-key-lexicon" title="Link to this heading">#</a></h4>
 <p>並列静的インデックス構築は内部的にすべての単語をソートして処理しています。<a class="reference internal" href="../reference/tables.html#table-pat-key"><span class="std std-ref">TABLE_PAT_KEY</span></a>と<a class="reference internal" href="../reference/tables.html#table-pat-key"><span class="std std-ref">TABLE_PAT_KEY</span></a>は効率よくこの処理をできます。なぜなら、これらはツリーベースだからです。しかし、<a class="reference internal" href="../reference/tables.html#table-hash-key"><span class="std std-ref">TABLE_HASH_KEY</span></a>は効率よくこの処理をすることができません。なぜならツリーベースではないからです。そのため、語彙表が<a class="reference internal" href="../reference/tables.html#table-hash-key"><span class="std std-ref">TABLE_HASH_KEY</span></a>の場合は並列静的インデックス構築をサポートしていませんでした。</p>
@@ -432,8 +446,8 @@
 <section id="release-15-0-1-2025-02-20">
 <span id="release-15-0-1"></span><h2>15.0.1リリース - 2025-02-20<a class="headerlink" href="#release-15-0-1-2025-02-20" title="Link to this heading">#</a></h2>
 <!-- prettier-ignore-end -->
-<section id="id1">
-<h3>改良<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>改良<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <section id="install-ubuntu-dropped-support-for-ubuntu-20-04-focal-fossa">
 <h4>[<a class="reference internal" href="../install/ubuntu.html"><span class="doc">Ubuntu</span></a>] Ubuntu 20.04 (Focal Fossa) のサポート終了<a class="headerlink" href="#install-ubuntu-dropped-support-for-ubuntu-20-04-focal-fossa" title="Link to this heading">#</a></h4>
 <p>Ubuntu 20.04は2025年5月にサポート終了（EOL）となるため、今回のリリースからサポートを終了しました。</p>
@@ -445,8 +459,8 @@
 <span id="release-15-0-0"></span><h2>15.0.0リリース - 2025-02-09<a class="headerlink" href="#release-15-0-0-2025-02-09" title="Link to this heading">#</a></h2>
 <!-- prettier-ignore-end -->
 <p>毎年恒例の肉の日メジャーリリースです！このリリースには後方互換性が壊れる変更はありません！既存のデータベースを移行せずにGroongaをアップグレードできます。既存のデータベースをそのまま使い続けることができます。</p>
-<section id="id2">
-<h3>改良<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>改良<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <section id="table-pat-key-added-support-for-builtin-type-float32-as-key-type">
 <h4><a class="reference internal" href="../reference/tables.html#table-pat-key"><span class="std std-ref">TABLE_PAT_KEY</span></a>: キーの型として<a class="reference internal" href="../reference/types.html#builtin-type-float32"><span class="std std-ref">Float32</span></a>をサポート<a class="headerlink" href="#table-pat-key-added-support-for-builtin-type-float32-as-key-type" title="Link to this heading">#</a></h4>
 <p><a class="reference external" href="https://github.com/groonga/groonga/issues/2211">GH-2211</a></p>
@@ -485,8 +499,15 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-3-2025-03-10">15.0.3リリース - 2025-03-10</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-4-2025-03-29">15.0.4リリース - 2025-03-29</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improvements">改良</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clarified-x-1-and-x-1-0-semantics"><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1.0</span></code>のセマンティクスを明確にした</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-3-2025-03-10">15.0.3リリース - 2025-03-10</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">改良</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-index-construction-added-support-for-parallel-construction-with-table-hash-key-lexicon"><span class="xref std std-ref">offline-index-construction</span>: 語彙表が<span class="xref std std-ref">table-hash-key</span>の場合でも並列構築をサポート</a></li>
 </ul>
 </li>
@@ -500,14 +521,14 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-1-2025-02-20">15.0.1リリース - 2025-02-20</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">改良</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">改良</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-dropped-support-for-ubuntu-20-04-focal-fossa">[<span class="xref std std-doc">/install/ubuntu</span>] Ubuntu 20.04 (Focal Fossa) のサポート終了</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-0-2025-02-09">15.0.0リリース - 2025-02-09</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">改良</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">改良</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-pat-key-added-support-for-builtin-type-float32-as-key-type"><span class="xref std std-ref">table-pat-key</span>: キーの型として<span class="xref std std-ref">builtin-type-float32</span>をサポート</a></li>
 </ul>
 </li>
