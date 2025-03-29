@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>12.3.7. リリース手順 &#8212; Groonga v15.0.3 documentation</title>
+    <title>12.3.7. リリース手順 &#8212; Groonga v15.0.4 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=3d898cde"></script>
+    <script src="../../_static/documentation_options.js?v=d897bb43"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="12.3.5. クエリの実現" href="query.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.0.3" />
+  <meta name="docsearch:version" content="15.0.4" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.3 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.3 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.4 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.4 documentation - Home"/>
   
   
 </a></div>
@@ -524,28 +524,23 @@
 </section>
 <section id="rake-release">
 <h3><span class="section-number">12.3.7.3.6. </span><code class="docutils literal notranslate"><span class="pre">rake</span> <span class="pre">release</span></code> の実行<a class="headerlink" href="#rake-release" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">rake</span> <span class="pre">release</span></code> コマンドでは、 <code class="docutils literal notranslate"><span class="pre">NEW_RELEASE_DATE</span></code> にリリースの日付（≒ 実行日）を指定します。</p>
+<p>新しいバージョンをリリースするために <code class="docutils literal notranslate"><span class="pre">rake</span> <span class="pre">release</span></code> を実行します。</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">GROONGA_CLONE_DIR</span><span class="si">}</span>
-<span class="gp">$ </span>rake<span class="w"> </span>release<span class="w"> </span><span class="nv">NEW_RELEASE_DATE</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+%Y-%m-%d<span class="k">)</span>
+<span class="gp">$ </span>rake<span class="w"> </span>release
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">release</span></code> タスクは次の3つのタスクを実行します。</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p><code class="docutils literal notranslate"><span class="pre">release:version:update</span></code></p>
-<ul class="simple">
-<li><p>RPMパッケージのspecファイルに新しいバージョンのチェンジログを追記したりなどします。</p></li>
-</ul>
+<p>RPMパッケージのspecファイルに新しいバージョンのチェンジログを追記したりなどします。</p>
+<p><code class="docutils literal notranslate"><span class="pre">NEW_RELEASE_DATE</span></code> でリリース日を変更できます。</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">release:tag</span></code></p>
-<ul class="simple">
-<li><p>リリース用のタグを打ちます。</p></li>
-<li><p>これによりタグがプッシュされ自動リリースが動き出します。</p></li>
-</ul>
+<p>リリース用のタグを打ちます。</p>
+<p>これによりタグがプッシュされ自動リリースが動き出します。</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dev:version:bump</span></code></p>
-<ul class="simple">
-<li><p>次のリリースに向けてバージョンを更新します。</p></li>
-</ul>
+<p>次のリリースに向けてバージョンを更新します。</p>
 </li>
 </ol>
 <section id="dev-version-bump">
@@ -642,7 +637,7 @@
 <h3><span class="section-number">12.3.7.3.11. </span>ドキュメントの更新<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">groonga.org</span></code> リポジトリにて次のタスクを実行します。そうすることでタグがプッシュされCIにてドキュメントが更新されます。</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">GROONGA_ORG_PATH</span><span class="si">}</span>
-<span class="gp">$ </span>rake<span class="w"> </span>release:version:update
+<span class="gp">$ </span>rake<span class="w"> </span>release
 </pre></div>
 </div>
 </section>

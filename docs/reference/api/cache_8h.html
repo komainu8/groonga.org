@@ -105,6 +105,7 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:aea10a11d0e905316a89e0a24b5b9c2a0" id="r_aea10a11d0e905316a89e0a24b5b9c2a0"><td class="memItemLeft" align="right" valign="top">typedef struct _grn_cache&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cache_8h.html#aea10a11d0e905316a89e0a24b5b9c2a0">grn_cache</a></td></tr>
+<tr class="memdesc:aea10a11d0e905316a89e0a24b5b9c2a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cache object.  <br /></td></tr>
 <tr class="separator:aea10a11d0e905316a89e0a24b5b9c2a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -122,8 +123,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:a808cdd0987a53fab77eeb10003dae7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free resourses of the <code>cache</code>.  <br /></td></tr>
 <tr class="separator:a808cdd0987a53fab77eeb10003dae7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ddfd4463ada1a5d2b360b450648bd40" id="r_a6ddfd4463ada1a5d2b360b450648bd40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cache_8h.html#a6ddfd4463ada1a5d2b360b450648bd40">grn_cache_current_set</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="cache_8h.html#aea10a11d0e905316a89e0a24b5b9c2a0">grn_cache</a> *cache)</td></tr>
+<tr class="memdesc:a6ddfd4463ada1a5d2b360b450648bd40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current <a class="el" href="cache_8h.html#aea10a11d0e905316a89e0a24b5b9c2a0">grn_cache</a> object.  <br /></td></tr>
 <tr class="separator:a6ddfd4463ada1a5d2b360b450648bd40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dd72617669c844b82aed75ed6268147" id="r_a6dd72617669c844b82aed75ed6268147"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="cache_8h.html#aea10a11d0e905316a89e0a24b5b9c2a0">grn_cache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cache_8h.html#a6dd72617669c844b82aed75ed6268147">grn_cache_current_get</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx)</td></tr>
+<tr class="memdesc:a6dd72617669c844b82aed75ed6268147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current <a class="el" href="cache_8h.html#aea10a11d0e905316a89e0a24b5b9c2a0">grn_cache</a> object.  <br /></td></tr>
 <tr class="separator:a6dd72617669c844b82aed75ed6268147"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54a12cbca9845f082b8321d22e1446b8" id="r_a54a12cbca9845f082b8321d22e1446b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cache_8h.html#a54a12cbca9845f082b8321d22e1446b8">grn_cache_default_reopen</a> (void)</td></tr>
 <tr class="separator:a54a12cbca9845f082b8321d22e1446b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,6 +164,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Cache object. </p>
+<p>You can create a new cache object using <a class="el" href="cache_8h.html#a852a55cba129a115aedc95d80f246013">grn_cache_open</a>, and free it using <a class="el" href="cache_8h.html#a808cdd0987a53fab77eeb10003dae7be">grn_cache_close</a>. </p>
 
 </div>
 </div>
@@ -219,6 +225,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Retrieve the current <a class="el" href="cache_8h.html#aea10a11d0e905316a89e0a24b5b9c2a0">grn_cache</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The context object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="cache_8h.html#aea10a11d0e905316a89e0a24b5b9c2a0">grn_cache</a> object is associated with the database that the context is using. If there is no specific cache, it returns the current cache which might be NULL. </dd></dl>
+
 </div>
 </div>
 <a id="a6ddfd4463ada1a5d2b360b450648bd40" name="a6ddfd4463ada1a5d2b360b450648bd40"></a>
@@ -246,6 +261,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set the current <a class="el" href="cache_8h.html#aea10a11d0e905316a89e0a24b5b9c2a0">grn_cache</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The context object. </td></tr>
+    <tr><td class="paramname">cache</td><td>The new current cache object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0a478ce86495f9d0d997110a422bc10447">GRN_SUCCESS</a> always. </dd></dl>
 
 </div>
 </div>

@@ -203,6 +203,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ac1b74b90183029aea4ca1b2346e4c8ec" id="r_ac1b74b90183029aea4ca1b2346e4c8ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plugin_8h.html#ac1b74b90183029aea4ca1b2346e4c8ec">grn_plugin_logtrace</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a8dda5231f18477c8b5e8236e7a9429d4">grn_log_level</a> level)</td></tr>
 <tr class="separator:ac1b74b90183029aea4ca1b2346e4c8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9852b0de0334935219e3dfeb7e77e506" id="r_a9852b0de0334935219e3dfeb7e77e506"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="plugin_8h.html#ac7e83b5bdf1fe790ee6b68ee47060125">grn_plugin_mutex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plugin_8h.html#a9852b0de0334935219e3dfeb7e77e506">grn_plugin_mutex_open</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx)</td></tr>
+<tr class="memdesc:a9852b0de0334935219e3dfeb7e77e506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new object of <a class="el" href="plugin_8h.html#ac7e83b5bdf1fe790ee6b68ee47060125">grn_plugin_mutex</a>.  <br /></td></tr>
 <tr class="separator:a9852b0de0334935219e3dfeb7e77e506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e4dbe17f9f9e73f0834bcab5bd2a90c" id="r_a9e4dbe17f9f9e73f0834bcab5bd2a90c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="plugin_8h.html#ac7e83b5bdf1fe790ee6b68ee47060125">grn_plugin_mutex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plugin_8h.html#a9e4dbe17f9f9e73f0834bcab5bd2a90c">grn_plugin_mutex_create</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx)</td></tr>
 <tr class="separator:a9e4dbe17f9f9e73f0834bcab5bd2a90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1274,6 +1275,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Create a new object of <a class="el" href="plugin_8h.html#ac7e83b5bdf1fe790ee6b68ee47060125">grn_plugin_mutex</a>. </p>
+<p>Memory for the new object is obtained with <a class="el" href="plugin_8h.html#ae33b9896b7b708c31bf09ca968a6372f">GRN_PLUGIN_MALLOC</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The context object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A newly created <a class="el" href="plugin_8h.html#ac7e83b5bdf1fe790ee6b68ee47060125">grn_plugin_mutex</a> object on success, <code>NULL</code> if sufficient memory is not available. The returned <a class="el" href="plugin_8h.html#ac7e83b5bdf1fe790ee6b68ee47060125">grn_plugin_mutex</a> object must be freed by <a class="el" href="plugin_8h.html#a7b3d5ea789124152d2e7b4f089d12e85">grn_plugin_mutex_close</a>. See <code>ctx-&gt;rc</code> (<a class="el" href="struct__grn__ctx.html#adade154c2766cedb9d8ae7c2b3fc90de">grn_ctx::rc</a>) for error details. </dd></dl>
 
 </div>
 </div>

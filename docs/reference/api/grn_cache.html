@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.26.4. grn_cache &#8212; Groonga v15.0.3 documentation</title>
+    <title>7.26.4. grn_cache &#8212; Groonga v15.0.4 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=0c7e188a"></script>
+    <script src="../../_static/documentation_options.js?v=e9602f17"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -63,7 +63,7 @@
     <link rel="prev" title="7.26.3. Plugin" href="plugin.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.3" />
+  <meta name="docsearch:version" content="15.0.4" />
   </head>
   
   
@@ -129,8 +129,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.3 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.3 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.4 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.4 documentation - Home"/>
   
   
 </a></div>
@@ -677,7 +677,7 @@
 <a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> command. It is not general use cache
 object. It is only for <a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> command.</p>
 <p>You can just change the current cache object by
-<a class="reference internal" href="#c.grn_cache_current_set" title="grn_cache_current_set"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_cache_current_set()</span></code></a>. <a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a>
+<code class="xref c c-func docutils literal notranslate"><span class="pre">grn_cache_current_set()</span></code>. <a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a>
 command response cache is done internally.</p>
 <p><a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> command uses one global cache
 object. If you open multiple databases, the one cache is shared. It is
@@ -704,51 +704,10 @@ case. If you open only one database or don’t use
 </section>
 <section id="reference">
 <h2><span class="section-number">7.26.4.3. </span>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
-<dl class="c type">
-<dt class="sig sig-object c" id="c.grn_cache">
-<span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_cache</span></span></span><a class="headerlink" href="#c.grn_cache" title="Link to this definition">#</a><br /></dt>
-<dd><p>It is an opaque cache object. You can create a <code class="docutils literal notranslate"><span class="pre">grn_cache</span></code> by
-<code class="xref c c-func docutils literal notranslate"><span class="pre">grn_cache_open()</span></code> and free the created object by
-<code class="xref c c-func docutils literal notranslate"><span class="pre">grn_cache_close()</span></code>.</p>
-</dd></dl>
-
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_cache_current_set">
-<span class="n"><span class="pre">grn_rc</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_cache_current_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <a class="reference internal" href="#c.grn_cache" title="grn_cache"><span class="n"><span class="pre">grn_cache</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">cache</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_cache_current_set" title="Link to this definition">#</a><br /></dt>
-<dd><p>Sets the cache object that is used in
-<a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> – The context.</p></li>
-<li><p><strong>cache</strong> – The cache object that is used in
-<a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> command.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> on success, not <code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> otherwise.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_cache_current_get">
-<a class="reference internal" href="#c.grn_cache" title="grn_cache"><span class="n"><span class="pre">grn_cache</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_cache_current_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_cache_current_get" title="Link to this definition">#</a><br /></dt>
-<dd><p>Gets the cache object that is used in
-<a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> – The context.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The cache object that is used in
-<a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> command. It may be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are currently switching to automatic generation using Doxygen.</p>
+</div>
 </section>
 </section>
 

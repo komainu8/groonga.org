@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.26.4. grn_cache &#8212; Groonga v15.0.3 documentation</title>
+    <title>7.26.4. grn_cache &#8212; Groonga v15.0.4 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=3d898cde"></script>
+    <script src="../../_static/documentation_options.js?v=d897bb43"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="7.26.3. Plugin" href="plugin.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.0.3" />
+  <meta name="docsearch:version" content="15.0.4" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.3 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.3 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.4 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.4 documentation - Home"/>
   
   
 </a></div>
@@ -675,7 +675,7 @@
 <p>このAPIは実験的です。</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">grn_cache</span></code> は <a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> コマンドのレスポンスを保持するためのデータストアです。一般的なオブジェクトのキャッシュとして使うものではありません。あくまで <a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> コマンドのためのものです。</p>
-<p><a class="reference internal" href="#c.grn_cache_current_set" title="grn_cache_current_set"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_cache_current_set()</span></code></a> を使うことで現在のキャッシュオブジェクトを変更することができます。 <a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> コマンドのレスポンスが内部的に用いられます。</p>
+<p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_cache_current_set()</span></code> を使うことで現在のキャッシュオブジェクトを変更することができます。 <a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> コマンドのレスポンスが内部的に用いられます。</p>
 <p><a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> コマンドは、一つのグローバルキャッシュオブジェクトを利用します。もし複数のデータベースをオープンしていた場合、そのキャッシュオブジェクトは共有されます。これは重要な問題です。</p>
 <p>もし複数のデータベースを開き、 <a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> コマンドを使用するのであれば、 <code class="docutils literal notranslate"><span class="pre">grn_cache</span></code> オブジェクトを使う必要があります。 <a class="reference internal" href="../executables/groonga-httpd.html"><span class="doc">groonga-httpd</span></a> のようなケースが該当します。もし一つのデータベースのみを開く場合や、 <a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> コマンドを使わない場合は、 <code class="docutils literal notranslate"><span class="pre">grn_cache</span></code> オブジェクトを使う必要はありません。 <a class="reference external" href="http://ranguba.org/ja/#about-rroonga">Rroonga</a> のようなケースです。</p>
 </section>
@@ -694,45 +694,10 @@
 </section>
 <section id="reference">
 <h2><span class="section-number">7.26.4.3. </span>リファレンス<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
-<dl class="c type">
-<dt class="sig sig-object c" id="c.grn_cache">
-<span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_cache</span></span></span><a class="headerlink" href="#c.grn_cache" title="Link to this definition">#</a><br /></dt>
-<dd><p><code class="docutils literal notranslate"><span class="pre">grn_cache</span></code> は詳細を公開していないオブジェクトです。 <code class="xref c c-func docutils literal notranslate"><span class="pre">grn_cache_open()</span></code> で作成し、 <code class="xref c c-func docutils literal notranslate"><span class="pre">grn_cache_close()</span></code> で解放できます。</p>
-</dd></dl>
-
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_cache_current_set">
-<span class="n"><span class="pre">grn_rc</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_cache_current_set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <a class="reference internal" href="#c.grn_cache" title="grn_cache"><span class="n"><span class="pre">grn_cache</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">cache</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_cache_current_set" title="Link to this definition">#</a><br /></dt>
-<dd><p><a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> コマンドで使われるキャッシュオブジェクトを設定します。</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> -- その時点のコンテキスト。</p></li>
-<li><p><strong>cache</strong> -- <a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> コマンドで使われるキャッシュオブジェクト。</p></li>
-</ul>
-</dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
-<dd class="field-even"><p>成功時は <code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> 、エラー時は <code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> 以外。</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_cache_current_get">
-<a class="reference internal" href="#c.grn_cache" title="grn_cache"><span class="n"><span class="pre">grn_cache</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_cache_current_get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_cache_current_get" title="Link to this definition">#</a><br /></dt>
-<dd><p><a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> コマンドで使われるキャッシュオブジェクトを取得します。</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> -- その時点のコンテキスト。</p></li>
-</ul>
-</dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../commands/select.html"><span class="doc">select</span></a> コマンドで使われるキャッシュオブジェクト。 <code class="docutils literal notranslate"><span class="pre">NULL</span></code> のこともあります。</p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>現在、Doxygenを使った自動生成に切り替え中です。</p>
+</div>
 </section>
 </section>
 
