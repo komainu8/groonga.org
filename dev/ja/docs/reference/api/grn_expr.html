@@ -735,57 +735,6 @@
 <dd></dd></dl>
 
 <dl class="c function">
-<dt class="sig sig-object c" id="c.grn_expr_get_keywords">
-<span class="n"><span class="pre">grn_rc</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_expr_get_keywords</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">expr</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">keywords</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_expr_get_keywords" title="Link to this definition">#</a><br /></dt>
-<dd><p>Extracts keywords from <code class="docutils literal notranslate"><span class="pre">expr</span></code> and stores to
-<code class="docutils literal notranslate"><span class="pre">keywords</span></code>. Keywords in <code class="docutils literal notranslate"><span class="pre">keywords</span></code> are owned by <code class="docutils literal notranslate"><span class="pre">expr</span></code>. Don't
-unlink them. Each keyword is <code class="docutils literal notranslate"><span class="pre">GRN_BULK</span></code> and its domain is
-<code class="docutils literal notranslate"><span class="pre">GRN_DB_TEXT</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">keywords</span></code> must be <code class="docutils literal notranslate"><span class="pre">GRN_PVECTOR</span></code>.</p>
-<p>以下はスキーマの例です。</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">grn_obj</span><span class="w"> </span><span class="n">keywords</span><span class="p">;</span>
-<span class="n">GRN_PTR_INIT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">keywords</span><span class="p">,</span><span class="w"> </span><span class="n">GRN_OBJ_VECTOR</span><span class="p">,</span><span class="w"> </span><span class="n">GRN_ID_NIL</span><span class="p">);</span>
-<span class="n">grn_expr_get_keywords</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">expr</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">keywords</span><span class="p">);</span>
-<span class="p">{</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">n_keywords</span><span class="p">;</span>
-<span class="w">  </span><span class="n">n_keywords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GRN_BULK_VSIZE</span><span class="p">(</span><span class="o">&amp;</span><span class="n">keywords</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">grn_obj</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n_keywords</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">grn_obj</span><span class="w"> </span><span class="o">*</span><span class="n">keyword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GRN_PTR_VALUE_AT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">keywords</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">keyword_content</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">keyword_size</span><span class="p">;</span>
-<span class="w">    </span><span class="n">keyword_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GRN_TEXT_VALUE</span><span class="p">(</span><span class="n">keyword</span><span class="p">);</span>
-<span class="w">    </span><span class="n">keyword_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GRN_TEXT_LEN</span><span class="p">(</span><span class="n">keyword</span><span class="p">);</span>
-<span class="w">    </span><span class="cm">/*</span>
-<span class="cm">      Use keyword_content and keyword_size.</span>
-<span class="cm">      You don&#39;t need to unlink keyword.</span>
-<span class="cm">      keyword is owned by expr.</span>
-<span class="cm">    */</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-<span class="n">GRN_OBJ_FIN</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">keywords</span><span class="p">);</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> -- The context that creates the <code class="docutils literal notranslate"><span class="pre">expr</span></code>.</p></li>
-<li><p><strong>expr</strong> -- The expression to be extracted.</p></li>
-<li><p><strong>keywords</strong> -- <p>The container to store extracted keywords.
-It must be <code class="docutils literal notranslate"><span class="pre">GRN_PVECTOR</span></code>.</p>
-<p>Each extracted keyword is <code class="docutils literal notranslate"><span class="pre">GRN_BULK</span></code> and its
-domain is <code class="docutils literal notranslate"><span class="pre">GRN_DB_TEXT</span></code>.</p>
-<p>Extracted keywords are owned by <code class="docutils literal notranslate"><span class="pre">expr</span></code>. Don't
-unlink them.</p>
-</p></li>
-</ul>
-</dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
-<dd class="field-even"><p>成功時は <code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> 、エラー時は <code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> 以外。</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="c function">
 <dt class="sig sig-object c" id="c.grn_expr_syntax_escape">
 <span class="n"><span class="pre">grn_rc</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_expr_syntax_escape</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">string</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">string_size</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">target_characters</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n"><span class="pre">escape_character</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">escaped_string</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_expr_syntax_escape" title="Link to this definition">#</a><br /></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">string</span></code> 中の <code class="docutils literal notranslate"><span class="pre">target_characters</span></code> を <code class="docutils literal notranslate"><span class="pre">escape_character</span></code> でエスケープします。</p>
