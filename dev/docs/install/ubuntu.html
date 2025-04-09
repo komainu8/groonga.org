@@ -523,6 +523,79 @@ Groonga plugin. If you want to use that one, install
 <p>Build from source is for developers.</p>
 <p>See <a class="reference internal" href="cmake.html"><span class="doc">Others: Build with CMake</span></a> .</p>
 </section>
+<section id="migration-from-groonga-ppa-ppa-groonga-ppa-to-groonga-apt-repository-packages-groonga-org">
+<h2><span class="section-number">2.4.8. </span>Migration from Groonga PPA (ppa:groonga/ppa) to Groonga APT Repository (<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>)<a class="headerlink" href="#migration-from-groonga-ppa-ppa-groonga-ppa-to-groonga-apt-repository-packages-groonga-org" title="Link to this heading">#</a></h2>
+<p>This section guides you through the migration from the deprecated Groonga PPA
+(Personal Package Archive, ppa:groonga/ppa) to our new Groonga APT Repository
+(<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>).</p>
+<p>By switching to the Groonga APT Repository, you’ll receive packages built with
+Apache Arrow enabled. Which unlocks extra features such as parallel offline
+index building. We strongly recommend you to migrate to enjoy these enhancements.</p>
+<p>If you are currently using the Groonga PPA, please follow the
+steps below to switch to the new package source.</p>
+<section id="configure-the-groonga-apt-repository">
+<h3><span class="section-number">2.4.8.1. </span>Configure the Groonga APT Repository<a class="headerlink" href="#configure-the-groonga-apt-repository" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4><span class="section-number">2.4.8.1.1. </span>Register Groonga APT Repository<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>To register the Groonga APT Repository, install the <code class="docutils literal notranslate"><span class="pre">groonga-apt-source</span></code> package
+as follows.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-V<span class="w"> </span>groonga-apt-source
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+</pre></div>
+</div>
+</section>
+<section id="remove-the-existing-package-source">
+<h4><span class="section-number">2.4.8.1.2. </span>Remove the Existing Package Source<a class="headerlink" href="#remove-the-existing-package-source" title="Link to this heading">#</a></h4>
+<p>Remove the old Groonga PPA:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>-y<span class="w"> </span>--remove<span class="w"> </span>ppa:groonga/ppa
+</pre></div>
+</div>
+<p>After these steps, your package source is now switched from Groonga PPA to
+Groonga APT Repository.</p>
+</section>
+</section>
+<section id="upgrade-package">
+<h3><span class="section-number">2.4.8.2. </span>Upgrade Package<a class="headerlink" href="#upgrade-package" title="Link to this heading">#</a></h3>
+<p>There are two approaches depending on your needs.</p>
+<section id="option-1-use-groonga-apt-repository-from-the-next-release-recommended">
+<h4><span class="section-number">2.4.8.2.1. </span>Option 1: Use Groonga APT Repository from the Next Release (Recommended)<a class="headerlink" href="#option-1-use-groonga-apt-repository-from-the-next-release-recommended" title="Link to this heading">#</a></h4>
+<p>Starting with the next package version, we strongly recommend using the Groonga
+APT Repository. When you upgrade Groonga via <code class="docutils literal notranslate"><span class="pre">apt</span></code>, you will automatically receive
+the next package version without having to specify a version explicitly as
+follows. This option is simpler and is recommended for most users:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+</pre></div>
+</div>
+</section>
+<section id="option-2-use-groonga-apt-repository-immediately-without-waiting-for-next-release">
+<h4><span class="section-number">2.4.8.2.2. </span>Option 2: Use Groonga APT Repository Immediately Without Waiting for Next Release<a class="headerlink" href="#option-2-use-groonga-apt-repository-immediately-without-waiting-for-next-release" title="Link to this heading">#</a></h4>
+<p>If you wish to upgrade immediately without waiting for the next official release,
+you can force an upgrade to a specific package version in the Groonga APT
+Repository. In this case, you must upgrade the package by specifying the version.
+This is important because even if the version numbers match, the package’s
+naming conventions between the Groonga PPA and the Groonga APT Repository differ,
+and the Groonga PPA package takes precedence.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>package-name<span class="o">=</span>version
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the package has dependencies, you also need to upgrade dependent packages by
+specifying the version.</p>
+</div>
+<p>For example, upgrade a specific version of <code class="docutils literal notranslate"><span class="pre">groonga-bin</span></code> package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">version</span><span class="o">=</span><span class="k">$(</span>dpkg-query<span class="w"> </span>-W<span class="w"> </span>-f<span class="o">=</span><span class="s1">&#39;${Version}&#39;</span><span class="w"> </span>libgroonga0<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/\.ubuntu.*$//&#39;</span><span class="k">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y<span class="w"> </span>-V<span class="w"> </span>--allow-downgrades<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">libgroonga0</span><span class="o">=</span><span class="nv">$version</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>groonga-bin<span class="o">=</span><span class="nv">$version</span>
+</pre></div>
+</div>
+<p>This command forces the upgrade to a specific package version from the new
+repository. In this case, it’s Groonga APT Repository.</p>
+</section>
+</section>
+</section>
 </section>
 
 
@@ -583,6 +656,19 @@ Groonga plugin. If you want to use that one, install
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groonga-munin-plugins-package">2.4.5. <code class="docutils literal notranslate"><span class="pre">groonga-munin-plugins</span></code> package</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groonga-normalizer-mysql-package">2.4.6. <code class="docutils literal notranslate"><span class="pre">groonga-normalizer-mysql</span></code> package</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-from-source">2.4.7. Build from source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migration-from-groonga-ppa-ppa-groonga-ppa-to-groonga-apt-repository-packages-groonga-org">2.4.8. Migration from Groonga PPA (ppa:groonga/ppa) to Groonga APT Repository (packages.groonga.org)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-the-groonga-apt-repository">2.4.8.1. Configure the Groonga APT Repository</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.4.8.1.1. Register Groonga APT Repository</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-the-existing-package-source">2.4.8.1.2. Remove the Existing Package Source</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-package">2.4.8.2. Upgrade Package</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-use-groonga-apt-repository-from-the-next-release-recommended">2.4.8.2.1. Option 1: Use Groonga APT Repository from the Next Release (Recommended)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-use-groonga-apt-repository-immediately-without-waiting-for-next-release">2.4.8.2.2. Option 2: Use Groonga APT Repository Immediately Without Waiting for Next Release</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
