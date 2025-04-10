@@ -420,8 +420,8 @@ memory error with a 32-bit package even if you just process medium
 size data.</p>
 <section id="register-groonga-apt-repository">
 <h2><span class="section-number">2.4.1. </span>Register Groonga APT repository<a class="headerlink" href="#register-groonga-apt-repository" title="Link to this heading">#</a></h2>
-<section id="apt-repository-packages-groonga-org">
-<h3><span class="section-number">2.4.1.1. </span>APT Repository (<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>)<a class="headerlink" href="#apt-repository-packages-groonga-org" title="Link to this heading">#</a></h3>
+<section id="groonga-apt-repository-packages-groonga-org">
+<h3><span class="section-number">2.4.1.1. </span>Groonga APT Repository (<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>)<a class="headerlink" href="#groonga-apt-repository-packages-groonga-org" title="Link to this heading">#</a></h3>
 <p>Groonga packages are distributed via our Groonga APT repository at
 <a class="reference external" href="https://packages.groonga.org">https://packages.groonga.org</a>.</p>
 <p>Install <code class="docutils literal notranslate"><span class="pre">groonga-apt-source</span></code> to enable Groonga APT repository.</p>
@@ -433,31 +433,16 @@ sudo<span class="w"> </span>apt<span class="w"> </span>update
 </pre></div>
 </div>
 </section>
-<section id="ppa-personal-package-archive">
-<h3><span class="section-number">2.4.1.2. </span>PPA (Personal Package Archive)<a class="headerlink" href="#ppa-personal-package-archive" title="Link to this heading">#</a></h3>
+<section id="deprecated-groonga-ppa-personal-package-archive">
+<h3><span class="section-number">2.4.1.2. </span>Deprecated Groonga PPA (Personal Package Archive)<a class="headerlink" href="#deprecated-groonga-ppa-personal-package-archive" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The PPA will be deprecated. We strongly recommend using our Groonga APT
-repository (<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>) because packages from that repository are built
-with Apache Arrow enabled. This configuration unlocks extra features, such as
-parallel offline index building.</p>
-</div>
-<p>The Groonga APT repository for Ubuntu uses PPA (Personal Package
-Archive) on Launchpad. You can install Groonga by APT from the PPA.</p>
-<p>Here are supported Ubuntu versions:</p>
-<ul class="simple">
-<li><p>22.04 LTS Jammy Jellyfish</p></li>
-<li><p>24.04 LTS Noble Numbat</p></li>
-</ul>
-<p>Enable the universe repository to install Groonga:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>-V<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>software-properties-common
-sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>-y<span class="w"> </span>universe
-</pre></div>
-</div>
-<p>Add the <code class="docutils literal notranslate"><span class="pre">ppa:groonga/ppa</span></code> PPA to your system:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>-y<span class="w"> </span>ppa:groonga/ppa
-sudo<span class="w"> </span>apt<span class="w"> </span>update
-</pre></div>
+<p>The Grppmga PPA (Personal Package Archive, ppa:groonga/ppa) is deprecated. We
+strongly recommend using our Groonga APT repository (<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>)
+because packages from that repository are built with Apache Arrow enabled. This
+configuration unlocks extra features, such as parallel offline index building.
+If you are currently using the Groonga PPA, please see
+<a class="reference internal" href="#migrate-from-ppa-to-apt-repository"><span class="std std-ref">Migration from Groonga PPA (ppa:groonga/ppa) to Groonga APT Repository (packages.groonga.org)</span></a>.</p>
 </div>
 </section>
 </section>
@@ -524,7 +509,7 @@ Groonga plugin. If you want to use that one, install
 <p>See <a class="reference internal" href="cmake.html"><span class="doc">Others: Build with CMake</span></a> .</p>
 </section>
 <section id="migration-from-groonga-ppa-ppa-groonga-ppa-to-groonga-apt-repository-packages-groonga-org">
-<h2><span class="section-number">2.4.8. </span>Migration from Groonga PPA (ppa:groonga/ppa) to Groonga APT Repository (<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>)<a class="headerlink" href="#migration-from-groonga-ppa-ppa-groonga-ppa-to-groonga-apt-repository-packages-groonga-org" title="Link to this heading">#</a></h2>
+<span id="migrate-from-ppa-to-apt-repository"></span><h2><span class="section-number">2.4.8. </span>Migration from Groonga PPA (ppa:groonga/ppa) to Groonga APT Repository (<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>)<a class="headerlink" href="#migration-from-groonga-ppa-ppa-groonga-ppa-to-groonga-apt-repository-packages-groonga-org" title="Link to this heading">#</a></h2>
 <p>This section guides you through the migration from the deprecated Groonga PPA
 (Personal Package Archive, ppa:groonga/ppa) to our new Groonga APT Repository
 (<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>).</p>
@@ -646,8 +631,8 @@ repository. In this case, it’s Groonga APT Repository.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-groonga-apt-repository">2.4.1. Register Groonga APT repository</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apt-repository-packages-groonga-org">2.4.1.1. APT Repository (packages.groonga.org)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ppa-personal-package-archive">2.4.1.2. PPA (Personal Package Archive)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groonga-apt-repository-packages-groonga-org">2.4.1.1. Groonga APT Repository (packages.groonga.org)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecated-groonga-ppa-personal-package-archive">2.4.1.2. Deprecated Groonga PPA (Personal Package Archive)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groonga-package">2.4.2. <code class="docutils literal notranslate"><span class="pre">groonga</span></code> package</a></li>

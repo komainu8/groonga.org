@@ -485,11 +485,9 @@
 <section id="how-to-edit-documentation">
 <h2><span class="section-number">12.2.1.5. </span>ドキュメントを編集する方法<a class="headerlink" href="#how-to-edit-documentation" title="Link to this heading">#</a></h2>
 <p>Groongaドキュメントは、<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText (.rst)</a> または <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">Markdown (.md)</a> で書かれています。Groongaドキュメントのファイルは、<code class="docutils literal notranslate"><span class="pre">doc/source</span></code> 配下にあります。それぞれのページに対応した <code class="docutils literal notranslate"><span class="pre">.rst</span></code> ファイルまたは、 <code class="docutils literal notranslate"><span class="pre">.md</span></code> が必ず１つあります。対応するファイルを変更することで、対象のドキュメントを編集できます。例えば、この <a class="reference internal" href="#"><span class="doc">導入</span></a> ページを編集したい場合は、<code class="docutils literal notranslate"><span class="pre">doc/source/contribution/documentation/introduction.rst</span></code> ファイルを編集すればよいです。編集したいファイルをみつけて、編集してください。</p>
-<!-- prettier-ignore-start -->
 </section>
 <section id="how-to-add-a-new-documentation">
 <span id="how-to-add-new-documentation"></span><h2><span class="section-number">12.2.1.6. </span>新しいドキュメントを追加する方法<a class="headerlink" href="#how-to-add-a-new-documentation" title="Link to this heading">#</a></h2>
-<!-- prettier-ignore-end -->
 <p>新しいドキュメントを追加したい場合は、以下のコマンドで新しいドキュメントを <code class="docutils literal notranslate"><span class="pre">doc/files.am</span></code>と <code class="docutils literal notranslate"><span class="pre">doc/files.cmake</span></code> に追加する必要があります。</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>../groonga.doc<span class="w"> </span>--preset<span class="o">=</span>doc
 <span class="gp">$ </span>cmake<span class="w"> </span>--build<span class="w"> </span>../groonga.doc

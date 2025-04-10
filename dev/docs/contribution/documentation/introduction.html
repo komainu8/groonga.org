@@ -492,11 +492,9 @@ enable it explicitly by adding <code class="docutils literal notranslate"><span 
 Each page of the documentation corresponds to a <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file or a <code class="docutils literal notranslate"><span class="pre">.md</span></code> file. By modifying the corresponding file, you can edit the target document.
 For Example, if you want to edit this <a class="reference internal" href="#"><span class="doc">Introduction</span></a> page, you should edit the <code class="docutils literal notranslate"><span class="pre">doc/source/contribution/documentation/introduction.rst</span></code> file.
 Please find the file you wish to edit and make your changes.</p>
-<!-- prettier-ignore-start -->
 </section>
 <section id="how-to-add-a-new-documentation">
 <span id="how-to-add-new-documentation"></span><h2><span class="section-number">12.2.1.6. </span>How to add a new documentation<a class="headerlink" href="#how-to-add-a-new-documentation" title="Link to this heading">#</a></h2>
-<!-- prettier-ignore-end -->
 <p>If you want to add a new documentation, you need to add the new documentation into <code class="docutils literal notranslate"><span class="pre">doc/files.am</span></code> and <code class="docutils literal notranslate"><span class="pre">doc/files.cmake</span></code> by the following command lines.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>../groonga.doc<span class="w"> </span>--preset<span class="o">=</span>doc
 <span class="gp">$ </span>cmake<span class="w"> </span>--build<span class="w"> </span>../groonga.doc

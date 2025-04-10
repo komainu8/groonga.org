@@ -416,8 +416,8 @@
 <p>32-bit用と64-bit用のパッケージを配布していますが、サーバ用途には64-bitパッケージを利用することをオススメします。32-bit用パッケージはテスト用か開発用にだけ使って下さい。32-bit用パッケージを使った場合は、中程度のサイズのデータでもメモリ不足エラーになることがあります。</p>
 <section id="register-groonga-apt-repository">
 <h2><span class="section-number">2.4.1. </span>GroongaのAPTリポジトリー登録<a class="headerlink" href="#register-groonga-apt-repository" title="Link to this heading">#</a></h2>
-<section id="apt-repository-packages-groonga-org">
-<h3><span class="section-number">2.4.1.1. </span>APTリポジトリー（<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>）<a class="headerlink" href="#apt-repository-packages-groonga-org" title="Link to this heading">#</a></h3>
+<section id="groonga-apt-repository-packages-groonga-org">
+<h3><span class="section-number">2.4.1.1. </span>Groonga APTリポジトリー（<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>）<a class="headerlink" href="#groonga-apt-repository-packages-groonga-org" title="Link to this heading">#</a></h3>
 <p>Groongaパッケージは、Groonga APTリポジトリー（<a class="reference external" href="https://packages.groonga.org">https://packages.groonga.org</a>）にて配布されています。</p>
 <p><code class="docutils literal notranslate"><span class="pre">groonga-apt-source</span></code>をインストールすることで、Groonga APTリポジトリーを登録できます。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
@@ -428,27 +428,11 @@ sudo<span class="w"> </span>apt<span class="w"> </span>update
 </pre></div>
 </div>
 </section>
-<section id="ppa-personal-package-archive">
-<h3><span class="section-number">2.4.1.2. </span>PPA（Personal Package Archive）<a class="headerlink" href="#ppa-personal-package-archive" title="Link to this heading">#</a></h3>
+<section id="deprecated-groonga-ppa-personal-package-archive">
+<h3><span class="section-number">2.4.1.2. </span>非推奨なGroonga PPA（Personal Package Archive）<a class="headerlink" href="#deprecated-groonga-ppa-personal-package-archive" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>PPAは非推奨となります。ご利用の場合は、Groonga APTリポジトリー（<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>）の利用を強くお勧めします。なぜなら、Groonga APTリポジトリーではApache Arrowが有効な状態でビルドされたパッケージが提供されており、これにより並列オフラインインデックス構築などの追加機能が利用可能になるためです。</p>
-</div>
-<p>Ubuntu用のGroongaのAPTリポジトリーはLaunchpad上のPPA（Personal Package Archive）を使っています。このPPAからAPTでGroongaをインストールできます。</p>
-<p>サポートしているUbuntuのバージョンは次の通りです。</p>
-<ul class="simple">
-<li><p>22.04 LTS Jammy Jellyfish</p></li>
-<li><p>24.04 LTS Noble Numbat</p></li>
-</ul>
-<p>Groongaをインストールするためにuniverseリポジトリを有効にしてください。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>-V<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>software-properties-common
-sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>-y<span class="w"> </span>universe
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">ppa:groonga/ppa</span></code> PPAをシステムに登録します。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>-y<span class="w"> </span>ppa:groonga/ppa
-sudo<span class="w"> </span>apt<span class="w"> </span>update
-</pre></div>
+<p>Groonga PPA（Personal Package Archive, ppa:groonga/ppa）は非推奨となります。ご利用の場合は、Groonga APTリポジトリーの利用を強くお勧めします。なぜなら、Groonga APTリポジトリーではApache Arrowが有効な状態でビルドされたパッケージが提供されており、これにより並列オフラインインデックス構築などの追加機能が利用可能になるためです。Groonga PPAを利用されている場合は、<a class="reference internal" href="#migrate-from-ppa-to-apt-repository"><span class="std std-ref">Groonga PPA（ppa:groonga/ppa）から Groonga APTリポジトリー（packages.groonga.org）への移行</span></a>を確認してください。</p>
 </div>
 </section>
 </section>
@@ -507,7 +491,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>update
 <p>詳細は <a class="reference internal" href="cmake.html"><span class="doc">その他: CMakeを使ってビルド</span></a> を参照してください。</p>
 </section>
 <section id="migration-from-groonga-ppa-ppa-groonga-ppa-to-groonga-apt-repository-packages-groonga-org">
-<h2><span class="section-number">2.4.8. </span>Groonga PPA（ppa:groonga/ppa）から Groonga APTリポジトリー（<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>）への移行<a class="headerlink" href="#migration-from-groonga-ppa-ppa-groonga-ppa-to-groonga-apt-repository-packages-groonga-org" title="Link to this heading">#</a></h2>
+<span id="migrate-from-ppa-to-apt-repository"></span><h2><span class="section-number">2.4.8. </span>Groonga PPA（ppa:groonga/ppa）から Groonga APTリポジトリー（<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>）への移行<a class="headerlink" href="#migration-from-groonga-ppa-ppa-groonga-ppa-to-groonga-apt-repository-packages-groonga-org" title="Link to this heading">#</a></h2>
 <p>このセクションでは、廃止予定のGroonga PPA（Personal Package Archive, ppa:groonga/ppa）から新しい Groonga APTリポジトリー（<a class="reference external" href="http://packages.groonga.org">packages.groonga.org</a>）への移行手順を案内します。</p>
 <p>Groonga APTリポジトリーに切り替えることで、Apache Arrowが有効化されたパッケージを利用できるようになり、並列オフラインインデックス構築などの追加機能が利用可能になります。これらの機能を活用するためにも、移行することを強くお勧めします。</p>
 <p>もし現在、Groonga PPAを使用している場合は、次の手順に従って新しいパッケージソースに切り替えてください。</p>
@@ -612,8 +596,8 @@ sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> <
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-groonga-apt-repository">2.4.1. GroongaのAPTリポジトリー登録</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apt-repository-packages-groonga-org">2.4.1.1. APTリポジトリー（packages.groonga.org）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ppa-personal-package-archive">2.4.1.2. PPA（Personal Package Archive）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groonga-apt-repository-packages-groonga-org">2.4.1.1. Groonga APTリポジトリー（packages.groonga.org）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecated-groonga-ppa-personal-package-archive">2.4.1.2. 非推奨なGroonga PPA（Personal Package Archive）</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groonga-package">2.4.2. <code class="docutils literal notranslate"><span class="pre">groonga</span></code>パッケージ</a></li>
