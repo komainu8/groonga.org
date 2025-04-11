@@ -173,6 +173,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a4d37b5e6e3d447f06152a33914aee965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract keywords from an expression.  <br /></td></tr>
 <tr class="separator:a4d37b5e6e3d447f06152a33914aee965"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab715ac118a480f88b88ba88db54c5669" id="r_ab715ac118a480f88b88ba88db54c5669"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="expr_8h.html#ab715ac118a480f88b88ba88db54c5669">grn_expr_syntax_escape</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, const char *query, int query_size, const char *target_characters, char escape_character, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *escaped_query)</td></tr>
+<tr class="memdesc:ab715ac118a480f88b88ba88db54c5669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escape target characters in a query by a specified escape character.  <br /></td></tr>
 <tr class="separator:ab715ac118a480f88b88ba88db54c5669"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70613237ab9bf3b682d90c4a254bbf47" id="r_a70613237ab9bf3b682d90c4a254bbf47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="expr_8h.html#a70613237ab9bf3b682d90c4a254bbf47">grn_expr_syntax_escape_query</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, const char *query, int query_size, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *escaped_query)</td></tr>
 <tr class="separator:a70613237ab9bf3b682d90c4a254bbf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1838,6 +1839,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Escape target characters in a query by a specified escape character. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The context object. Its encoding must match that of the input <code>query</code>. </td></tr>
+    <tr><td class="paramname">query</td><td>The input query to be escaped. </td></tr>
+    <tr><td class="paramname">query_size</td><td>The byte size of <code>query</code>. A value of -1 indicates that the query is null-terminated. </td></tr>
+    <tr><td class="paramname">target_characters</td><td>A null-terminated string containing the characters to be escaped. For example, <code>"+-&gt;&lt;~*()\"\\:"</code> is used for query syntax. </td></tr>
+    <tr><td class="paramname">escape_character</td><td>The character to use for escaping characters found in <code>target_characters</code>. For example, <code>"\\"</code> (backslash) is used. </td></tr>
+    <tr><td class="paramname">escaped_query</td><td>The buffer where the escaped query is stored.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0a478ce86495f9d0d997110a422bc10447">GRN_SUCCESS</a> on success, the appropriate <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> on error.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="https://groonga.org/docs/reference/grn_expr/query_syntax.html">https://groonga.org/docs/reference/grn_expr/query_syntax.html</a> </dd></dl>
 
 </div>
 </div>

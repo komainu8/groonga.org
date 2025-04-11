@@ -735,27 +735,6 @@
 <dd></dd></dl>
 
 <dl class="c function">
-<dt class="sig sig-object c" id="c.grn_expr_syntax_escape">
-<span class="n"><span class="pre">grn_rc</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_expr_syntax_escape</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">string</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">string_size</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">target_characters</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n"><span class="pre">escape_character</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">escaped_string</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_expr_syntax_escape" title="Link to this definition">#</a><br /></dt>
-<dd><p><code class="docutils literal notranslate"><span class="pre">string</span></code> 中の <code class="docutils literal notranslate"><span class="pre">target_characters</span></code> を <code class="docutils literal notranslate"><span class="pre">escape_character</span></code> でエスケープします。</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> -- エンコーディングは <code class="docutils literal notranslate"><span class="pre">string</span></code> と同じでなければいけません。 <code class="docutils literal notranslate"><span class="pre">escaped_string</span></code> 用のバッファを確保するために使います。</p></li>
-<li><p><strong>string</strong> -- 文字列式表現</p></li>
-<li><p><strong>string_size</strong> -- <code class="docutils literal notranslate"><span class="pre">string</span></code> のバイトサイズです。 <code class="docutils literal notranslate"><span class="pre">-1</span></code> を指定した場合は <code class="docutils literal notranslate"><span class="pre">string</span></code> がNULL終端文字列であるという意味になります。</p></li>
-<li><p><strong>target_characters</strong> -- NULL終端されたエスケープ対象文字。たとえば、 <a class="reference internal" href="../grn_expr/query_syntax.html"><span class="doc">クエリー構文</span></a> 用の <code class="docutils literal notranslate"><span class="pre">target_characters</span></code> は <code class="docutils literal notranslate"><span class="pre">&quot;+-&gt;&lt;~*()\&quot;\\:&quot;</span></code> になります。</p></li>
-<li><p><strong>escape_character</strong> -- <code class="docutils literal notranslate"><span class="pre">target_characters</span></code> の文字をエスケープする文字です。たとえば、 <a class="reference internal" href="../grn_expr/query_syntax.html"><span class="doc">クエリー構文</span></a> 用の <code class="docutils literal notranslate"><span class="pre">escaped_character</span></code> は <code class="docutils literal notranslate"><span class="pre">\\</span></code> （バックスラッシュ）になります。</p></li>
-<li><p><strong>escaped_string</strong> -- エスケープされた <code class="docutils literal notranslate"><span class="pre">string</span></code> の出力先です。テキスト型のbulkでなければいけません。</p></li>
-</ul>
-</dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
-<dd class="field-even"><p>成功時は <code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> 、エラー時は <code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> 以外。</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="c function">
 <dt class="sig sig-object c" id="c.grn_expr_syntax_escape_query">
 <span class="n"><span class="pre">grn_rc</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_expr_syntax_escape_query</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">query</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">query_size</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">escaped_query</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_expr_syntax_escape_query" title="Link to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="../grn_expr/query_syntax.html"><span class="doc">クエリー構文</span></a> にある特別な文字をエスケープします。</p>

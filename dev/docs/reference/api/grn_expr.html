@@ -739,36 +739,6 @@ appends the parsed expression to another expression.</p>
 <dd></dd></dl>
 
 <dl class="c function">
-<dt class="sig sig-object c" id="c.grn_expr_syntax_escape">
-<span class="n"><span class="pre">grn_rc</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_expr_syntax_escape</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">string</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">string_size</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">target_characters</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n"><span class="pre">escape_character</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">escaped_string</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_expr_syntax_escape" title="Link to this definition">#</a><br /></dt>
-<dd><p>Escapes <code class="docutils literal notranslate"><span class="pre">target_characters</span></code> in <code class="docutils literal notranslate"><span class="pre">string</span></code> by <code class="docutils literal notranslate"><span class="pre">escape_character</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> – Its encoding must be the same encoding of <code class="docutils literal notranslate"><span class="pre">string</span></code>.
-It is used for allocating buffer for <code class="docutils literal notranslate"><span class="pre">escaped_string</span></code>.</p></li>
-<li><p><strong>string</strong> – String expression representation.</p></li>
-<li><p><strong>string_size</strong> – The byte size of <code class="docutils literal notranslate"><span class="pre">string</span></code>. <code class="docutils literal notranslate"><span class="pre">-1</span></code> means <code class="docutils literal notranslate"><span class="pre">string</span></code>
-is NULL terminated string.</p></li>
-<li><p><strong>target_characters</strong> – NULL terminated escape target characters.
-For example, <code class="docutils literal notranslate"><span class="pre">&quot;+-&gt;&lt;~*()\&quot;\\:&quot;</span></code> is
-<code class="docutils literal notranslate"><span class="pre">target_characters</span></code> for
-<a class="reference internal" href="../grn_expr/query_syntax.html"><span class="doc">Query syntax</span></a>.</p></li>
-<li><p><strong>escape_character</strong> – The character to use escape a character in
-<code class="docutils literal notranslate"><span class="pre">target_characters</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">\\</span></code>
-(backslash) is <code class="docutils literal notranslate"><span class="pre">escaped_character</span></code> for
-<a class="reference internal" href="../grn_expr/query_syntax.html"><span class="doc">Query syntax</span></a>.</p></li>
-<li><p><strong>escaped_string</strong> – The output of escaped <code class="docutils literal notranslate"><span class="pre">string</span></code>. It should be
-text typed bulk.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> on success, not <code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> on error.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="c function">
 <dt class="sig sig-object c" id="c.grn_expr_syntax_escape_query">
 <span class="n"><span class="pre">grn_rc</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_expr_syntax_escape_query</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">query</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">query_size</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">escaped_query</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_expr_syntax_escape_query" title="Link to this definition">#</a><br /></dt>
 <dd><p>Escapes special characters in
