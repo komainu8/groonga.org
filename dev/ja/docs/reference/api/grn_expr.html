@@ -735,25 +735,6 @@
 <dd></dd></dl>
 
 <dl class="c function">
-<dt class="sig sig-object c" id="c.grn_expr_syntax_escape_query">
-<span class="n"><span class="pre">grn_rc</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_expr_syntax_escape_query</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">query</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">query_size</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">escaped_query</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_expr_syntax_escape_query" title="Link to this definition">#</a><br /></dt>
-<dd><p><a class="reference internal" href="../grn_expr/query_syntax.html"><span class="doc">クエリー構文</span></a> にある特別な文字をエスケープします。</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> -- このエンコーディングは <code class="docutils literal notranslate"><span class="pre">query</span></code> のエンコーディングと同じでなければなりません。 <code class="docutils literal notranslate"><span class="pre">escaped_query</span></code> 用のバッファを確保するために使います。</p></li>
-<li><p><strong>query</strong> -- <a class="reference internal" href="../grn_expr/query_syntax.html"><span class="doc">クエリー構文</span></a> にある文字列式の表現。</p></li>
-<li><p><strong>query_size</strong> -- <code class="docutils literal notranslate"><span class="pre">query</span></code> のバイトサイズです。 <code class="docutils literal notranslate"><span class="pre">-1</span></code> を指定した場合は <code class="docutils literal notranslate"><span class="pre">query</span></code> がNULL終端文字列であるという意味になります。</p></li>
-<li><p><strong>escaped_query</strong> -- エスケープされた <code class="docutils literal notranslate"><span class="pre">query</span></code> の出力。テキスト型用のbulkを返す。</p></li>
-</ul>
-</dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
-<dd class="field-even"><p>成功時は <code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> 、エラー時は <code class="docutils literal notranslate"><span class="pre">GRN_SUCCESS</span></code> 以外。</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="c function">
 <dt class="sig sig-object c" id="c.grn_expr_compile">
 <span class="n"><span class="pre">grn_rc</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_expr_compile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">expr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_expr_compile" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
