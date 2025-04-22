@@ -3644,7 +3644,7 @@
 <p>デフォルト値は <code class="docutils literal notranslate"><span class="pre">0</span></code> です。</p>
 <p>あいまいクエリーを有効にするには <a class="reference internal" href="#select-fuzzy-max-distance-ratio"><span class="std std-ref">fuzzy_max_distance_ratio</span></a> または <a class="reference internal" href="#select-fuzzy-max-distance"><span class="std std-ref">fuzzy_max_distance</span></a> を指定する必要があります。もし、どちらも指定した場合は <a class="reference internal" href="#select-fuzzy-max-distance-ratio"><span class="std std-ref">fuzzy_max_distance_ratio</span></a> が使われます。</p>
 <p>対象のクエリーをもとに許容する編集距離を指定できます。多くの場合、 <a class="reference internal" href="#select-fuzzy-max-distance"><span class="std std-ref">fuzzy_max_distance</span></a> よりもこの引数の方が適切です。</p>
-<p>一般的に、短いクエリーに立ちして長い編集距離を許容することは適切ではありません。なぜなら、不適切な結果を増やすからです。たとえば、 <code class="docutils literal notranslate"><span class="pre">hye</span></code> と編集距離 <code class="docutils literal notranslate"><span class="pre">3</span></code> では次の単語を許容します。</p>
+<p>一般的に、短いクエリーに対して長い編集距離を許容することは適切ではありません。なぜなら、不適切な結果を増やすからです。たとえば、 <code class="docutils literal notranslate"><span class="pre">hye</span></code> と編集距離 <code class="docutils literal notranslate"><span class="pre">3</span></code> では次の単語を許容します。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">hey</span></code> （適切な結果）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">eye</span></code> （適切な結果）</p></li>
