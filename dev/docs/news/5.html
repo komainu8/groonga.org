@@ -1030,7 +1030,7 @@ accessor.</p></li>
 <section id="id17">
 <h3>Fixes<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <ul>
-<li><p>Fixed a memory leak when an error is occurred in <a class="reference internal" href="../reference/api/grn_expr.html#c.grn_expr_exec" title="grn_expr_exec"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_expr_exec()</span></code></a>.
+<li><p>Fixed a memory leak when an error is occurred in <code class="xref c c-func docutils literal notranslate"><span class="pre">grn_expr_exec()</span></code>.
 For example, unsupported operator (e.g. <code class="docutils literal notranslate"><span class="pre">GRN_OP_TERM_EXTRACT</span></code>) is used
 (<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">implemented</span> <span class="pre">operator</span> <span class="pre">assigned</span></code> is occurred for the case).</p></li>
 <li><p>[bindings/php] Added a missing check for a memory allocation failure.

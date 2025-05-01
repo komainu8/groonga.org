@@ -827,7 +827,7 @@
 <section id="id17">
 <h3>修正<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <ul>
-<li><p><a class="reference internal" href="../reference/api/grn_expr.html#c.grn_expr_exec" title="grn_expr_exec"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_expr_exec()</span></code></a> でエラーが発生したときのメモリーリークを修正しました。例えば、サポートしていないオペレーター（例： <code class="docutils literal notranslate"><span class="pre">GRN_OP_TERM_EXTRACT</span></code>）が使われた場合です（ <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">implemented</span> <span class="pre">operator</span> <span class="pre">assigned</span></code> が発生するケース）。</p></li>
+<li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_expr_exec()</span></code> でエラーが発生したときのメモリーリークを修正しました。例えば、サポートしていないオペレーター（例： <code class="docutils literal notranslate"><span class="pre">GRN_OP_TERM_EXTRACT</span></code>）が使われた場合です（ <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">implemented</span> <span class="pre">operator</span> <span class="pre">assigned</span></code> が発生するケース）。</p></li>
 <li><p>[bindings/php] メモリーアロケーションに失敗したときのチェックが抜けていたのを追加しました。[Bill Parkerさんが報告]</p></li>
 <li><p>[<a class="reference internal" href="../install/centos.html"><span class="doc">CentOS</span></a>][<a class="reference internal" href="../server/package.html"><span class="doc">サーバーパッケージ</span></a>][ログローテート] スクリプト内のシンタックスエラーを修正しました。</p></li>
 <li><p>[<a class="reference internal" href="../install/centos.html"><span class="doc">CentOS</span></a>][<a class="reference internal" href="../server/package.html"><span class="doc">サーバーパッケージ</span></a>][ログローテート] デーモンの起動チェックを修正しました。</p></li>
