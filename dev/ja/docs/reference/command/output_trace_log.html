@@ -707,7 +707,7 @@
 <h3><span class="section-number">7.3.4.3.1. </span>JSON<a class="headerlink" href="#json" title="Link to this heading">#</a></h3>
 <p>次のようにして明示的に出力形式としてJSONを指定できます。</p>
 <p>コマンドラインスタイル：</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_format json
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_type json
 </pre></div>
 </div>
 <p>URIスタイル：</p>
@@ -715,7 +715,7 @@
 </pre></div>
 </div>
 <p>あるいは</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_format=json
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_type=json
 </pre></div>
 </div>
 <p>出力形式としてJSONを指定したときに出力構造は次の通りです。</p>
@@ -956,7 +956,7 @@
 <h3><span class="section-number">7.3.4.3.2. </span>Apache Arrow<a class="headerlink" href="#apache-arrow" title="Link to this heading">#</a></h3>
 <p>次のようにすると明示的に出力形式としてApache Arrowを指定できます。</p>
 <p>コマンドラインスタイル：</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_format apache-arrow
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_type apache-arrow
 </pre></div>
 </div>
 <p>URIスタイル：</p>
@@ -964,7 +964,7 @@
 </pre></div>
 </div>
 <p>あるいは</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_format=apache-arrow
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_type=apache-arrow
 </pre></div>
 </div>
 <p>出力形式がApache Arrowのときの出力構造は次の通りです。</p>

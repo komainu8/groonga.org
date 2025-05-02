@@ -714,7 +714,7 @@ format, JSON is used by default.</p>
 <h3><span class="section-number">7.3.4.3.1. </span>JSON<a class="headerlink" href="#json" title="Link to this heading">#</a></h3>
 <p>You can specify JSON output format explicitly like the followings:</p>
 <p>Command line style:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_format json
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_type json
 </pre></div>
 </div>
 <p>URI style:</p>
@@ -722,7 +722,7 @@ format, JSON is used by default.</p>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_format=json
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_type=json
 </pre></div>
 </div>
 <p>Here is an output structure for JSON output format:</p>
@@ -970,7 +970,7 @@ may provide a tool for it.</p>
 <p>You can specify Apache Arrow output format explicitly like the
 followings:</p>
 <p>Command line style:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_format apache-arrow
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_type apache-arrow
 </pre></div>
 </div>
 <p>URI style:</p>
@@ -978,7 +978,7 @@ followings:</p>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_format=apache-arrow
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_type=apache-arrow
 </pre></div>
 </div>
 <p>Here is an output structure for Apache Arrow output format:</p>
