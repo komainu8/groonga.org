@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.26.7. grn_content_type &#8212; Groonga v15.0.4 documentation</title>
+    <title>7.26.7. grn_content_type &#8212; Groonga v15.0.9 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=d897bb43"></script>
+    <script src="../../_static/documentation_options.js?v=648aa2f4"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="7.26.6. grn_command_version" href="grn_command_version.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.0.4" />
+  <meta name="docsearch:version" content="15.0.9" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.4 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.4 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
   
   
 </a></div>
@@ -670,33 +670,17 @@
 <h1><span class="section-number">7.26.7. </span><code class="docutils literal notranslate"><span class="pre">grn_content_type</span></code><a class="headerlink" href="#grn-content-type" title="Link to this heading">#</a></h1>
 <section id="summary">
 <h2><span class="section-number">7.26.7.1. </span>概要<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
-<p><a class="reference internal" href="#c.grn_content_type" title="grn_content_type"><code class="xref c c-type docutils literal notranslate"><span class="pre">grn_content_type</span></code></a> shows input type and output
+<p><code class="xref c c-type docutils literal notranslate"><span class="pre">grn_content_type</span></code> shows input type and output
 type. Currently, it is used only for output type.</p>
 <p>Normally, you don't need to use this type. It is used internally in
 <code class="xref c c-func docutils literal notranslate"><span class="pre">grn_ctx_send()</span></code>.</p>
 </section>
 <section id="reference">
 <h2><span class="section-number">7.26.7.2. </span>リファレンス<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
-<dl class="c type">
-<dt class="sig sig-object c" id="c.grn_content_type">
-<span class="k"><span class="pre">type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_content_type</span></span></span><a class="headerlink" href="#c.grn_content_type" title="Link to this definition">#</a><br /></dt>
-<dd><p>指定可能な値は以下の通りです。</p>
-<dl class="simple">
-<dt><cite>GRN_CONTENT_NONE</cite></dt><dd><p>It means that outputting nothing or using the original format.
-<a class="reference internal" href="../commands/dump.html"><span class="doc">dump</span></a> uses the type.</p>
-</dd>
-<dt><cite>GRN_CONTENT_TSV</cite></dt><dd><p>It means tab separated values format.</p>
-</dd>
-<dt><cite>GRN_CONTENT_JSON</cite></dt><dd><p>JSON形式:</p>
-</dd>
-<dt><cite>GRN_CONTENT_XML</cite></dt><dd><p>It means XML format.</p>
-</dd>
-<dt><cite>GRN_CONTENT_MSGPACK</cite></dt><dd><p>It means MessagePack format. You need MessagePack library on building
-Groonga. If you don't have MessagePack library, you can't use this type.</p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>現在、Doxygenを使った自動生成に切り替え中です。</p>
+</div>
 </section>
 </section>
 

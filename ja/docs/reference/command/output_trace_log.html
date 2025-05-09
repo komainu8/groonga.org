@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.3.4. トレースログの出力 &#8212; Groonga v15.0.4 documentation</title>
+    <title>7.3.4. トレースログの出力 &#8212; Groonga v15.0.9 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=d897bb43"></script>
+    <script src="../../_static/documentation_options.js?v=648aa2f4"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="7.3.3. 出力形式" href="output_format.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.0.4" />
+  <meta name="docsearch:version" content="15.0.9" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.4 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.4 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
   
   
 </a></div>
@@ -707,7 +707,7 @@
 <h3><span class="section-number">7.3.4.3.1. </span>JSON<a class="headerlink" href="#json" title="Link to this heading">#</a></h3>
 <p>次のようにして明示的に出力形式としてJSONを指定できます。</p>
 <p>コマンドラインスタイル：</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_format json
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_type json
 </pre></div>
 </div>
 <p>URIスタイル：</p>
@@ -715,7 +715,7 @@
 </pre></div>
 </div>
 <p>あるいは</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_format=json
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_type=json
 </pre></div>
 </div>
 <p>出力形式としてJSONを指定したときに出力構造は次の通りです。</p>
@@ -956,7 +956,7 @@
 <h3><span class="section-number">7.3.4.3.2. </span>Apache Arrow<a class="headerlink" href="#apache-arrow" title="Link to this heading">#</a></h3>
 <p>次のようにすると明示的に出力形式としてApache Arrowを指定できます。</p>
 <p>コマンドラインスタイル：</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_format apache-arrow
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_type apache-arrow
 </pre></div>
 </div>
 <p>URIスタイル：</p>
@@ -964,7 +964,7 @@
 </pre></div>
 </div>
 <p>あるいは</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_format=apache-arrow
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_type=apache-arrow
 </pre></div>
 </div>
 <p>出力形式がApache Arrowのときの出力構造は次の通りです。</p>

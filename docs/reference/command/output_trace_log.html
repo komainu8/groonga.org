@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.3.4. Output trace log &#8212; Groonga v15.0.4 documentation</title>
+    <title>7.3.4. Output trace log &#8212; Groonga v15.0.9 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=e9602f17"></script>
+    <script src="../../_static/documentation_options.js?v=557d36a0"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -63,7 +63,7 @@
     <link rel="prev" title="7.3.3. Output format" href="output_format.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.4" />
+  <meta name="docsearch:version" content="15.0.9" />
   </head>
   
   
@@ -129,8 +129,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.4 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.4 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
   
   
 </a></div>
@@ -714,7 +714,7 @@ format, JSON is used by default.</p>
 <h3><span class="section-number">7.3.4.3.1. </span>JSON<a class="headerlink" href="#json" title="Link to this heading">#</a></h3>
 <p>You can specify JSON output format explicitly like the followings:</p>
 <p>Command line style:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_format json
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_type json
 </pre></div>
 </div>
 <p>URI style:</p>
@@ -722,7 +722,7 @@ format, JSON is used by default.</p>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_format=json
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_type=json
 </pre></div>
 </div>
 <p>Here is an output structure for JSON output format:</p>
@@ -970,7 +970,7 @@ may provide a tool for it.</p>
 <p>You can specify Apache Arrow output format explicitly like the
 followings:</p>
 <p>Command line style:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_format apache-arrow
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>select ... --output_trace_log yes --command_version 3 --output_type apache-arrow
 </pre></div>
 </div>
 <p>URI style:</p>
@@ -978,7 +978,7 @@ followings:</p>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_format=apache-arrow
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/d/select?...&amp;output_trace_log=yes&amp;command_version=3&amp;output_type=apache-arrow
 </pre></div>
 </div>
 <p>Here is an output structure for Apache Arrow output format:</p>
