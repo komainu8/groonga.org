@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>News - 15 series &#8212; Groonga v15.0.5 documentation</title>
+    <title>News - 15 series &#8212; Groonga v15.1.0 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=8dafff53"></script>
+    <script src="../_static/documentation_options.js?v=b3e8545c"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -61,7 +61,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.5" />
+  <meta name="docsearch:version" content="15.1.0" />
   </head>
   
   
@@ -127,8 +127,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.5 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.5 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.0 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.0 documentation - Home"/>
   
   
 </a></div>
@@ -396,10 +396,65 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="news-15-series">
 <h1>News - 15 series<a class="headerlink" href="#news-15-series" title="Link to this heading">#</a></h1>
-<section id="release-15-0-4-2025-03-29">
-<span id="release-15-0-4"></span><h2>Release 15.0.4 - 2025-03-29<a class="headerlink" href="#release-15-0-4-2025-03-29" title="Link to this heading">#</a></h2>
+<section id="release-15-0-9-2025-05-08">
+<span id="release-15-0-9"></span><h2>Release 15.0.9 - 2025-05-08<a class="headerlink" href="#release-15-0-9-2025-05-08" title="Link to this heading">#</a></h2>
+<p>This release adds the tokenizer’s option to make token inspection simpler and
+improves negative-division semantics for unsigned integer.</p>
 <section id="improvements">
 <h3>Improvements<a class="headerlink" href="#improvements" title="Link to this heading">#</a></h3>
+<section id="reference-commands-tokenize-reference-commands-table-tokenize-added-tokenize-output-style-option">
+<h4><a class="reference internal" href="../reference/commands/tokenize.html"><span class="doc">tokenize</span></a>/<a class="reference internal" href="../reference/commands/table_tokenize.html"><span class="doc">table_tokenize</span></a>: Added <a class="reference internal" href="../reference/commands/tokenize.html#tokenize-output-style"><span class="std std-ref">output_style</span></a> option<a class="headerlink" href="#reference-commands-tokenize-reference-commands-table-tokenize-added-tokenize-output-style-option" title="Link to this heading">#</a></h4>
+<p>This <a class="reference internal" href="../reference/commands/tokenize.html#tokenize-output-style"><span class="std std-ref">output_style</span></a> option to the
+<a class="reference internal" href="../reference/commands/tokenize.html"><span class="doc">tokenize</span></a>/<a class="reference internal" href="../reference/commands/table_tokenize.html"><span class="doc">table_tokenize</span></a>
+command makes it easier to focus on the tokens when you don’t need the full
+attribute set.</p>
+<p>Here is example of using <a class="reference internal" href="../reference/commands/tokenize.html#tokenize-output-style"><span class="std std-ref">output_style</span></a> option.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tokenize</span> <span class="n">TokenNgram</span> <span class="s2">&quot;Fulltext Search&quot;</span> <span class="o">--</span><span class="n">output_style</span> <span class="n">simple</span>
+<span class="p">[</span>
+  <span class="p">[</span>
+    <span class="mi">0</span><span class="p">,</span>
+    <span class="mf">1746573056.540744</span><span class="p">,</span>
+    <span class="mf">0.0007045269012451172</span>
+  <span class="p">],</span>
+  <span class="p">[</span>
+    <span class="s2">&quot;Fu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ul&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ll&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;te&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;xt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;t &quot;</span><span class="p">,</span>
+    <span class="s2">&quot; S&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Se&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ea&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rc&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ch&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;h&quot;</span>
+  <span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="clarified-x-negative-value-semantics">
+<h4>Clarified <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">negative</span> <span class="pre">value</span></code> semantics<a class="headerlink" href="#clarified-x-negative-value-semantics" title="Link to this heading">#</a></h4>
+<p>Previously, only dividing <code class="docutils literal notranslate"><span class="pre">X</span></code> by <code class="docutils literal notranslate"><span class="pre">-1</span></code>/<code class="docutils literal notranslate"><span class="pre">1.0</span></code> returns <code class="docutils literal notranslate"><span class="pre">-X</span></code> for unsigned integers.
+From this release, dividing by any negative value will yield the mathematically
+expected negative result as follows.</p>
+<ul class="simple">
+<li><p>Before: <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-2</span></code> might not return <code class="docutils literal notranslate"><span class="pre">-(X</span> <span class="pre">/</span> <span class="pre">2)</span></code>.</p></li>
+<li><p>After: <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-2</span></code> always returns <code class="docutils literal notranslate"><span class="pre">-(X</span> <span class="pre">/</span> <span class="pre">2)</span></code>.</p></li>
+</ul>
+<p>This is a backward incompatible change but we assume that no user depends on
+this behavior.</p>
+</section>
+</section>
+</section>
+<section id="release-15-0-4-2025-03-29">
+<span id="release-15-0-4"></span><h2>Release 15.0.4 - 2025-03-29<a class="headerlink" href="#release-15-0-4-2025-03-29" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Improvements<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <section id="clarified-x-1-and-x-1-0-semantics">
 <h4>Clarified <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1.0</span></code> semantics<a class="headerlink" href="#clarified-x-1-and-x-1-0-semantics" title="Link to this heading">#</a></h4>
 <p>In many languages, <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1.0</span></code> return <code class="docutils literal notranslate"><span class="pre">-X</span></code>. But Groonga
@@ -412,8 +467,8 @@ depends on this behavior.</p>
 </section>
 <section id="release-15-0-3-2025-03-10">
 <span id="release-15-0-3"></span><h2>Release 15.0.3 - 2025-03-10<a class="headerlink" href="#release-15-0-3-2025-03-10" title="Link to this heading">#</a></h2>
-<section id="id1">
-<h3>Improvements<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>Improvements<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <section id="offline-index-construction-added-support-for-parallel-construction-with-table-hash-key-lexicon">
 <h4><a class="reference internal" href="../reference/indexing.html#offline-index-construction"><span class="std std-ref">Offline index construction</span></a>: Added support for parallel construction with <a class="reference internal" href="../reference/tables.html#table-hash-key"><span class="std std-ref">TABLE_HASH_KEY</span></a> lexicon<a class="headerlink" href="#offline-index-construction-added-support-for-parallel-construction-with-table-hash-key-lexicon" title="Link to this heading">#</a></h4>
 <p>Parallel offline index construction iterates sorted terms
@@ -457,8 +512,8 @@ parameter. If options are ignored, the required parameter is missing.</p>
 </section>
 <section id="release-15-0-1-2025-02-20">
 <span id="release-15-0-1"></span><h2>Release 15.0.1 - 2025-02-20<a class="headerlink" href="#release-15-0-1-2025-02-20" title="Link to this heading">#</a></h2>
-<section id="id2">
-<h3>Improvements<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>Improvements<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <section id="install-ubuntu-dropped-support-for-ubuntu-20-04-focal-fossa">
 <h4>[<a class="reference internal" href="../install/ubuntu.html"><span class="doc">Ubuntu</span></a>] Dropped support for Ubuntu 20.04 (Focal Fossa)<a class="headerlink" href="#install-ubuntu-dropped-support-for-ubuntu-20-04-focal-fossa" title="Link to this heading">#</a></h4>
 <p>Ubuntu 20.04 will reach EOL in May 2025, so support for it has been dropped
@@ -472,8 +527,8 @@ starting with this release.</p>
 backward incompatible changes! So you can upgrade Groonga without
 migrating your existing databases. You can still use your existing
 databases as-is.</p>
-<section id="id3">
-<h3>Improvements<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>Improvements<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <section id="table-pat-key-added-support-for-builtin-type-float32-as-key-type">
 <h4><a class="reference internal" href="../reference/tables.html#table-pat-key"><span class="std std-ref">TABLE_PAT_KEY</span></a>: Added support for <a class="reference internal" href="../reference/types.html#builtin-type-float32"><span class="std std-ref">Float32</span></a> as key type<a class="headerlink" href="#table-pat-key-added-support-for-builtin-type-float32-as-key-type" title="Link to this heading">#</a></h4>
 <p><a class="reference external" href="https://github.com/groonga/groonga/issues/2211">GH-2211</a></p>
@@ -519,15 +574,23 @@ type like other numeric types such as <a class="reference internal" href="../ref
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-4-2025-03-29">Release 15.0.4 - 2025-03-29</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-9-2025-05-08">Release 15.0.9 - 2025-05-08</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improvements">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-commands-tokenize-reference-commands-table-tokenize-added-tokenize-output-style-option"><span class="xref std std-doc">/reference/commands/tokenize</span>/<span class="xref std std-doc">/reference/commands/table_tokenize</span>: Added <span class="xref std std-ref">tokenize-output-style</span> option</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clarified-x-negative-value-semantics">Clarified <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">negative</span> <span class="pre">value</span></code> semantics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-4-2025-03-29">Release 15.0.4 - 2025-03-29</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clarified-x-1-and-x-1-0-semantics">Clarified <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1.0</span></code> semantics</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-3-2025-03-10">Release 15.0.3 - 2025-03-10</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-index-construction-added-support-for-parallel-construction-with-table-hash-key-lexicon"><span class="xref std std-ref">offline-index-construction</span>: Added support for parallel construction with <span class="xref std std-ref">table-hash-key</span> lexicon</a></li>
 </ul>
 </li>
@@ -541,14 +604,14 @@ type like other numeric types such as <a class="reference internal" href="../ref
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-1-2025-02-20">Release 15.0.1 - 2025-02-20</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-dropped-support-for-ubuntu-20-04-focal-fossa">[<span class="xref std std-doc">/install/ubuntu</span>] Dropped support for Ubuntu 20.04 (Focal Fossa)</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-0-2025-02-09">Release 15.0.0 - 2025-02-09</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-pat-key-added-support-for-builtin-type-float32-as-key-type"><span class="xref std std-ref">table-pat-key</span>: Added support for <span class="xref std std-ref">builtin-type-float32</span> as key type</a></li>
 </ul>
 </li>

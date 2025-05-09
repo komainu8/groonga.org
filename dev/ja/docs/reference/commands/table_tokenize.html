@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.3.67. table_tokenize &#8212; Groonga v15.0.5 documentation</title>
+    <title>7.3.67. table_tokenize &#8212; Groonga v15.1.0 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=bc586b07"></script>
+    <script src="../../_static/documentation_options.js?v=821fc008"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="7.3.66. table_rename" href="table_rename.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.0.5" />
+  <meta name="docsearch:version" content="15.1.0" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.5 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.5 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.0 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.0 documentation - Home"/>
   
   
 </a></div>
@@ -681,6 +681,7 @@
                <span class="p">[</span><span class="n">flags</span><span class="o">=</span><span class="n">NONE</span><span class="p">]</span>
                <span class="p">[</span><span class="n">mode</span><span class="o">=</span><span class="n">GET</span><span class="p">]</span>
                <span class="p">[</span><span class="n">index_column</span><span class="o">=</span><span class="n">null</span><span class="p">]</span>
+               <span class="p">[</span><span class="n">output_style</span><span class="o">=</span><span class="n">full</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -741,6 +742,14 @@
 <p>インデックスカラム名を指定します。</p>
 <p>戻り値にインデックスの <code class="docutils literal notranslate"><span class="pre">estimated_size</span></code> が含まれます。</p>
 <p><code class="docutils literal notranslate"><span class="pre">estimated_size</span></code> はトークンの概算の出現頻度を調べるのに便利です。</p>
+</section>
+<section id="output-style">
+<h4><span class="section-number">7.3.67.4.2.4. </span><code class="docutils literal notranslate"><span class="pre">output_style</span></code><a class="headerlink" href="#output-style" title="Link to this heading">#</a></h4>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.0.9.</span></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">table_tokenize</span></code> コマンドの出力スタイルを指定します。</p>
+<p>詳細は、 <a class="reference internal" href="tokenize.html"><span class="doc">tokenize</span></a> の <a class="reference internal" href="tokenize.html#tokenize-output-style"><span class="std std-ref">output_style</span></a> オプションを参照してください。</p>
 </section>
 </section>
 </section>
@@ -818,6 +827,7 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flags">7.3.67.4.2.1. <code class="docutils literal notranslate"><span class="pre">flags</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mode">7.3.67.4.2.2. <code class="docutils literal notranslate"><span class="pre">mode</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#index-column">7.3.67.4.2.3. <code class="docutils literal notranslate"><span class="pre">index_column</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-style">7.3.67.4.2.4. <code class="docutils literal notranslate"><span class="pre">output_style</span></code></a></li>
 </ul>
 </li>
 </ul>
