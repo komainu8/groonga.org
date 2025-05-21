@@ -1120,7 +1120,7 @@ We expect that Groonga doesn’t return records in the above example because of 
 However, If this problem occur, Groonga returns match record.
 Because if we use <code class="docutils literal notranslate"><span class="pre">query_parallel_or()</span></code>, <code class="docutils literal notranslate"><span class="pre">match_escalation_threshold</span></code> doesn’t work.</p>
 </li>
-<li><p>Fixed a bug that full-text search againt a reference column of a vector didn’t work.</p>
+<li><p>Fixed a bug that full-text search against a reference column of a vector didn’t work.</p>
 <p>This problem has occured Groonga v14.0.0 or later.
 This problem has effect if we execute full-text search against a reference column of a vector.</p>
 <p>We expected that Groonga returns <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">&quot;Linux</span> <span class="pre">MySQL&quot;]</span></code> and <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">&quot;MySQL</span> <span class="pre">Groonga&quot;]</span></code> as below example.

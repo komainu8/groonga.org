@@ -3130,7 +3130,7 @@ In this release, we can get a correct reference destination data via index colum
 <ul>
 <li><p>We can search source table after filtering by using <code class="docutils literal notranslate"><span class="pre">index_column.except_source_column</span></code>.
 For example, we specify <code class="docutils literal notranslate"><span class="pre">comments.content</span></code> when searching in the following example.
-In this case, at first, this query execute full text search from <code class="docutils literal notranslate"><span class="pre">content</span></code> column of <code class="docutils literal notranslate"><span class="pre">Commentts</span></code> table, then fetch the records of Articles table which refers to already searched records of Comments table.</p>
+In this case, at first, this query execute full text search from <code class="docutils literal notranslate"><span class="pre">content</span></code> column of <code class="docutils literal notranslate"><span class="pre">Comments</span></code> table, then fetch the records of Articles table which refers to already searched records of Comments table.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table_create</span> <span class="n">Articles</span> <span class="n">TABLE_HASH_KEY</span> <span class="n">ShortText</span>
 
 <span class="n">table_create</span> <span class="n">Comments</span> <span class="n">TABLE_NO_KEY</span>

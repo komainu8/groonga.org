@@ -471,7 +471,7 @@ results above commands, you need to support null instead of “null” string.</
 side effect for this feature. If you open old version of groonga
 database at least once, you can not open its database by old
 version of groonga.</p>
-<p>There is also another backward incompatible change agaist plugin API for
+<p>There is also another backward incompatible change against plugin API for
 tokenizer. The argument of <code class="docutils literal notranslate"><span class="pre">grn_tokenizer_query_open</span></code> API has changed.
 This API change affects developer of tokenizer plugin.</p>
 </div>
@@ -525,7 +525,7 @@ escalation.  see <a class="reference internal" href="../reference/executables/gr
 <section id="id5">
 <h3>Improvements<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Supported to calculate the value of distance accross border
+<li><p>Supported to calculate the value of distance across border
 in <code class="docutils literal notranslate"><span class="pre">geo_distance</span></code> with <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> as approximate type. [#1534]</p></li>
 <li><p>[doc] Added the <a class="reference internal" href="../spec/gqtp.html"><span class="doc">GQTP</span></a> specification.</p></li>
 <li><p>Improved to ignore non critical <code class="docutils literal notranslate"><span class="pre">getaddrinfo()</span></code> error which groonga command emits on startup.
@@ -534,7 +534,7 @@ is resolved in previous version.</p></li>
 <li><p>[experimental] Added <code class="docutils literal notranslate"><span class="pre">snippet_html()</span></code> function which extract keyword and surrounding text.
 See <a class="reference internal" href="../reference/functions/snippet_html.html"><span class="doc">snippet_html</span></a> about details.</p></li>
 <li><p>Supported to report error reason when error occured during reading table record.</p></li>
-<li><p>Supported to search with keyword by nested index notation ( concatinate multiple
+<li><p>Supported to search with keyword by nested index notation ( concatenate multiple
 indexed column name with dot character ) if there is a relationship between
 multiple table with index.</p></li>
 <li><p>Supported to log “[tokenizer][mecab]” tag when using <code class="docutils literal notranslate"><span class="pre">TokenMecab</span></code> tokenizer.</p></li>
