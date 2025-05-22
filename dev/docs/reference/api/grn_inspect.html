@@ -673,7 +673,7 @@
 <p>Here is the list of <code class="docutils literal notranslate"><span class="pre">grn_inspect</span></code> function series. It sets inspected text into specified object.</p>
 <ul class="simple">
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect()</span></code></p></li>
-<li><p><a class="reference internal" href="#c.grn_inspect_indented" title="grn_inspect_indented"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_indented()</span></code></a></p></li>
+<li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_indented()</span></code></p></li>
 <li><p><a class="reference internal" href="#c.grn_inspect_limited" title="grn_inspect_limited"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_limited()</span></code></a></p></li>
 <li><p><a class="reference internal" href="#c.grn_inspect_name" title="grn_inspect_name"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_name()</span></code></a></p></li>
 <li><p><a class="reference internal" href="#c.grn_inspect_encoding" title="grn_inspect_encoding"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_encoding()</span></code></a></p></li>
@@ -700,48 +700,6 @@
 </section>
 <section id="reference">
 <h2><span class="section-number">7.26.17.3. </span>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_inspect_indented">
-<span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_inspect_indented</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">buffer</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">obj</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">indent</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_inspect_indented" title="Link to this definition">#</a><br /></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 4.0.8.</span></p>
-</div>
-<p>Inspect specified target <code class="docutils literal notranslate"><span class="pre">obj</span></code> object.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">indent</span></code> is only added if inspected text contains newline (inspected text must be multiple lines).</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> – The context object</p></li>
-<li><p><strong>buffer</strong> – The buffer object which is inspected text will be stored.</p></li>
-<li><p><strong>obj</strong> – The inspect target object.</p></li>
-<li><p><strong>indent</strong> – The pre-pended indentation text.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">buffer</span></code> object which is inspected text is set with indent.</p>
-</dd>
-</dl>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">grn_obj</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span>
-<span class="n">GRN_TEXT_INIT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="n">grn_inspect_indented</span><span class="p">(</span><span class="o">&amp;</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;***&quot;</span><span class="p">);</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.*s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">GRN_TEXT_LEN</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">),</span><span class="w"> </span><span class="n">GRN_TEXT_VALUE</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">));</span>
-</pre></div>
-</div>
-<p>If obj is <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code> table, it prints like the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">***</span><span class="c1">#&lt;table:pat Users key:ShortText value:(nil) size:7 columns:[] default_tokenizer:(nil) normalizer:(nil) keys:[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;] subrec:none nodes:{</span>
-<span class="o">***</span><span class="mi">4</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span>
-<span class="o">***</span>  <span class="n">L</span><span class="p">:</span><span class="mi">2</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span>
-<span class="o">***</span>    <span class="n">L</span><span class="p">:</span><span class="mi">1</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span>
-<span class="o">***</span>      <span class="n">L</span><span class="p">:</span><span class="mi">0</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span>
-<span class="o">***</span>      <span class="n">R</span><span class="p">:</span><span class="mi">1</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">}(</span><span class="s2">&quot;a&quot;</span><span class="p">)[</span><span class="mi">01100001</span><span class="p">]</span>
-<span class="o">...</span>
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="c function">
 <dt class="sig sig-object c" id="c.grn_inspect_limited">
 <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_inspect_limited</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">buffer</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_inspect_limited" title="Link to this definition">#</a><br /></dt>
