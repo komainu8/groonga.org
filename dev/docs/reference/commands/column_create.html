@@ -1338,7 +1338,7 @@ number of handleable records:</p>
 <caption><span class="caption-text">The number of kinds of index target data and the number of handleable records in a small index column</span><a class="headerlink" href="#id4" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>The number of kinds of index target data</p></th>
-<th class="head"><p>The number of hanleable records</p></th>
+<th class="head"><p>The number of handleable records</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2571,7 +2571,7 @@ increments.</p>
 rate by combining <code class="docutils literal notranslate"><span class="pre">COMPRESS_FILTER_SHUFFLE</span></code> even though
 calculating increments would not have same value in
 continuance, or increments are too large.</p>
-<p>For exapmle, <code class="docutils literal notranslate"><span class="pre">[4526677,</span> <span class="pre">4592401,</span> <span class="pre">4658217,</span> <span class="pre">4723879]</span></code> in
+<p>For example, <code class="docutils literal notranslate"><span class="pre">[4526677,</span> <span class="pre">4592401,</span> <span class="pre">4658217,</span> <span class="pre">4723879]</span></code> in
 <code class="docutils literal notranslate"><span class="pre">UInt32</span></code> would be <code class="docutils literal notranslate"><span class="pre">[4526677,</span> <span class="pre">65724,</span> <span class="pre">65816,</span> <span class="pre">65662]</span></code> after
 only being applied <code class="docutils literal notranslate"><span class="pre">COMPRESS_FILTER_BYTE_DELTA</span></code>. This data
 would not have values in continuance, and increments are large.</p>
