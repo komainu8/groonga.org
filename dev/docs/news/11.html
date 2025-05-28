@@ -1403,7 +1403,7 @@ If we specify as below, <code class="docutils literal notranslate"><span class="
 <h3>Improvements<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>[<a class="reference internal" href="../reference/normalizers.html"><span class="doc">Normalizers</span></a>] Added support for multiple normalizers.</p>
-<p>We can specify multiple normalizers by <code class="docutils literal notranslate"><span class="pre">--notmalizers</span></code> option when we create a table since this release.
+<p>We can specify multiple normalizers by <code class="docutils literal notranslate"><span class="pre">--normalizers</span></code> option when we create a table since this release.
 If we can also specify them by  <code class="docutils literal notranslate"><span class="pre">--normalizer</span></code> existing option because of compatibility.</p>
 <p>We added <code class="docutils literal notranslate"><span class="pre">NormalizerTable</span></code> for customizing a normalizer in Groonga 11.0.4.
 We can more flexibly behavior of the normalizer by combining <code class="docutils literal notranslate"><span class="pre">NormalizerTable</span></code> with existing normalizer.</p>
@@ -1932,7 +1932,7 @@ If we specify as below, <code class="docutils literal notranslate"><span class="
 We can normalize with use that table.
 In other words, we can use customized normalizer.</p>
 <p>For example, we define that “S” normalize to “5” in the following example.
-The <code class="docutils literal notranslate"><span class="pre">Substitutions</span></code> table is for nromalize.</p>
+The <code class="docutils literal notranslate"><span class="pre">Substitutions</span></code> table is for normalize.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table_create</span> <span class="n">Substitutions</span> <span class="n">TABLE_PAT_KEY</span> <span class="n">ShortText</span>
 <span class="n">column_create</span> <span class="n">Substitutions</span> <span class="n">substituted</span> <span class="n">COLUMN_SCALAR</span> <span class="n">ShortText</span>
