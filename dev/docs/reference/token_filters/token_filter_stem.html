@@ -677,7 +677,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">TokenFilterStem</span></code> has optional parameter:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TokenFilterStem</span>
 
-<span class="n">TokenFilterStem</span><span class="p">(</span><span class="s2">&quot;algorithm&quot;</span><span class="p">,</span> <span class="s2">&quot;steming_algorithm&quot;</span><span class="p">)</span>
+<span class="n">TokenFilterStem</span><span class="p">(</span><span class="s2">&quot;algorithm&quot;</span><span class="p">,</span> <span class="s2">&quot;stemming_algorithm&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -747,7 +747,7 @@
 <p>All of <code class="docutils literal notranslate"><span class="pre">develop</span></code>, <code class="docutils literal notranslate"><span class="pre">developing</span></code>, <code class="docutils literal notranslate"><span class="pre">developed</span></code> and <code class="docutils literal notranslate"><span class="pre">develops</span></code>
 tokens are stemmed as <code class="docutils literal notranslate"><span class="pre">develop</span></code>. So we can find <code class="docutils literal notranslate"><span class="pre">develop</span></code>,
 <code class="docutils literal notranslate"><span class="pre">developing</span></code> and <code class="docutils literal notranslate"><span class="pre">developed</span></code> by <code class="docutils literal notranslate"><span class="pre">develops</span></code> query.</p>
-<p>You can specify steming algorithm except English with <code class="docutils literal notranslate"><span class="pre">algorithm</span></code> option as below.</p>
+<p>You can specify stemming algorithm except English with <code class="docutils literal notranslate"><span class="pre">algorithm</span></code> option as below.</p>
 <p>Execution example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plugin_register</span> <span class="n">token_filters</span><span class="o">/</span><span class="n">stem</span>
 <span class="c1"># [[0,1337566253.89858,0.000355720520019531],true]</span>
@@ -812,11 +812,11 @@ tokens are stemmed as <code class="docutils literal notranslate"><span class="pr
 <p>There is a optional parameters <code class="docutils literal notranslate"><span class="pre">algorithm</span></code>.</p>
 <section id="algorithm">
 <h4><span class="section-number">7.9.5.4.1.1. </span><code class="docutils literal notranslate"><span class="pre">algorithm</span></code><a class="headerlink" href="#algorithm" title="Link to this heading">#</a></h4>
-<p>Specify a steming algorithm.</p>
-<p>Steming algorithm is extract the stem. It is prepared for each language.</p>
-<p>You can extract the stem of each language by changing steming algorithm.
+<p>Specify a stemming algorithm.</p>
+<p>Stemming algorithm is extract the stem. It is prepared for each language.</p>
+<p>You can extract the stem of each language by changing stemming algorithm.
 For example, if you want extract the stem of the French, you specify French to <code class="docutils literal notranslate"><span class="pre">algorithm</span></code> option.</p>
-<p>Here are support steming algorithm:</p>
+<p>Here are support stemming algorithm:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">French</span>
 <span class="n">Spanish</span>
 <span class="n">Portuguese</span>

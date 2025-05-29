@@ -1139,7 +1139,7 @@ However, <a class="reference internal" href="../reference/window_functions/windo
 <h3>Fixes<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Fixed a bug that Groonga doesn’t return a response when an error occurred
-in command (e.g. sytax error in filter).</p>
+in command (e.g. syntax error in filter).</p>
 <ul>
 <li><p>This bug only occurs when we use <code class="docutils literal notranslate"><span class="pre">--output_type</span> <span class="pre">apache-arrow</span></code>.</p></li>
 </ul>
@@ -1344,7 +1344,7 @@ We can dump WAL by the following tools, but currently, users doesn’t need to u
 <blockquote>
 <div><ul class="simple">
 <li><p>[<a class="reference internal" href="../reference/executables/grndb.html"><span class="doc">grndb</span></a>] <code class="docutils literal notranslate"><span class="pre">dump-wal</span></code> command.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dump-wal.rb</span></code> scritp.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dump-wal.rb</span></code> script.</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -2092,7 +2092,7 @@ Therefore, if a’s socre is 1 and b’s score is 1, the score of this record  i
 </pre></div>
 </div>
 </div></blockquote>
-<p>We can do the same by also useing <a class="reference internal" href="../reference/commands/select.html#select-adjuster"><span class="std std-ref">adjuster</span></a> .
+<p>We can do the same by also using <a class="reference internal" href="../reference/commands/select.html#select-adjuster"><span class="std std-ref">adjuster</span></a> .
 If we use <a class="reference internal" href="../reference/commands/select.html#select-adjuster"><span class="std std-ref">adjuster</span></a> , we need to make <code class="docutils literal notranslate"><span class="pre">--filter</span></code> condition and <code class="docutils literal notranslate"><span class="pre">--adjuster</span></code> conditon on our application, but we make only <code class="docutils literal notranslate"><span class="pre">--filter</span></code> condition on it by this improvement.</p>
 <p>We can also describe filter condition as below by using <code class="docutils literal notranslate"><span class="pre">query()</span></code>.</p>
 <blockquote>
