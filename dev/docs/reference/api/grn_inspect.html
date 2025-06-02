@@ -674,7 +674,7 @@
 <ul class="simple">
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect()</span></code></p></li>
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_indented()</span></code></p></li>
-<li><p><a class="reference internal" href="#c.grn_inspect_limited" title="grn_inspect_limited"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_limited()</span></code></a></p></li>
+<li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_limited()</span></code></p></li>
 <li><p><a class="reference internal" href="#c.grn_inspect_name" title="grn_inspect_name"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_name()</span></code></a></p></li>
 <li><p><a class="reference internal" href="#c.grn_inspect_encoding" title="grn_inspect_encoding"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_encoding()</span></code></a></p></li>
 <li><p><a class="reference internal" href="#c.grn_inspect_type" title="grn_inspect_type"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_type()</span></code></a></p></li>
@@ -700,42 +700,6 @@
 </section>
 <section id="reference">
 <h2><span class="section-number">7.26.17.3. </span>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_inspect_limited">
-<span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_inspect_limited</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">buffer</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_inspect_limited" title="Link to this definition">#</a><br /></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 7.0.0.</span></p>
-</div>
-<p>Inspect specified target <code class="docutils literal notranslate"><span class="pre">obj</span></code> object.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If inspected text is too long, it will be truncated.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> – The context object</p></li>
-<li><p><strong>buffer</strong> – The buffer object which is inspected(truncated) text will be stored.</p></li>
-<li><p><strong>obj</strong> – The inspect target object.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">buffer</span></code> object which is object detail is set.
-If inspected text is longer than 64 characters, inspected text is truncated to it. Otherwise, inspected text will not be truncated.</p>
-</dd>
-</dl>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">grn_obj</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span>
-<span class="n">GRN_TEXT_INIT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="n">grn_inspect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">obj</span><span class="p">);</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;#=&gt; %.*s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">GRN_TEXT_LEN</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">),</span><span class="w"> </span><span class="n">GRN_TEXT_VALUE</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">));</span>
-</pre></div>
-</div>
-<p>Even though if obj is <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code> table, it prints truncated result like the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;table:pat Users key:ShortText value:(nil) size:7 columns:[] de...(502)</span>
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="c function">
 <dt class="sig sig-object c" id="c.grn_inspect_name">
 <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_inspect_name</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">buffer</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_inspect_name" title="Link to this definition">#</a><br /></dt>
