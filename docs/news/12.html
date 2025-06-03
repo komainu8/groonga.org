@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>News - 12 series &#8212; Groonga v15.0.9 documentation</title>
+    <title>News - 12 series &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=557d36a0"></script>
+    <script src="../_static/documentation_options.js?v=d7278418"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -61,7 +61,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -127,8 +127,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -819,12 +819,12 @@ For example, you can use this feature to detect records that are taking time lon
 <p>Here is about specifying <code class="docutils literal notranslate"><span class="pre">GRN_SLOW_LOG_THRESHOLD</span></code>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">GRN_SLOW_LOG_THRESHOLD</span></code> requires specifying time in seconds as a threshold. The time of the threshold can shorter than a second with specifying decimal number.</p></li>
-<li><p>A log with debug level would be output if the processing time takes longer than specifyed time with <code class="docutils literal notranslate"><span class="pre">GRN_SLOW_LOG_THRESHOLD</span></code>.</p></li>
+<li><p>A log with debug level would be output if the processing time takes longer than specified time with <code class="docutils literal notranslate"><span class="pre">GRN_SLOW_LOG_THRESHOLD</span></code>.</p></li>
 </ul>
-<p>Setting for log level would be controled with <a class="reference internal" href="../reference/executables/groonga.html#cmdoption-groonga-l"><code class="xref std std-option docutils literal notranslate"><span class="pre">log-level</span></code></a> or <a class="reference internal" href="../reference/commands/log_level.html"><span class="doc">log_level</span></a>.</p>
+<p>Setting for log level would be controlled with <a class="reference internal" href="../reference/executables/groonga.html#cmdoption-groonga-l"><code class="xref std std-option docutils literal notranslate"><span class="pre">log-level</span></code></a> or <a class="reference internal" href="../reference/commands/log_level.html"><span class="doc">log_level</span></a>.</p>
 <p>What value to specify <code class="docutils literal notranslate"><span class="pre">GRN_SLOW_LOG_THRESHOLD</span></code> would depend on its environment and checking purpose.
 For an example, we can use following setting to check which records are taking longer time for <code class="docutils literal notranslate"><span class="pre">load</span></code>.
-For this, we specify the value based on necesarry time per 1 record caliculated with  total number and time of <code class="docutils literal notranslate"><span class="pre">load</span></code>.</p>
+For this, we specify the value based on necesarry time per 1 record calculated with  total number and time of <code class="docutils literal notranslate"><span class="pre">load</span></code>.</p>
 <p>Necessary time to process <cite>load</cite> would be checked in <a class="reference internal" href="../reference/log.html#query-log"><span class="std std-ref">Query log</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2022</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span> <span class="mi">16</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">27.139000</span><span class="o">|</span><span class="mi">000000</span><span class="n">CE63AFF640</span><span class="o">|&gt;</span><span class="n">load</span> <span class="o">--</span><span class="n">table</span> <span class="n">Memo</span>
 <span class="mi">2022</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">16</span> <span class="mi">16</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mf">40.841000</span><span class="o">|</span><span class="mi">000000</span><span class="n">CE63AFF640</span><span class="o">|</span><span class="p">:</span><span class="mi">000133702000000</span> <span class="n">load</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span> <span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">100000</span><span class="p">]</span>
@@ -1056,7 +1056,7 @@ So if the condition above was satisfied, Groonga sometimes crashed or returned i
 <ul>
 <li><p>Changed specification of the <code class="docutils literal notranslate"><span class="pre">escalate()</span></code> function (Experimental) to make it easier to use.</p>
 <p>We changed to not use results out of <code class="docutils literal notranslate"><span class="pre">escalate()</span></code>.</p>
-<p>In the previous specification, users had to guess how many results would be passed to <code class="docutils literal notranslate"><span class="pre">escalate()</span></code> to determin the first threshold, which was incovenient.</p>
+<p>In the previous specification, users had to guess how many results would be passed to <code class="docutils literal notranslate"><span class="pre">escalate()</span></code> to determine the first threshold, which was incovenient.</p>
 <p>Here is a example for the previous <code class="docutils literal notranslate"><span class="pre">escalate()</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">number_column</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="n">escalate</span><span class="p">(</span><span class="n">THRESHOLD_1</span><span class="p">,</span> <span class="n">CONDITION_1</span><span class="p">,</span>
                                <span class="o">...</span><span class="p">,</span>

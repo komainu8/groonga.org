@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>News - 10 series &#8212; Groonga v15.0.9 documentation</title>
+    <title>News - 10 series &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=557d36a0"></script>
+    <script src="../_static/documentation_options.js?v=d7278418"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -61,7 +61,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -127,8 +127,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -1337,7 +1337,7 @@ the drilldown had failed.</p></li>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Because the drilldown packes specifying all keys for drilldown. So, if each the size of drilldown key is large,
+<li><p>Because the drilldown packs specifying all keys for drilldown. So, if each the size of drilldown key is large,
 the size of the packed drilldown keys is larger than 4KiB.</p></li>
 </ul>
 </li>
@@ -1511,7 +1511,7 @@ use to slow storage (e.g. HDD).</p></li>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">_score</span></code> may be broken with full text search.</p></li>
 <li><p>The records that couldn’t hit might hit.</p></li>
-<li><p>Please refer to the following URL for the details about occurrence conditionin of this bug.</p>
+<li><p>Please refer to the following URL for the details about occurrence conditioning of this bug.</p>
 <ul>
 <li><p><a class="reference external" href="https://groonga.org/en/blog/2020/09/29/groonga-10.0.7.html#multi-column-index">https://groonga.org/en/blog/2020/09/29/groonga-10.0.7.html#multi-column-index</a></p></li>
 </ul>
@@ -2794,7 +2794,7 @@ However, we can sort distance from central coordinate using <code class="docutil
 <li><p>This API is only used on the reference count mode (The reference count mode is a state of <code class="docutils literal notranslate"><span class="pre">GRN_ENABLE_REFERENCE_COUNT=yes</span></code>.).</p>
 <ul>
 <li><p>It calls <code class="docutils literal notranslate"><span class="pre">grn_obj_unlink()</span></code> only on the reference count mode. It doesn’t do anything except when the reference count mode.</p></li>
-<li><p>We useful it when we need only call <code class="docutils literal notranslate"><span class="pre">grn_obj_unlink()</span></code> on the referece count mode.</p></li>
+<li><p>We useful it when we need only call <code class="docutils literal notranslate"><span class="pre">grn_obj_unlink()</span></code> on the reference count mode.</p></li>
 <li><p>Because as the following example, we don’t write condition that whether the reference count mode or not.</p>
 <ul>
 <li><p>The example if we don’t use <code class="docutils literal notranslate"><span class="pre">grn_obj_unref()</span></code>.</p>
@@ -2819,7 +2819,7 @@ However, we can sort distance from central coordinate using <code class="docutil
 <li><p><code class="docutils literal notranslate"><span class="pre">grn_get_version_minor(void)</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">grn_get_version_micro(void)</span></code></p>
 <ul class="simple">
-<li><p>They return Groonga’s major, minor, and micor version numbers as a <code class="docutils literal notranslate"><span class="pre">uint32_t</span></code>.</p></li>
+<li><p>They return Groonga’s major, minor, and micro version numbers as a <code class="docutils literal notranslate"><span class="pre">uint32_t</span></code>.</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">grn_posting_get_record_id(grn_ctx</span> <span class="pre">*ctx,</span> <span class="pre">grn_posting</span> <span class="pre">*posting)</span></code></p></li>

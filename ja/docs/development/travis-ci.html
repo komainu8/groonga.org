@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11.1. Travis CI &#8212; Groonga v15.0.9 documentation</title>
+    <title>11.1. Travis CI &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=648aa2f4"></script>
+    <script src="../_static/documentation_options.js?v=e6d0104c"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="11. 開発" href="../development.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -410,7 +410,7 @@
 <section id="configuration">
 <h2><span class="section-number">11.1.1. </span>設定<a class="headerlink" href="#configuration" title="Link to this heading">#</a></h2>
 <p>Travis CIは64-bit版のUbuntu 14.04 LTS サーバ版を使っています。（ <a class="reference external" href="http://about.travis-ci.org/docs/user/ci-environment/">Travis CI: About Travis CI Environment</a> 参照。）Travis CIにGroongaをインストールするために、Groongaプロジェクトが提供しているUbuntu 14.04 LTS用のapt-lineを使えます。</p>
-<p><code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> でビルド方法を変更することができます。（ <a class="reference external" href="http://about.travis-ci.org/docs/user/build-configuration/">Travis CI: Conifugration your Travis CI build with .travis.yml</a> 参照。） <code class="docutils literal notranslate"><span class="pre">before_install</span></code> フックまたは <code class="docutils literal notranslate"><span class="pre">install</span></code> フックを使います。もし、Travis CIがサポートしている言語（例えばRuby）を使ったソフトウェアの場合は <code class="docutils literal notranslate"><span class="pre">before_install</span></code> を使います。そうでない場合は <code class="docutils literal notranslate"><span class="pre">install</span></code> を使います。</p>
+<p><code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> でビルド方法を変更することができます。（ <a class="reference external" href="http://about.travis-ci.org/docs/user/build-configuration/">Travis CI: Configuration your Travis CI build with .travis.yml</a> 参照。） <code class="docutils literal notranslate"><span class="pre">before_install</span></code> フックまたは <code class="docutils literal notranslate"><span class="pre">install</span></code> フックを使います。もし、Travis CIがサポートしている言語（例えばRuby）を使ったソフトウェアの場合は <code class="docutils literal notranslate"><span class="pre">before_install</span></code> を使います。そうでない場合は <code class="docutils literal notranslate"><span class="pre">install</span></code> を使います。</p>
 <p>以下の <code class="docutils literal notranslate"><span class="pre">sudo</span></code> と <code class="docutils literal notranslate"><span class="pre">before_install</span></code> の設定を <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> に加えます:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span><span class="p">:</span> <span class="n">required</span>
 <span class="n">before_install</span><span class="p">:</span>

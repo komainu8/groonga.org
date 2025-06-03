@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>News - 14 series &#8212; Groonga v15.0.9 documentation</title>
+    <title>News - 14 series &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=557d36a0"></script>
+    <script src="../_static/documentation_options.js?v=d7278418"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -61,7 +61,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -127,8 +127,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -576,7 +576,7 @@ value. But it was not done.</p>
 <section id="table-pat-key-improved-key-space-efficiency">
 <h4><a class="reference internal" href="../reference/tables.html#table-pat-key"><span class="std std-ref">TABLE_PAT_KEY</span></a>: Improved key space efficiency<a class="headerlink" href="#table-pat-key-improved-key-space-efficiency" title="Link to this heading">#</a></h4>
 <p><a class="reference external" href="https://github.com/groonga/groonga/issues/2104">GH-2104</a></p>
-<p>There was a case that wastes key space. Now, we can use key space as efficiency as possible.</p>
+<p>There was a case that wastes key space. Now, we can use key space as efficiently as possible.</p>
 </section>
 </section>
 <section id="id4">
@@ -1120,7 +1120,7 @@ We expect that Groonga doesn’t return records in the above example because of 
 However, If this problem occur, Groonga returns match record.
 Because if we use <code class="docutils literal notranslate"><span class="pre">query_parallel_or()</span></code>, <code class="docutils literal notranslate"><span class="pre">match_escalation_threshold</span></code> doesn’t work.</p>
 </li>
-<li><p>Fixed a bug that full-text search againt a reference column of a vector didn’t work.</p>
+<li><p>Fixed a bug that full-text search against a reference column of a vector didn’t work.</p>
 <p>This problem has occured Groonga v14.0.0 or later.
 This problem has effect if we execute full-text search against a reference column of a vector.</p>
 <p>We expected that Groonga returns <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">&quot;Linux</span> <span class="pre">MySQL&quot;]</span></code> and <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">&quot;MySQL</span> <span class="pre">Groonga&quot;]</span></code> as below example.
@@ -1655,7 +1655,7 @@ This bug occur easily when search time is long such as sequential search.</p>
 </li>
 <li><p>[<a class="reference internal" href="../install/ubuntu.html"><span class="doc">Ubuntu</span></a>] We become able to provide package for Ubuntu again.</p>
 <p>We don’t provide packages for Ubuntu in Groonga version 14.0.0.
-Because we fail makeing Groonga package for Ubuntu by problrm of build environment for Ubuntu package.</p>
+Because we fail making Groonga package for Ubuntu by problrm of build environment for Ubuntu package.</p>
 <p>We fixed problrm of build environment for Ubuntu package in 14.0.1. So, we can provide packages for Ubuntu again since this release.</p>
 </li>
 <li><p>Fixed build error when we build from source by using <a class="reference external" href="https://clang.llvm.org/"><code class="docutils literal notranslate"><span class="pre">clang</span></code></a>. [GitHub#1738][Reported by windymelt]</p></li>
@@ -1687,7 +1687,7 @@ But It keeps backward compatibility. We can upgrade to 14.0.0 without rebuilding
 <li><p>Added new functions <code class="docutils literal notranslate"><span class="pre">distance_cosine()</span></code>, <code class="docutils literal notranslate"><span class="pre">distance_inner_product()</span></code>, <code class="docutils literal notranslate"><span class="pre">distance_l2_norm_squared()</span></code>, <code class="docutils literal notranslate"><span class="pre">distance_l1_norm()</span></code>.</p>
 <p>We can only get records that a small distance as vector with these functions and <code class="docutils literal notranslate"><span class="pre">limit</span> <span class="pre">N</span></code></p>
 <p>These functions calculate distance in the <code class="docutils literal notranslate"><span class="pre">output</span></code> stage.</p>
-<p>However, we don’t optimaize these functions yet.</p>
+<p>However, we don’t optimize these functions yet.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">distance_cosine()</span></code>: Calculate cosine similarity.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">distance_inner_product()</span></code>: Calculate inner product.</p></li>

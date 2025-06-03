@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.1.5. groonga-httpd &#8212; Groonga v15.0.9 documentation</title>
+    <title>7.1.5. groonga-httpd &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=557d36a0"></script>
+    <script src="../../_static/documentation_options.js?v=d7278418"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -63,7 +63,7 @@
     <link rel="prev" title="7.1.4. groonga-benchmark" href="groonga-benchmark.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -129,8 +129,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -905,7 +905,7 @@ form, groonga-httpd removes the base path from the head of request URI
 and prepend <code class="docutils literal notranslate"><span class="pre">/d/</span></code> to the processed request URI. By the path
 conversion, users can use custom path prefix and Groonga can always
 uses <code class="docutils literal notranslate"><span class="pre">/d/command?parameter1=value1&amp;...</span></code> form.</p>
-<p>Nomally, this directive isn’t needed. It is needed for per command
+<p>Normally, this directive isn’t needed. It is needed for per command
 configuration.</p>
 <p>Here is an example configuration to add authorization to
 <a class="reference internal" href="../commands/shutdown.html"><span class="doc">shutdown</span></a> command:</p>
@@ -957,7 +957,7 @@ You can disable logging to specify <code class="docutils literal notranslate"><s
 <section id="groonga-log-level">
 <span id="groonga-httpd-groonga-log-level"></span><h4><span class="section-number">7.1.5.4.1.6. </span><code class="docutils literal notranslate"><span class="pre">groonga_log_level</span></code><a class="headerlink" href="#groonga-log-level" title="Link to this heading">#</a></h4>
 <p>Syntax:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">groonga_log_level</span> <span class="n">none</span> <span class="o">|</span> <span class="n">emergency</span> <span class="o">|</span> <span class="n">alert</span> <span class="o">|</span> <span class="n">ciritical</span> <span class="o">|</span> <span class="n">error</span> <span class="o">|</span> <span class="n">warning</span> <span class="o">|</span> <span class="n">notice</span> <span class="o">|</span> <span class="n">info</span> <span class="o">|</span> <span class="n">debug</span> <span class="o">|</span> <span class="n">dump</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">groonga_log_level</span> <span class="n">none</span> <span class="o">|</span> <span class="n">emergency</span> <span class="o">|</span> <span class="n">alert</span> <span class="o">|</span> <span class="n">critical</span> <span class="o">|</span> <span class="n">error</span> <span class="o">|</span> <span class="n">warning</span> <span class="o">|</span> <span class="n">notice</span> <span class="o">|</span> <span class="n">info</span> <span class="o">|</span> <span class="n">debug</span> <span class="o">|</span> <span class="n">dump</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">

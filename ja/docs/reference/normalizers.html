@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.7. ノーマライザー &#8212; Groonga v15.0.9 documentation</title>
+    <title>7.7. ノーマライザー &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=648aa2f4"></script>
+    <script src="../_static/documentation_options.js?v=e6d0104c"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="7.6.3.1. インデックスカラム" href="columns/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -679,7 +679,7 @@
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>Groonga 2.0.9以前には <code class="docutils literal notranslate"><span class="pre">table_create</span></code> に <code class="docutils literal notranslate"><span class="pre">--normalizer</span></code> オプションはありません。代わりに <code class="docutils literal notranslate"><span class="pre">KEY_NORMALIZE</span></code> フラグを使っていました。</p>
-<p>Groonga 2.1.0以降で古いデータベースを開くことができます。ここでいう古いデータベースとはGroonga 2.0.9以前で作ったデータベースということです。しかし、一度新しいGroongaで開いたデータベースを2.0.9以前のGroongaで開くことはできません。一度 Groonga 2.1.0以降のGroongaでデータベースを開くと、 <code class="docutils literal notranslate"><span class="pre">KEY_NORMALIZE</span></code> フラグ情報がノーマライザー情報に変換されます。そのため、2.0.9以前のGroongaは、一度Groonga 2.1.0以降で開いたデータベース内から <code class="docutils literal notranslate"><span class="pre">KEY_NROMALIZE</span></code> フラグの情報を見つけることができません。</p>
+<p>Groonga 2.1.0以降で古いデータベースを開くことができます。ここでいう古いデータベースとはGroonga 2.0.9以前で作ったデータベースということです。しかし、一度新しいGroongaで開いたデータベースを2.0.9以前のGroongaで開くことはできません。一度 Groonga 2.1.0以降のGroongaでデータベースを開くと、 <code class="docutils literal notranslate"><span class="pre">KEY_NORMALIZE</span></code> フラグ情報がノーマライザー情報に変換されます。そのため、2.0.9以前のGroongaは、一度Groonga 2.1.0以降で開いたデータベース内から <code class="docutils literal notranslate"><span class="pre">KEY_NORMALIZE</span></code> フラグの情報を見つけることができません。</p>
 </div>
 <p>ノーマライザーモジュールを持っているテーブルのキーは正規化されます。</p>
 <p>実行例:</p>

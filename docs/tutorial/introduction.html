@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.1. Basic operations &#8212; Groonga v15.0.9 documentation</title>
+    <title>4.1. Basic operations &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=557d36a0"></script>
+    <script src="../_static/documentation_options.js?v=d7278418"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -63,7 +63,7 @@
     <link rel="prev" title="4. Tutorial" href="../tutorial.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -129,8 +129,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -1137,7 +1137,7 @@
 <section id="sort-a-search-result">
 <h2><span class="section-number">4.1.15. </span>Sort a search result<a class="headerlink" href="#sort-a-search-result" title="Link to this heading">#</a></h2>
 <p>A <a class="reference internal" href="../reference/commands/select.html"><span class="doc">select</span></a> command sorts its result when used with a <code class="docutils literal notranslate"><span class="pre">sort_keys</span></code> parameter.</p>
-<p>A <code class="docutils literal notranslate"><span class="pre">sort_keys</span></code> parameter specifies a column as a sorting creteria. A search result is arranged in ascending order of the column values. If you want to sort a search result in reverse order, please add a leading hyphen (‘-’) to the column name in a parameter.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">sort_keys</span></code> parameter specifies a column as a sorting criteria. A search result is arranged in ascending order of the column values. If you want to sort a search result in reverse order, please add a leading hyphen (‘-’) to the column name in a parameter.</p>
 <p>The following example shows records in the Site table in reverse order.</p>
 <p>Execution example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="o">--</span><span class="n">table</span> <span class="n">Site</span> <span class="o">--</span><span class="n">sort_keys</span> <span class="o">-</span><span class="n">_id</span>

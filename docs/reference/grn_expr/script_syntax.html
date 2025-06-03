@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.13.2. Script syntax &#8212; Groonga v15.0.9 documentation</title>
+    <title>7.13.2. Script syntax &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=557d36a0"></script>
+    <script src="../../_static/documentation_options.js?v=d7278418"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -63,7 +63,7 @@
     <link rel="prev" title="7.13.1. Query syntax" href="query_syntax.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -129,8 +129,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -677,7 +677,7 @@ syntax. For example, <code class="docutils literal notranslate"><span class="pre
 script syntax doesn’t support statement such as <code class="docutils literal notranslate"><span class="pre">if</span></code> control
 statement, <code class="docutils literal notranslate"><span class="pre">for</span></code> iteration statement and variable definition
 statement. Function definion is not supported too. But script syntax
-addes the original additional operators.  They are described after
+adds the original additional operators.  They are described after
 ECMAScript syntax is described.</p>
 <section id="security">
 <span id="script-syntax-security"></span><h2><span class="section-number">7.13.2.1. </span>Security<a class="headerlink" href="#security" title="Link to this heading">#</a></h2>
@@ -799,7 +799,7 @@ prepending <code class="docutils literal notranslate"><span class="pre">\\''</sp
 a literal for <code class="docutils literal notranslate"><span class="pre">Say</span> <span class="pre">&quot;Hello!&quot;.</span></code> string.</p>
 <p>String encoding must be the same as encoding of database. The default
 encoding is UTF-8. It can be changed by <code class="docutils literal notranslate"><span class="pre">--with-default-encoding</span></code>
-configure option, <code class="docutils literal notranslate"><span class="pre">--encodiong</span></code> <a class="reference internal" href="../executables/groonga.html"><span class="doc">groonga executable file</span></a> option
+configure option, <code class="docutils literal notranslate"><span class="pre">--encoding</span></code> <a class="reference internal" href="../executables/groonga.html"><span class="doc">groonga executable file</span></a> option
 and so on.</p>
 </section>
 <section id="boolean">
@@ -1038,10 +1038,10 @@ matched.</p>
 </section>
 <section id="function-call">
 <h2><span class="section-number">7.13.2.6. </span>Function call<a class="headerlink" href="#function-call" title="Link to this heading">#</a></h2>
-<p>Its syntax is <code class="docutils literal notranslate"><span class="pre">name(arugment1,</span> <span class="pre">argument2,</span> <span class="pre">...)</span></code>.</p>
+<p>Its syntax is <code class="docutils literal notranslate"><span class="pre">name(argument1,</span> <span class="pre">argument2,</span> <span class="pre">...)</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">name(argument1,</span> <span class="pre">argument2,</span> <span class="pre">...)</span></code> calls a function that is named
 <code class="docutils literal notranslate"><span class="pre">name</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">argument1</span></code>, <code class="docutils literal notranslate"><span class="pre">argument2</span></code> and <code class="docutils literal notranslate"><span class="pre">...</span></code>.</p>
-<p>See <a class="reference internal" href="../function.html"><span class="doc">Function</span></a> for available functin list.</p>
+<p>See <a class="reference internal" href="../function.html"><span class="doc">Function</span></a> for available function list.</p>
 <p>Here is a simple example:</p>
 <p>Execution example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="n">Entries</span> <span class="o">--</span><span class="nb">filter</span> <span class="s1">&#39;edit_distance(_key, &quot;Groonga&quot;) &lt;= 1&#39;</span>
@@ -1093,7 +1093,7 @@ matched.</p>
 </div>
 <p>The expression uses <a class="reference internal" href="../functions/edit_distance.html"><span class="doc">edit_distance</span></a>. It
 matches records that <code class="docutils literal notranslate"><span class="pre">_key</span></code> column value is similar to
-<code class="docutils literal notranslate"><span class="pre">&quot;Groonga&quot;</span></code>. Similality of <code class="docutils literal notranslate"><span class="pre">&quot;Groonga&quot;</span></code> is computed as edit
+<code class="docutils literal notranslate"><span class="pre">&quot;Groonga&quot;</span></code>. Similarity of <code class="docutils literal notranslate"><span class="pre">&quot;Groonga&quot;</span></code> is computed as edit
 distance. If edit distance is less than or equal to 1, the value is
 treated as similar. In this case, <code class="docutils literal notranslate"><span class="pre">&quot;Groonga&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Mroonga&quot;</span></code> are
 treated as similar.</p>
@@ -2734,7 +2734,7 @@ is 3.</p>
 </section>
 <section id="original-operators">
 <h2><span class="section-number">7.13.2.9. </span>Original operators<a class="headerlink" href="#original-operators" title="Link to this heading">#</a></h2>
-<p>Script syntax adds the original binary opearators to ECMAScript
+<p>Script syntax adds the original binary operators to ECMAScript
 syntax. They operate search specific operations. They are starts with
 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> or <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
 <section id="match-operator">
@@ -3923,7 +3923,7 @@ used to implement the operator.</p>
 <span class="c1"># ]</span>
 </pre></div>
 </div>
-<p>The expression extrcts terms that included in document <code class="docutils literal notranslate"><span class="pre">Groonga</span> <span class="pre">is</span>
+<p>The expression extracts terms that included in document <code class="docutils literal notranslate"><span class="pre">Groonga</span> <span class="pre">is</span>
 <span class="pre">the</span> <span class="pre">successor</span> <span class="pre">project</span> <span class="pre">to</span> <span class="pre">Senna.</span></code>. In this case, <code class="docutils literal notranslate"><span class="pre">NormalizerAuto</span></code>
 normalizer is specified to <code class="docutils literal notranslate"><span class="pre">Words</span></code>. So <code class="docutils literal notranslate"><span class="pre">Groonga</span></code> can be extracted
 even if it is loaded as <code class="docutils literal notranslate"><span class="pre">groonga</span></code> into <code class="docutils literal notranslate"><span class="pre">Words</span></code>. All of extracted

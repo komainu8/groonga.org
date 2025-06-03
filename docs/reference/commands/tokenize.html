@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.3.70. tokenize &#8212; Groonga v15.0.9 documentation</title>
+    <title>7.3.70. tokenize &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=557d36a0"></script>
+    <script src="../../_static/documentation_options.js?v=d7278418"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -63,7 +63,7 @@
     <link rel="prev" title="7.3.69. thread_limit" href="thread_limit.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -129,8 +129,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -1324,7 +1324,7 @@ a token.</p>
 </div>
 <p>Continuous alphabets are tokenized as one token. For example,
 <code class="docutils literal notranslate"><span class="pre">fulltext</span></code> is a token.</p>
-<p>If you want to tokenize by two characters with noramlizer, use
+<p>If you want to tokenize by two characters with normalizer, use
 <code class="docutils literal notranslate"><span class="pre">TokenBigramSplitSymbolAlpha</span></code>.</p>
 <p>Execution example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tokenize</span> <span class="n">TokenBigramSplitSymbolAlpha</span> <span class="s2">&quot;Fulltext Search&quot;</span> <span class="n">NormalizerAuto</span>
@@ -1486,7 +1486,7 @@ tokenizer. <code class="docutils literal notranslate"><span class="pre">ENABLE_T
 Tokenized delimiter is special character that indicates token
 border. It is <code class="docutils literal notranslate"><span class="pre">U+FFFE</span></code>. The character is not assigned any
 character. It means that the character is not appeared in normal
-string. So the character is good character for this puropose. If
+string. So the character is good character for this purpose. If
 <code class="docutils literal notranslate"><span class="pre">ENABLE_TOKENIZED_DELIMITER</span></code> is enabled, the target string is
 treated as already tokenized string. Tokenizer just tokenizes by
 tokenized delimiter.</p>
@@ -1712,7 +1712,7 @@ tokenizer that is named <code class="docutils literal notranslate"><span class="
 <section id="output-style">
 <span id="tokenize-output-style"></span><h4><span class="section-number">7.3.70.4.2.5. </span><code class="docutils literal notranslate"><span class="pre">output_style</span></code><a class="headerlink" href="#output-style" title="Link to this heading">#</a></h4>
 <div class="versionadded">
-<p><span class="versionmodified added">Added in version 15.0.8.</span></p>
+<p><span class="versionmodified added">Added in version 15.0.9.</span></p>
 </div>
 <p>Specifies the output style of the <code class="docutils literal notranslate"><span class="pre">tokenize</span></code> command.</p>
 <div class="pst-scrollable-table-container"><table class="table">

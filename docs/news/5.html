@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>News - 5 series &#8212; Groonga v15.0.9 documentation</title>
+    <title>News - 5 series &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=557d36a0"></script>
+    <script src="../_static/documentation_options.js?v=d7278418"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -61,7 +61,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -127,8 +127,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -534,7 +534,7 @@ threads to <code class="docutils literal notranslate"><span class="pre">1</span>
 <section id="id4">
 <h3>Improvements<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>[patiricia trie] Added an error check for the max total key
+<li><p>[patricia trie] Added an error check for the max total key
 size. See <a class="reference internal" href="../limitations.html"><span class="doc">Limitations</span></a> about the max total key size.</p></li>
 <li><p>[<a class="reference internal" href="../reference/executables/grndb.html"><span class="doc">grndb</span></a>] Added a check for broken
 object. The check can detect a case that the object can’t be opened.</p></li>
@@ -1233,7 +1233,7 @@ feature.</p></li>
 because index column may refer reference columns.</p></li>
 <li><p>[<a class="reference internal" href="../reference/commands/dump.html"><span class="doc">dump</span></a>] Don’t dump records of lexicon.</p></li>
 <li><p>[<a class="reference internal" href="../reference/commands/dump.html"><span class="doc">dump</span></a>] Show <code class="docutils literal notranslate"><span class="pre">_id</span></code> for <code class="docutils literal notranslate"><span class="pre">TABLE_NO_KEY</span></code> again.</p></li>
-<li><p>[<a class="reference internal" href="../reference/commands/dump.html"><span class="doc">dump</span></a>] Used offline index construnction.</p></li>
+<li><p>[<a class="reference internal" href="../reference/commands/dump.html"><span class="doc">dump</span></a>] Used offline index construction.</p></li>
 <li><p>Increased max hash key size from 4KiB (4096Byte) to 64KiB - 1 (65535Byte).</p></li>
 <li><p>Increased max cache key size from 4KiB (4096Byte) to 64KiB - 1 (65535Byte).</p></li>
 <li><p>Improved performance for nested index search.</p></li>
@@ -1301,7 +1301,7 @@ and added a test for invalid patricia trie node add case.
 <ul class="simple">
 <li><p>Supported MessagePack 1.0.1. [Reported by Hiroshi Hatake]</p></li>
 <li><p>[logical_range_filter] Disabled range index by default. It’s enabled
-when you set the enviromnent variable <code class="docutils literal notranslate"><span class="pre">GRN_LOGICAL_RANGE_FILTER_ENABLED</span></code>
+when you set the environment variable <code class="docutils literal notranslate"><span class="pre">GRN_LOGICAL_RANGE_FILTER_ENABLED</span></code>
 to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </section>

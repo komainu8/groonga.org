@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>News - 3 series &#8212; Groonga v15.0.9 documentation</title>
+    <title>News - 3 series &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=557d36a0"></script>
+    <script src="../_static/documentation_options.js?v=d7278418"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -61,7 +61,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -127,8 +127,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -408,7 +408,7 @@
 <li><p>Enabled <code class="docutils literal notranslate"><span class="pre">GRN_JA_SKIP_SAME_VALUE_PUT</span></code> by default. In the previous releases, the value of
 this configuration is ‘no’. This change affects reducing the size of Groonga database.</p></li>
 <li><p>Supported multiple indexes including a nested index and multiple keywords query.
-This change improves missing search results isssue when narrowing down by multiple keywords query.</p></li>
+This change improves missing search results issue when narrowing down by multiple keywords query.</p></li>
 <li><p>Added API to customize normalizer for snippet.</p></li>
 </ul>
 </section>
@@ -534,7 +534,7 @@ It enables HTTP server process to handle over 4096 files.</p></li>
 <li><p>[httpd] Supported multiple buffered body of POST request.
 The load command caused timeout in such a case. [GitHub #120] [Patch by Motoi Washida]</p></li>
 <li><p>[gqtp] Supported error message. The body is changed to return
-raw text insted of double quoted text. This is incompatible changes.</p></li>
+raw text instead of double quoted text. This is incompatible changes.</p></li>
 <li><p>[http] Supported “400 Bad request” for invalid argument error.</p></li>
 <li><p>[doc] Added examples for <a class="reference internal" href="../reference/suggest/completion.html"><span class="doc">Completion</span></a></p></li>
 <li><p>Supported Ubuntu 13.10 (Saucy Salamander).</p></li>
@@ -639,7 +639,7 @@ error instead of a warning. [groonga-dev,01571] [Suggested by Naoya Murakami]</p
 <h3>Fixes<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Fixed a bug that error in expression may cause stack overflow.
-This change avoids that groonga crashes suddenly as a result of error accumlation.</p></li>
+This change avoids that groonga crashes suddenly as a result of error accumulation.</p></li>
 <li><p>Fixed a crash bug that offline index construction for vector column which has
 orphan reference causes.</p></li>
 <li><p>Fixed a bug that groonga doesn’t exit on error while daemon mode starts.
@@ -841,7 +841,7 @@ for Int8, UInt8, Int16, UInt16 and UInt64.</p></li>
 <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/=</span> <span class="pre">Y</span></code>, <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">%=</span> <span class="pre">Y</span></code>, <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">&lt;&lt;=</span> <span class="pre">Y</span></code>, <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">&gt;&gt;=</span> <span class="pre">Y</span></code>, <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">&gt;&gt;&gt;=</span> <span class="pre">Y</span></code>, <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">&amp;=</span> <span class="pre">Y</span></code>,
 <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">|=</span> <span class="pre">Y</span></code> and <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">^=</span> <span class="pre">Y</span></code> for Int8, UInt8, Int16, UInt16 and UInt64.</p></li>
 <li><p>Supported unary operations such as <code class="docutils literal notranslate"><span class="pre">-X</span></code> for Int8, UInt8, Int16, UInt16 and UInt64.</p></li>
-<li><p>Supported complex string concatination in <code class="docutils literal notranslate"><span class="pre">--output_columns</span></code>.
+<li><p>Supported complex string concatenation in <code class="docutils literal notranslate"><span class="pre">--output_columns</span></code>.
 For example, you can use a query such as <code class="docutils literal notranslate"><span class="pre">--output_columns</span> <span class="pre">'&quot;&lt;&quot;</span> <span class="pre">+</span> <span class="pre">title</span> <span class="pre">+</span> <span class="pre">&quot;&gt;&quot;'</span></code>.</p></li>
 <li><p>Added the information of the repository of groonga to development page.</p></li>
 <li><p>Added <code class="docutils literal notranslate"><span class="pre">sub_filter()</span></code> function.</p></li>

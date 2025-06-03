@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>News - 9 series &#8212; Groonga v15.0.9 documentation</title>
+    <title>News - 9 series &#8212; Groonga v15.1.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=557d36a0"></script>
+    <script src="../_static/documentation_options.js?v=d7278418"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -61,7 +61,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.0.9" />
+  <meta name="docsearch:version" content="15.1.1" />
   </head>
   
   
@@ -127,8 +127,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.0.9 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.0.9 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -451,7 +451,7 @@
 <li><p>[<a class="reference internal" href="../reference/commands/load.html"><span class="doc">load</span></a>] Improve error message.</p>
 <ul>
 <li><p>Response of <code class="docutils literal notranslate"><span class="pre">load</span></code> command includes error message also.</p></li>
-<li><p>If we faile data load, Groonga output error detail of <code class="docutils literal notranslate"><span class="pre">load</span></code> command by this Improvement.</p></li>
+<li><p>If we fail data load, Groonga output error detail of <code class="docutils literal notranslate"><span class="pre">load</span></code> command by this Improvement.</p></li>
 </ul>
 </li>
 <li><p>[httpd] Updated bundled nginx to 1.17.7.</p></li>
@@ -647,7 +647,7 @@ with <code class="docutils literal notranslate"><span class="pre">--sort_keys</s
 <li><p>[<a class="reference internal" href="../reference/commands/select.html"><span class="doc">select</span></a>] Fixed a bug that search is an error when occurring search escalation.</p></li>
 <li><p>[<a class="reference internal" href="../reference/commands/select.html"><span class="doc">select</span></a>] Fixed a bug that may return wrong search results when we use nested equal condition.</p></li>
 <li><p>[geo_distance_location_rectangle] Fixed an example that has wrong <code class="docutils literal notranslate"><span class="pre">load</span></code> format. [GitHub#1023][Patched by yagisumi]</p></li>
-<li><p>[<a class="reference internal" href="../tutorial/micro_blog.html"><span class="doc">Let’s create micro-blog</span></a>] Fixed an example that has wrong search results. [GutHub#1024][Patched by yagisumi]</p></li>
+<li><p>[<a class="reference internal" href="../tutorial/micro_blog.html"><span class="doc">Let’s create micro-blog</span></a>] Fixed an example that has wrong search results. [GitHub#1024][Patched by yagisumi]</p></li>
 </ul>
 </section>
 <section id="id13">
@@ -957,7 +957,7 @@ However, we will provide it made from VC++ instead of making from MinGW sooner o
 <section id="id26">
 <h3>Improvements<a class="headerlink" href="#id26" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Added support to acccept null for vector value.</p>
+<li><p>Added support to accept null for vector value.</p>
 <ul>
 <li><p>You can use <cite>select … –columns[vector].flags COLUMN_VECTOR –columns[vector].value “null”</cite></p></li>
 </ul>
@@ -974,7 +974,7 @@ However, we will provide it made from VC++ instead of making from MinGW sooner o
 </ul>
 </li>
 <li><p>[<a class="reference internal" href="../reference/commands/select.html"><span class="doc">select</span></a>] Added documentation about <code class="docutils literal notranslate"><span class="pre">load_table</span></code>, <code class="docutils literal notranslate"><span class="pre">load_columns</span></code> and <code class="docutils literal notranslate"><span class="pre">load_values</span></code>.</p></li>
-<li><p>[<a class="reference internal" href="../reference/commands/load.html"><span class="doc">load</span></a>] Added supoort to display a table of load destination in a query log.</p>
+<li><p>[<a class="reference internal" href="../reference/commands/load.html"><span class="doc">load</span></a>] Added support to display a table of load destination in a query log.</p>
 <ul>
 <li><p>A name of table of load destination display as string in <code class="docutils literal notranslate"><span class="pre">[]</span></code> as below.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:000000000000000</span> <span class="pre">load(3):</span> <span class="pre">[LoadedLogs][3]</span></code></p></li>
@@ -999,7 +999,7 @@ However, we will provide it made from VC++ instead of making from MinGW sooner o
 </ul>
 </li>
 <li><p>Fixed a warning about possibility of counting threads overflow.
-In real world, it doesn’t affect user because enourmous number of threads is not used. [GitHub#904]</p></li>
+In real world, it doesn’t affect user because enormous number of threads is not used. [GitHub#904]</p></li>
 <li><p>Fixed build error on macOS [GitHub#909] [Reported by shiro615]</p></li>
 <li><p>Fixed a stop word handling bug.</p>
 <ul>
@@ -1061,7 +1061,7 @@ You can upgrade to 9.0.0 without rebuilding database.</p>
 </ul>
 </li>
 <li><p>[<a class="reference internal" href="../reference/commands/dump.html"><span class="doc">dump</span></a>] Added support for dumping binary data.</p></li>
-<li><p>[<a class="reference internal" href="../reference/commands/select.html"><span class="doc">select</span></a>] Added support for similer search against index column.</p>
+<li><p>[<a class="reference internal" href="../reference/commands/select.html"><span class="doc">select</span></a>] Added support for similar search against index column.</p>
 <ul>
 <li><p>If you have used multi column index, you can similar search against all source columns by this feature.</p></li>
 </ul>
