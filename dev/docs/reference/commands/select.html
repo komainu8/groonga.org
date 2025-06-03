@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.3.58. select &#8212; Groonga v15.1.0 documentation</title>
+    <title>7.3.58. select &#8212; Groonga v15.1.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=b3e8545c"></script>
+    <script src="../../_static/documentation_options.js?v=7a77f4d4"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -63,7 +63,7 @@
     <link rel="prev" title="7.3.57. schema" href="schema.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.1.0" />
+  <meta name="docsearch:version" content="15.1.2" />
   </head>
   
   
@@ -129,8 +129,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.0 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.0 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.2 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.2 documentation - Home"/>
   
   
 </a></div>
@@ -1691,30 +1691,66 @@ languages. For example, you can use
 with suitable dictionary.)</p>
 <p>Here is an example to use typo tolerance search with Japanese
 text. <code class="docutils literal notranslate"><span class="pre">--default_tokenizer</span> <span class="pre">TokenMecab</span></code> for <code class="docutils literal notranslate"><span class="pre">JapaneseTerms</span></code> is
-important. <code class="docutils literal notranslate"><span class="pre">JapaneseTerms</span></code> is a lexicon for this case:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">groonga</span><span class="o">-</span><span class="n">command</span>
-<span class="o">..</span> <span class="n">include</span><span class="p">::</span> <span class="o">../../</span><span class="n">example</span><span class="o">/</span><span class="n">reference</span><span class="o">/</span><span class="n">commands</span><span class="o">/</span><span class="n">select</span><span class="o">/</span><span class="n">usage_typo_tolerance_japanese</span><span class="o">.</span><span class="n">log</span>
-<span class="o">..</span> <span class="n">table_create</span> <span class="n">JapaneseEntries</span> <span class="n">TABLE_NO_KEY</span>
-<span class="o">..</span> <span class="n">column_create</span> <span class="n">JapaneseEntries</span> <span class="n">content</span> <span class="n">COLUMN_SCALAR</span> <span class="n">Text</span>
-<span class="o">..</span> <span class="n">table_create</span> <span class="n">JapaneseTerms</span> <span class="n">TABLE_PAT_KEY</span> <span class="n">ShortText</span> \
-<span class="o">..</span>   <span class="o">--</span><span class="n">default_tokenizer</span> <span class="n">TokenMecab</span> \
-<span class="o">..</span>   <span class="o">--</span><span class="n">normalizer</span> <span class="n">NormalizerNFKC150</span>
-<span class="o">..</span> <span class="n">column_create</span> <span class="n">JapaneseTerms</span> <span class="n">japanese_entries_content</span> \
-<span class="o">..</span>   <span class="n">COLUMN_INDEX</span><span class="o">|</span><span class="n">WITH_POSITION</span> <span class="n">JapaneseEntries</span> <span class="n">content</span>
-<span class="o">..</span> <span class="n">load</span> <span class="o">--</span><span class="n">table</span> <span class="n">JapaneseEntries</span>
-<span class="o">..</span> <span class="p">[</span>
-<span class="o">..</span> <span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;ようこそ！これが最初の投稿です！&quot;</span><span class="p">},</span>
-<span class="o">..</span> <span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Groongaを使い始めました。とても速いですね！&quot;</span><span class="p">},</span>
-<span class="o">..</span> <span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Mroongaも使い始めました。これもとても速いですね！本当に速い！&quot;</span><span class="p">},</span>
-<span class="o">..</span> <span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Sennaのシステムをすべて移行しました！&quot;</span><span class="p">},</span>
-<span class="o">..</span> <span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Tritonnのシステムもすべて移行しました！&quot;</span><span class="p">}</span>
-<span class="o">..</span> <span class="p">]</span>
-<span class="o">..</span> <span class="n">select</span> \
-<span class="o">..</span>   <span class="o">--</span><span class="n">table</span> <span class="n">JapaneseEntries</span> \
-<span class="o">..</span>   <span class="o">--</span><span class="n">fuzzy_max_distance_ratio</span> <span class="mf">0.34</span> \
-<span class="o">..</span>   <span class="o">--</span><span class="n">match_columns</span> <span class="n">content</span> \
-<span class="o">..</span>   <span class="o">--</span><span class="n">query</span> <span class="n">ともて</span> \
-<span class="o">..</span>   <span class="o">--</span><span class="n">output_columns</span> <span class="n">content</span><span class="p">,</span><span class="n">_score</span>
+important. <code class="docutils literal notranslate"><span class="pre">JapaneseTerms</span></code> is a lexicon for this case.</p>
+<p>Execution example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table_create</span> <span class="n">JapaneseEntries</span> <span class="n">TABLE_NO_KEY</span>
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],true]</span>
+<span class="n">column_create</span> <span class="n">JapaneseEntries</span> <span class="n">content</span> <span class="n">COLUMN_SCALAR</span> <span class="n">Text</span>
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],true]</span>
+<span class="n">table_create</span> <span class="n">JapaneseTerms</span> <span class="n">TABLE_PAT_KEY</span> <span class="n">ShortText</span> \
+  <span class="o">--</span><span class="n">default_tokenizer</span> <span class="n">TokenMecab</span> \
+  <span class="o">--</span><span class="n">normalizer</span> <span class="n">NormalizerNFKC150</span>
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],true]</span>
+<span class="n">column_create</span> <span class="n">JapaneseTerms</span> <span class="n">japanese_entries_content</span> \
+  <span class="n">COLUMN_INDEX</span><span class="o">|</span><span class="n">WITH_POSITION</span> <span class="n">JapaneseEntries</span> <span class="n">content</span>
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],true]</span>
+<span class="n">load</span> <span class="o">--</span><span class="n">table</span> <span class="n">JapaneseEntries</span>
+<span class="p">[</span>
+<span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;ようこそ！これが最初の投稿です！&quot;</span><span class="p">},</span>
+<span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Groongaを使い始めました。とても速いですね！&quot;</span><span class="p">},</span>
+<span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Mroongaも使い始めました。これもとても速いですね！本当に速い！&quot;</span><span class="p">},</span>
+<span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Sennaのシステムをすべて移行しました！&quot;</span><span class="p">},</span>
+<span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Tritonnのシステムもすべて移行しました！&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],5]</span>
+<span class="n">select</span> \
+  <span class="o">--</span><span class="n">table</span> <span class="n">JapaneseEntries</span> \
+  <span class="o">--</span><span class="n">fuzzy_max_distance_ratio</span> <span class="mf">0.34</span> \
+  <span class="o">--</span><span class="n">match_columns</span> <span class="n">content</span> \
+  <span class="o">--</span><span class="n">query</span> <span class="n">ともて</span> \
+  <span class="o">--</span><span class="n">output_columns</span> <span class="n">content</span><span class="p">,</span><span class="n">_score</span>
+<span class="c1"># [</span>
+<span class="c1">#   [</span>
+<span class="c1">#     0,</span>
+<span class="c1">#     1337566253.89858,</span>
+<span class="c1">#     0.000355720520019531</span>
+<span class="c1">#   ],</span>
+<span class="c1">#   [</span>
+<span class="c1">#     [</span>
+<span class="c1">#       [</span>
+<span class="c1">#         2</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         [</span>
+<span class="c1">#           &quot;content&quot;,</span>
+<span class="c1">#           &quot;Text&quot;</span>
+<span class="c1">#         ],</span>
+<span class="c1">#         [</span>
+<span class="c1">#           &quot;_score&quot;,</span>
+<span class="c1">#           &quot;Int32&quot;</span>
+<span class="c1">#         ]</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;Groongaを使い始めました。とても速いですね！&quot;,</span>
+<span class="c1">#         1</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;Mroongaも使い始めました。これもとても速いですね！本当に速い！&quot;,</span>
+<span class="c1">#         1</span>
+<span class="c1">#       ]</span>
+<span class="c1">#     ]</span>
+<span class="c1">#   ]</span>
+<span class="c1"># ]</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="#select-fuzzy-query-related-parameters"><span class="std std-ref">Fuzzy query related parameters</span></a> for details.</p>
