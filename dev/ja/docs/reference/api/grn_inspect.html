@@ -676,7 +676,7 @@
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect()</span></code></p></li>
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_indented()</span></code></p></li>
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_limited()</span></code></p></li>
-<li><p><a class="reference internal" href="#c.grn_inspect_name" title="grn_inspect_name"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_name()</span></code></a></p></li>
+<li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_name()</span></code></p></li>
 <li><p><a class="reference internal" href="#c.grn_inspect_encoding" title="grn_inspect_encoding"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_encoding()</span></code></a></p></li>
 <li><p><a class="reference internal" href="#c.grn_inspect_type" title="grn_inspect_type"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_type()</span></code></a></p></li>
 <li><p><a class="reference internal" href="#c.grn_inspect_query_log_flags" title="grn_inspect_query_log_flags"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_query_log_flags()</span></code></a></p></li>
@@ -701,37 +701,6 @@
 </section>
 <section id="reference">
 <h2><span class="section-number">7.26.17.3. </span>リファレンス<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_inspect_name">
-<span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_inspect_name</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">buffer</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_inspect_name" title="Link to this definition">#</a><br /></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 4.0.8.</span></p>
-</div>
-<p>指定した <code class="docutils literal notranslate"><span class="pre">obj</span></code> オブジェクトを調査します。</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> -- その時点のコンテキスト。</p></li>
-<li><p><strong>buffer</strong> -- オブジェクト名が設定されるオブジェクト</p></li>
-<li><p><strong>obj</strong> -- 対象のオブジェクト</p></li>
-</ul>
-</dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
-<dd class="field-even"><p>オブジェクトの名前が設定される <code class="docutils literal notranslate"><span class="pre">buffer</span></code> オブジェクト。指定したオブジェクトが無効な値であれば <code class="docutils literal notranslate"><span class="pre">(nil)</span></code> が設定され、内部で使用しているオブジェクトであれば <code class="docutils literal notranslate"><span class="pre">(anonymous:</span> <span class="pre">ID)</span></code> が設定されます。</p>
-</dd>
-</dl>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">grn_obj</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span>
-<span class="n">GRN_TEXT_INIT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="n">grn_inspect_name</span><span class="p">(</span><span class="o">&amp;</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">obj</span><span class="p">);</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.*s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">GRN_TEXT_LEN</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">),</span><span class="w"> </span><span class="n">GRN_TEXT_VALUE</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">));</span>
-</pre></div>
-</div>
-<p>調査対象のオブジェクト名は次のように表示されます:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Users</span>
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="c function">
 <dt class="sig sig-object c" id="c.grn_inspect_encoding">
 <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_inspect_encoding</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">buffer</span></span>, <span class="n"><span class="pre">grn_encoding</span></span><span class="w"> </span><span class="n"><span class="pre">encoding</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_inspect_encoding" title="Link to this definition">#</a><br /></dt>
