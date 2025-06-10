@@ -112,6 +112,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a3f84f9754452ff035f1aa896342fa159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inspect specified object and return the name of the specified object.  <br /></td></tr>
 <tr class="separator:a3f84f9754452ff035f1aa896342fa159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf81554d77d0f83d379a1c36e7ab18d8" id="r_aaf81554d77d0f83d379a1c36e7ab18d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#aaf81554d77d0f83d379a1c36e7ab18d8">grn_inspect_encoding</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *buffer, <a class="el" href="groonga_2groonga_8h.html#af5906ce9a5c07f9c9a5b222b99813a64">grn_encoding</a> encoding)</td></tr>
+<tr class="memdesc:aaf81554d77d0f83d379a1c36e7ab18d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inspect the given encoding and produce its name.  <br /></td></tr>
 <tr class="separator:aaf81554d77d0f83d379a1c36e7ab18d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae21a3e9f56afcebbdb42f01815aba04b" id="r_ae21a3e9f56afcebbdb42f01815aba04b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#ae21a3e9f56afcebbdb42f01815aba04b">grn_inspect_type</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *buffer, unsigned char type)</td></tr>
 <tr class="separator:ae21a3e9f56afcebbdb42f01815aba04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,6 +216,42 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Inspect the given encoding and produce its name. </p>
+<dl class="section since"><dt>Since</dt><dd>4.0.8</dd></dl>
+<p>For example usage: </p><div class="fragment"><div class="line"><a class="code hl_struct" href="struct__grn__obj.html">grn_obj</a> encoding;</div>
+<div class="line"><a class="code hl_define" href="groonga_2groonga_8h.html#acbbbcb96d95b5fb72a472689c3a83aed">GRN_TEXT_INIT</a>(&amp;encoding, 0);</div>
+<div class="line"><a class="code hl_function" href="util_8h.html#aaf81554d77d0f83d379a1c36e7ab18d8">grn_inspect_encoding</a>(ctx, &amp;encoding, <a class="code hl_enumvalue" href="groonga_2groonga_8h.html#af5906ce9a5c07f9c9a5b222b99813a64a444acd03e5331e97fdd5b45815b3d61e">GRN_ENC_UTF8</a>);</div>
+<div class="line">printf(<span class="stringliteral">&quot;%.*s\n&quot;</span>, (<span class="keywordtype">int</span>)<a class="code hl_define" href="groonga_2groonga_8h.html#aefdf8600505520890eabb1c9002ff6eb">GRN_TEXT_LEN</a>(&amp;encoding), <a class="code hl_define" href="groonga_2groonga_8h.html#a59f4890b6aa7665a1657c6eb5a10a43b">GRN_TEXT_VALUE</a>(&amp;encoding));</div>
+<div class="line"><a class="code hl_define" href="groonga_2groonga_8h.html#a6241d141a94520921276738389bc90b8">GRN_OBJ_FIN</a>(ctx, &amp;encoding);</div>
+<div class="ttc" id="agroonga_2groonga_8h_html_af5906ce9a5c07f9c9a5b222b99813a64a444acd03e5331e97fdd5b45815b3d61e"><div class="ttname"><a href="groonga_2groonga_8h.html#af5906ce9a5c07f9c9a5b222b99813a64a444acd03e5331e97fdd5b45815b3d61e">GRN_ENC_UTF8</a></div><div class="ttdeci">@ GRN_ENC_UTF8</div><div class="ttdoc">UTF-8 (3)</div><div class="ttdef"><b>Definition</b> groonga.h:170</div></div>
+<div class="ttc" id="autil_8h_html_aaf81554d77d0f83d379a1c36e7ab18d8"><div class="ttname"><a href="util_8h.html#aaf81554d77d0f83d379a1c36e7ab18d8">grn_inspect_encoding</a></div><div class="ttdeci">GRN_API grn_obj * grn_inspect_encoding(grn_ctx *ctx, grn_obj *buffer, grn_encoding encoding)</div><div class="ttdoc">Inspect the given encoding and produce its name.</div></div>
+</div><!-- fragment --><p>For example output: Depending on <code>encoding</code>, it will output one of the following lines: </p><div class="fragment"><div class="line"><span class="keywordflow">default</span>(UTF-8)</div>
+<div class="line">none</div>
+<div class="line">EUC-JP</div>
+<div class="line">UTF-8</div>
+<div class="line">Shift_JIS</div>
+<div class="line">Latin-1</div>
+<div class="line">KOI8-R</div>
+<div class="line">unknown(encoding)</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The context object. </td></tr>
+    <tr><td class="paramname">buffer</td><td>The buffer where the encoding name will be stored. </td></tr>
+    <tr><td class="paramname">encoding</td><td>The encoding to inspect. Must be one of:<ul>
+<li><a class="el" href="groonga_2groonga_8h.html#af5906ce9a5c07f9c9a5b222b99813a64a78192c079c5cd624b98f3b1ed4a616f5">GRN_ENC_DEFAULT</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#af5906ce9a5c07f9c9a5b222b99813a64afbd3b59a48010bce9d7078f93e4c191c">GRN_ENC_NONE</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#af5906ce9a5c07f9c9a5b222b99813a64a182835104c3b7426f212484c6cb3e966">GRN_ENC_EUC_JP</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#af5906ce9a5c07f9c9a5b222b99813a64a444acd03e5331e97fdd5b45815b3d61e">GRN_ENC_UTF8</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#af5906ce9a5c07f9c9a5b222b99813a64aab439e9220581934e8728baa60fee79a">GRN_ENC_SJIS</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#af5906ce9a5c07f9c9a5b222b99813a64a75fe3e9000ea381812c16fa34566932c">GRN_ENC_LATIN1</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#af5906ce9a5c07f9c9a5b222b99813a64a83b849f4e15384de12987528eb2a5337">GRN_ENC_KOI8R</a></li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The inspected object's encoding name in text. </dd></dl>
 
 </div>
 </div>
