@@ -679,7 +679,7 @@
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_name()</span></code></p></li>
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_encoding()</span></code></p></li>
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_type()</span></code></p></li>
-<li><p><a class="reference internal" href="#c.grn_inspect_query_log_flags" title="grn_inspect_query_log_flags"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_query_log_flags()</span></code></a></p></li>
+<li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_inspect_query_log_flags()</span></code></p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">grn_p</span></code> 系の関数のリストは次の通りです。調査したオブジェクトの内容をコンソールに出力します。</p>
 <ul class="simple">
@@ -701,38 +701,6 @@
 </section>
 <section id="reference">
 <h2><span class="section-number">7.26.17.3. </span>リファレンス<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_inspect_query_log_flags">
-<span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_inspect_query_log_flags</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">buffer</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">flags</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_inspect_query_log_flags" title="Link to this definition">#</a><br /></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 7.0.4.</span></p>
-</div>
-<p>指定した <code class="docutils literal notranslate"><span class="pre">flag</span></code> を調査します。</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> -- その時点のコンテキスト。</p></li>
-<li><p><strong>buffer</strong> -- フラグの名前が設定されるオブジェクト</p></li>
-<li><p><strong>flags</strong> -- The inspect target type.</p></li>
-</ul>
-</dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
-<dd class="field-even"><p>フラグの名前が設定される <code class="docutils literal notranslate"><span class="pre">buffer</span></code> オブジェクト。不正な <code class="docutils literal notranslate"><span class="pre">flags</span></code> が与えられた場合、空の文字列が <code class="docutils literal notranslate"><span class="pre">buffer</span></code> に設定されます。</p>
-</dd>
-</dl>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">grn_obj</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span>
-<span class="n">GRN_TEXT_INIT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">current_flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grn_query_logger_get_flags</span><span class="p">(</span><span class="o">&amp;</span><span class="n">context</span><span class="p">);</span>
-<span class="n">grn_inspect_query_log_flags</span><span class="p">(</span><span class="o">&amp;</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">current_flags</span><span class="p">);</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.*s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">GRN_TEXT_LEN</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">),</span><span class="w"> </span><span class="n">GRN_TEXT_VALUE</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">));</span>
-</pre></div>
-</div>
-<p>クエリーログのフラグは次のように表示されます:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COMMAND</span><span class="o">|</span><span class="n">RESULT_CODE</span><span class="o">|</span><span class="n">DESTINATION</span><span class="o">|</span><span class="n">CACHE</span><span class="o">|</span><span class="n">SIZE</span><span class="o">|</span><span class="n">SCORE</span>
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="c function">
 <dt class="sig sig-object c" id="c.grn_p">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_p</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_p" title="Link to this definition">#</a><br /></dt>

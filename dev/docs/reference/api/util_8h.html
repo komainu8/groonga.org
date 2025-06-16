@@ -118,6 +118,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae21a3e9f56afcebbdb42f01815aba04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inspect the given type and produce its name.  <br /></td></tr>
 <tr class="separator:ae21a3e9f56afcebbdb42f01815aba04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30ca9cd9f3ce7facecb8243a76562ef1" id="r_a30ca9cd9f3ce7facecb8243a76562ef1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#a30ca9cd9f3ce7facecb8243a76562ef1">grn_inspect_query_log_flags</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *buffer, unsigned int flags)</td></tr>
+<tr class="memdesc:a30ca9cd9f3ce7facecb8243a76562ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inspect the given query log flags and produce their names.  <br /></td></tr>
 <tr class="separator:a30ca9cd9f3ce7facecb8243a76562ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2a7608811bb8f7b0b95ecd0a5f62891" id="r_aa2a7608811bb8f7b0b95ecd0a5f62891"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#aa2a7608811bb8f7b0b95ecd0a5f62891">grn_inspect_key</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *buffer, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *table, const void *key, uint32_t key_size)</td></tr>
 <tr class="separator:aa2a7608811bb8f7b0b95ecd0a5f62891"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -558,6 +559,45 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Inspect the given query log flags and produce their names. </p>
+<dl class="section since"><dt>Since</dt><dd>7.0.4</dd></dl>
+<p>For example usage: </p><div class="fragment"><div class="line"><a class="code hl_struct" href="struct__grn__obj.html">grn_obj</a> flags;</div>
+<div class="line"><a class="code hl_define" href="groonga_2groonga_8h.html#acbbbcb96d95b5fb72a472689c3a83aed">GRN_TEXT_INIT</a>(&amp;flags, 0);</div>
+<div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> current_flags = <a class="code hl_function" href="groonga_2groonga_8h.html#a4ceae67b0e8f55a2b82102cdc9d81d08">grn_query_logger_get_flags</a>(ctx);</div>
+<div class="line"><a class="code hl_function" href="util_8h.html#a30ca9cd9f3ce7facecb8243a76562ef1">grn_inspect_query_log_flags</a>(ctx, &amp;flags, current_flags);</div>
+<div class="line">printf(<span class="stringliteral">&quot;%.*s\n&quot;</span>,</div>
+<div class="line">       (<span class="keywordtype">int</span>)<a class="code hl_define" href="groonga_2groonga_8h.html#aefdf8600505520890eabb1c9002ff6eb">GRN_TEXT_LEN</a>(&amp;flags),</div>
+<div class="line">       <a class="code hl_define" href="groonga_2groonga_8h.html#a59f4890b6aa7665a1657c6eb5a10a43b">GRN_TEXT_VALUE</a>(&amp;flags));</div>
+<div class="line"><a class="code hl_define" href="groonga_2groonga_8h.html#a6241d141a94520921276738389bc90b8">GRN_OBJ_FIN</a>(ctx, &amp;flags);</div>
+<div class="ttc" id="agroonga_2groonga_8h_html_a4ceae67b0e8f55a2b82102cdc9d81d08"><div class="ttname"><a href="groonga_2groonga_8h.html#a4ceae67b0e8f55a2b82102cdc9d81d08">grn_query_logger_get_flags</a></div><div class="ttdeci">GRN_API unsigned int grn_query_logger_get_flags(grn_ctx *ctx)</div></div>
+<div class="ttc" id="autil_8h_html_a30ca9cd9f3ce7facecb8243a76562ef1"><div class="ttname"><a href="util_8h.html#a30ca9cd9f3ce7facecb8243a76562ef1">grn_inspect_query_log_flags</a></div><div class="ttdeci">GRN_API grn_obj * grn_inspect_query_log_flags(grn_ctx *ctx, grn_obj *buffer, unsigned int flags)</div><div class="ttdoc">Inspect the given query log flags and produce their names.</div></div>
+</div><!-- fragment --><p>For example output: Depending on <code>flags</code>, it will output one of the following: </p><div class="fragment"><div class="line">NONE</div>
+<div class="line">CACHE</div>
+<div class="line">COMMAND</div>
+<div class="line">DESTINATION</div>
+<div class="line">RESULT_CODE</div>
+<div class="line">SCORE</div>
+<div class="line">SIZE</div>
+</div><!-- fragment --><p>When multiple flags are set, they are displayed separated by "|". </p><div class="fragment"><div class="line">CACHE|COMMAND|DESTINATION|RESULT_CODE|SCORE|SIZE</div>
+</div><!-- fragment --><p>Available flags:</p><ul>
+<li><a class="el" href="groonga_2groonga_8h.html#a6c0aa0d18b9c577b256fabbbaad528d0">GRN_QUERY_LOG_NONE</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#adceaeaa3ab7b7e530b9ddb4f2d8b61be">GRN_QUERY_LOG_CACHE</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#a137929ce3a2d0e66401b8c232eda9db7">GRN_QUERY_LOG_COMMAND</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#a65e932435b65c4839550b213c5df7d14">GRN_QUERY_LOG_DESTINATION</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#a17360725b2c780ddcb7b3c1abea9b46a">GRN_QUERY_LOG_RESULT_CODE</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#a35159528b80e62b5c01520f22789f730">GRN_QUERY_LOG_SCORE</a></li>
+<li><a class="el" href="groonga_2groonga_8h.html#ae74f9adee0d24cef789c0ef0924cb082">GRN_QUERY_LOG_SIZE</a></li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The context object. </td></tr>
+    <tr><td class="paramname">buffer</td><td>The buffer where the flag names will be stored. </td></tr>
+    <tr><td class="paramname">flags</td><td>The query log flags to inspect.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The names of the inspected query log flags as text. </dd></dl>
 
 </div>
 </div>
