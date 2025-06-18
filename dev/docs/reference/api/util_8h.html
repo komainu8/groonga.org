@@ -123,6 +123,7 @@ Functions</h2></td></tr>
 <tr class="memitem:aa2a7608811bb8f7b0b95ecd0a5f62891" id="r_aa2a7608811bb8f7b0b95ecd0a5f62891"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#aa2a7608811bb8f7b0b95ecd0a5f62891">grn_inspect_key</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *buffer, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *table, const void *key, uint32_t key_size)</td></tr>
 <tr class="separator:aa2a7608811bb8f7b0b95ecd0a5f62891"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6ec34b3b499440d824663e29bdff2cc" id="r_ad6ec34b3b499440d824663e29bdff2cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#ad6ec34b3b499440d824663e29bdff2cc">grn_p</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *obj)</td></tr>
+<tr class="memdesc:ad6ec34b3b499440d824663e29bdff2cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print inspected text of the given object.  <br /></td></tr>
 <tr class="separator:ad6ec34b3b499440d824663e29bdff2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0dfc10b2bf580bbf5c6e625f275fc99" id="r_aa0dfc10b2bf580bbf5c6e625f275fc99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util_8h.html#aa0dfc10b2bf580bbf5c6e625f275fc99">grn_p_geo_point</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="structgrn__geo__point.html">grn_geo_point</a> *point)</td></tr>
 <tr class="separator:aa0dfc10b2bf580bbf5c6e625f275fc99"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -741,6 +742,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Print inspected text of the given object. </p>
+<dl class="section since"><dt>Since</dt><dd>4.0.8</dd></dl>
+<p>For example usage: </p><div class="fragment"><div class="line"><a class="code hl_function" href="util_8h.html#ad6ec34b3b499440d824663e29bdff2cc">grn_p</a>(ctx, obj);</div>
+<div class="ttc" id="autil_8h_html_ad6ec34b3b499440d824663e29bdff2cc"><div class="ttname"><a href="util_8h.html#ad6ec34b3b499440d824663e29bdff2cc">grn_p</a></div><div class="ttdeci">GRN_API void grn_p(grn_ctx *ctx, grn_obj *obj)</div><div class="ttdoc">Print inspected text of the given object.</div></div>
+</div><!-- fragment --><p>If <code>obj</code> is a ShortText type, it prints output like: </p><div class="fragment"><div class="line"><span class="preprocessor">#&lt;type ShortText size:4096 type:var_size&gt;</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The context object. </td></tr>
+    <tr><td class="paramname">obj</td><td>The object to inspect and print. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

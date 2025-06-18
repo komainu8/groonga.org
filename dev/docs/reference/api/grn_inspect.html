@@ -682,7 +682,7 @@
 </ul>
 <p>Here is the list of <code class="docutils literal notranslate"><span class="pre">grn_p</span></code> function series. It prints inspected text into console.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#c.grn_p" title="grn_p"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p()</span></code></a></p></li>
+<li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p()</span></code></p></li>
 <li><p><a class="reference internal" href="#c.grn_p_geo_point" title="grn_p_geo_point"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p_geo_point()</span></code></a></p></li>
 <li><p><a class="reference internal" href="#c.grn_p_ii_values" title="grn_p_ii_values"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p_ii_values()</span></code></a></p></li>
 </ul>
@@ -700,31 +700,6 @@
 </section>
 <section id="reference">
 <h2><span class="section-number">7.26.17.3. </span>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_p">
-<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_p</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_p" title="Link to this definition">#</a><br /></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 4.0.8.</span></p>
-</div>
-<p>Inspect specified target <code class="docutils literal notranslate"><span class="pre">obj</span></code> object.
-It prints inspected text.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> – The context object</p></li>
-<li><p><strong>obj</strong> – The inspect target object.</p></li>
-</ul>
-</dd>
-</dl>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">grn_p</span><span class="p">(</span><span class="o">&amp;</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">obj</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>If obj is <code class="docutils literal notranslate"><span class="pre">ShortText</span></code>, it prints like the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;type ShortText size:4096 type:var_size&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="c function">
 <dt class="sig sig-object c" id="c.grn_p_geo_point">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_p_geo_point</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_geo_point</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">point</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_p_geo_point" title="Link to this definition">#</a><br /></dt>
