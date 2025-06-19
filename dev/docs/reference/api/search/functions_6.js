@@ -416,7 +416,7 @@ var searchData=
   ['grn_5fobj_5fcolumn_413',['grn_obj_column',['../groonga_2groonga_8h.html#a905586912b93ec8aaf6d926b760c59d2',1,'groonga.h']]],
   ['grn_5fobj_5fcolumns_414',['grn_obj_columns',['../groonga_2groonga_8h.html#a37be6a617ba1486e7b3086d7da7284bb',1,'groonga.h']]],
   ['grn_5fobj_5fdb_415',['grn_obj_db',['../groonga_2groonga_8h.html#a061cac3100c17413a9c84d8c330661a5',1,'groonga.h']]],
-  ['grn_5fobj_5fdefrag_416',['grn_obj_defrag',['../groonga_2groonga_8h.html#addd2b0c3419cea30c1981a4664f48d6c',1,'groonga.h']]],
+  ['grn_5fobj_5fdefrag_416',['grn_obj_defrag',['../groonga_2groonga_8h.html#aa5efbc43cc77885aa100de0260a249f6',1,'groonga.h']]],
   ['grn_5fobj_5fdelete_5fby_5fid_417',['grn_obj_delete_by_id',['../groonga_2groonga_8h.html#a8ad8686fa3b5a306228a76610090db0b',1,'groonga.h']]],
   ['grn_5fobj_5fdelete_5fhook_418',['grn_obj_delete_hook',['../groonga_2groonga_8h.html#af12f52b1055a37356243cc3f707528b7',1,'groonga.h']]],
   ['grn_5fobj_5fexpire_419',['grn_obj_expire',['../groonga_2groonga_8h.html#a0f67e516d07f87fee51a1909bd5eecd5',1,'groonga.h']]],
