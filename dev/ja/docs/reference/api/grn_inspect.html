@@ -684,7 +684,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">grn_p</span></code> 系の関数のリストは次の通りです。調査したオブジェクトの内容をコンソールに出力します。</p>
 <ul class="simple">
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p()</span></code></p></li>
-<li><p><a class="reference internal" href="#c.grn_p_geo_point" title="grn_p_geo_point"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p_geo_point()</span></code></a></p></li>
+<li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p_geo_point()</span></code></p></li>
 <li><p><a class="reference internal" href="#c.grn_p_ii_values" title="grn_p_ii_values"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p_ii_values()</span></code></a></p></li>
 </ul>
 </section>
@@ -701,35 +701,6 @@
 </section>
 <section id="reference">
 <h2><span class="section-number">7.26.17.3. </span>リファレンス<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_p_geo_point">
-<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_p_geo_point</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_geo_point</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">point</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_p_geo_point" title="Link to this definition">#</a><br /></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 4.0.8.</span></p>
-</div>
-<p>指定した <code class="docutils literal notranslate"><span class="pre">obj</span></code> を調査し、geo pointの内容を出力します。</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> -- その時点のコンテキスト。</p></li>
-<li><p><strong>point</strong> -- 対象のオブジェクト</p></li>
-</ul>
-</dd>
-</dl>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">grn_obj</span><span class="w"> </span><span class="n">point</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">latitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="mi">40</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">42</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">46</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">longitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="mi">-74</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">22</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
-<span class="n">GRN_WGS84_GEO_POINT_INIT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="n">GRN_GEO_POINT_SET</span><span class="p">(</span><span class="o">&amp;</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="n">latitude</span><span class="p">,</span><span class="w"> </span><span class="n">longitude</span><span class="p">);</span>
-<span class="n">grn_p_geo_point</span><span class="p">(</span><span class="o">&amp;</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">grn_geo_point</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">point</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>もし <code class="docutils literal notranslate"><span class="pre">point</span></code> がニューヨークを示す場合、次のように表示されます:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[(</span><span class="mi">524290</span><span class="p">,</span><span class="mi">18</span><span class="p">)</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">290</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span> <span class="p">[</span><span class="mi">00000000</span> <span class="mi">00000000</span> <span class="mi">00000000</span> <span class="mi">10000000</span> <span class="mi">00000000</span> <span class="mi">00000000</span> <span class="mi">00000001</span> <span class="mi">00001100</span><span class="p">]]</span>
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="c function">
 <dt class="sig sig-object c" id="c.grn_p_ii_values">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_p_ii_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_p_ii_values" title="Link to this definition">#</a><br /></dt>
