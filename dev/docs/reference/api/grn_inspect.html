@@ -684,7 +684,7 @@
 <ul class="simple">
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p()</span></code></p></li>
 <li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p_geo_point()</span></code></p></li>
-<li><p><a class="reference internal" href="#c.grn_p_ii_values" title="grn_p_ii_values"><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p_ii_values()</span></code></a></p></li>
+<li><p><code class="xref c c-func docutils literal notranslate"><span class="pre">grn_p_ii_values()</span></code></p></li>
 </ul>
 </section>
 <section id="example">
@@ -700,38 +700,10 @@
 </section>
 <section id="reference">
 <h2><span class="section-number">7.26.17.3. </span>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_p_ii_values">
-<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_p_ii_values</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">grn_ctx</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ctx</span></span>, <span class="n"><span class="pre">grn_obj</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_p_ii_values" title="Link to this definition">#</a><br /></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 4.0.8.</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are currently switching to automatic generation using Doxygen.</p>
 </div>
-<p>Inspect specified target <code class="docutils literal notranslate"><span class="pre">obj</span></code> object.
-It prints inspected index values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ctx</strong> – The context object</p></li>
-<li><p><strong>obj</strong> – The inspect target object.</p></li>
-</ul>
-</dd>
-</dl>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">grn_p_ii_values</span><span class="p">(</span><span class="o">&amp;</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">obj</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>If <code class="docutils literal notranslate"><span class="pre">obj</span></code> is an index column, it prints like the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-  <span class="c1">#&lt;&quot;!&quot;</span>
-    <span class="n">elements</span><span class="p">:[</span>
-      <span class="p">{</span><span class="n">status</span><span class="p">:</span><span class="n">available</span><span class="p">,</span> <span class="n">rid</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="n">tf</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="n">weight</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="n">rest</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
-      <span class="p">{</span><span class="n">status</span><span class="p">:</span><span class="n">available</span><span class="p">,</span> <span class="n">rid</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">sid</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="n">tf</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="n">weight</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="n">rest</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
-    <span class="p">]</span>
-  <span class="o">&gt;</span><span class="p">,</span>
-  <span class="o">...</span>
-</pre></div>
-</div>
-</dd></dl>
-
 </section>
 </section>
 
