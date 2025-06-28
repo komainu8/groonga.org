@@ -788,7 +788,7 @@
 <section id="advanced-usage">
 <h2><span class="section-number">7.8.10.5. </span>高度な使い方<a class="headerlink" href="#advanced-usage" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">delimiter</span></code> オプションは、複数の区切り文字を指定することもできます。</p>
-<p>例えば、以下のように <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> は、<code class="docutils literal notranslate"><span class="pre">Hello</span></code> と <code class="docutils literal notranslate"><span class="pre">World</span></code> にトークナイズされます。</p>
+<p>例えば、以下のように <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> は、<code class="docutils literal notranslate"><span class="pre">Hello</span></code> と <code class="docutils literal notranslate"><span class="pre">World</span></code> にトークナイズされます。以下の例では、<code class="docutils literal notranslate"><span class="pre">&quot;,&quot;</span></code> と <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> が区切り文字です。</p>
 <p>実行例:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tokenize</span> <span class="s1">&#39;TokenDelimit(&quot;delimiter&quot;, &quot;,&quot;, &quot;delimiter&quot;, &quot; &quot;)&#39;</span> <span class="s2">&quot;Hello, World&quot;</span>
 <span class="c1"># [</span>
