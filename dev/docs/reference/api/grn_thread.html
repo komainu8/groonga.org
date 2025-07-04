@@ -729,32 +729,9 @@ decreased.</p>
 <section id="reference">
 <h2><span class="section-number">7.26.24.3. </span>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
 <dl class="c type">
-<dt class="sig sig-object c" id="c.grn_thread_get_limit_func">
-<span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_thread_get_limit_func</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#c.grn_thread_get_limit_func" title="Link to this definition">#</a><br /></dt>
-<dd><p>It’s the type of function that returns the max number of threads.</p>
-</dd></dl>
-
-<dl class="c type">
 <dt class="sig sig-object c" id="c.grn_thread_set_limit_func">
 <span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">grn_thread_set_limit_func</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n"><span class="pre">new_limit</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#c.grn_thread_set_limit_func" title="Link to this definition">#</a><br /></dt>
 <dd><p>It’s the type of function that sets the max number of threads.</p>
-</dd></dl>
-
-<dl class="c function">
-<dt class="sig sig-object c" id="c.grn_thread_set_get_limit_func">
-<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grn_thread_set_get_limit_func</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.grn_thread_get_limit_func" title="grn_thread_get_limit_func"><span class="n"><span class="pre">grn_thread_get_limit_func</span></span></a><span class="w"> </span><span class="n"><span class="pre">func</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.grn_thread_set_get_limit_func" title="Link to this definition">#</a><br /></dt>
-<dd><p>It sets the custom function that returns the max number of threads.</p>
-<p><code class="docutils literal notranslate"><span class="pre">data</span></code> is passed to <code class="docutils literal notranslate"><span class="pre">func</span></code> when <code class="docutils literal notranslate"><span class="pre">func</span></code> is called from
-<code class="xref c c-func docutils literal notranslate"><span class="pre">grn_thread_get_limit()</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>func</strong> – The custom function that returns the max number of threads.</p></li>
-<li><p><strong>data</strong> – An user data to be passed to <code class="docutils literal notranslate"><span class="pre">func</span></code> when <code class="docutils literal notranslate"><span class="pre">func</span></code>
-is called.</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="c function">
