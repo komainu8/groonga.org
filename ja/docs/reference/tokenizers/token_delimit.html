@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.8.10. TokenDelimit &#8212; Groonga v15.1.1 documentation</title>
+    <title>7.8.10. TokenDelimit &#8212; Groonga v15.1.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=e6d0104c"></script>
+    <script src="../../_static/documentation_options.js?v=4b806080"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="7.8.9. TokenBigramSplitSymbolAlphaDigit" href="token_bigram_split_symbol_alpha_digit.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.1.1" />
+  <meta name="docsearch:version" content="15.1.2" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.1 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.1 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.2 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.2 documentation - Home"/>
   
   
 </a></div>
@@ -788,7 +788,7 @@
 <section id="advanced-usage">
 <h2><span class="section-number">7.8.10.5. </span>高度な使い方<a class="headerlink" href="#advanced-usage" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">delimiter</span></code> オプションは、複数の区切り文字を指定することもできます。</p>
-<p>例えば、以下のように <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> は、<code class="docutils literal notranslate"><span class="pre">Hello</span></code> と <code class="docutils literal notranslate"><span class="pre">World</span></code> にトークナイズされます。</p>
+<p>例えば、以下のように <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> は、<code class="docutils literal notranslate"><span class="pre">Hello</span></code> と <code class="docutils literal notranslate"><span class="pre">World</span></code> にトークナイズされます。以下の例では、<code class="docutils literal notranslate"><span class="pre">&quot;,&quot;</span></code> と <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> が区切り文字です。</p>
 <p>実行例:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tokenize</span> <span class="s1">&#39;TokenDelimit(&quot;delimiter&quot;, &quot;,&quot;, &quot;delimiter&quot;, &quot; &quot;)&#39;</span> <span class="s2">&quot;Hello, World&quot;</span>
 <span class="c1"># [</span>
