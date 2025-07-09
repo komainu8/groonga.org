@@ -415,19 +415,19 @@
 <h4>[Near phrase search] Fixed a bug that interval between phrases calculation<a class="headerlink" href="#near-phrase-search-fixed-a-bug-that-interval-between-phrases-calculation" title="Link to this heading">#</a></h4>
 <p>This problem may occur when we use <code class="docutils literal notranslate"><span class="pre">*NP</span></code>, <code class="docutils literal notranslate"><span class="pre">*NPP</span></code>, or <code class="docutils literal notranslate"><span class="pre">*ONP</span></code> with <code class="docutils literal notranslate"><span class="pre">MAX_ELEMENT_INTERVAL</span></code> as below.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">*NP-1,0,12,11&quot;abc</span> <span class="pre">ef&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">*NPP-1,0,10,9&quot;(abc</span> <span class="pre">bcd)</span> <span class="pre">(ef)&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*NP-1,0,12&quot;abc</span> <span class="pre">ef&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*NPP-1,0,10&quot;(abc</span> <span class="pre">bcd)</span> <span class="pre">(ef)&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">*ONP-1,0,5|6</span> <span class="pre">&quot;abc</span> <span class="pre">defghi</span> <span class="pre">jklmnop&quot;</span></code></p></li>
 </ul>
 <p>If you don’t use <code class="docutils literal notranslate"><span class="pre">MAX_ELEMENT_INTERVAL</span></code>, this problem doesn’t occur.</p>
-<p>Please refer to the following links about usage and syntax of <code class="docutils literal notranslate"><span class="pre">*NP</span></code>, <code class="docutils literal notranslate"><span class="pre">*NPP</span></code>, or <code class="docutils literal notranslate"><span class="pre">*ONPP</span></code>.</p>
+<p>Please refer to the following links about usage and syntax of <code class="docutils literal notranslate"><span class="pre">*NP</span></code>, <code class="docutils literal notranslate"><span class="pre">*NPP</span></code>, or <code class="docutils literal notranslate"><span class="pre">*ONP</span></code>.</p>
 <ul class="simple">
 <li><p>[<code class="docutils literal notranslate"><span class="pre">*NP</span></code> in query syntax] <a class="reference internal" href="../reference/grn_expr/query_syntax.html#query-syntax-near-phrase-search-condition"><span class="std std-ref">Near phrase search condition</span></a></p></li>
 <li><p>[<code class="docutils literal notranslate"><span class="pre">*NP</span></code> in script syntax] <a class="reference internal" href="../reference/grn_expr/script_syntax.html#script-syntax-near-phrase-search-operator"><span class="std std-ref">Near phrase search operator</span></a></p></li>
 <li><p>[<code class="docutils literal notranslate"><span class="pre">*NPP</span></code> in query syntax] <a class="reference internal" href="../reference/grn_expr/query_syntax.html#query-syntax-near-phrase-product-search-condition"><span class="std std-ref">Near phrase product search condition</span></a></p></li>
 <li><p>[<code class="docutils literal notranslate"><span class="pre">*NPP</span></code> in script syntax] <a class="reference internal" href="../reference/grn_expr/script_syntax.html#script-syntax-near-phrase-product-search-operator"><span class="std std-ref">Near phrase product search operator</span></a></p></li>
-<li><p>[<code class="docutils literal notranslate"><span class="pre">*ONPP</span></code> in query syntax] <a class="reference internal" href="../reference/grn_expr/query_syntax.html#query-syntax-ordered-near-phrase-search-condition"><span class="std std-ref">Ordered near phrase search condition</span></a></p></li>
-<li><p>[<code class="docutils literal notranslate"><span class="pre">*ONPP</span></code> in script syntax] <a class="reference internal" href="../reference/grn_expr/script_syntax.html#script-syntax-ordered-near-phrase-search-operator"><span class="std std-ref">Ordered near phrase search operator</span></a></p></li>
+<li><p>[<code class="docutils literal notranslate"><span class="pre">*ONP</span></code> in query syntax] <a class="reference internal" href="../reference/grn_expr/query_syntax.html#query-syntax-ordered-near-phrase-search-condition"><span class="std std-ref">Ordered near phrase search condition</span></a></p></li>
+<li><p>[<code class="docutils literal notranslate"><span class="pre">*ONP</span></code> in script syntax] <a class="reference internal" href="../reference/grn_expr/script_syntax.html#script-syntax-ordered-near-phrase-search-operator"><span class="std std-ref">Ordered near phrase search operator</span></a></p></li>
 </ul>
 <p>If this problem occurs, the following things may happen.</p>
 <ul class="simple">
