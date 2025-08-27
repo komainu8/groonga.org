@@ -408,8 +408,9 @@
 <ul>
 <li><p>4GiB by default.</p></li>
 <li><p>1TiB by specifying <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> flag to
-<a class="reference internal" href="reference/commands/table_create.html#table-create-flags"><span class="std std-ref">flags</span></a>. <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> can be used only with
-<a class="reference internal" href="reference/tables.html#table-hash-key"><span class="std std-ref">TABLE_HASH_KEY</span></a>.</p></li>
+<a class="reference internal" href="reference/commands/table_create.html#table-create-flags"><span class="std std-ref">flags</span></a>. <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> can be used with
+<a class="reference internal" href="reference/tables.html#table-hash-key"><span class="std std-ref">TABLE_HASH_KEY</span></a> or <a class="reference internal" href="reference/tables.html#table-pat-key"><span class="std std-ref">TABLE_PAT_KEY</span></a>.
+However, <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> with <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code> supports version 15.1.5 or later.</p></li>
 </ul>
 </li>
 <li><p>The maximum number of records:</p>

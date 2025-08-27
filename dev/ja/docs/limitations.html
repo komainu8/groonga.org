@@ -408,7 +408,7 @@
 <li><p>キーに格納した値の合計サイズの上限値：</p>
 <ul>
 <li><p>デフォルトは4GiB。</p></li>
-<li><p><a class="reference internal" href="reference/commands/table_create.html#table-create-flags"><span class="std std-ref">flags</span></a> に <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> フラグを指定すると1TiB。ただし、 <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> は <a class="reference internal" href="reference/tables.html#table-hash-key"><span class="std std-ref">TABLE_HASH_KEY</span></a> でしか使えない。</p></li>
+<li><p><a class="reference internal" href="reference/commands/table_create.html#table-create-flags"><span class="std std-ref">flags</span></a> に <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> を指定すると1TiB。 <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> は <a class="reference internal" href="reference/tables.html#table-hash-key"><span class="std std-ref">TABLE_HASH_KEY</span></a> と <a class="reference internal" href="reference/tables.html#table-pat-key"><span class="std std-ref">TABLE_PAT_KEY</span></a> で使える。 ただし、 <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code> に <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> が使えるのは、 15.1.5 以降のバージョン。</p></li>
 </ul>
 </li>
 <li><p>最大レコード数：</p>
