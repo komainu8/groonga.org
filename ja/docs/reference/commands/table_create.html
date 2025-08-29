@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.3.63. table_create &#8212; Groonga v15.1.4 documentation</title>
+    <title>7.3.63. table_create &#8212; Groonga v15.1.5 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=ca518759"></script>
+    <script src="../../_static/documentation_options.js?v=ae9e571d"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="7.3.62. table_copy" href="table_copy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.1.4" />
+  <meta name="docsearch:version" content="15.1.5" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.4 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.4 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.5 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.5 documentation - Home"/>
   
   
 </a></div>
@@ -717,7 +717,10 @@
 <section id="create-large-data-store-table">
 <span id="table-create-large-data-store"></span><h3><span class="section-number">7.3.63.3.2. </span>大きなデータ保存用テーブルの作成<a class="headerlink" href="#create-large-data-store-table" title="Link to this heading">#</a></h3>
 <p>たくさんの大きなキーを保存したいとき、テーブルにすべてのキーを保存できないかもしれません。もし、総キーデータが4GiBより大きいなら、デフォルトではすべてのキーデータをテーブルに保存できません。</p>
-<p><code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> フラグを使うと4GiBから1TiBに最大総キーサイズを拡張できます。 <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> フラグは <code class="docutils literal notranslate"><span class="pre">TABLE_HASH_KEY</span></code> を使っているときだけ使えます。 <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> フラグは <code class="docutils literal notranslate"><span class="pre">TABLE_NO_KEY</span></code> 、 <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code> 、 <code class="docutils literal notranslate"><span class="pre">TABLE_DAT_KEY</span></code> と一緒に使えません。</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.1.5: </span><code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code> も <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> フラグをサポートしました。</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> フラグを使うと4GiBから1TiBに最大総キーサイズを拡張できます。 <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> フラグは <code class="docutils literal notranslate"><span class="pre">TABLE_HASH_KEY</span></code> と <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code> を使っているときに使えます。 <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> フラグは <code class="docutils literal notranslate"><span class="pre">TABLE_NO_KEY</span></code> と <code class="docutils literal notranslate"><span class="pre">TABLE_DAT_KEY</span></code> と一緒に使えません。</p>
 <p>以下はたくさんの大きなキーを保存することができるテーブルを作る例です。</p>
 <p>実行例:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table_create</span> <span class="n">Paths</span> <span class="n">TABLE_HASH_KEY</span><span class="o">|</span><span class="n">KEY_LARGE</span> <span class="n">ShortText</span>
@@ -725,6 +728,7 @@
 </pre></div>
 </div>
 <p>この <code class="docutils literal notranslate"><span class="pre">table_create</span></code> コマンドは、名前が <code class="docutils literal notranslate"><span class="pre">Paths</span></code> で <code class="docutils literal notranslate"><span class="pre">TABLE_HASH_KEY</span></code> 型のテーブルを作成します。 <code class="docutils literal notranslate"><span class="pre">Paths</span></code> テーブルはたくさんの大きなキーを保存できます。</p>
+<p>上記の例は、 <code class="docutils literal notranslate"><span class="pre">TABLE_HASH_KEY</span></code> のケースですが、テーブルが <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code> であっても、 <code class="docutils literal notranslate"><span class="pre">TABLE_HASH_KEY</span></code> と同様に <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> フラグを設定できます。</p>
 </section>
 <section id="create-lexicon">
 <span id="table-create-lexicon"></span><h3><span class="section-number">7.3.63.3.3. </span>語彙表の作成<a class="headerlink" href="#create-lexicon" title="Link to this heading">#</a></h3>
@@ -829,7 +833,7 @@
 <td><p>半無限文字列を有効にします。 <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code> と使う必要があります。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code></p></td>
-<td><p>最大総キーサイズを4GiBから1TiBへ拡張します。 <code class="docutils literal notranslate"><span class="pre">TABLE_HASH_KEY</span></code> と使う必要があります。</p></td>
+<td><p>最大総キーサイズを4GiBから1TiBへ拡張します。 <code class="docutils literal notranslate"><span class="pre">TABLE_HASH_KEY</span></code> または <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code> と使う必要があります。</p></td>
 </tr>
 </tbody>
 </table>
