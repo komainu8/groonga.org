@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>News - 15 series &#8212; Groonga v15.1.5 documentation</title>
+    <title>News - 15 series &#8212; Groonga v15.1.6 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=9f69c349"></script>
+    <script src="../_static/documentation_options.js?v=3239b385"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -61,7 +61,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.1.5" />
+  <meta name="docsearch:version" content="15.1.6" />
   </head>
   
   
@@ -127,8 +127,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.5 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.5 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.6 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.6 documentation - Home"/>
   
   
 </a></div>
@@ -396,11 +396,83 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="news-15-series">
 <h1>News - 15 series<a class="headerlink" href="#news-15-series" title="Link to this heading">#</a></h1>
+<section id="release-15-1-5-2025-08-29">
+<span id="release-15-1-5"></span><h2>Release 15.1.5 - 2025-08-29<a class="headerlink" href="#release-15-1-5-2025-08-29" title="Link to this heading">#</a></h2>
+<p>In this release, we supported <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> flag for <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code>!</p>
+<section id="improvements">
+<h3>Improvements<a class="headerlink" href="#improvements" title="Link to this heading">#</a></h3>
+<section id="reference-commands-table-create-added-support-for-key-large-flag-for-table-pat-key">
+<h4>[<a class="reference internal" href="../reference/commands/table_create.html"><span class="doc">table_create</span></a>] Added support for <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> flag for <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code><a class="headerlink" href="#reference-commands-table-create-added-support-for-key-large-flag-for-table-pat-key" title="Link to this heading">#</a></h4>
+<p>You can now use the <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> flag with <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code> tables to expand the maximum total key size from 4GiB to 1TiB,
+similar to <code class="docutils literal notranslate"><span class="pre">TABLE_HASH_KEY</span></code> tables as below. This allows you to store more keys in total.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table_create</span> <span class="n">LargePaths</span> <span class="n">TABLE_PAT_KEY</span><span class="o">|</span><span class="n">KEY_LARGE</span> <span class="n">ShortText</span>
+</pre></div>
+</div>
+</section>
+<section id="reference-normalizers-normalizer-nfkc-added-support-for-unify-hyphen-and-prolonged-sound-mark-and-remove-symbol-combination">
+<h4>[<a class="reference internal" href="../reference/normalizers/normalizer_nfkc.html"><span class="doc">NormalizerNFKC</span></a>] Added support for <code class="docutils literal notranslate"><span class="pre">unify_hyphen_and_prolonged_sound_mark</span></code> and <code class="docutils literal notranslate"><span class="pre">remove_symbol</span></code> combination<a class="headerlink" href="#reference-normalizers-normalizer-nfkc-added-support-for-unify-hyphen-and-prolonged-sound-mark-and-remove-symbol-combination" title="Link to this heading">#</a></h4>
+<p>Previously, when both <code class="docutils literal notranslate"><span class="pre">unify_hyphen_and_prolonged_sound_mark</span></code> and <code class="docutils literal notranslate"><span class="pre">remove_symbol</span></code> options were enabled together,
+This combination didn’t remove hyphen characters as expected because the hyphen characters were not properly treated as symbols to be removed.</p>
+<p>This release fixes this issue. So, hyphen characters are properly removed from the normalized text as below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">normalize</span> \
+  <span class="s1">&#39;NormalizerNFKC(&quot;remove_symbol&quot;, true, </span><span class="se">\</span>
+<span class="s1">  &quot;unify_hyphen_and_prolonged_sound_mark&quot;, true)&#39;</span> \
+  <span class="s2">&quot;090ー1234-5678&quot;</span>
+<span class="p">[</span>
+  <span class="p">[</span>
+    <span class="mi">0</span><span class="p">,</span>
+    <span class="mf">1756363926.409565</span><span class="p">,</span>
+    <span class="mf">0.0003023147583007812</span>
+  <span class="p">],</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;normalized&quot;</span><span class="p">:</span> <span class="s2">&quot;09012345678&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;types&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;checks&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="install-almalinux-added-support-for-almalinux-10">
+<h4>[<a class="reference internal" href="../install/almalinux.html"><span class="doc">AlmaLinux</span></a>] Added support for AlmaLinux 10<a class="headerlink" href="#install-almalinux-added-support-for-almalinux-10" title="Link to this heading">#</a></h4>
+<p>AlmaLinux 10 packages are now available.
+You can install Groonga on AlmaLinux 10 using the standard package installation methods.</p>
+</section>
+</section>
+<section id="fixes">
+<h3>Fixes<a class="headerlink" href="#fixes" title="Link to this heading">#</a></h3>
+<section id="install-cmake-fixed-how-to-build-install">
+<h4>[<a class="reference internal" href="../install/cmake.html"><span class="doc">Others: Build with CMake</span></a>] Fixed how to build/install<a class="headerlink" href="#install-cmake-fixed-how-to-build-install" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://github.com/groonga/groonga/issues/2479">GH-2479</a></p>
+<p>Patched by Tsutomu Katsube</p>
+<p>The documentation included an incorrect <code class="docutils literal notranslate"><span class="pre">-B</span></code> option in the <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span></code> and <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--install</span></code> commands,
+which caused build errors.</p>
+<p>The corrected commands are now:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">&lt;</span><span class="n">Build</span> <span class="n">directory</span> <span class="n">path</span><span class="o">&gt;</span>
+<span class="n">cmake</span> <span class="o">--</span><span class="n">install</span> <span class="o">&lt;</span><span class="n">Build</span> <span class="n">directory</span> <span class="n">path</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="reference-commands-table-create-fixed-a-bug-where-key-large-flag-was-lost-after-executing-truncate-command">
+<h4>[<a class="reference internal" href="../reference/commands/table_create.html"><span class="doc">table_create</span></a>] Fixed a bug where <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> flag was lost after executing <code class="docutils literal notranslate"><span class="pre">truncate</span></code> command<a class="headerlink" href="#reference-commands-table-create-fixed-a-bug-where-key-large-flag-was-lost-after-executing-truncate-command" title="Link to this heading">#</a></h4>
+<p>This issue meant that when you executed the <code class="docutils literal notranslate"><span class="pre">truncate</span></code> command on a <code class="docutils literal notranslate"><span class="pre">TABLE_HASH_KEY</span></code> table with the <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> flag,
+the table could no longer hold more than 4 GiB of total key data, because the <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> flag was removed during the truncation.</p>
+</section>
+</section>
+<section id="thanks">
+<h3>Thanks<a class="headerlink" href="#thanks" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Tsutomu Katsube</p></li>
+</ul>
+</section>
+</section>
 <section id="release-15-1-4-2025-07-29">
 <span id="release-15-1-4"></span><h2>Release 15.1.4 - 2025-07-29<a class="headerlink" href="#release-15-1-4-2025-07-29" title="Link to this heading">#</a></h2>
 <p>In this release, we fixed a bug in the interval calculation between phrases in <code class="docutils literal notranslate"><span class="pre">*ONPP</span></code> operator.</p>
-<section id="fixes">
-<h3>Fixes<a class="headerlink" href="#fixes" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h3>Fixes<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <section id="ordered-near-phrase-product-search-fixed-a-bug-in-the-interval-calculation-between-phrases">
 <h4>[Ordered near phrase product search] Fixed a bug in the interval calculation between phrases<a class="headerlink" href="#ordered-near-phrase-product-search-fixed-a-bug-in-the-interval-calculation-between-phrases" title="Link to this heading">#</a></h4>
 <p>This problem may occur when we use <code class="docutils literal notranslate"><span class="pre">*ONPP</span></code> with <code class="docutils literal notranslate"><span class="pre">MAX_ELEMENT_INTERVAL</span></code> such as <code class="docutils literal notranslate"><span class="pre">*ONPP-1,0,10&quot;(abc</span> <span class="pre">bcd)</span> <span class="pre">(defg)&quot;</span></code>.
@@ -420,8 +492,8 @@ If you don’t use <code class="docutils literal notranslate"><span class="pre">
 </section>
 <section id="release-15-1-3-2025-07-18">
 <span id="release-15-1-3"></span><h2>Release 15.1.3 - 2025-07-18<a class="headerlink" href="#release-15-1-3-2025-07-18" title="Link to this heading">#</a></h2>
-<section id="improvements">
-<h3>Improvements<a class="headerlink" href="#improvements" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>Improvements<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <section id="apache-arrow-added-support-for-apache-arrow-c-21-0-0">
 <h4>[Apache Arrow] Added support for Apache Arrow C++ 21.0.0<a class="headerlink" href="#apache-arrow-added-support-for-apache-arrow-c-21-0-0" title="Link to this heading">#</a></h4>
 </section>
@@ -429,8 +501,8 @@ If you don’t use <code class="docutils literal notranslate"><span class="pre">
 </section>
 <section id="release-15-1-2-2025-07-07">
 <span id="release-15-1-2"></span><h2>Release 15.1.2 - 2025-07-07<a class="headerlink" href="#release-15-1-2-2025-07-07" title="Link to this heading">#</a></h2>
-<section id="id1">
-<h3>Improvements<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>Improvements<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <section id="windows-drop-support-for-groonga-package-that-is-built-with-visual-studio-2019">
 <h4>[Windows] Drop support for Groonga package that is built with Visual Studio 2019<a class="headerlink" href="#windows-drop-support-for-groonga-package-that-is-built-with-visual-studio-2019" title="Link to this heading">#</a></h4>
 <p>We don’t provide the following packages since this release.</p>
@@ -440,8 +512,8 @@ If you don’t use <code class="docutils literal notranslate"><span class="pre">
 </ul>
 </section>
 </section>
-<section id="id2">
-<h3>Fixes<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>Fixes<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <section id="near-phrase-search-fixed-a-bug-that-interval-between-phrases-calculation">
 <h4>[Near phrase search] Fixed a bug that interval between phrases calculation<a class="headerlink" href="#near-phrase-search-fixed-a-bug-that-interval-between-phrases-calculation" title="Link to this heading">#</a></h4>
 <p>This problem may occur when we use <code class="docutils literal notranslate"><span class="pre">*NP</span></code>, <code class="docutils literal notranslate"><span class="pre">*NPP</span></code>, or <code class="docutils literal notranslate"><span class="pre">*ONP</span></code> with <code class="docutils literal notranslate"><span class="pre">MAX_ELEMENT_INTERVAL</span></code> as below.</p>
@@ -472,8 +544,8 @@ If you don’t use <code class="docutils literal notranslate"><span class="pre">
 <span id="release-15-1-1"></span><h2>Release 15.1.1 - 2025-06-02<a class="headerlink" href="#release-15-1-1-2025-06-02" title="Link to this heading">#</a></h2>
 <p>This release updates TokenMecab to preserve user-defined entries with spaces as
 single tokens.</p>
-<section id="id3">
-<h3>Improvements<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h3>Improvements<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <section id="reference-tokenizers-token-mecab-fix-unintended-splitting-of-user-defined-entries-with-spaces">
 <h4><a class="reference internal" href="../reference/tokenizers/token_mecab.html"><span class="doc">TokenMecab</span></a>: Fix unintended splitting of user-defined entries with spaces<a class="headerlink" href="#reference-tokenizers-token-mecab-fix-unintended-splitting-of-user-defined-entries-with-spaces" title="Link to this heading">#</a></h4>
 <p>Previously, <a class="reference internal" href="../reference/tokenizers/token_mecab.html#token-mecab"><span class="std std-ref">TokenMecab</span></a> split user-defined entries containing spaces
@@ -500,8 +572,8 @@ handled as single tokens like “search engine” as follows.</p>
 </div>
 </section>
 </section>
-<section id="id4">
-<h3>Fixes<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h3>Fixes<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <section id="fixed-many-typos-in-documentation">
 <h4>Fixed many typos in documentation<a class="headerlink" href="#fixed-many-typos-in-documentation" title="Link to this heading">#</a></h4>
 <p><a class="reference external" href="https://github.com/groonga/groonga/pull/2332">GH-2332</a>,
@@ -514,8 +586,8 @@ handled as single tokens like “search engine” as follows.</p>
 <p>Patched by Vasilii Lakhin.</p>
 </section>
 </section>
-<section id="thanks">
-<h3>Thanks<a class="headerlink" href="#thanks" title="Link to this heading">#</a></h3>
+<section id="id7">
+<h3>Thanks<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Vasilii Lakhin</p></li>
 </ul>
@@ -525,8 +597,8 @@ handled as single tokens like “search engine” as follows.</p>
 <span id="release-15-0-9"></span><h2>Release 15.0.9 - 2025-05-08<a class="headerlink" href="#release-15-0-9-2025-05-08" title="Link to this heading">#</a></h2>
 <p>This release adds the tokenizer’s option to make token inspection simpler and
 improves negative-division semantics for unsigned integer.</p>
-<section id="id5">
-<h3>Improvements<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id8">
+<h3>Improvements<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <section id="reference-commands-tokenize-reference-commands-table-tokenize-added-tokenize-output-style-option">
 <h4><a class="reference internal" href="../reference/commands/tokenize.html"><span class="doc">tokenize</span></a>/<a class="reference internal" href="../reference/commands/table_tokenize.html"><span class="doc">table_tokenize</span></a>: Added <a class="reference internal" href="../reference/commands/tokenize.html#tokenize-output-style"><span class="std std-ref">output_style</span></a> option<a class="headerlink" href="#reference-commands-tokenize-reference-commands-table-tokenize-added-tokenize-output-style-option" title="Link to this heading">#</a></h4>
 <p>This <a class="reference internal" href="../reference/commands/tokenize.html#tokenize-output-style"><span class="std std-ref">output_style</span></a> option to the
@@ -578,8 +650,8 @@ this behavior.</p>
 </section>
 <section id="release-15-0-4-2025-03-29">
 <span id="release-15-0-4"></span><h2>Release 15.0.4 - 2025-03-29<a class="headerlink" href="#release-15-0-4-2025-03-29" title="Link to this heading">#</a></h2>
-<section id="id6">
-<h3>Improvements<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="id9">
+<h3>Improvements<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <section id="clarified-x-1-and-x-1-0-semantics">
 <h4>Clarified <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1.0</span></code> semantics<a class="headerlink" href="#clarified-x-1-and-x-1-0-semantics" title="Link to this heading">#</a></h4>
 <p>In many languages, <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1.0</span></code> return <code class="docutils literal notranslate"><span class="pre">-X</span></code>. But Groonga
@@ -592,8 +664,8 @@ depends on this behavior.</p>
 </section>
 <section id="release-15-0-3-2025-03-10">
 <span id="release-15-0-3"></span><h2>Release 15.0.3 - 2025-03-10<a class="headerlink" href="#release-15-0-3-2025-03-10" title="Link to this heading">#</a></h2>
-<section id="id7">
-<h3>Improvements<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="id10">
+<h3>Improvements<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <section id="offline-index-construction-added-support-for-parallel-construction-with-table-hash-key-lexicon">
 <h4><a class="reference internal" href="../reference/indexing.html#offline-index-construction"><span class="std std-ref">Offline index construction</span></a>: Added support for parallel construction with <a class="reference internal" href="../reference/tables.html#table-hash-key"><span class="std std-ref">TABLE_HASH_KEY</span></a> lexicon<a class="headerlink" href="#offline-index-construction-added-support-for-parallel-construction-with-table-hash-key-lexicon" title="Link to this heading">#</a></h4>
 <p>Parallel offline index construction iterates sorted terms
@@ -614,8 +686,8 @@ lexicon.</p>
 </section>
 <section id="release-15-0-2-2025-02-21">
 <span id="release-15-0-2"></span><h2>Release 15.0.2 - 2025-02-21<a class="headerlink" href="#release-15-0-2-2025-02-21" title="Link to this heading">#</a></h2>
-<section id="id8">
-<h3>Fixes<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<section id="id11">
+<h3>Fixes<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <section id="offline-index-construction-fixed-a-bug-that-options-may-be-ignored-in-parallel-construction">
 <h4><a class="reference internal" href="../reference/indexing.html#offline-index-construction"><span class="std std-ref">Offline index construction</span></a>: Fixed a bug that options may be ignored in parallel construction<a class="headerlink" href="#offline-index-construction-fixed-a-bug-that-options-may-be-ignored-in-parallel-construction" title="Link to this heading">#</a></h4>
 <p>Groonga may ignore options of <a class="reference internal" href="../reference/normalizers.html"><span class="doc">Normalizers</span></a>,
@@ -637,8 +709,8 @@ parameter. If options are ignored, the required parameter is missing.</p>
 </section>
 <section id="release-15-0-1-2025-02-20">
 <span id="release-15-0-1"></span><h2>Release 15.0.1 - 2025-02-20<a class="headerlink" href="#release-15-0-1-2025-02-20" title="Link to this heading">#</a></h2>
-<section id="id9">
-<h3>Improvements<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<section id="id12">
+<h3>Improvements<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <section id="install-ubuntu-dropped-support-for-ubuntu-20-04-focal-fossa">
 <h4>[<a class="reference internal" href="../install/ubuntu.html"><span class="doc">Ubuntu</span></a>] Dropped support for Ubuntu 20.04 (Focal Fossa)<a class="headerlink" href="#install-ubuntu-dropped-support-for-ubuntu-20-04-focal-fossa" title="Link to this heading">#</a></h4>
 <p>Ubuntu 20.04 will reach EOL in May 2025, so support for it has been dropped
@@ -652,8 +724,8 @@ starting with this release.</p>
 backward incompatible changes! So you can upgrade Groonga without
 migrating your existing databases. You can still use your existing
 databases as-is.</p>
-<section id="id10">
-<h3>Improvements<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<section id="id13">
+<h3>Improvements<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <section id="table-pat-key-added-support-for-builtin-type-float32-as-key-type">
 <h4><a class="reference internal" href="../reference/tables.html#table-pat-key"><span class="std std-ref">TABLE_PAT_KEY</span></a>: Added support for <a class="reference internal" href="../reference/types.html#builtin-type-float32"><span class="std std-ref">Float32</span></a> as key type<a class="headerlink" href="#table-pat-key-added-support-for-builtin-type-float32-as-key-type" title="Link to this heading">#</a></h4>
 <p><a class="reference external" href="https://github.com/groonga/groonga/issues/2211">GH-2211</a></p>
@@ -699,45 +771,60 @@ type like other numeric types such as <a class="reference internal" href="../ref
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-1-4-2025-07-29">Release 15.1.4 - 2025-07-29</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-1-5-2025-08-29">Release 15.1.5 - 2025-08-29</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improvements">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-commands-table-create-added-support-for-key-large-flag-for-table-pat-key">[<span class="xref std std-doc">/reference/commands/table_create</span>] Added support for <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> flag for <code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-normalizers-normalizer-nfkc-added-support-for-unify-hyphen-and-prolonged-sound-mark-and-remove-symbol-combination">[<span class="xref std std-doc">/reference/normalizers/normalizer_nfkc</span>] Added support for <code class="docutils literal notranslate"><span class="pre">unify_hyphen_and_prolonged_sound_mark</span></code> and <code class="docutils literal notranslate"><span class="pre">remove_symbol</span></code> combination</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-almalinux-added-support-for-almalinux-10">[<span class="xref std std-doc">/install/almalinux</span>] Added support for AlmaLinux 10</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixes">Fixes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cmake-fixed-how-to-build-install">[<span class="xref std std-doc">/install/cmake</span>] Fixed how to build/install</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-commands-table-create-fixed-a-bug-where-key-large-flag-was-lost-after-executing-truncate-command">[<span class="xref std std-doc">/reference/commands/table_create</span>] Fixed a bug where <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code> flag was lost after executing <code class="docutils literal notranslate"><span class="pre">truncate</span></code> command</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thanks">Thanks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-1-4-2025-07-29">Release 15.1.4 - 2025-07-29</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Fixes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ordered-near-phrase-product-search-fixed-a-bug-in-the-interval-calculation-between-phrases">[Ordered near phrase product search] Fixed a bug in the interval calculation between phrases</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-1-3-2025-07-18">Release 15.1.3 - 2025-07-18</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improvements">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-arrow-added-support-for-apache-arrow-c-21-0-0">[Apache Arrow] Added support for Apache Arrow C++ 21.0.0</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-1-2-2025-07-07">Release 15.1.2 - 2025-07-07</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-drop-support-for-groonga-package-that-is-built-with-visual-studio-2019">[Windows] Drop support for Groonga package that is built with Visual Studio 2019</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Fixes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Fixes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#near-phrase-search-fixed-a-bug-that-interval-between-phrases-calculation">[Near phrase search] Fixed a bug that interval between phrases calculation</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-1-1-2025-06-02">Release 15.1.1 - 2025-06-02</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-tokenizers-token-mecab-fix-unintended-splitting-of-user-defined-entries-with-spaces"><span class="xref std std-doc">/reference/tokenizers/token_mecab</span>: Fix unintended splitting of user-defined entries with spaces</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Fixes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Fixes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-many-typos-in-documentation">Fixed many typos in documentation</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thanks">Thanks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Thanks</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-9-2025-05-08">Release 15.0.9 - 2025-05-08</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-commands-tokenize-reference-commands-table-tokenize-added-tokenize-output-style-option"><span class="xref std std-doc">/reference/commands/tokenize</span>/<span class="xref std std-doc">/reference/commands/table_tokenize</span>: Added <span class="xref std std-ref">tokenize-output-style</span> option</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clarified-x-negative-value-semantics">Clarified <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">negative</span> <span class="pre">value</span></code> semantics</a></li>
 </ul>
@@ -745,35 +832,35 @@ type like other numeric types such as <a class="reference internal" href="../ref
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-4-2025-03-29">Release 15.0.4 - 2025-03-29</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clarified-x-1-and-x-1-0-semantics">Clarified <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">/</span> <span class="pre">-1.0</span></code> semantics</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-3-2025-03-10">Release 15.0.3 - 2025-03-10</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-index-construction-added-support-for-parallel-construction-with-table-hash-key-lexicon"><span class="xref std std-ref">offline-index-construction</span>: Added support for parallel construction with <span class="xref std std-ref">table-hash-key</span> lexicon</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-2-2025-02-21">Release 15.0.2 - 2025-02-21</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Fixes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Fixes</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-index-construction-fixed-a-bug-that-options-may-be-ignored-in-parallel-construction"><span class="xref std std-ref">offline-index-construction</span>: Fixed a bug that options may be ignored in parallel construction</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-1-2025-02-20">Release 15.0.1 - 2025-02-20</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-dropped-support-for-ubuntu-20-04-focal-fossa">[<span class="xref std std-doc">/install/ubuntu</span>] Dropped support for Ubuntu 20.04 (Focal Fossa)</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-15-0-0-2025-02-09">Release 15.0.0 - 2025-02-09</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Improvements</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#table-pat-key-added-support-for-builtin-type-float32-as-key-type"><span class="xref std std-ref">table-pat-key</span>: Added support for <span class="xref std std-ref">builtin-type-float32</span> as key type</a></li>
 </ul>
 </li>
