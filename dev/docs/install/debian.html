@@ -413,15 +413,10 @@
 <h1><span class="section-number">2.3. </span>Debian GNU/Linux<a class="headerlink" href="#debian-gnu-linux" title="Link to this heading">#</a></h1>
 <p>This section describes how to install Groonga related deb packages on
 Debian GNU/Linux. You can install them by <code class="docutils literal notranslate"><span class="pre">apt</span></code>.</p>
-<p>We distribute both 32-bit and 64-bit packages but we strongly
-recommend a 64-bit package for server. You should use a 32-bit package
-just only for tests or development. You will encounter an out of
-memory error with a 32-bit package even if you just process medium
-size data.</p>
-<section id="bookworm">
-<h2><span class="section-number">2.3.1. </span>bookworm<a class="headerlink" href="#bookworm" title="Link to this heading">#</a></h2>
+<section id="trixie">
+<span id="id1"></span><h2><span class="section-number">2.3.1. </span>trixie<a class="headerlink" href="#trixie" title="Link to this heading">#</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">Added in version 13.0.2.</span></p>
+<p><span class="versionmodified added">Added in version 13.0.8.</span></p>
 </div>
 <p>Install <code class="docutils literal notranslate"><span class="pre">groonga-apt-source</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>% sudo apt update
@@ -476,8 +471,15 @@ If you want to use that one, install groonga-normalizer-mysql package.</p>
 </pre></div>
 </div>
 </section>
+<section id="bookworm">
+<h2><span class="section-number">2.3.2. </span>bookworm<a class="headerlink" href="#bookworm" title="Link to this heading">#</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 13.0.2.</span></p>
+</div>
+<p>On bookworm, follow the same installation procedure as trixie. See/Please refer <a class="reference internal" href="#trixie"><span class="std std-ref">trixie</span></a>.</p>
+</section>
 <section id="build-from-source">
-<h2><span class="section-number">2.3.2. </span>Build from source<a class="headerlink" href="#build-from-source" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.3.3. </span>Build from source<a class="headerlink" href="#build-from-source" title="Link to this heading">#</a></h2>
 <p>Build from source is for developers.</p>
 <p>See <a class="reference internal" href="cmake.html"><span class="doc">Others: Build with CMake</span></a> .</p>
 </section>
@@ -530,8 +532,9 @@ If you want to use that one, install groonga-normalizer-mysql package.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bookworm">2.3.1. bookworm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-from-source">2.3.2. Build from source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trixie">2.3.1. trixie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bookworm">2.3.2. bookworm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-from-source">2.3.3. Build from source</a></li>
 </ul>
   </nav></div>
 
