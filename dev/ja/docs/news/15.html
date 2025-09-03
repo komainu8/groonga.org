@@ -400,6 +400,7 @@
 <section id="release-15-1-5-2025-08-29">
 <span id="release-15-1-5"></span><h2>15.1.5リリース - 2025-08-29<a class="headerlink" href="#release-15-1-5-2025-08-29" title="Link to this heading">#</a></h2>
 <p>今回のリリースでは、<code class="docutils literal notranslate"><span class="pre">TABLE_PAT_KEY</span></code>テーブルで<code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code>フラグをサポートしました！</p>
+<p>Debian 13 &quot;Trixie&quot; が2025-08-09にリリースされました。GroongaはすでにDebian 13で使えます！ ぜひ試してみてください！</p>
 <section id="improvements">
 <h3>改良<a class="headerlink" href="#improvements" title="Link to this heading">#</a></h3>
 <section id="reference-commands-table-create-added-support-for-key-large-flag-for-table-pat-key">
@@ -452,9 +453,14 @@
 </pre></div>
 </div>
 </section>
-<section id="reference-commands-table-create-fixed-a-bug-where-key-large-flag-was-lost-after-executing-truncate-command">
-<h4>[<a class="reference internal" href="../reference/commands/table_create.html"><span class="doc">table_create</span></a>] <code class="docutils literal notranslate"><span class="pre">truncate</span></code> コマンド実行後に <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code>フラグが失われる不具合を修正<a class="headerlink" href="#reference-commands-table-create-fixed-a-bug-where-key-large-flag-was-lost-after-executing-truncate-command" title="Link to this heading">#</a></h4>
+<section id="reference-commands-truncate-fixed-a-bug-where-key-large-flag-was-lost-after-executing-truncate-command">
+<h4>[<a class="reference internal" href="../reference/commands/truncate.html"><span class="doc">truncate</span></a>] <code class="docutils literal notranslate"><span class="pre">truncate</span></code> コマンド実行後に <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code>フラグが失われる不具合を修正<a class="headerlink" href="#reference-commands-truncate-fixed-a-bug-where-key-large-flag-was-lost-after-executing-truncate-command" title="Link to this heading">#</a></h4>
 <p>この問題により、<code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code>フラグが設定された<code class="docutils literal notranslate"><span class="pre">TABLE_HASH_KEY</span></code>テーブルに対して<code class="docutils literal notranslate"><span class="pre">truncate</span></code>コマンドを実行すると、<code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code>フラグがトランケート時に削除されてしまうため、テーブルは合計で4 GiBを超えるキーを保持できなくなっていました。</p>
+</section>
+<section id="reference-executables-grndb-fixed-a-bug-that-the-database-checked-by-grndb-check-command-was-not-enough">
+<h4>[<a class="reference internal" href="../reference/executables/grndb.html"><span class="doc">grndb</span></a>] <code class="docutils literal notranslate"><span class="pre">grndb</span> <span class="pre">check</span></code> コマンドによるデータベースのチェックが不十分だった問題を修正<a class="headerlink" href="#reference-executables-grndb-fixed-a-bug-that-the-database-checked-by-grndb-check-command-was-not-enough" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">grndb</span> <span class="pre">check</span></code> コマンドが一部のデータベースファイルをチェックしていませんでした。</p>
+<p>ただ、この修正が入る前でも <code class="docutils literal notranslate"><span class="pre">grndb</span> <span class="pre">check</span></code> によるテーブルとカラムのチェックは正しい結果を返します。 この修正によって、データベースのチェックも正しい結果を返せるようになります。</p>
 </section>
 </section>
 <section id="thanks">
@@ -727,7 +733,8 @@
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixes">修正</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cmake-fixed-how-to-build-install">[<span class="xref std std-doc">/install/cmake</span>] ビルド・インストール方法を修正</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-commands-table-create-fixed-a-bug-where-key-large-flag-was-lost-after-executing-truncate-command">[<span class="xref std std-doc">/reference/commands/table_create</span>] <code class="docutils literal notranslate"><span class="pre">truncate</span></code> コマンド実行後に <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code>フラグが失われる不具合を修正</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-commands-truncate-fixed-a-bug-where-key-large-flag-was-lost-after-executing-truncate-command">[<span class="xref std std-doc">/reference/commands/truncate</span>] <code class="docutils literal notranslate"><span class="pre">truncate</span></code> コマンド実行後に <code class="docutils literal notranslate"><span class="pre">KEY_LARGE</span></code>フラグが失われる不具合を修正</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-executables-grndb-fixed-a-bug-that-the-database-checked-by-grndb-check-command-was-not-enough">[<span class="xref std std-doc">/reference/executables/grndb</span>] <code class="docutils literal notranslate"><span class="pre">grndb</span> <span class="pre">check</span></code> コマンドによるデータベースのチェックが不十分だった問題を修正</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thanks">感謝</a></li>
