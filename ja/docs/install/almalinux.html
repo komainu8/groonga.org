@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.5. AlmaLinux &#8212; Groonga v15.1.5 documentation</title>
+    <title>2.5. AlmaLinux &#8212; Groonga v15.1.7 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=ae9e571d"></script>
+    <script src="../_static/documentation_options.js?v=6701f795"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="2.4. Ubuntu" href="ubuntu.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.1.5" />
+  <meta name="docsearch:version" content="15.1.7" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.5 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.5 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.7 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.7 documentation - Home"/>
   
   
 </a></div>
@@ -437,6 +437,11 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--enablerepo<span class="o">=</span>epel<span class="w"> </span>groonga-tokenizer-mecab
 </pre></div>
 </div>
+<p><a class="reference internal" href="../reference/token_filters/token_filter_stem.html"><span class="doc">TokenFilterStem</span></a> を使いたいときは、groonga-token-filter-stemパッケージをインストールしてください。</p>
+<p>groonga-token-filter-stemパッケージのインストール:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>groonga-token-filter-stem
+</pre></div>
+</div>
 <p>TODO:</p>
 <ul class="simple">
 <li><p>AlmaLinux 10用の groonga-normalizer-mysql パッケージがリリースされた後、 groonga-normalizer-mysql のインストール方法をここに書きます。</p></li>
@@ -455,6 +460,11 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--enablerepo<span class="o">=</span>epel<span class="w"> </span>groonga-tokenizer-mecab
 </pre></div>
 </div>
+<p><a class="reference internal" href="../reference/token_filters/token_filter_stem.html"><span class="doc">TokenFilterStem</span></a> を使いたいときは、groonga-token-filter-stemパッケージをインストールしてください。</p>
+<p>groonga-token-filter-stemパッケージのインストール:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>groonga-token-filter-stem
+</pre></div>
+</div>
 <p>MySQL互換のノーマライザーをGroongaのプラグインとして提供するパッケージがあります。MySQL互換のノーマライザーを使うには <code class="docutils literal notranslate"><span class="pre">groonga-normalizer-mysql</span></code> パッケージをインストールしてください。</p>
 <p>groonga-normalizer-mysqlパッケージのインストール:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--enablerepo<span class="o">=</span>epel<span class="w"> </span>groonga-normalizer-mysql
@@ -471,6 +481,11 @@
 <p><a class="reference external" href="https://taku910.github.io/mecab/">MeCab</a> をトークナイザーとして使いたいときは、groonga-tokenizer-mecabパッケージをインストールしてください。</p>
 <p>groonga-tokenizer-mecabパッケージのインストール:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--enablerepo<span class="o">=</span>epel<span class="w"> </span>groonga-tokenizer-mecab
+</pre></div>
+</div>
+<p><a class="reference internal" href="../reference/token_filters/token_filter_stem.html"><span class="doc">TokenFilterStem</span></a> を使いたいときは、groonga-token-filter-stemパッケージをインストールしてください。</p>
+<p>groonga-token-filter-stemパッケージのインストール:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>groonga-token-filter-stem
 </pre></div>
 </div>
 <p>MySQL互換のノーマライザーをGroongaのプラグインとして提供するパッケージがあります。MySQL互換のノーマライザーを使うには <code class="docutils literal notranslate"><span class="pre">groonga-normalizer-mysql</span></code> パッケージをインストールしてください。</p>
