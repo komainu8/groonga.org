@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.7.2.2. NormalizerNFKC &#8212; Groonga v15.1.6 documentation</title>
+    <title>7.7.2.2. NormalizerNFKC &#8212; Groonga v15.1.8 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=03ce27d1"></script>
+    <script src="../../_static/documentation_options.js?v=12834eaa"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
@@ -64,7 +64,7 @@
     <link rel="prev" title="7.7.2.1. NormalizerAuto" href="normalizer_auto.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.1.6" />
+  <meta name="docsearch:version" content="15.1.8" />
   </head>
   
   
@@ -130,8 +130,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.6 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.6 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.8 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.8 documentation - Home"/>
   
   
 </a></div>
@@ -733,7 +733,12 @@
 <span class="n">NormalizerNFKC</span><span class="p">(</span><span class="s2">&quot;unify_kana_hyphen&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span>
 
 <span class="n">NormalizerNFKC</span><span class="p">(</span><span class="s2">&quot;unify_latin_alphabet_with&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span>
+
+<span class="n">NormalizerNFKC</span><span class="p">(</span><span class="s2">&quot;unify_iteration_mark&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.1.7: </span><a class="reference internal" href="#normalizer-nfkc-unify-iteration-mark"><span class="std std-ref">unify_iteration_mark</span></a>追加。</p>
 </div>
 <p>複数のオプション指定:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NormalizerNFKC</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="s2">&quot;16.0.0&quot;</span><span class="p">,</span> <span class="s2">&quot;unify_to_romaji&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;unify_kana_case&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;unify_hyphen_and_prolonged_sound_mark&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span>
@@ -1629,6 +1634,32 @@
 <span class="c1"># ]</span>
 </pre></div>
 </div>
+<p>以下は <a class="reference internal" href="#normalizer-nfkc-unify-iteration-mark"><span class="std std-ref">unify_iteration_mark</span></a> オプションの使用例です。このオプションは、踊り字を直前の文字に置き換えて正規化します。</p>
+<!-- groonga-command -->
+<p>Execution example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>normalize<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;NormalizerNFKC(&quot;unify_iteration_mark&quot;, true)&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;時々&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>WITH_TYPES
+<span class="c1"># [</span>
+<span class="c1">#   [</span>
+<span class="c1">#     0,</span>
+<span class="c1">#     1758882899.892991,</span>
+<span class="c1">#     0.0004293918609619141</span>
+<span class="c1">#   ],</span>
+<span class="c1">#   {</span>
+<span class="c1">#     &quot;normalized&quot;: &quot;時時&quot;,</span>
+<span class="c1">#     &quot;types&quot;: [</span>
+<span class="c1">#       &quot;kanji&quot;,</span>
+<span class="c1">#       &quot;kanji&quot;,</span>
+<span class="c1">#       &quot;null&quot;</span>
+<span class="c1">#     ],</span>
+<span class="c1">#     &quot;checks&quot;: [</span>
+<span class="c1">#     ]</span>
+<span class="c1">#   }</span>
+<span class="c1"># ]</span>
+</pre></div>
+</div>
 </section>
 <section id="advanced-usage">
 <h3><span class="section-number">7.7.2.2.3.2. </span>高度な使い方<a class="headerlink" href="#advanced-usage" title="Link to this heading">#</a></h3>
@@ -2083,6 +2114,63 @@ normalize<span class="w"> </span><span class="se">\</span>
 <p>このオプションは、以下のように発音記号付きの文字と発音記号なしの文字を同じ文字とみなすことができます。</p>
 <p>ただし、この機能は LATIN (SMALL|CAPITAL) LETTER X WITH XXX にのみフォーカスしています。 LATIN (SMALL|CAPITAL) LETTER X + COMBINING XXX はサポートしていません。</p>
 </section>
+<section id="unify-iteration-mark">
+<span id="normalizer-nfkc-unify-iteration-mark"></span><h4><span class="section-number">7.7.2.2.4.1.24. </span><code class="docutils literal notranslate"><span class="pre">unify_iteration_mark</span></code><a class="headerlink" href="#unify-iteration-mark" title="Link to this heading">#</a></h4>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.1.7.</span></p>
+</div>
+<p>このオプションは、踊り字を直前の文字に置き換えて正規化します。</p>
+<p>正規化対象の踊り字は以下の通りです。</p>
+<ul class="simple">
+<li><p>Hiragana Iteration Mark ゝ (U+309D)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">こゝ</span> <span class="o">-&gt;</span> <span class="n">ここ</span>
+<span class="n">づゝ</span> <span class="o">-&gt;</span> <span class="n">づつ</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Hiragana Voiced Iteration Mark ゞ (U+309E)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ぶゞ漬け</span> <span class="o">-&gt;</span> <span class="n">ぶぶ漬け</span>
+<span class="n">ふゞき</span> <span class="o">-&gt;</span> <span class="n">ふぶき</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Katakana Iteration Mark ヽ (U+30FD)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">バナヽ</span> <span class="o">-&gt;</span> <span class="n">バナナ</span>
+<span class="n">バヽナ</span> <span class="o">-&gt;</span> <span class="n">バハナ</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Katakana Voiced Iteration Mark ヾ (U+30FE)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">バヾ</span> <span class="o">-&gt;</span> <span class="n">ババ</span>
+<span class="n">フヾキ</span> <span class="o">-&gt;</span> <span class="n">フブキ</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Ideographic Iteration Mark 々 (U+3005) - 制限：直前の単一文字の繰り返しのみサポート</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">時々</span> <span class="o">-&gt;</span> <span class="n">時時</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Vertical Ideographic Iteration Mark 〻 (U+303B) - 制限：直前の単一文字の繰り返しのみサポート</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">各〻</span> <span class="o">-&gt;</span> <span class="n">各各</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><strong>々</strong> と <strong>〻</strong> については、<strong>直前の1文字のみ</strong>を繰り返すケースのみに限ります。 次のような「直前1文字の繰り返し」以外のパターンは <strong>非対応</strong> です。</p>
+<p>例</p>
+<ul class="simple">
+<li><p>&quot;部分々々&quot; -&gt; &quot;部分部分&quot;</p></li>
+<li><p>&quot;古々々米&quot; -&gt; &quot;古古古米&quot;</p></li>
+</ul>
+</div>
+</section>
 </section>
 </section>
 <section id="see-also">
@@ -2176,6 +2264,7 @@ normalize<span class="w"> </span><span class="se">\</span>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unify-kana-prolonged-sound-mark">7.7.2.2.4.1.21. <code class="docutils literal notranslate"><span class="pre">unify_kana_prolonged_sound_mark</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unify-kana-hyphen">7.7.2.2.4.1.22. <code class="docutils literal notranslate"><span class="pre">unify_kana_hyphen</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unify-latin-alphabet-with">7.7.2.2.4.1.23. <code class="docutils literal notranslate"><span class="pre">unify_latin_alphabet_with</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unify-iteration-mark">7.7.2.2.4.1.24. <code class="docutils literal notranslate"><span class="pre">unify_iteration_mark</span></code></a></li>
 </ul>
 </li>
 </ul>

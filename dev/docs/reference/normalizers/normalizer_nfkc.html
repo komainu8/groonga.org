@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.7.2.2. NormalizerNFKC &#8212; Groonga v15.1.6 documentation</title>
+    <title>7.7.2.2. NormalizerNFKC &#8212; Groonga v15.1.8 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=3239b385"></script>
+    <script src="../../_static/documentation_options.js?v=2374dafe"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -63,7 +63,7 @@
     <link rel="prev" title="7.7.2.1. NormalizerAuto" href="normalizer_auto.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.1.6" />
+  <meta name="docsearch:version" content="15.1.8" />
   </head>
   
   
@@ -129,8 +129,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.6 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.6 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.8 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.8 documentation - Home"/>
   
   
 </a></div>
@@ -732,7 +732,12 @@
 <span class="n">NormalizerNFKC</span><span class="p">(</span><span class="s2">&quot;unify_kana_hyphen&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span>
 
 <span class="n">NormalizerNFKC</span><span class="p">(</span><span class="s2">&quot;unify_latin_alphabet_with&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span>
+
+<span class="n">NormalizerNFKC</span><span class="p">(</span><span class="s2">&quot;unify_iteration_mark&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.1.7: </span><a class="reference internal" href="#normalizer-nfkc-unify-iteration-mark"><span class="std std-ref">unify_iteration_mark</span></a> is added.</p>
 </div>
 <p>Specify multiple options:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NormalizerNFKC</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="s2">&quot;16.0.0&quot;</span><span class="p">,</span> <span class="s2">&quot;unify_to_romaji&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;unify_kana_case&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;unify_hyphen_and_prolonged_sound_mark&quot;</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span>
@@ -1651,6 +1656,33 @@ This option enables that alphabets with diacritical mark and alphabets without d
 <span class="c1"># ]</span>
 </pre></div>
 </div>
+<p>Here is an example of <a class="reference internal" href="#normalizer-nfkc-unify-iteration-mark"><span class="std std-ref">unify_iteration_mark</span></a> option.
+This option enables normalization of iteration marks by replacing them with the actual repeated character.</p>
+<!-- groonga-command -->
+<p>Execution example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>normalize<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;NormalizerNFKC(&quot;unify_iteration_mark&quot;, true)&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;時々&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>WITH_TYPES
+<span class="c1"># [</span>
+<span class="c1">#   [</span>
+<span class="c1">#     0,</span>
+<span class="c1">#     1758882899.892991,</span>
+<span class="c1">#     0.0004293918609619141</span>
+<span class="c1">#   ],</span>
+<span class="c1">#   {</span>
+<span class="c1">#     &quot;normalized&quot;: &quot;時時&quot;,</span>
+<span class="c1">#     &quot;types&quot;: [</span>
+<span class="c1">#       &quot;kanji&quot;,</span>
+<span class="c1">#       &quot;kanji&quot;,</span>
+<span class="c1">#       &quot;null&quot;</span>
+<span class="c1">#     ],</span>
+<span class="c1">#     &quot;checks&quot;: [</span>
+<span class="c1">#     ]</span>
+<span class="c1">#   }</span>
+<span class="c1"># ]</span>
+</pre></div>
+</div>
 </section>
 <section id="advanced-usage">
 <h3><span class="section-number">7.7.2.2.3.2. </span>Advanced usage<a class="headerlink" href="#advanced-usage" title="Link to this heading">#</a></h3>
@@ -2110,6 +2142,64 @@ And a previous kana letter is “ン” , “-” is normalized to “ン”.</p
 <p>This option enables that alphabets with diacritical mark and alphabets without diacritical mark regarded as the same character as below.</p>
 <p>However, this feature focus on only LATIN (SMALL|CAPITAL) LETTER X WITH XXX. It doesn’t support LATIN (SMALL|CAPITAL) LETTER X + COMBINING XXX characters.</p>
 </section>
+<section id="unify-iteration-mark">
+<span id="normalizer-nfkc-unify-iteration-mark"></span><h4><span class="section-number">7.7.2.2.4.1.24. </span><code class="docutils literal notranslate"><span class="pre">unify_iteration_mark</span></code><a class="headerlink" href="#unify-iteration-mark" title="Link to this heading">#</a></h4>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.1.7.</span></p>
+</div>
+<p>This option enables normalization of iteration marks by replacing them with the actual repeated character.</p>
+<p>The following iteration marks are normalize.</p>
+<ul class="simple">
+<li><p>Hiragana Iteration Mark ゝ (U+309D)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">こゝ</span> <span class="o">-&gt;</span> <span class="n">ここ</span>
+<span class="n">づゝ</span> <span class="o">-&gt;</span> <span class="n">づつ</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Hiragana Voiced Iteration Mark ゞ (U+309E)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ぶゞ漬け</span> <span class="o">-&gt;</span> <span class="n">ぶぶ漬け</span>
+<span class="n">ふゞき</span> <span class="o">-&gt;</span> <span class="n">ふぶき</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Katakana Iteration Mark ヽ (U+30FD)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">バナヽ</span> <span class="o">-&gt;</span> <span class="n">バナナ</span>
+<span class="n">バヽナ</span> <span class="o">-&gt;</span> <span class="n">バハナ</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Katakana Voiced Iteration Mark ヾ (U+30FE)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">バヾ</span> <span class="o">-&gt;</span> <span class="n">ババ</span>
+<span class="n">フヾキ</span> <span class="o">-&gt;</span> <span class="n">フブキ</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Ideographic Iteration Mark 々 (U+3005) - limitation: only repeats the immediately preceding single character</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">時々</span> <span class="o">-&gt;</span> <span class="n">時時</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Vertical Ideographic Iteration Mark 〻 (U+303B) - limitation: only repeats the immediately preceding single character</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">各〻</span> <span class="o">-&gt;</span> <span class="n">各各</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For Ideographic Iteration Mark (々) and Vertical Ideographic Iteration Mark (〻), this feature only repeats the immediately preceding single character.
+Patterns beyond <strong>repeat the previous one character</strong> are <strong>not</strong> supported like the following cases.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>“部分々々” -&gt; “部分部分”</p></li>
+<li><p>“古々々米” -&gt; “古古古米”</p></li>
+</ul>
+</div>
+</section>
 </section>
 </section>
 <section id="see-also">
@@ -2203,6 +2293,7 @@ And a previous kana letter is “ン” , “-” is normalized to “ン”.</p
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unify-kana-prolonged-sound-mark">7.7.2.2.4.1.21. <code class="docutils literal notranslate"><span class="pre">unify_kana_prolonged_sound_mark</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unify-kana-hyphen">7.7.2.2.4.1.22. <code class="docutils literal notranslate"><span class="pre">unify_kana_hyphen</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unify-latin-alphabet-with">7.7.2.2.4.1.23. <code class="docutils literal notranslate"><span class="pre">unify_latin_alphabet_with</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unify-iteration-mark">7.7.2.2.4.1.24. <code class="docutils literal notranslate"><span class="pre">unify_iteration_mark</span></code></a></li>
 </ul>
 </li>
 </ul>
