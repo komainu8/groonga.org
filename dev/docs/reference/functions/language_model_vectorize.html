@@ -699,6 +699,9 @@ with file name. If
 <code class="docutils literal notranslate"><span class="pre">${PREFIX}/share/groonga/language_models/mistral-7b-v0.1.Q4_K_M.gguf</span></code>
 exists, you can refer it by <code class="docutils literal notranslate"><span class="pre">mistral-7b-v0.1.Q4_K_M</span></code>. It’s computed by
 removing directory and <code class="docutils literal notranslate"><span class="pre">.gguf</span></code> extension.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.1.8: </span>You can also specify a Hugging Face URI for <code class="docutils literal notranslate"><span class="pre">model_name</span></code>.</p>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">text</span></code> is the input text.</p>
 </section>
 <section id="requirements">
@@ -820,6 +823,16 @@ with file name. If
 <code class="docutils literal notranslate"><span class="pre">${PREFIX}/share/groonga/language_models/mistral-7b-v0.1.Q4_K_M.gguf</span></code>
 exists, you can refer it by <code class="docutils literal notranslate"><span class="pre">mistral-7b-v0.1.Q4_K_M</span></code>. It’s computed by
 removing directory and <code class="docutils literal notranslate"><span class="pre">.gguf</span></code> extension.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.1.8: </span>You can specify a Hugging Face URI for <code class="docutils literal notranslate"><span class="pre">model_name</span></code>.</p>
+<p>When you specify a Hugging Face URI, the model will be automatically downloaded.</p>
+<p>The model is downloaded to the directory where the Groonga database files are located.</p>
+<p>Example of URI: <code class="docutils literal notranslate"><span class="pre">hf:///groonga/bge-m3-Q4_K_M-GGUF</span></code> for <code class="docutils literal notranslate"><span class="pre">https://huggingface.co/groonga/bge-m3-Q4_K_M-GGUF</span></code>.</p>
+<p>Example of function execution:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">language_model_vectorize</span><span class="p">(</span><span class="s2">&quot;hf:///groonga/bge-m3-Q4_K_M-GGUF&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="text">
 <h3><span class="section-number">7.15.15.5.2. </span><code class="docutils literal notranslate"><span class="pre">text</span></code><a class="headerlink" href="#text" title="Link to this heading">#</a></h3>
