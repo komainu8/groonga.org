@@ -165,10 +165,16 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:aedd1ee45cf26ae3b83a00cab42cf8826" id="r_aedd1ee45cf26ae3b83a00cab42cf8826"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a></td></tr>
+<tr class="memdesc:aedd1ee45cf26ae3b83a00cab42cf8826"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an opaque data to pass build data to a tokenizer from Groonga.  <br /></td></tr>
+<tr class="separator:aedd1ee45cf26ae3b83a00cab42cf8826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd8b46410eed87e9a378c5648045b67b" id="r_abd8b46410eed87e9a378c5648045b67b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__grn__tokenizer__token.html">_grn_tokenizer_token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#abd8b46410eed87e9a378c5648045b67b">grn_tokenizer_token</a></td></tr>
 <tr class="separator:abd8b46410eed87e9a378c5648045b67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72121d59f42448b98a9c10a40486ab39" id="r_a72121d59f42448b98a9c10a40486ab39"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="token_8h.html#a73d560668e00395fdcc0686dd401eed2">grn_token_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a72121d59f42448b98a9c10a40486ab39">grn_tokenizer_status</a></td></tr>
 <tr class="separator:a72121d59f42448b98a9c10a40486ab39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c19f80b82276f583e78111d9d667ddd" id="r_a6c19f80b82276f583e78111d9d667ddd"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a6c19f80b82276f583e78111d9d667ddd">grn_tokenizer_build_func</a>(<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data)</td></tr>
+<tr class="memdesc:a6c19f80b82276f583e78111d9d667ddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function to build an index column by this tokenizer.  <br /></td></tr>
+<tr class="separator:a6c19f80b82276f583e78111d9d667ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15390240196eaea1bd46302d32262124" id="r_a15390240196eaea1bd46302d32262124"><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a15390240196eaea1bd46302d32262124">grn_tokenizer_init_func</a>(<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer__query__deprecated_8h.html#ab2e18bc9f494681a7285878d3a6c1228">grn_tokenizer_query</a> *query)</td></tr>
 <tr class="separator:a15390240196eaea1bd46302d32262124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45de9d866732e066f5e95871095e8841" id="r_a45de9d866732e066f5e95871095e8841"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a45de9d866732e066f5e95871095e8841">grn_tokenizer_next_func</a>(<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer__query__deprecated_8h.html#ab2e18bc9f494681a7285878d3a6c1228">grn_tokenizer_query</a> *query, <a class="el" href="token_8h.html#aafd38082b55a93b82db19f0ce532cc50">grn_token</a> *token, void *user_data)</td></tr>
@@ -224,6 +230,33 @@ Functions</h2></td></tr>
 <tr class="separator:a9f0ff73e4769ad6461ba6e6e29ff2c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5142394f470aa6657a04f16ce76a88c1" id="r_a5142394f470aa6657a04f16ce76a88c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a5142394f470aa6657a04f16ce76a88c1">grn_tokenizer_query_get_options</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer__query__deprecated_8h.html#ab2e18bc9f494681a7285878d3a6c1228">grn_tokenizer_query</a> *query)</td></tr>
 <tr class="separator:a5142394f470aa6657a04f16ce76a88c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ada6df5f4883893a02ef052f242f2ea" id="r_a6ada6df5f4883893a02ef052f242f2ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a6ada6df5f4883893a02ef052f242f2ea">grn_tokenizer_build_data_get_source_table</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data)</td></tr>
+<tr class="memdesc:a6ada6df5f4883893a02ef052f242f2ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the build target table.  <br /></td></tr>
+<tr class="separator:a6ada6df5f4883893a02ef052f242f2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2f7413723c2e2a5ff32beba585dc915" id="r_aa2f7413723c2e2a5ff32beba585dc915"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#aa2f7413723c2e2a5ff32beba585dc915">grn_tokenizer_build_data_get_source_columns</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data)</td></tr>
+<tr class="memdesc:aa2f7413723c2e2a5ff32beba585dc915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the build target columns as <a class="el" href="groonga_2groonga_8h.html#a48d4ce8bc92bb20189a9ca2ddb0cd330">GRN_PVECTOR</a>.  <br /></td></tr>
+<tr class="separator:aa2f7413723c2e2a5ff32beba585dc915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04aebf554eda44e8d6a15e727788355" id="r_ab04aebf554eda44e8d6a15e727788355"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#ab04aebf554eda44e8d6a15e727788355">grn_tokenizer_build_data_get_lexicon</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data)</td></tr>
+<tr class="memdesc:ab04aebf554eda44e8d6a15e727788355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the lexicon for this tokenizer.  <br /></td></tr>
+<tr class="separator:ab04aebf554eda44e8d6a15e727788355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab930cd77367e0d0641e6634ef48c3d7" id="r_aab930cd77367e0d0641e6634ef48c3d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#aab930cd77367e0d0641e6634ef48c3d7">grn_tokenizer_build_data_get_index_column</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data)</td></tr>
+<tr class="memdesc:aab930cd77367e0d0641e6634ef48c3d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the index column for this tokenizer.  <br /></td></tr>
+<tr class="separator:aab930cd77367e0d0641e6634ef48c3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae6a993b08f097f7211fd2982ed6806" id="r_a2ae6a993b08f097f7211fd2982ed6806"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a2ae6a993b08f097f7211fd2982ed6806">grn_tokenizer_build_data_start_record</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data, <a class="el" href="groonga_2groonga_8h.html#a4a1a044ec7d98935eed6f3067f520240">grn_id</a> rid)</td></tr>
+<tr class="memdesc:a2ae6a993b08f097f7211fd2982ed6806"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tokenizer must call this when it starts processing a new record.  <br /></td></tr>
+<tr class="separator:a2ae6a993b08f097f7211fd2982ed6806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d32849b61c2b34358e2fc107c6043e0" id="r_a2d32849b61c2b34358e2fc107c6043e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a2d32849b61c2b34358e2fc107c6043e0">grn_tokenizer_build_data_start_section</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data, uint32_t sid)</td></tr>
+<tr class="memdesc:a2d32849b61c2b34358e2fc107c6043e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tokenizer must call this when it starts processing a new section.  <br /></td></tr>
+<tr class="separator:a2d32849b61c2b34358e2fc107c6043e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a57d8b5567902d72d38b304198072d" id="r_aa4a57d8b5567902d72d38b304198072d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#aa4a57d8b5567902d72d38b304198072d">grn_tokenizer_build_data_append_tokens</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *tokens)</td></tr>
+<tr class="memdesc:aa4a57d8b5567902d72d38b304198072d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tokenizer must call this when it appends tokens to the current record and section.  <br /></td></tr>
+<tr class="separator:aa4a57d8b5567902d72d38b304198072d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5db7820af72114faf50dcde4e9571979" id="r_a5db7820af72114faf50dcde4e9571979"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a5db7820af72114faf50dcde4e9571979">grn_tokenizer_build_data_finish_section</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data)</td></tr>
+<tr class="memdesc:a5db7820af72114faf50dcde4e9571979"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tokenizer must call this when it finishes processing a section.  <br /></td></tr>
+<tr class="separator:a5db7820af72114faf50dcde4e9571979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdfeb48b800262359e0b78b074be374a" id="r_abdfeb48b800262359e0b78b074be374a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#abdfeb48b800262359e0b78b074be374a">grn_tokenizer_build_data_finish_record</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data)</td></tr>
+<tr class="memdesc:abdfeb48b800262359e0b78b074be374a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tokenizer must call this when it finishes processing a record.  <br /></td></tr>
+<tr class="separator:abdfeb48b800262359e0b78b074be374a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c11bbeb9ff828bc471ad134a12ff447" id="r_a6c11bbeb9ff828bc471ad134a12ff447"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a6c11bbeb9ff828bc471ad134a12ff447">grn_tokenizer_token_init</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#abd8b46410eed87e9a378c5648045b67b">grn_tokenizer_token</a> *token)</td></tr>
 <tr class="separator:a6c11bbeb9ff828bc471ad134a12ff447"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08efd3dbf1fd8ab0d0f84a2028b2fb51" id="r_a08efd3dbf1fd8ab0d0f84a2028b2fb51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a08efd3dbf1fd8ab0d0f84a2028b2fb51">grn_tokenizer_token_fin</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#abd8b46410eed87e9a378c5648045b67b">grn_tokenizer_token</a> *token)</td></tr>
@@ -238,6 +271,9 @@ Functions</h2></td></tr>
 <tr class="separator:a71030d47d403dc24936a37cfcc3e1ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1926b09e167b9931b15fbb197060f756" id="r_a1926b09e167b9931b15fbb197060f756"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a1926b09e167b9931b15fbb197060f756">grn_tokenizer_create</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, const char *name, int name_length)</td></tr>
 <tr class="separator:a1926b09e167b9931b15fbb197060f756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5bebdafe2ca1846400e54eb3331fc31" id="r_ab5bebdafe2ca1846400e54eb3331fc31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#ab5bebdafe2ca1846400e54eb3331fc31">grn_tokenizer_set_build_func</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *tokenizer, <a class="el" href="tokenizer_8h.html#a6c19f80b82276f583e78111d9d667ddd">grn_tokenizer_build_func</a> *build)</td></tr>
+<tr class="memdesc:ab5bebdafe2ca1846400e54eb3331fc31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set build function for this tokenizer.  <br /></td></tr>
+<tr class="separator:ab5bebdafe2ca1846400e54eb3331fc31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83816ddc929d347a17ebf4c880f18c52" id="r_a83816ddc929d347a17ebf4c880f18c52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a83816ddc929d347a17ebf4c880f18c52">grn_tokenizer_set_init_func</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *tokenizer, <a class="el" href="tokenizer_8h.html#a15390240196eaea1bd46302d32262124">grn_tokenizer_init_func</a> *init)</td></tr>
 <tr class="separator:a83816ddc929d347a17ebf4c880f18c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9a1060c7d4d1fb2fd67c83a63f4b82d" id="r_ac9a1060c7d4d1fb2fd67c83a63f4b82d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#ac9a1060c7d4d1fb2fd67c83a63f4b82d">grn_tokenizer_set_next_func</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *tokenizer, <a class="el" href="tokenizer_8h.html#a45de9d866732e066f5e95871095e8841">grn_tokenizer_next_func</a> *next)</td></tr>
@@ -471,6 +507,50 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="aedd1ee45cf26ae3b83a00cab42cf8826" name="aedd1ee45cf26ae3b83a00cab42cf8826"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedd1ee45cf26ae3b83a00cab42cf8826">&#9670;&#160;</a></span>grn_tokenizer_build_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an opaque data to pass build data to a tokenizer from Groonga. </p>
+<p>This is used for <a class="el" href="tokenizer_8h.html#a6c19f80b82276f583e78111d9d667ddd">grn_tokenizer_build_func</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="tokenizer_8h.html#ab5bebdafe2ca1846400e54eb3331fc31" title="Set build function for this tokenizer.">grn_tokenizer_set_build_func</a></dd></dl>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
+<a id="a6c19f80b82276f583e78111d9d667ddd" name="a6c19f80b82276f583e78111d9d667ddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c19f80b82276f583e78111d9d667ddd">&#9670;&#160;</a></span>grn_tokenizer_build_func</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> grn_tokenizer_build_func(<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function to build an index column by this tokenizer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Data to be built.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0a478ce86495f9d0d997110a422bc10447">GRN_SUCCESS</a> on success, the appropriate <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> on error. <code>ctx-&gt;rc</code> must be updated too by <a class="el" href="plugin_8h.html#a67b57c6c5fb573e9f2e25c19419d5ca9">GRN_PLUGIN_ERROR</a> on error.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="tokenizer_8h.html#ab5bebdafe2ca1846400e54eb3331fc31" title="Set build function for this tokenizer.">grn_tokenizer_set_build_func</a>.</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
 <a id="a54d8e4146dc548d0f8d87e4d98c57fb8" name="a54d8e4146dc548d0f8d87e4d98c57fb8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a54d8e4146dc548d0f8d87e4d98c57fb8">&#9670;&#160;</a></span>grn_tokenizer_fin_func</h2>
 
@@ -542,6 +622,308 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aa4a57d8b5567902d72d38b304198072d" name="aa4a57d8b5567902d72d38b304198072d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a57d8b5567902d72d38b304198072d">&#9670;&#160;</a></span>grn_tokenizer_build_data_append_tokens()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> grn_tokenizer_build_data_append_tokens </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td>
+          <td class="paramname"><em>tokens</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A tokenizer must call this when it appends tokens to the current record and section. </p>
+<p>This can't be called multiple times for a pair of record and section.</p>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
+<a id="abdfeb48b800262359e0b78b074be374a" name="abdfeb48b800262359e0b78b074be374a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdfeb48b800262359e0b78b074be374a">&#9670;&#160;</a></span>grn_tokenizer_build_data_finish_record()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> grn_tokenizer_build_data_finish_record </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A tokenizer must call this when it finishes processing a record. </p>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
+<a id="a5db7820af72114faf50dcde4e9571979" name="a5db7820af72114faf50dcde4e9571979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5db7820af72114faf50dcde4e9571979">&#9670;&#160;</a></span>grn_tokenizer_build_data_finish_section()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> grn_tokenizer_build_data_finish_section </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A tokenizer must call this when it finishes processing a section. </p>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
+<a id="aab930cd77367e0d0641e6634ef48c3d7" name="aab930cd77367e0d0641e6634ef48c3d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab930cd77367e0d0641e6634ef48c3d7">&#9670;&#160;</a></span>grn_tokenizer_build_data_get_index_column()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> * grn_tokenizer_build_data_get_index_column </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the index column for this tokenizer. </p>
+<p>This is owned by <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a>. You must not free it.</p>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
+<a id="ab04aebf554eda44e8d6a15e727788355" name="ab04aebf554eda44e8d6a15e727788355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04aebf554eda44e8d6a15e727788355">&#9670;&#160;</a></span>grn_tokenizer_build_data_get_lexicon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> * grn_tokenizer_build_data_get_lexicon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the lexicon for this tokenizer. </p>
+<p>This is owned by <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a>. You must not free it.</p>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
+<a id="aa2f7413723c2e2a5ff32beba585dc915" name="aa2f7413723c2e2a5ff32beba585dc915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2f7413723c2e2a5ff32beba585dc915">&#9670;&#160;</a></span>grn_tokenizer_build_data_get_source_columns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> * grn_tokenizer_build_data_get_source_columns </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the build target columns as <a class="el" href="groonga_2groonga_8h.html#a48d4ce8bc92bb20189a9ca2ddb0cd330">GRN_PVECTOR</a>. </p>
+<p>This is owned by <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a>. You must not free it.</p>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
+<a id="a6ada6df5f4883893a02ef052f242f2ea" name="a6ada6df5f4883893a02ef052f242f2ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ada6df5f4883893a02ef052f242f2ea">&#9670;&#160;</a></span>grn_tokenizer_build_data_get_source_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> * grn_tokenizer_build_data_get_source_table </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the build target table. </p>
+<p>This is owned by <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a>. You must not free it.</p>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
+<a id="a2ae6a993b08f097f7211fd2982ed6806" name="a2ae6a993b08f097f7211fd2982ed6806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae6a993b08f097f7211fd2982ed6806">&#9670;&#160;</a></span>grn_tokenizer_build_data_start_record()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> grn_tokenizer_build_data_start_record </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a4a1a044ec7d98935eed6f3067f520240">grn_id</a>&#160;</td>
+          <td class="paramname"><em>rid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A tokenizer must call this when it starts processing a new record. </p>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
+<a id="a2d32849b61c2b34358e2fc107c6043e0" name="a2d32849b61c2b34358e2fc107c6043e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d32849b61c2b34358e2fc107c6043e0">&#9670;&#160;</a></span>grn_tokenizer_build_data_start_section()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> grn_tokenizer_build_data_start_section </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>sid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A tokenizer must call this when it starts processing a new section. </p>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
 <a id="a6e52ea246eee4a6210db3711cc83e6d7" name="a6e52ea246eee4a6210db3711cc83e6d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e52ea246eee4a6210db3711cc83e6d7">&#9670;&#160;</a></span>grn_tokenizer_charlen()</h2>
 
@@ -1405,6 +1787,45 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5bebdafe2ca1846400e54eb3331fc31" name="ab5bebdafe2ca1846400e54eb3331fc31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5bebdafe2ca1846400e54eb3331fc31">&#9670;&#160;</a></span>grn_tokenizer_set_build_func()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> grn_tokenizer_set_build_func </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td>
+          <td class="paramname"><em>tokenizer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#a6c19f80b82276f583e78111d9d667ddd">grn_tokenizer_build_func</a> *&#160;</td>
+          <td class="paramname"><em>build</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set build function for this tokenizer. </p>
+<p>The given <code>build</code> is called only once when an index column that uses this tokenizer is created.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="tokenizer_8h.html#a6c19f80b82276f583e78111d9d667ddd" title="A function to build an index column by this tokenizer.">grn_tokenizer_build_func</a></dd></dl>
+<dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
 
 </div>
 </div>
