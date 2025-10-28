@@ -75,6 +75,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">accessor.h File Reference</div></div>
 </div><!--header-->
@@ -101,8 +102,39 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ac5bf83a70b7544d3b21a6c45e8d8da80" id="r_ac5bf83a70b7544d3b21a6c45e8d8da80"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="accessor_8h.html#ac5bf83a70b7544d3b21a6c45e8d8da80">grn_accessor_execute_func</a>) (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *index, <a class="el" href="groonga_2groonga_8h.html#a6332c3a098e3efed9965032d497597fe">grn_operator</a> op, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *res, <a class="el" href="groonga_2groonga_8h.html#a6332c3a098e3efed9965032d497597fe">grn_operator</a> logical_op, void *user_data)</td></tr>
 <tr class="separator:ac5bf83a70b7544d3b21a6c45e8d8da80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a33c55ecd02b4ba1471b2e1b8b702be50" id="r_a33c55ecd02b4ba1471b2e1b8b702be50"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50">grn_accessor_action</a> { <br />
+&#160;&#160;<a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50a5b1da449f3ce570bc334911803fcca48">GRN_ACCESSOR_VOID</a> = 0
+, <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50af0284521d8ba11ef93e461338aaa1477">GRN_ACCESSOR_GET_ID</a>
+, <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50a2cd6b2470ce1a8ee7b73ef9e3a12c87b">GRN_ACCESSOR_GET_KEY</a>
+, <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50a996ae4fd54dd227dfda7d88a8a3499bc">GRN_ACCESSOR_GET_VALUE</a>
+, <br />
+&#160;&#160;<a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50a62b5443927da060c97f0266b7c2c829e">GRN_ACCESSOR_GET_SCORE</a>
+, <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50a586d09bd7ac485d7df7b595c746e00be">GRN_ACCESSOR_GET_NSUBRECS</a>
+, <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50a6637edca7ffbd5ee7f0a39802457b6a8">GRN_ACCESSOR_GET_MAX</a>
+, <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50a35e488cff15848ec5ddba2d33de314b6">GRN_ACCESSOR_GET_MIN</a>
+, <br />
+&#160;&#160;<a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50ae4e9b00c1f09b2b07f7c0bd6a9cf98aa">GRN_ACCESSOR_GET_SUM</a>
+, <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50a7e0d893264f2de6a3c5b4bd69747cac9">GRN_ACCESSOR_GET_AVG</a>
+, <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50ae9605a037faff46edefceb02e88b12a4">GRN_ACCESSOR_GET_MEAN</a>
+, <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50af12f9165d77d2e94751848bbd5977da8">GRN_ACCESSOR_GET_COLUMN_VALUE</a>
+, <br />
+&#160;&#160;<a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50a9e698a0673d6687db869e4020ed45dfc">GRN_ACCESSOR_GET_DB_OBJ</a>
+, <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50a96308d07b7ccb04d7a768ba716e9fad0">GRN_ACCESSOR_LOOKUP</a>
+, <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50a44bc37844c21ee8fda181dbb2749d808">GRN_ACCESSOR_FUNCALL</a>
+<br />
+ }</td></tr>
+<tr class="separator:a33c55ecd02b4ba1471b2e1b8b702be50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:acd6527784b2783130afc8e0396b1160d" id="r_acd6527784b2783130afc8e0396b1160d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50">grn_accessor_action</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="accessor_8h.html#acd6527784b2783130afc8e0396b1160d">grn_accessor_get_action</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *accessor)</td></tr>
+<tr class="separator:acd6527784b2783130afc8e0396b1160d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb26d468a7210a5c87230ea602cb5ff4" id="r_adb26d468a7210a5c87230ea602cb5ff4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="accessor_8h.html#adb26d468a7210a5c87230ea602cb5ff4">grn_accessor_get_obj</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *accessor)</td></tr>
+<tr class="separator:adb26d468a7210a5c87230ea602cb5ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4741387d9681c04153cfb36fdaafef30" id="r_a4741387d9681c04153cfb36fdaafef30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="accessor_8h.html#a4741387d9681c04153cfb36fdaafef30">grn_accessor_get_next</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *accessor)</td></tr>
+<tr class="separator:a4741387d9681c04153cfb36fdaafef30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a572d83b6bfec07b451edd26ee9904747" id="r_a572d83b6bfec07b451edd26ee9904747"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="accessor_8h.html#a572d83b6bfec07b451edd26ee9904747">grn_accessor_resolve</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *accessor, int depth, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *base_res, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *res, <a class="el" href="groonga_2groonga_8h.html#a6332c3a098e3efed9965032d497597fe">grn_operator</a> op)</td></tr>
 <tr class="separator:a572d83b6bfec07b451edd26ee9904747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affc0c2cbd106dcb4f8a624b2b3418f7c" id="r_affc0c2cbd106dcb4f8a624b2b3418f7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a4a1a044ec7d98935eed6f3067f520240">grn_id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="accessor_8h.html#affc0c2cbd106dcb4f8a624b2b3418f7c">grn_accessor_resolve_id</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *accessor, <a class="el" href="groonga_2groonga_8h.html#a4a1a044ec7d98935eed6f3067f520240">grn_id</a> id)</td></tr>
@@ -126,6 +158,38 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a33c55ecd02b4ba1471b2e1b8b702be50" name="a33c55ecd02b4ba1471b2e1b8b702be50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33c55ecd02b4ba1471b2e1b8b702be50">&#9670;&#160;</a></span>grn_accessor_action</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50">grn_accessor_action</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50a5b1da449f3ce570bc334911803fcca48" name="a33c55ecd02b4ba1471b2e1b8b702be50a5b1da449f3ce570bc334911803fcca48"></a>GRN_ACCESSOR_VOID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50af0284521d8ba11ef93e461338aaa1477" name="a33c55ecd02b4ba1471b2e1b8b702be50af0284521d8ba11ef93e461338aaa1477"></a>GRN_ACCESSOR_GET_ID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50a2cd6b2470ce1a8ee7b73ef9e3a12c87b" name="a33c55ecd02b4ba1471b2e1b8b702be50a2cd6b2470ce1a8ee7b73ef9e3a12c87b"></a>GRN_ACCESSOR_GET_KEY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50a996ae4fd54dd227dfda7d88a8a3499bc" name="a33c55ecd02b4ba1471b2e1b8b702be50a996ae4fd54dd227dfda7d88a8a3499bc"></a>GRN_ACCESSOR_GET_VALUE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50a62b5443927da060c97f0266b7c2c829e" name="a33c55ecd02b4ba1471b2e1b8b702be50a62b5443927da060c97f0266b7c2c829e"></a>GRN_ACCESSOR_GET_SCORE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50a586d09bd7ac485d7df7b595c746e00be" name="a33c55ecd02b4ba1471b2e1b8b702be50a586d09bd7ac485d7df7b595c746e00be"></a>GRN_ACCESSOR_GET_NSUBRECS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50a6637edca7ffbd5ee7f0a39802457b6a8" name="a33c55ecd02b4ba1471b2e1b8b702be50a6637edca7ffbd5ee7f0a39802457b6a8"></a>GRN_ACCESSOR_GET_MAX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50a35e488cff15848ec5ddba2d33de314b6" name="a33c55ecd02b4ba1471b2e1b8b702be50a35e488cff15848ec5ddba2d33de314b6"></a>GRN_ACCESSOR_GET_MIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50ae4e9b00c1f09b2b07f7c0bd6a9cf98aa" name="a33c55ecd02b4ba1471b2e1b8b702be50ae4e9b00c1f09b2b07f7c0bd6a9cf98aa"></a>GRN_ACCESSOR_GET_SUM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50a7e0d893264f2de6a3c5b4bd69747cac9" name="a33c55ecd02b4ba1471b2e1b8b702be50a7e0d893264f2de6a3c5b4bd69747cac9"></a>GRN_ACCESSOR_GET_AVG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50ae9605a037faff46edefceb02e88b12a4" name="a33c55ecd02b4ba1471b2e1b8b702be50ae9605a037faff46edefceb02e88b12a4"></a>GRN_ACCESSOR_GET_MEAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50af12f9165d77d2e94751848bbd5977da8" name="a33c55ecd02b4ba1471b2e1b8b702be50af12f9165d77d2e94751848bbd5977da8"></a>GRN_ACCESSOR_GET_COLUMN_VALUE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50a9e698a0673d6687db869e4020ed45dfc" name="a33c55ecd02b4ba1471b2e1b8b702be50a9e698a0673d6687db869e4020ed45dfc"></a>GRN_ACCESSOR_GET_DB_OBJ&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50a96308d07b7ccb04d7a768ba716e9fad0" name="a33c55ecd02b4ba1471b2e1b8b702be50a96308d07b7ccb04d7a768ba716e9fad0"></a>GRN_ACCESSOR_LOOKUP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a33c55ecd02b4ba1471b2e1b8b702be50a44bc37844c21ee8fda181dbb2749d808" name="a33c55ecd02b4ba1471b2e1b8b702be50a44bc37844c21ee8fda181dbb2749d808"></a>GRN_ACCESSOR_FUNCALL&#160;</td><td class="fielddoc"></td></tr>
+</table>
 
 </div>
 </div>
@@ -217,6 +281,90 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a6332c3a098e3efed9965032d497597fe">grn_operator</a>&#160;</td>
           <td class="paramname"><em>logical_op</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd6527784b2783130afc8e0396b1160d" name="acd6527784b2783130afc8e0396b1160d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd6527784b2783130afc8e0396b1160d">&#9670;&#160;</a></span>grn_accessor_get_action()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="accessor_8h.html#a33c55ecd02b4ba1471b2e1b8b702be50">grn_accessor_action</a> grn_accessor_get_action </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td>
+          <td class="paramname"><em>accessor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4741387d9681c04153cfb36fdaafef30" name="a4741387d9681c04153cfb36fdaafef30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4741387d9681c04153cfb36fdaafef30">&#9670;&#160;</a></span>grn_accessor_get_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> * grn_accessor_get_next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td>
+          <td class="paramname"><em>accessor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb26d468a7210a5c87230ea602cb5ff4" name="adb26d468a7210a5c87230ea602cb5ff4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb26d468a7210a5c87230ea602cb5ff4">&#9670;&#160;</a></span>grn_accessor_get_obj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> * grn_accessor_get_obj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td>
+          <td class="paramname"><em>accessor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
