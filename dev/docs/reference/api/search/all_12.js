@@ -16,11 +16,12 @@ var searchData=
   ['similarity_5fthreshold_13',['similarity_threshold',['../struct__grn__search__optarg.html#af1fd93ab9d5b63b6af6a5b201a1f69f5',1,'_grn_search_optarg']]],
   ['smart_5fobj_2ehpp_14',['smart_obj.hpp',['../smart__obj_8hpp.html',1,'']]],
   ['sort_5fkeys_15',['sort_keys',['../struct__grn__window__definition.html#a9b71e87f7ff55b4640ca42b6a20264f3',1,'_grn_window_definition']]],
-  ['src_16',['src',['../structgrn__caster.html#aae0f69e0e490a9b63ea7ac67d91a1750',1,'grn_caster']]],
-  ['start_5fposition_17',['start_position',['../struct__grn__search__optarg.html#a3e651ef6c0c97da413be0e9db72cd656',1,'_grn_search_optarg']]],
-  ['stat_18',['stat',['../struct__grn__ctx.html#a9212fa571e0334c46f416acace2195c1',1,'_grn_ctx::stat'],['../struct__grn__ctx__info.html#af080ee11525b9b58901b75764df6632d',1,'_grn_ctx_info::stat']]],
-  ['status_19',['status',['../struct__grn__tokenizer__token.html#a11b1fa51dccb76f6a368d27aeafcdc94',1,'_grn_tokenizer_token']]],
-  ['str_20',['str',['../struct__grn__tokenizer__token.html#a669ed19d9d00c1e4373a6c32573a7c6c',1,'_grn_tokenizer_token']]],
-  ['string_2eh_21',['string.h',['../string_8h.html',1,'']]],
-  ['subno_22',['subno',['../struct__grn__ctx.html#a6c8a0850a7b93db844c79ac8d5f5b038',1,'_grn_ctx']]]
+  ['sorter_2eh_16',['sorter.h',['../sorter_8h.html',1,'']]],
+  ['src_17',['src',['../structgrn__caster.html#aae0f69e0e490a9b63ea7ac67d91a1750',1,'grn_caster']]],
+  ['start_5fposition_18',['start_position',['../struct__grn__search__optarg.html#a3e651ef6c0c97da413be0e9db72cd656',1,'_grn_search_optarg']]],
+  ['stat_19',['stat',['../struct__grn__ctx.html#a9212fa571e0334c46f416acace2195c1',1,'_grn_ctx::stat'],['../struct__grn__ctx__info.html#af080ee11525b9b58901b75764df6632d',1,'_grn_ctx_info::stat']]],
+  ['status_20',['status',['../struct__grn__tokenizer__token.html#a11b1fa51dccb76f6a368d27aeafcdc94',1,'_grn_tokenizer_token']]],
+  ['str_21',['str',['../struct__grn__tokenizer__token.html#a669ed19d9d00c1e4373a6c32573a7c6c',1,'_grn_tokenizer_token']]],
+  ['string_2eh_22',['string.h',['../string_8h.html',1,'']]],
+  ['subno_23',['subno',['../struct__grn__ctx.html#a6c8a0850a7b93db844c79ac8d5f5b038',1,'_grn_ctx']]]
 ];
