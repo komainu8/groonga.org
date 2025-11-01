@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.8.12. TokenMecab &#8212; Groonga v15.1.8 documentation</title>
+    <title>7.8.13. TokenMecab &#8212; Groonga v15.1.9 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=2374dafe"></script>
+    <script src="../../_static/documentation_options.js?v=47bb0aba"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -59,11 +59,11 @@
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7.8.13. TokenNgram" href="token_ngram.html" />
-    <link rel="prev" title="7.8.11. TokenDelimitNull" href="token_delimit_null.html" />
+    <link rel="next" title="7.8.14. TokenNgram" href="token_ngram.html" />
+    <link rel="prev" title="7.8.12. TokenLanguageModelKNN" href="token_language_model_knn.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.1.8" />
+  <meta name="docsearch:version" content="15.1.9" />
   </head>
   
   
@@ -129,8 +129,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.8 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.8 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.9 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.9 documentation - Home"/>
   
   
 </a></div>
@@ -469,13 +469,14 @@
 <li class="toctree-l2"><a class="reference internal" href="token_bigram_split_symbol_alpha_digit.html">7.8.9. <code class="docutils literal notranslate"><span class="pre">TokenBigramSplitSymbolAlphaDigit</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="token_delimit.html">7.8.10. <code class="docutils literal notranslate"><span class="pre">TokenDelimit</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="token_delimit_null.html">7.8.11. <code class="docutils literal notranslate"><span class="pre">TokenDelimitNull</span></code></a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.8.12. <code class="docutils literal notranslate"><span class="pre">TokenMecab</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="token_ngram.html">7.8.13. <code class="docutils literal notranslate"><span class="pre">TokenNgram</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="token_pattern.html">7.8.14. <code class="docutils literal notranslate"><span class="pre">TokenPattern</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="token_regexp.html">7.8.15. <code class="docutils literal notranslate"><span class="pre">TokenRegexp</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="token_table.html">7.8.16. <code class="docutils literal notranslate"><span class="pre">TokenTable</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="token_trigram.html">7.8.17. <code class="docutils literal notranslate"><span class="pre">TokenTrigram</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="token_unigram.html">7.8.18. <code class="docutils literal notranslate"><span class="pre">TokenUnigram</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_language_model_knn.html">7.8.12. <code class="docutils literal notranslate"><span class="pre">TokenLanguageModelKNN</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.8.13. <code class="docutils literal notranslate"><span class="pre">TokenMecab</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_ngram.html">7.8.14. <code class="docutils literal notranslate"><span class="pre">TokenNgram</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_pattern.html">7.8.15. <code class="docutils literal notranslate"><span class="pre">TokenPattern</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_regexp.html">7.8.16. <code class="docutils literal notranslate"><span class="pre">TokenRegexp</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_table.html">7.8.17. <code class="docutils literal notranslate"><span class="pre">TokenTable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_trigram.html">7.8.18. <code class="docutils literal notranslate"><span class="pre">TokenTrigram</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_unigram.html">7.8.19. <code class="docutils literal notranslate"><span class="pre">TokenUnigram</span></code></a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../token_filters.html">7.9. Token filters</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -518,32 +519,33 @@
 <li class="toctree-l2"><a class="reference internal" href="../functions/html_untag.html">7.15.12. <code class="docutils literal notranslate"><span class="pre">html_untag</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functions/in_records.html">7.15.13. <code class="docutils literal notranslate"><span class="pre">in_records</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functions/in_values.html">7.15.14. <code class="docutils literal notranslate"><span class="pre">in_values</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/language_model_vectorize.html">7.15.15. <code class="docutils literal notranslate"><span class="pre">language_model_vectorize</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/math_abs.html">7.15.16. <code class="docutils literal notranslate"><span class="pre">math_abs</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/now.html">7.15.17. now</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/number_classify.html">7.15.18. <code class="docutils literal notranslate"><span class="pre">number_classify</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/prefix_rk_search.html">7.15.19. <code class="docutils literal notranslate"><span class="pre">prefix_rk_search</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/query.html">7.15.20. <code class="docutils literal notranslate"><span class="pre">query</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/query_parallel_or.html">7.15.21. <code class="docutils literal notranslate"><span class="pre">query_parallel_or</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/rand.html">7.15.22. rand</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/snippet.html">7.15.23. <code class="docutils literal notranslate"><span class="pre">snippet</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/snippet_html.html">7.15.24. <code class="docutils literal notranslate"><span class="pre">snippet_html</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/string_length.html">7.15.25. <code class="docutils literal notranslate"><span class="pre">string_length</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/string_slice.html">7.15.26. <code class="docutils literal notranslate"><span class="pre">string_slice</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/string_substring.html">7.15.27. <code class="docutils literal notranslate"><span class="pre">string_substring</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/sub_filter.html">7.15.28. <code class="docutils literal notranslate"><span class="pre">sub_filter</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_day.html">7.15.29. <code class="docutils literal notranslate"><span class="pre">time_classify_day</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_day_of_week.html">7.15.30. <code class="docutils literal notranslate"><span class="pre">time_classify_day_of_week</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_hour.html">7.15.31. <code class="docutils literal notranslate"><span class="pre">time_classify_hour</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_minute.html">7.15.32. <code class="docutils literal notranslate"><span class="pre">time_classify_minute</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_month.html">7.15.33. <code class="docutils literal notranslate"><span class="pre">time_classify_month</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_second.html">7.15.34. <code class="docutils literal notranslate"><span class="pre">time_classify_second</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_week.html">7.15.35. <code class="docutils literal notranslate"><span class="pre">time_classify_week</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_year.html">7.15.36. <code class="docutils literal notranslate"><span class="pre">time_classify_year</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/vector_find.html">7.15.37. <code class="docutils literal notranslate"><span class="pre">vector_find</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/vector_new.html">7.15.38. <code class="docutils literal notranslate"><span class="pre">vector_new</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/vector_size.html">7.15.39. <code class="docutils literal notranslate"><span class="pre">vector_size</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../functions/vector_slice.html">7.15.40. <code class="docutils literal notranslate"><span class="pre">vector_slice</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/language_model_knn.html">7.15.15. <code class="docutils literal notranslate"><span class="pre">language_model_knn</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/language_model_vectorize.html">7.15.16. <code class="docutils literal notranslate"><span class="pre">language_model_vectorize</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/math_abs.html">7.15.17. <code class="docutils literal notranslate"><span class="pre">math_abs</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/now.html">7.15.18. now</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/number_classify.html">7.15.19. <code class="docutils literal notranslate"><span class="pre">number_classify</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/prefix_rk_search.html">7.15.20. <code class="docutils literal notranslate"><span class="pre">prefix_rk_search</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/query.html">7.15.21. <code class="docutils literal notranslate"><span class="pre">query</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/query_parallel_or.html">7.15.22. <code class="docutils literal notranslate"><span class="pre">query_parallel_or</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/rand.html">7.15.23. rand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/snippet.html">7.15.24. <code class="docutils literal notranslate"><span class="pre">snippet</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/snippet_html.html">7.15.25. <code class="docutils literal notranslate"><span class="pre">snippet_html</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/string_length.html">7.15.26. <code class="docutils literal notranslate"><span class="pre">string_length</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/string_slice.html">7.15.27. <code class="docutils literal notranslate"><span class="pre">string_slice</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/string_substring.html">7.15.28. <code class="docutils literal notranslate"><span class="pre">string_substring</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/sub_filter.html">7.15.29. <code class="docutils literal notranslate"><span class="pre">sub_filter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_day.html">7.15.30. <code class="docutils literal notranslate"><span class="pre">time_classify_day</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_day_of_week.html">7.15.31. <code class="docutils literal notranslate"><span class="pre">time_classify_day_of_week</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_hour.html">7.15.32. <code class="docutils literal notranslate"><span class="pre">time_classify_hour</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_minute.html">7.15.33. <code class="docutils literal notranslate"><span class="pre">time_classify_minute</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_month.html">7.15.34. <code class="docutils literal notranslate"><span class="pre">time_classify_month</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_second.html">7.15.35. <code class="docutils literal notranslate"><span class="pre">time_classify_second</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_week.html">7.15.36. <code class="docutils literal notranslate"><span class="pre">time_classify_week</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_year.html">7.15.37. <code class="docutils literal notranslate"><span class="pre">time_classify_year</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/vector_find.html">7.15.38. <code class="docutils literal notranslate"><span class="pre">vector_find</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/vector_new.html">7.15.39. <code class="docutils literal notranslate"><span class="pre">vector_new</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/vector_size.html">7.15.40. <code class="docutils literal notranslate"><span class="pre">vector_size</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/vector_slice.html">7.15.41. <code class="docutils literal notranslate"><span class="pre">vector_slice</span></code></a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../window_function.html">7.16. Window function</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -648,7 +650,7 @@
     
     <li class="breadcrumb-item"><a href="../tokenizers.html" class="nav-link"><span class="section-number">7.8. </span>Tokenizers</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><span class="section-number">7.8.12. </span><code class="docutils literal notranslate"><span class="pre">TokenMecab</span></code></span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><span class="section-number">7.8.13. </span><code class="docutils literal notranslate"><span class="pre">TokenMecab</span></code></span></li>
   </ul>
 </nav>
 </div>
@@ -666,9 +668,9 @@
                 <article class="bd-article">
                   
   <section id="tokenmecab">
-<span id="token-mecab"></span><h1><span class="section-number">7.8.12. </span><code class="docutils literal notranslate"><span class="pre">TokenMecab</span></code><a class="headerlink" href="#tokenmecab" title="Link to this heading">#</a></h1>
+<span id="token-mecab"></span><h1><span class="section-number">7.8.13. </span><code class="docutils literal notranslate"><span class="pre">TokenMecab</span></code><a class="headerlink" href="#tokenmecab" title="Link to this heading">#</a></h1>
 <section id="summary">
-<h2><span class="section-number">7.8.12.1. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8.13.1. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">TokenMecab</span></code> is a tokenizer based on <a class="reference external" href="https://taku910.github.io/mecab/">MeCab</a> part-of-speech and
 morphological analyzer.</p>
 <p>MeCab doesn’t depend on Japanese. You can use MeCab for other
@@ -687,7 +689,7 @@ require dictionary maintenance because <a class="reference internal" href="token
 dictionary.) <a class="reference external" href="https://github.com/neologd/mecab-ipadic-neologd">mecab-ipadic-NEologd : Neologism dictionary for MeCab</a> may help you.</p>
 </section>
 <section id="syntax">
-<h2><span class="section-number">7.8.12.2. </span>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8.13.2. </span>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">TokenMecab</span></code> has optional parameter.</p>
 <p>No options:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TokenMecab</span>
@@ -713,10 +715,10 @@ dictionary.) <a class="reference external" href="https://github.com/neologd/meca
 You can also specify mingle multiple options except above example.</p>
 </section>
 <section id="usage">
-<h2><span class="section-number">7.8.12.3. </span>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8.13.3. </span>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
 </section>
 <section id="simple-usage">
-<h2><span class="section-number">7.8.12.4. </span>Simple usage<a class="headerlink" href="#simple-usage" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8.13.4. </span>Simple usage<a class="headerlink" href="#simple-usage" title="Link to this heading">#</a></h2>
 <p>Here is an example of <code class="docutils literal notranslate"><span class="pre">TokenMeCab</span></code>. <code class="docutils literal notranslate"><span class="pre">東京都</span></code> is tokenized to <code class="docutils literal notranslate"><span class="pre">東京</span></code>
 and <code class="docutils literal notranslate"><span class="pre">都</span></code>. They don’t include <code class="docutils literal notranslate"><span class="pre">京都</span></code>:</p>
 <p>Execution example:</p>
@@ -1199,7 +1201,7 @@ This option is useful for countermeasure of orthographical variants because it s
 </div>
 </section>
 <section id="advanced-usage">
-<h2><span class="section-number">7.8.12.5. </span>Advanced usage<a class="headerlink" href="#advanced-usage" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8.13.5. </span>Advanced usage<a class="headerlink" href="#advanced-usage" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">target_class</span></code> option can also specify subclasses and exclude or add specific
 part-of-speech of specific using + or -.
 So, you can also search a noun with excluding non-independent word and suffix of
@@ -1279,34 +1281,34 @@ person name as below.</p>
 </div>
 </section>
 <section id="parameters">
-<h2><span class="section-number">7.8.12.6. </span>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8.13.6. </span>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
 <section id="optional-parameter">
-<h3><span class="section-number">7.8.12.6.1. </span>Optional parameter<a class="headerlink" href="#optional-parameter" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.8.13.6.1. </span>Optional parameter<a class="headerlink" href="#optional-parameter" title="Link to this heading">#</a></h3>
 <p>There are four optional parameters <code class="docutils literal notranslate"><span class="pre">include_class</span></code> , <code class="docutils literal notranslate"><span class="pre">target_class</span></code> , <code class="docutils literal notranslate"><span class="pre">include_form</span></code> and <code class="docutils literal notranslate"><span class="pre">use_reading</span></code> .</p>
 <section id="include-class">
-<h4><span class="section-number">7.8.12.6.1.1. </span><code class="docutils literal notranslate"><span class="pre">include_class</span></code><a class="headerlink" href="#include-class" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.8.13.6.1.1. </span><code class="docutils literal notranslate"><span class="pre">include_class</span></code><a class="headerlink" href="#include-class" title="Link to this heading">#</a></h4>
 <p>Outputs class and subclass in MeCab’s metadata.</p>
 </section>
 <section id="target-class">
-<h4><span class="section-number">7.8.12.6.1.2. </span><code class="docutils literal notranslate"><span class="pre">target_class</span></code><a class="headerlink" href="#target-class" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.8.13.6.1.2. </span><code class="docutils literal notranslate"><span class="pre">target_class</span></code><a class="headerlink" href="#target-class" title="Link to this heading">#</a></h4>
 <p>Outputs a token of specifying a part-of-speech.</p>
 </section>
 <section id="include-reading">
-<h4><span class="section-number">7.8.12.6.1.3. </span><code class="docutils literal notranslate"><span class="pre">include_reading</span></code><a class="headerlink" href="#include-reading" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.8.13.6.1.3. </span><code class="docutils literal notranslate"><span class="pre">include_reading</span></code><a class="headerlink" href="#include-reading" title="Link to this heading">#</a></h4>
 <p>Outputs reading in MeCab’s metadata.</p>
 </section>
 <section id="include-form">
-<h4><span class="section-number">7.8.12.6.1.4. </span><code class="docutils literal notranslate"><span class="pre">include_form</span></code><a class="headerlink" href="#include-form" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.8.13.6.1.4. </span><code class="docutils literal notranslate"><span class="pre">include_form</span></code><a class="headerlink" href="#include-form" title="Link to this heading">#</a></h4>
 <p>Outputs inflected_type, inflected_form and base_form in MeCab’s metadata.</p>
 </section>
 <section id="use-reading">
-<h4><span class="section-number">7.8.12.6.1.5. </span><code class="docutils literal notranslate"><span class="pre">use_reading</span></code><a class="headerlink" href="#use-reading" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.8.13.6.1.5. </span><code class="docutils literal notranslate"><span class="pre">use_reading</span></code><a class="headerlink" href="#use-reading" title="Link to this heading">#</a></h4>
 <p>Outputs reading of token.</p>
 </section>
 </section>
 </section>
 <section id="see-also">
-<h2><span class="section-number">7.8.12.7. </span>See also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8.13.7. </span>See also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../commands/tokenize.html"><span class="doc">tokenize</span></a></p></li>
 </ul>
@@ -1324,12 +1326,12 @@ person name as below.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="token_delimit_null.html"
+       href="token_language_model_knn.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7.8.11. </span><code class="docutils literal notranslate"><span class="pre">TokenDelimitNull</span></code></p>
+        <p class="prev-next-title"><span class="section-number">7.8.12. </span><code class="docutils literal notranslate"><span class="pre">TokenLanguageModelKNN</span></code></p>
       </div>
     </a>
     <a class="right-next"
@@ -1337,7 +1339,7 @@ person name as below.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7.8.13. </span><code class="docutils literal notranslate"><span class="pre">TokenNgram</span></code></p>
+        <p class="prev-next-title"><span class="section-number">7.8.14. </span><code class="docutils literal notranslate"><span class="pre">TokenNgram</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1360,23 +1362,23 @@ person name as below.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">7.8.12.1. Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">7.8.12.2. Syntax</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">7.8.12.3. Usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-usage">7.8.12.4. Simple usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-usage">7.8.12.5. Advanced usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">7.8.12.6. Parameters</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameter">7.8.12.6.1. Optional parameter</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#include-class">7.8.12.6.1.1. <code class="docutils literal notranslate"><span class="pre">include_class</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#target-class">7.8.12.6.1.2. <code class="docutils literal notranslate"><span class="pre">target_class</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#include-reading">7.8.12.6.1.3. <code class="docutils literal notranslate"><span class="pre">include_reading</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#include-form">7.8.12.6.1.4. <code class="docutils literal notranslate"><span class="pre">include_form</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-reading">7.8.12.6.1.5. <code class="docutils literal notranslate"><span class="pre">use_reading</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">7.8.13.1. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">7.8.13.2. Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">7.8.13.3. Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-usage">7.8.13.4. Simple usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-usage">7.8.13.5. Advanced usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">7.8.13.6. Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameter">7.8.13.6.1. Optional parameter</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#include-class">7.8.13.6.1.1. <code class="docutils literal notranslate"><span class="pre">include_class</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#target-class">7.8.13.6.1.2. <code class="docutils literal notranslate"><span class="pre">target_class</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#include-reading">7.8.13.6.1.3. <code class="docutils literal notranslate"><span class="pre">include_reading</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#include-form">7.8.13.6.1.4. <code class="docutils literal notranslate"><span class="pre">include_form</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-reading">7.8.13.6.1.5. <code class="docutils literal notranslate"><span class="pre">use_reading</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">7.8.12.7. See also</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">7.8.13.7. See also</a></li>
 </ul>
   </nav></div>
 

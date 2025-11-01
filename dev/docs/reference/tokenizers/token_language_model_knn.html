@@ -1,0 +1,983 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>7.8.12. TokenLanguageModelKNN &#8212; Groonga v15.1.9 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=47bb0aba"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-7532323-1');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/tokenizers/token_language_model_knn';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://groonga.org/docs/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'english';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7.8.13. TokenMecab" href="token_mecab.html" />
+    <link rel="prev" title="7.8.11. TokenDelimitNull" href="token_delimit_null.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="15.1.9" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+     
+  
+
+<a class="navbar-brand logo" href="https://groonga.org/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.1.9 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.1.9 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/groonga/groonga" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/groonga" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="/blog" title="Blog" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-blog fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Blog</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/groonga/groonga" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/groonga" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="/blog" title="Blog" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-blog fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Blog</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../executables.html">7.1. Executables</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../executables/grndb.html">7.1.1. <code class="docutils literal notranslate"><span class="pre">grndb</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../executables/grnslap.html">7.1.2. grnslap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../executables/groonga.html">7.1.3. <code class="docutils literal notranslate"><span class="pre">groonga</span></code> executable file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../executables/groonga-benchmark.html">7.1.4. groonga-benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../executables/groonga-httpd.html">7.1.5. groonga-httpd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../executables/groonga-server-http.html">7.1.6. Groonga HTTP server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../executables/groonga-suggest-create-dataset.html">7.1.7. groonga-suggest-create-dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../executables/groonga-suggest-httpd.html">7.1.8. <code class="docutils literal notranslate"><span class="pre">groonga-suggest-httpd</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../executables/groonga-suggest-learner.html">7.1.9. groonga-suggest-learner</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../output.html">7.2. Output</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../command.html">7.3. Command</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../command/command_version.html">7.3.1. Command version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command/n_workers.html">7.3.2. Parallel execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command/output_format.html">7.3.3. Output format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command/output_trace_log.html">7.3.4. Output trace log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command/pretty_print.html">7.3.5. Pretty print</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command/request_id.html">7.3.6. Request ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command/request_timeout.html">7.3.7. Request timeout</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../command/return_code.html">7.3.8. Return code</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../command/return_codes/grn_operation_not_permitted.html">7.3.8.3.1. <code class="docutils literal notranslate"><span class="pre">-2:</span> <span class="pre">GRN_OPERATION_NOT_PERMITTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command/return_codes/grn_no_such_file_or_directory.html">7.3.8.3.2. <code class="docutils literal notranslate"><span class="pre">-3:</span> <span class="pre">GRN_NO_SUCH_FILE_OR_DIRECTORY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command/return_codes/grn_input_output_error.html">7.3.8.3.3. <code class="docutils literal notranslate"><span class="pre">-6:</span> <span class="pre">GRN_INPUT_OUTPUT_ERROR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command/return_codes/grn_not_enough_space.html">7.3.8.3.4. <code class="docutils literal notranslate"><span class="pre">-13:</span> <span class="pre">GRN_NOT_ENOUGH_SPACE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command/return_codes/grn_invalid_argument.html">7.3.8.3.5. <code class="docutils literal notranslate"><span class="pre">-22:</span> <span class="pre">GRN_INVALID_ARGUMENT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command/return_codes/grn_resource_deadlock_avoided.html">7.3.8.3.6. <code class="docutils literal notranslate"><span class="pre">-34:</span> <span class="pre">GRN_RESOURCE_DEADLOCK_AVOIDED</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/cache_limit.html">7.3.9. <code class="docutils literal notranslate"><span class="pre">cache_limit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/check.html">7.3.10. <code class="docutils literal notranslate"><span class="pre">check</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/clearlock.html">7.3.11. <code class="docutils literal notranslate"><span class="pre">clearlock</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/column_copy.html">7.3.12. <code class="docutils literal notranslate"><span class="pre">column_copy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/column_create.html">7.3.13. <code class="docutils literal notranslate"><span class="pre">column_create</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/column_list.html">7.3.14. <code class="docutils literal notranslate"><span class="pre">column_list</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/column_remove.html">7.3.15. <code class="docutils literal notranslate"><span class="pre">column_remove</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/column_rename.html">7.3.16. <code class="docutils literal notranslate"><span class="pre">column_rename</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/config_delete.html">7.3.17. <code class="docutils literal notranslate"><span class="pre">config_delete</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/config_get.html">7.3.18. <code class="docutils literal notranslate"><span class="pre">config_get</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/config_set.html">7.3.19. <code class="docutils literal notranslate"><span class="pre">config_set</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/database_unmap.html">7.3.20. <code class="docutils literal notranslate"><span class="pre">database_unmap</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/define_selector.html">7.3.21. <code class="docutils literal notranslate"><span class="pre">define_selector</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/defrag.html">7.3.22. <code class="docutils literal notranslate"><span class="pre">defrag</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/delete.html">7.3.23. <code class="docutils literal notranslate"><span class="pre">delete</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/dump.html">7.3.24. <code class="docutils literal notranslate"><span class="pre">dump</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/index_column_diff.html">7.3.25. <code class="docutils literal notranslate"><span class="pre">index_column_diff</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/io_flush.html">7.3.26. <code class="docutils literal notranslate"><span class="pre">io_flush</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/load.html">7.3.27. <code class="docutils literal notranslate"><span class="pre">load</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/lock_acquire.html">7.3.28. <code class="docutils literal notranslate"><span class="pre">lock_acquire</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/lock_clear.html">7.3.29. <code class="docutils literal notranslate"><span class="pre">lock_clear</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/lock_release.html">7.3.30. <code class="docutils literal notranslate"><span class="pre">lock_release</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/log_level.html">7.3.31. <code class="docutils literal notranslate"><span class="pre">log_level</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/log_put.html">7.3.32. <code class="docutils literal notranslate"><span class="pre">log_put</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/log_reopen.html">7.3.33. <code class="docutils literal notranslate"><span class="pre">log_reopen</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/logical_count.html">7.3.34. <code class="docutils literal notranslate"><span class="pre">logical_count</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/logical_parameters.html">7.3.35. <code class="docutils literal notranslate"><span class="pre">logical_parameters</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/logical_range_filter.html">7.3.36. <code class="docutils literal notranslate"><span class="pre">logical_range_filter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/logical_select.html">7.3.37. <code class="docutils literal notranslate"><span class="pre">logical_select</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/logical_shard_list.html">7.3.38. <code class="docutils literal notranslate"><span class="pre">logical_shard_list</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/logical_table_remove.html">7.3.39. <code class="docutils literal notranslate"><span class="pre">logical_table_remove</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/normalize.html">7.3.40. <code class="docutils literal notranslate"><span class="pre">normalize</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/normalizer_list.html">7.3.41. <code class="docutils literal notranslate"><span class="pre">normalizer_list</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/object_exist.html">7.3.42. <code class="docutils literal notranslate"><span class="pre">object_exist</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/object_inspect.html">7.3.43. <code class="docutils literal notranslate"><span class="pre">object_inspect</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/object_list.html">7.3.44. <code class="docutils literal notranslate"><span class="pre">object_list</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/object_remove.html">7.3.45. <code class="docutils literal notranslate"><span class="pre">object_remove</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/plugin_register.html">7.3.46. <code class="docutils literal notranslate"><span class="pre">plugin_register</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/plugin_unregister.html">7.3.47. <code class="docutils literal notranslate"><span class="pre">plugin_unregister</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/query_expand.html">7.3.48. <code class="docutils literal notranslate"><span class="pre">query_expand</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/quit.html">7.3.49. <code class="docutils literal notranslate"><span class="pre">quit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/range_filter.html">7.3.50. <code class="docutils literal notranslate"><span class="pre">range_filter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/reference_acquire.html">7.3.51. <code class="docutils literal notranslate"><span class="pre">reference_acquire</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/reference_release.html">7.3.52. <code class="docutils literal notranslate"><span class="pre">reference_release</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/register.html">7.3.53. <code class="docutils literal notranslate"><span class="pre">register</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/reindex.html">7.3.54. <code class="docutils literal notranslate"><span class="pre">reindex</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/request_cancel.html">7.3.55. <code class="docutils literal notranslate"><span class="pre">request_cancel</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/ruby_eval.html">7.3.56. <code class="docutils literal notranslate"><span class="pre">ruby_eval</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/schema.html">7.3.57. <code class="docutils literal notranslate"><span class="pre">schema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/select.html">7.3.58. <code class="docutils literal notranslate"><span class="pre">select</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/shutdown.html">7.3.59. <code class="docutils literal notranslate"><span class="pre">shutdown</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/status.html">7.3.60. <code class="docutils literal notranslate"><span class="pre">status</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/suggest.html">7.3.61. <code class="docutils literal notranslate"><span class="pre">suggest</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/table_copy.html">7.3.62. <code class="docutils literal notranslate"><span class="pre">table_copy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/table_create.html">7.3.63. <code class="docutils literal notranslate"><span class="pre">table_create</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/table_list.html">7.3.64. <code class="docutils literal notranslate"><span class="pre">table_list</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/table_remove.html">7.3.65. <code class="docutils literal notranslate"><span class="pre">table_remove</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/table_rename.html">7.3.66. <code class="docutils literal notranslate"><span class="pre">table_rename</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/table_tokenize.html">7.3.67. <code class="docutils literal notranslate"><span class="pre">table_tokenize</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/thread_dump.html">7.3.68. <code class="docutils literal notranslate"><span class="pre">thread_dump</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/thread_limit.html">7.3.69. <code class="docutils literal notranslate"><span class="pre">thread_limit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/tokenize.html">7.3.70. <code class="docutils literal notranslate"><span class="pre">tokenize</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/tokenizer_list.html">7.3.71. <code class="docutils literal notranslate"><span class="pre">tokenizer_list</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/truncate.html">7.3.72. <code class="docutils literal notranslate"><span class="pre">truncate</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../types.html">7.4. Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tables.html">7.5. Tables</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../column.html">7.6. Column</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../columns/scalar.html">7.6.2.1. Scalar column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../columns/vector.html">7.6.2.2. Vector column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../columns/pseudo.html">7.6.2.3. Pseudo column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../columns/index.html">7.6.3.1. Index column</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../normalizers.html">7.7. Normalizers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../normalizers/normalizer_auto.html">7.7.2.1. <code class="docutils literal notranslate"><span class="pre">NormalizerAuto</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../normalizers/normalizer_nfkc.html">7.7.2.2. <code class="docutils literal notranslate"><span class="pre">NormalizerNFKC</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../normalizers/normalizer_nfkc100.html">7.7.2.3. <code class="docutils literal notranslate"><span class="pre">NormalizerNFKC100</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../normalizers/normalizer_nfkc121.html">7.7.2.4. <code class="docutils literal notranslate"><span class="pre">NormalizerNFKC121</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../normalizers/normalizer_nfkc130.html">7.7.2.5. <code class="docutils literal notranslate"><span class="pre">NormalizerNFKC130</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../normalizers/normalizer_nfkc150.html">7.7.2.6. <code class="docutils literal notranslate"><span class="pre">NormalizerNFKC150</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../normalizers/normalizer_nfkc51.html">7.7.2.7. <code class="docutils literal notranslate"><span class="pre">NormalizerNFKC51</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../normalizers/normalizer_table.html">7.7.2.8. <code class="docutils literal notranslate"><span class="pre">NormalizerTable</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../tokenizers.html">7.8. Tokenizers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../tokenizer/summary.html">7.8.1. Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_bigram.html">7.8.2. <code class="docutils literal notranslate"><span class="pre">TokenBigram</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_bigram_ignore_blank.html">7.8.3. <code class="docutils literal notranslate"><span class="pre">TokenBigramIgnoreBlank</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_bigram_ignore_blank_split_symbol.html">7.8.4. <code class="docutils literal notranslate"><span class="pre">TokenBigramIgnoreBlankSplitSymbol</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_bigram_ignore_blank_split_symbol_alpha.html">7.8.5. <code class="docutils literal notranslate"><span class="pre">TokenBigramIgnoreBlankSplitSymbolAlpha</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_bigram_ignore_blank_split_symbol_alpha_digit.html">7.8.6. <code class="docutils literal notranslate"><span class="pre">TokenBigramIgnoreBlankSplitSymbolAlphaDigit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_bigram_split_symbol.html">7.8.7. <code class="docutils literal notranslate"><span class="pre">TokenBigramSplitSymbol</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_bigram_split_symbol_alpha.html">7.8.8. <code class="docutils literal notranslate"><span class="pre">TokenBigramSplitSymbolAlpha</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_bigram_split_symbol_alpha_digit.html">7.8.9. <code class="docutils literal notranslate"><span class="pre">TokenBigramSplitSymbolAlphaDigit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_delimit.html">7.8.10. <code class="docutils literal notranslate"><span class="pre">TokenDelimit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_delimit_null.html">7.8.11. <code class="docutils literal notranslate"><span class="pre">TokenDelimitNull</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.8.12. <code class="docutils literal notranslate"><span class="pre">TokenLanguageModelKNN</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_mecab.html">7.8.13. <code class="docutils literal notranslate"><span class="pre">TokenMecab</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_ngram.html">7.8.14. <code class="docutils literal notranslate"><span class="pre">TokenNgram</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_pattern.html">7.8.15. <code class="docutils literal notranslate"><span class="pre">TokenPattern</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_regexp.html">7.8.16. <code class="docutils literal notranslate"><span class="pre">TokenRegexp</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_table.html">7.8.17. <code class="docutils literal notranslate"><span class="pre">TokenTable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_trigram.html">7.8.18. <code class="docutils literal notranslate"><span class="pre">TokenTrigram</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="token_unigram.html">7.8.19. <code class="docutils literal notranslate"><span class="pre">TokenUnigram</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../token_filters.html">7.9. Token filters</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../token_filter/summary.html">7.9.1. Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../token_filters/token_filter_nfkc.html">7.9.2. <code class="docutils literal notranslate"><span class="pre">TokenFilterNFKC</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../token_filters/token_filter_nfkc100.html">7.9.3. <code class="docutils literal notranslate"><span class="pre">TokenFilterNFKC100</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../token_filters/token_filter_nfkc150.html">7.9.4. <code class="docutils literal notranslate"><span class="pre">TokenFilterNFKC150</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../token_filters/token_filter_stem.html">7.9.5. <code class="docutils literal notranslate"><span class="pre">TokenFilterStem</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../token_filters/token_filter_stop_word.html">7.9.6. <code class="docutils literal notranslate"><span class="pre">TokenFilterStopWord</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../query_expanders.html">7.10. Query expanders</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../query_expanders/tsv.html">7.10.1. QueryExpanderTSV</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../scorer.html">7.11. Scorer</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scorers/scorer_tf_at_most.html">7.11.3.1. <code class="docutils literal notranslate"><span class="pre">scorer_tf_at_most</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scorers/scorer_tf_idf.html">7.11.3.2. <code class="docutils literal notranslate"><span class="pre">scorer_tf_idf</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../cast.html">7.12. Cast</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../grn_expr.html">7.13. grn_expr</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../grn_expr/query_syntax.html">7.13.1. Query syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grn_expr/script_syntax.html">7.13.2. Script syntax</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../regular_expression.html">7.14. Regular expression</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../function.html">7.15. Function</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../functions/between.html">7.15.1. <code class="docutils literal notranslate"><span class="pre">between</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/cast_loose.html">7.15.2. <code class="docutils literal notranslate"><span class="pre">cast_loose</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/edit_distance.html">7.15.3. edit_distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/escalate.html">7.15.4. <code class="docutils literal notranslate"><span class="pre">escalate</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/fuzzy_search.html">7.15.5. <code class="docutils literal notranslate"><span class="pre">fuzzy_search</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/geo_distance.html">7.15.6. <code class="docutils literal notranslate"><span class="pre">geo_distance</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/geo_in_circle.html">7.15.7. geo_in_circle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/geo_in_rectangle.html">7.15.8. geo_in_rectangle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/highlight.html">7.15.9. <code class="docutils literal notranslate"><span class="pre">highlight</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/highlight_full.html">7.15.10. <code class="docutils literal notranslate"><span class="pre">highlight_full</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/highlight_html.html">7.15.11. <code class="docutils literal notranslate"><span class="pre">highlight_html</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/html_untag.html">7.15.12. <code class="docutils literal notranslate"><span class="pre">html_untag</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/in_records.html">7.15.13. <code class="docutils literal notranslate"><span class="pre">in_records</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/in_values.html">7.15.14. <code class="docutils literal notranslate"><span class="pre">in_values</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/language_model_knn.html">7.15.15. <code class="docutils literal notranslate"><span class="pre">language_model_knn</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/language_model_vectorize.html">7.15.16. <code class="docutils literal notranslate"><span class="pre">language_model_vectorize</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/math_abs.html">7.15.17. <code class="docutils literal notranslate"><span class="pre">math_abs</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/now.html">7.15.18. now</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/number_classify.html">7.15.19. <code class="docutils literal notranslate"><span class="pre">number_classify</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/prefix_rk_search.html">7.15.20. <code class="docutils literal notranslate"><span class="pre">prefix_rk_search</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/query.html">7.15.21. <code class="docutils literal notranslate"><span class="pre">query</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/query_parallel_or.html">7.15.22. <code class="docutils literal notranslate"><span class="pre">query_parallel_or</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/rand.html">7.15.23. rand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/snippet.html">7.15.24. <code class="docutils literal notranslate"><span class="pre">snippet</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/snippet_html.html">7.15.25. <code class="docutils literal notranslate"><span class="pre">snippet_html</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/string_length.html">7.15.26. <code class="docutils literal notranslate"><span class="pre">string_length</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/string_slice.html">7.15.27. <code class="docutils literal notranslate"><span class="pre">string_slice</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/string_substring.html">7.15.28. <code class="docutils literal notranslate"><span class="pre">string_substring</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/sub_filter.html">7.15.29. <code class="docutils literal notranslate"><span class="pre">sub_filter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_day.html">7.15.30. <code class="docutils literal notranslate"><span class="pre">time_classify_day</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_day_of_week.html">7.15.31. <code class="docutils literal notranslate"><span class="pre">time_classify_day_of_week</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_hour.html">7.15.32. <code class="docutils literal notranslate"><span class="pre">time_classify_hour</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_minute.html">7.15.33. <code class="docutils literal notranslate"><span class="pre">time_classify_minute</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_month.html">7.15.34. <code class="docutils literal notranslate"><span class="pre">time_classify_month</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_second.html">7.15.35. <code class="docutils literal notranslate"><span class="pre">time_classify_second</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_week.html">7.15.36. <code class="docutils literal notranslate"><span class="pre">time_classify_week</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/time_classify_year.html">7.15.37. <code class="docutils literal notranslate"><span class="pre">time_classify_year</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/vector_find.html">7.15.38. <code class="docutils literal notranslate"><span class="pre">vector_find</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/vector_new.html">7.15.39. <code class="docutils literal notranslate"><span class="pre">vector_new</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/vector_size.html">7.15.40. <code class="docutils literal notranslate"><span class="pre">vector_size</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/vector_slice.html">7.15.41. <code class="docutils literal notranslate"><span class="pre">vector_slice</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../window_function.html">7.16. Window function</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../window_functions/record_number.html">7.16.1. <code class="docutils literal notranslate"><span class="pre">record_number</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../window_functions/window_count.html">7.16.2. <code class="docutils literal notranslate"><span class="pre">window_count</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../window_functions/window_rank.html">7.16.3. <code class="docutils literal notranslate"><span class="pre">window_rank</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../window_functions/window_record_number.html">7.16.4. <code class="docutils literal notranslate"><span class="pre">window_record_number</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../window_functions/window_sum.html">7.16.5. <code class="docutils literal notranslate"><span class="pre">window_sum</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../operations.html">7.17. Operations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../operations/geolocation_search.html">7.17.1. Geolocation search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operations/prefix_rk_search.html">7.17.2. Prefix RK search</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">7.18. Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alias.html">7.19. Alias</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../suggest.html">7.20. Suggest</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../suggest/introduction.html">7.20.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suggest/completion.html">7.20.2. Completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suggest/correction.html">7.20.3. Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suggest/suggestion.html">7.20.4. Suggestion</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../indexing.html">7.21. Indexing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sharding.html">7.22. Sharding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../language_model.html">7.23. Language model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../log.html">7.24. Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tuning.html">7.25. Tuning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api.html">7.26. API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/overview.html">7.26.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/global_configurations.html">7.26.2. Global configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/plugin.html">7.26.3. Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_cache.html">7.26.4. <code class="docutils literal notranslate"><span class="pre">grn_cache</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_column.html">7.26.5. <code class="docutils literal notranslate"><span class="pre">grn_column</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_command_version.html">7.26.6. <code class="docutils literal notranslate"><span class="pre">grn_command_version</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_content_type.html">7.26.7. <code class="docutils literal notranslate"><span class="pre">grn_content_type</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_ctx.html">7.26.8. <code class="docutils literal notranslate"><span class="pre">grn_ctx</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_db.html">7.26.9. <code class="docutils literal notranslate"><span class="pre">grn_db</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_encoding.html">7.26.10. <code class="docutils literal notranslate"><span class="pre">grn_encoding</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_expr.html">7.26.11. grn_expr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_geo.html">7.26.12. <code class="docutils literal notranslate"><span class="pre">grn_geo</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_hook.html">7.26.13. <code class="docutils literal notranslate"><span class="pre">grn_hook</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_ii.html">7.26.14. <code class="docutils literal notranslate"><span class="pre">grn_ii</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_index_cursor.html">7.26.15. <code class="docutils literal notranslate"><span class="pre">grn_index_cursor</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_info.html">7.26.16. <code class="docutils literal notranslate"><span class="pre">grn_info</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_inspect.html">7.26.17. <code class="docutils literal notranslate"><span class="pre">grn_inspect</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_match_escalation.html">7.26.18. <code class="docutils literal notranslate"><span class="pre">grn_match_escalation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_obj.html">7.26.19. <code class="docutils literal notranslate"><span class="pre">grn_obj</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_proc.html">7.26.20. <code class="docutils literal notranslate"><span class="pre">grn_proc</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_search.html">7.26.21. <code class="docutils literal notranslate"><span class="pre">grn_search</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_table.html">7.26.22. <code class="docutils literal notranslate"><span class="pre">grn_table</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_table_cursor.html">7.26.23. <code class="docutils literal notranslate"><span class="pre">grn_table_cursor</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_thread.html">7.26.24. <code class="docutils literal notranslate"><span class="pre">grn_thread_*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_type.html">7.26.25. <code class="docutils literal notranslate"><span class="pre">grn_type</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/grn_user_data.html">7.26.26. <code class="docutils literal notranslate"><span class="pre">grn_user_data</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../reference.html" class="nav-link"><span class="section-number">7. </span>Reference manual</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../tokenizers.html" class="nav-link"><span class="section-number">7.8. </span>Tokenizers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><span class="section-number">7.8.12. </span><code class="docutils literal notranslate"><span class="pre">TokenLanguageModelKNN</span></code></span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <!-- groonga-command -->
+<!-- database: tokenizers_language_model_knn -->
+<section class="tex2jax_ignore mathjax_ignore" id="tokenlanguagemodelknn">
+<h1><span class="section-number">7.8.12. </span><code class="docutils literal notranslate"><span class="pre">TokenLanguageModelKNN</span></code><a class="headerlink" href="#tokenlanguagemodelknn" title="Link to this heading">#</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.1.8.</span></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an experimental feature. Currently, this feature is still not stable.</p>
+</div>
+<section id="summary">
+<h2><span class="section-number">7.8.12.1. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">TokenLanguageModelKNN</span></code> is a tokenizer that supports semantic search.</p>
+<p>Semantic search uses the k-Nearest Neighbors (k-NN) algorithm.</p>
+<p>To enable this tokenizer, register <code class="docutils literal notranslate"><span class="pre">language_model/knn</span></code> plugin by the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>plugin_register<span class="w"> </span>language_model/knn
+</pre></div>
+</div>
+</section>
+<section id="syntax">
+<h2><span class="section-number">7.8.12.2. </span>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">TokenLanguageModelKNN</span></code> requires two parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TokenLanguageModelKNN</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">,</span> <span class="s2">&quot;hf:///path/to&quot;</span><span class="p">,</span> <span class="s2">&quot;code_column&quot;</span><span class="p">,</span> <span class="s2">&quot;column_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">TokenLanguageModelKNN</span></code> has one optional parameter.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TokenLanguageModelKNN</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">,</span> <span class="s2">&quot;hf:///path/to&quot;</span><span class="p">,</span> <span class="s2">&quot;code_column&quot;</span><span class="p">,</span> <span class="s2">&quot;column_name&quot;</span><span class="p">,</span> <span class="s2">&quot;n_clusters&quot;</span><span class="p">,</span> <span class="n">N_CLUSTERS</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2><span class="section-number">7.8.12.3. </span>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tokenizer can’t be run with <a class="reference internal" href="../commands/tokenize.html"><span class="doc">tokenize</span></a> command.</p>
+</div>
+<p>This usage example shows how to set <code class="docutils literal notranslate"><span class="pre">TokenLanguageModelKNN</span></code> as <code class="docutils literal notranslate"><span class="pre">default_tokenizer</span></code>.</p>
+<p>You need to register <code class="docutils literal notranslate"><span class="pre">language_model/knn</span></code> plugin at first:</p>
+<!-- groonga-command -->
+<p>Execution example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>plugin_register<span class="w"> </span>language_model/knn
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],true]</span>
+</pre></div>
+</div>
+<p>Here is a schema definition and sample data.</p>
+<p>Sample schema:</p>
+<!-- groonga-command -->
+<p>Execution example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>table_create<span class="w"> </span>--name<span class="w"> </span>Memos<span class="w"> </span>--flags<span class="w"> </span>TABLE_NO_KEY
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],true]</span>
+column_create<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--table<span class="w"> </span>Memos<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>content<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--flags<span class="w"> </span>COLUMN_SCALAR<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--type<span class="w"> </span>ShortText
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],true]</span>
+</pre></div>
+</div>
+<p>Sample data:</p>
+<!-- groonga-command -->
+<p>Execution example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>load<span class="w"> </span>--table<span class="w"> </span>Memos
+<span class="o">[</span>
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;I am a boy.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;This is an apple.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;Groonga is a full text search engine.&quot;</span><span class="o">}</span>
+<span class="o">]</span>
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],3]</span>
+</pre></div>
+</div>
+<p>You need to store embedding information for each record. Here is how to create that column.</p>
+<!-- groonga-command -->
+<p>Execution example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>column_create<span class="w"> </span>Memos<span class="w"> </span>embedding_code<span class="w"> </span>COLUMN_SCALAR<span class="w"> </span>ShortBinary
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],true]</span>
+</pre></div>
+</div>
+<p>Create an index for semantic search.</p>
+<p>Specify <code class="docutils literal notranslate"><span class="pre">TokenLanguageModelKNN</span></code> as the tokenizer.</p>
+<!-- groonga-command -->
+<p>Execution example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>table_create<span class="w"> </span>Centroids<span class="w"> </span>TABLE_HASH_KEY<span class="w"> </span>ShortBinary<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--default_tokenizer<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s1">&#39;TokenLanguageModelKNN(&quot;model&quot;, &quot;hf:///groonga/all-MiniLM-L6-v2-Q4_K_M-GGUF&quot;, \</span>
+<span class="s1">                           &quot;code_column&quot;, &quot;embedding_code&quot;)&#39;</span>
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],true]</span>
+column_create<span class="w"> </span>Centroids<span class="w"> </span>data_content<span class="w"> </span>COLUMN_INDEX<span class="w"> </span>Memos<span class="w"> </span>content
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],true]</span>
+</pre></div>
+</div>
+<p>You can see that the embedding has been generated by fetching <code class="docutils literal notranslate"><span class="pre">Memos</span></code> table.
+The generated bytecode is saved.</p>
+<!-- groonga-command -->
+<p>Execution example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span>Memos
+<span class="c1"># [</span>
+<span class="c1">#   [</span>
+<span class="c1">#     0,</span>
+<span class="c1">#     1337566253.89858,</span>
+<span class="c1">#     0.000355720520019531</span>
+<span class="c1">#   ],</span>
+<span class="c1">#   [</span>
+<span class="c1">#     [</span>
+<span class="c1">#       [</span>
+<span class="c1">#         3</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         [</span>
+<span class="c1">#           &quot;_id&quot;,</span>
+<span class="c1">#           &quot;UInt32&quot;</span>
+<span class="c1">#         ],</span>
+<span class="c1">#         [</span>
+<span class="c1">#           &quot;content&quot;,</span>
+<span class="c1">#           &quot;ShortText&quot;</span>
+<span class="c1">#         ],</span>
+<span class="c1">#         [</span>
+<span class="c1">#           &quot;embedding_code&quot;,</span>
+<span class="c1">#           &quot;ShortBinary&quot;</span>
+<span class="c1">#         ]</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         1,</span>
+<span class="c1">#         &quot;I am a boy.&quot;,</span>
+<span class="c1">#         &quot;tW+IbgJ0dH9MM0nTOzt9ojKuwbfFnkUSCQHEh2X4l4ijXm03SpYrJHcLT+EbYFFUJPfyvim6bT8=&quot;</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         2,</span>
+<span class="c1">#         &quot;This is an apple.&quot;,</span>
+<span class="c1">#         &quot;utwX20mQL4h7XU/4OiMXRJnxJgg6QLP1lT3WehOKMZVlgSzowGRgeqd0GN7Y5E4G6mPzvoXhZD8=&quot;</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         3,</span>
+<span class="c1">#         &quot;Groonga is a full text search engine.&quot;,</span>
+<span class="c1">#         &quot;RLLyELYP2GC1grQNxMSK/+8OXE0W+3qJ+sY7wO4Hzmacv9NNv5vXjYjTsRBnH6b5Dpqrvu0hgT8=&quot;</span>
+<span class="c1">#       ]</span>
+<span class="c1">#     ]</span>
+<span class="c1">#   ]</span>
+<span class="c1"># ]</span>
+</pre></div>
+</div>
+<p>Users do not operate on this <code class="docutils literal notranslate"><span class="pre">embedding_code</span></code>. Groonga uses it internally for semantic search.</p>
+</section>
+<section id="parameters">
+<h2><span class="section-number">7.8.12.4. </span>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
+<section id="required-parameters">
+<h3><span class="section-number">7.8.12.4.1. </span>Required parameters<a class="headerlink" href="#required-parameters" title="Link to this heading">#</a></h3>
+<section id="model">
+<h4><span class="section-number">7.8.12.4.1.1. </span><code class="docutils literal notranslate"><span class="pre">model</span></code><a class="headerlink" href="#model" title="Link to this heading">#</a></h4>
+<p>Specify the language model to use.
+You can specify a Hugging Face URI for <code class="docutils literal notranslate"><span class="pre">model</span></code>.</p>
+<p>At the first index creation, it automatically downloads and places the model in the directory of Groonga’s database.
+After that, it uses the locally located model.</p>
+<p>Example of URI: <code class="docutils literal notranslate"><span class="pre">hf:///groonga/all-MiniLM-L6-v2-Q4_K_M-GGUF</span></code> for <code class="docutils literal notranslate"><span class="pre">https://huggingface.co/groonga/all-MiniLM-L6-v2-Q4_K_M-GGUF</span></code>.</p>
+<p>See also <a class="reference internal" href="../language_model.html"><span class="doc">Language model</span></a> for language model.</p>
+</section>
+<section id="code-column">
+<h4><span class="section-number">7.8.12.4.1.2. </span><code class="docutils literal notranslate"><span class="pre">code_column</span></code><a class="headerlink" href="#code-column" title="Link to this heading">#</a></h4>
+<p>Specify the column for storing the embedding.</p>
+<p>Create a column in the table storing the searchable text and specify its column name.</p>
+</section>
+</section>
+<section id="optional-parameter">
+<h3><span class="section-number">7.8.12.4.2. </span>Optional parameter<a class="headerlink" href="#optional-parameter" title="Link to this heading">#</a></h3>
+<section id="n-clusters">
+<h4><span class="section-number">7.8.12.4.2.1. </span><code class="docutils literal notranslate"><span class="pre">n_clusters</span></code><a class="headerlink" href="#n-clusters" title="Link to this heading">#</a></h4>
+<p>Specify the number of clusters to use as indexes.
+If not specified, an appropriate value will be set automatically.</p>
+<p>Usually, no specification is necessary.</p>
+</section>
+</section>
+</section>
+<section id="see-also">
+<h2><span class="section-number">7.8.12.5. </span>See also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../language_model.html"><span class="doc">Language model</span></a></p></li>
+<li><p><a class="reference internal" href="../commands/tokenize.html"><span class="doc">tokenize</span></a></p></li>
+<li><p><a class="reference internal" href="../functions/language_model_knn.html"><span class="doc">language_model_knn</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="token_delimit_null.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">7.8.11. </span><code class="docutils literal notranslate"><span class="pre">TokenDelimitNull</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="token_mecab.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7.8.13. </span><code class="docutils literal notranslate"><span class="pre">TokenMecab</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">7.8.12.1. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">7.8.12.2. Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">7.8.12.3. Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">7.8.12.4. Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-parameters">7.8.12.4.1. Required parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model">7.8.12.4.1.1. <code class="docutils literal notranslate"><span class="pre">model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#code-column">7.8.12.4.1.2. <code class="docutils literal notranslate"><span class="pre">code_column</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameter">7.8.12.4.2. Optional parameter</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-clusters">7.8.12.4.2.1. <code class="docutils literal notranslate"><span class="pre">n_clusters</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">7.8.12.5. See also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/groonga/groonga/edit/main/doc/source/reference/tokenizers/token_language_model_knn.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2009-2025 Groonga Project.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
