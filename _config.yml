@@ -4,8 +4,8 @@ paginate: 5
 url: https://groonga.org
 future: true
 incremental: true
-groonga_version: "15.1.7"
-groonga_release_date: 2025-09-29
+groonga_version: "15.1.8"
+groonga_release_date: 2025-10-31
 
 include:
   - "_images"
