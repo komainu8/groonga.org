@@ -11,11 +11,12 @@ var searchData=
   ['max_5fn_5fsubrecs_8',['max_n_subrecs',['../struct__grn__table__group__result.html#a12cff01cb5e45e1c87d2b270cd5a0b3a',1,'_grn_table_group_result']]],
   ['max_5fsize_9',['max_size',['../struct__grn__obj__format.html#afb35aa82897ad5a579c00d55025093be',1,'_grn_obj_format::max_size'],['../struct__grn__search__optarg.html#a50a25ba66b3c51aa8031b89fbe300b5e',1,'_grn_search_optarg::max_size']]],
   ['memory_2eh_10',['memory.h',['../memory_8h.html',1,'']]],
-  ['min_11',['min',['../struct__grn__match__info.html#a3d516d1ffafe90ce6a5cbbd7cfe8f7ce',1,'_grn_match_info::min'],['../struct__grn__obj__format.html#a16e9c6a61ab13e2636a15bf6dc382fc5',1,'_grn_obj_format::min']]],
-  ['min_5finterval_12',['min_interval',['../struct__grn__search__optarg.html#af2f0d5772d382a730fcf32173b7f9cba',1,'_grn_search_optarg']]],
-  ['min_5fsize_13',['min_size',['../struct__grn__obj__format.html#afc0acdacbc800db6ddf3cec2083eee6a',1,'_grn_obj_format']]],
-  ['mode_14',['mode',['../struct__grn__search__optarg.html#a9c17a4163fdbd4d4f895dda727926fc5',1,'_grn_search_optarg']]],
-  ['mode_20configuration_15',['Cache Mode Configuration',['../cache_8h.html#autotoc_md1',1,'']]],
-  ['modes_16',['Cache Modes',['../cache_8h.html#autotoc_md0',1,'']]],
-  ['msgpack_2eh_17',['msgpack.h',['../msgpack_8h.html',1,'']]]
+  ['memory_5fmap_2eh_11',['memory_map.h',['../memory__map_8h.html',1,'']]],
+  ['min_12',['min',['../struct__grn__match__info.html#a3d516d1ffafe90ce6a5cbbd7cfe8f7ce',1,'_grn_match_info::min'],['../struct__grn__obj__format.html#a16e9c6a61ab13e2636a15bf6dc382fc5',1,'_grn_obj_format::min']]],
+  ['min_5finterval_13',['min_interval',['../struct__grn__search__optarg.html#af2f0d5772d382a730fcf32173b7f9cba',1,'_grn_search_optarg']]],
+  ['min_5fsize_14',['min_size',['../struct__grn__obj__format.html#afc0acdacbc800db6ddf3cec2083eee6a',1,'_grn_obj_format']]],
+  ['mode_15',['mode',['../struct__grn__search__optarg.html#a9c17a4163fdbd4d4f895dda727926fc5',1,'_grn_search_optarg']]],
+  ['mode_20configuration_16',['Cache Mode Configuration',['../cache_8h.html#autotoc_md1',1,'']]],
+  ['modes_17',['Cache Modes',['../cache_8h.html#autotoc_md0',1,'']]],
+  ['msgpack_2eh_18',['msgpack.h',['../msgpack_8h.html',1,'']]]
 ];

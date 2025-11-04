@@ -74,6 +74,9 @@ $(function() {
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
 <li>grn_accessor_estimate_size_for_query()&#160;:&#160;<a class="el" href="accessor_8h.html#a394d9744e7f8e619bac0fcfe0711235a">accessor.h</a></li>
 <li>grn_accessor_execute()&#160;:&#160;<a class="el" href="accessor_8h.html#ae8673951f3c5348ba12b10e27bd754be">accessor.h</a></li>
+<li>grn_accessor_get_action()&#160;:&#160;<a class="el" href="accessor_8h.html#acd6527784b2783130afc8e0396b1160d">accessor.h</a></li>
+<li>grn_accessor_get_next()&#160;:&#160;<a class="el" href="accessor_8h.html#a4741387d9681c04153cfb36fdaafef30">accessor.h</a></li>
+<li>grn_accessor_get_obj()&#160;:&#160;<a class="el" href="accessor_8h.html#adb26d468a7210a5c87230ea602cb5ff4">accessor.h</a></li>
 <li>grn_accessor_name()&#160;:&#160;<a class="el" href="accessor_8h.html#a2933d7b7600b5e7851dc86e9d8dd9ae3">accessor.h</a></li>
 <li>grn_accessor_resolve()&#160;:&#160;<a class="el" href="accessor_8h.html#a572d83b6bfec07b451edd26ee9904747">accessor.h</a></li>
 <li>grn_accessor_resolve_id()&#160;:&#160;<a class="el" href="accessor_8h.html#affc0c2cbd106dcb4f8a624b2b3418f7c">accessor.h</a></li>
@@ -292,6 +295,7 @@ $(function() {
 <li>grn_expr_append_const_int()&#160;:&#160;<a class="el" href="expr_8h.html#a4717af512e04cd4a82fd792dc33793a1">expr.h</a></li>
 <li>grn_expr_append_const_int32()&#160;:&#160;<a class="el" href="expr_8h.html#a681565bf58f0bf75f3f127d0295ab7da">expr.h</a></li>
 <li>grn_expr_append_const_str()&#160;:&#160;<a class="el" href="expr_8h.html#afab29af3274781a1262c1ae541175d93">expr.h</a></li>
+<li>grn_expr_append_const_uint32()&#160;:&#160;<a class="el" href="expr_8h.html#abc7c99d54e28cf991bdc9c9e93d203f9">expr.h</a></li>
 <li>grn_expr_append_obj()&#160;:&#160;<a class="el" href="expr_8h.html#af6fff42a0b5596ca44994a1f7b943500">expr.h</a></li>
 <li>grn_expr_append_op()&#160;:&#160;<a class="el" href="expr_8h.html#af1370cf80f630382c9a8817392062ba9">expr.h</a></li>
 <li>grn_expr_clear_vars()&#160;:&#160;<a class="el" href="expr_8h.html#a093de0fc4d12928ee63146a5c0d9dd89">expr.h</a></li>
@@ -446,9 +450,11 @@ $(function() {
 <li>grn_is_back_trace_enable()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#ac69c1779fc7ff04470e9376f1682b909">groonga.h</a></li>
 <li>grn_is_reference_count_enable()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a5f975281e377416a8936d716da9ffeae">groonga.h</a></li>
 <li>grn_language_model_close()&#160;:&#160;<a class="el" href="language__model_8h.html#ab966ef0e4392dcde93bb3b23e0dc8a85">language_model.h</a></li>
+<li>grn_language_model_get_n_embedding_dimensions()&#160;:&#160;<a class="el" href="language__model_8h.html#a12c55176f625226f53d47e9ac3be0697">language_model.h</a></li>
 <li>grn_language_model_inferencer_close()&#160;:&#160;<a class="el" href="language__model_8h.html#a63277b3d17d371a8ef927dd2eca4d87f">language_model.h</a></li>
 <li>grn_language_model_inferencer_vectorize()&#160;:&#160;<a class="el" href="language__model_8h.html#a2f481e52135c18aa321f5eb72f52bbdd">language_model.h</a></li>
 <li>grn_language_model_inferencer_vectorize_applier()&#160;:&#160;<a class="el" href="language__model_8h.html#ab22e5360641a1c52612583554c8b2ecf">language_model.h</a></li>
+<li>grn_language_model_inferencer_vectorize_in_batch()&#160;:&#160;<a class="el" href="language__model_8h.html#ae0f46416e78e8bd406d8730a9a202ef2">language_model.h</a></li>
 <li>grn_language_model_loader_close()&#160;:&#160;<a class="el" href="language__model_8h.html#a21b2ec7f3e3f306e857b7c5750fb694e">language_model.h</a></li>
 <li>grn_language_model_loader_load()&#160;:&#160;<a class="el" href="language__model_8h.html#ad4e17aa739c5f4c547007642a783826d">language_model.h</a></li>
 <li>grn_language_model_loader_open()&#160;:&#160;<a class="el" href="language__model_8h.html#a49da82bcaeee3d8a3cbcb37761c0d28c">language_model.h</a></li>
@@ -468,6 +474,9 @@ $(function() {
 <li>grn_logger_set()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#af05c9bf45d261aa0892486bf9db8c2ba">groonga.h</a></li>
 <li>grn_logger_set_max_level()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a07b6bebd800cd0ac0d44af6ee13b96cb">groonga.h</a></li>
 <li>grn_memory_get_usage()&#160;:&#160;<a class="el" href="memory_8h.html#acb4b2d1675e49127ed1c1724ee42c32a">memory.h</a></li>
+<li>grn_memory_map_close()&#160;:&#160;<a class="el" href="memory__map_8h.html#a384fce5c70fbed5475b4f2b0b0dc8349">memory_map.h</a></li>
+<li>grn_memory_map_get_address()&#160;:&#160;<a class="el" href="memory__map_8h.html#ab2709034d0633fff2fc6610f99904885">memory_map.h</a></li>
+<li>grn_memory_map_open()&#160;:&#160;<a class="el" href="memory__map_8h.html#a081a16fd501cd7ff90723585247aea5a">memory_map.h</a></li>
 <li>grn_msgpack_pack()&#160;:&#160;<a class="el" href="msgpack_8h.html#ab503bd3d3b9c658880d4f81d9c283516">msgpack.h</a></li>
 <li>grn_msgpack_pack_raw()&#160;:&#160;<a class="el" href="msgpack_8h.html#a460aa7e66615fa164077b9f40f896c76">msgpack.h</a></li>
 <li>grn_msgpack_unpack_array()&#160;:&#160;<a class="el" href="msgpack_8h.html#aa9020e043c03146baef07a305b5655f1">msgpack.h</a></li>
@@ -508,6 +517,12 @@ $(function() {
 <li>grn_obj_is_aggregator_proc()&#160;:&#160;<a class="el" href="obj_8h.html#a78175a698a828c8892fb4cecd12e4cba">obj.h</a></li>
 <li>grn_obj_is_applier_proc()&#160;:&#160;<a class="el" href="obj_8h.html#aa8f8d4acf78ee70a840b0bfb3d7129b9">obj.h</a></li>
 <li>grn_obj_is_avg_accessor()&#160;:&#160;<a class="el" href="obj_8h.html#a5fa0854adfac3c2e149b5faa8a153a4d">obj.h</a></li>
+<li>grn_obj_is_binary_family_bulk()&#160;:&#160;<a class="el" href="obj_8h.html#a9c3d2be7ad146fc75cf5abfb2e68f423">obj.h</a></li>
+<li>grn_obj_is_binary_family_scalar_accessor()&#160;:&#160;<a class="el" href="obj_8h.html#aba698836e608d614a2d4e4b1589bbb98">obj.h</a></li>
+<li>grn_obj_is_binary_family_scalar_column()&#160;:&#160;<a class="el" href="obj_8h.html#a9b2b143dbfb8f0378f5e52efae0fe543">obj.h</a></li>
+<li>grn_obj_is_binary_family_type()&#160;:&#160;<a class="el" href="obj_8h.html#a18721725bd240ce578af7d5cc8d53ad8">obj.h</a></li>
+<li>grn_obj_is_binary_family_vector()&#160;:&#160;<a class="el" href="obj_8h.html#a09127e5789523fc91619cd92acb6e648">obj.h</a></li>
+<li>grn_obj_is_binary_family_vector_column()&#160;:&#160;<a class="el" href="obj_8h.html#ac68e42ddb16c15e2caa56119d47e22a0">obj.h</a></li>
 <li>grn_obj_is_builtin()&#160;:&#160;<a class="el" href="obj_8h.html#a786df256d7cb6b5d8cf6548761fa225a">obj.h</a></li>
 <li>grn_obj_is_bulk()&#160;:&#160;<a class="el" href="obj_8h.html#a18df21e36c9e4dadcbb32f4f11ad035e">obj.h</a></li>
 <li>grn_obj_is_column()&#160;:&#160;<a class="el" href="obj_8h.html#a0f5b93fdf1265cbe3a4d1d0ec0d9a346">obj.h</a></li>
@@ -548,6 +563,7 @@ $(function() {
 <li>grn_obj_is_scorer_proc()&#160;:&#160;<a class="el" href="obj_8h.html#a15032a47e6c76561305946bccf0bcc1c">obj.h</a></li>
 <li>grn_obj_is_selector_only_proc()&#160;:&#160;<a class="el" href="obj_8h.html#a7e0225275801ff113839f053e4616127">obj.h</a></li>
 <li>grn_obj_is_selector_proc()&#160;:&#160;<a class="el" href="obj_8h.html#ae426cebec32a1c703744387dc600dcbd">obj.h</a></li>
+<li>grn_obj_is_sorter_proc()&#160;:&#160;<a class="el" href="obj_8h.html#a145c8150000a8bdc7d42d4a29600f137">obj.h</a></li>
 <li>grn_obj_is_sum_accessor()&#160;:&#160;<a class="el" href="obj_8h.html#aa2e36533f627b5aa41b002547134fb91">obj.h</a></li>
 <li>grn_obj_is_table()&#160;:&#160;<a class="el" href="obj_8h.html#a8b94a5aa71f61c36ef7f2aba2c057ca9">obj.h</a></li>
 <li>grn_obj_is_table_with_key()&#160;:&#160;<a class="el" href="obj_8h.html#ab37af39500cba91215cb94bc443a8107">obj.h</a></li>
@@ -626,6 +642,7 @@ $(function() {
 <li>grn_operator_to_string()&#160;:&#160;<a class="el" href="operator_8h.html#acabc22f6df50c7a5743152d93cfc2528">operator.h</a></li>
 <li>grn_output_array_close()&#160;:&#160;<a class="el" href="output_8h.html#ae70ab64f2d375fcc27b87e265da1a7e5">output.h</a></li>
 <li>grn_output_array_open()&#160;:&#160;<a class="el" href="output_8h.html#a1954412c825af1d7fe5d47c942e4927b">output.h</a></li>
+<li>grn_output_binary()&#160;:&#160;<a class="el" href="output_8h.html#a3f3989aa98c85dae5db501737d422b8b">output.h</a></li>
 <li>grn_output_bool()&#160;:&#160;<a class="el" href="output_8h.html#a2317ba241162492ba89ff0aec14d555c">output.h</a></li>
 <li>grn_output_columns_apply()&#160;:&#160;<a class="el" href="output__columns_8h.html#a93b8a7dc1ee773419566adb492a52f33">output_columns.h</a></li>
 <li>grn_output_columns_parse()&#160;:&#160;<a class="el" href="output__columns_8h.html#ad3dfa16aea25d37363e5c6fc424501a8">output_columns.h</a></li>
@@ -751,6 +768,7 @@ $(function() {
 <li>grn_proc_set_is_stable()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a8a8be7211b40c6c660c0fe9911f96779">groonga.h</a></li>
 <li>grn_proc_set_selector()&#160;:&#160;<a class="el" href="selector_8h.html#a29a1f12001b84f515f5d39f0aeeffcec">selector.h</a></li>
 <li>grn_proc_set_selector_operator()&#160;:&#160;<a class="el" href="selector_8h.html#a0789529c19fe6af372839e454085fd98">selector.h</a></li>
+<li>grn_proc_set_sorter()&#160;:&#160;<a class="el" href="sorter_8h.html#a37b26422a4462de43f067644f5569ba8">sorter.h</a></li>
 <li>grn_progress_get_type()&#160;:&#160;<a class="el" href="progress_8h.html#a75f7ce37226003d57522bd922160aa46">progress.h</a></li>
 <li>grn_progress_index_get_n_processed_records()&#160;:&#160;<a class="el" href="progress_8h.html#a8d23483f62bd73cda416ce30b89afaae">progress.h</a></li>
 <li>grn_progress_index_get_n_processed_terms()&#160;:&#160;<a class="el" href="progress_8h.html#a4c870d39b2ff1b457a416ea595d75815">progress.h</a></li>
@@ -843,6 +861,13 @@ $(function() {
 <li>grn_snip_set_delimiter_regexp()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#abc59f29f6265da728387ffeb192c0af0">groonga.h</a></li>
 <li>grn_snip_set_normalizer()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a8ea653a18b79795611e4ee9306c9ce07">groonga.h</a></li>
 <li>grn_snip_set_normalizers()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a2ea2abbe659e936dfb314b448e2d52a5">groonga.h</a></li>
+<li>grn_sorter_data_get_args()&#160;:&#160;<a class="el" href="sorter_8h.html#a2440d040443a2760e34e426ba6dc38e9">sorter.h</a></li>
+<li>grn_sorter_data_get_limit()&#160;:&#160;<a class="el" href="sorter_8h.html#ae5aa5411e91ef1fa901c554ec0d615bb">sorter.h</a></li>
+<li>grn_sorter_data_get_offset()&#160;:&#160;<a class="el" href="sorter_8h.html#adadd9390c308add0a614d9c9c13f93df">sorter.h</a></li>
+<li>grn_sorter_data_get_result()&#160;:&#160;<a class="el" href="sorter_8h.html#ab293d0bf1bfb2de2f4a495c71be8af47">sorter.h</a></li>
+<li>grn_sorter_data_get_sorter()&#160;:&#160;<a class="el" href="sorter_8h.html#a95fdba8bdc0579f1344cb0e2d7f35e73">sorter.h</a></li>
+<li>grn_sorter_data_get_table()&#160;:&#160;<a class="el" href="sorter_8h.html#aa946db2cad103ab15b5a51505f2ce9f1">sorter.h</a></li>
+<li>grn_sorter_data_is_ascending()&#160;:&#160;<a class="el" href="sorter_8h.html#a6438d173e435c4d4373bd17a20856fd9">sorter.h</a></li>
 <li>grn_str_close()&#160;:&#160;<a class="el" href="string_8h.html#a676a0c46eb48b7e2b217c5f4232c5374">string.h</a></li>
 <li>grn_str_open()&#160;:&#160;<a class="el" href="string_8h.html#a6f9cd6089aa29cf6a7bc5f463b43c799">string.h</a></li>
 <li>grn_string_get_checks()&#160;:&#160;<a class="el" href="string_8h.html#ad0658614570c6806a8aa0169c7b31589">string.h</a></li>
@@ -1038,6 +1063,15 @@ $(function() {
 <li>grn_token_set_source_offset()&#160;:&#160;<a class="el" href="token_8h.html#a72647c003f2a598a5b4faaeabe248b97">token.h</a></li>
 <li>grn_token_set_status()&#160;:&#160;<a class="el" href="token_8h.html#aa36fe8b795053c6e2f8eea1aae963ab5">token.h</a></li>
 <li>grn_token_set_weight()&#160;:&#160;<a class="el" href="token_8h.html#afe9d153d76b21a87d1ae7c328bf542b3">token.h</a></li>
+<li>grn_tokenizer_build_data_append_tokens()&#160;:&#160;<a class="el" href="tokenizer_8h.html#aa4a57d8b5567902d72d38b304198072d">tokenizer.h</a></li>
+<li>grn_tokenizer_build_data_finish_record()&#160;:&#160;<a class="el" href="tokenizer_8h.html#abdfeb48b800262359e0b78b074be374a">tokenizer.h</a></li>
+<li>grn_tokenizer_build_data_finish_section()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a5db7820af72114faf50dcde4e9571979">tokenizer.h</a></li>
+<li>grn_tokenizer_build_data_get_index_column()&#160;:&#160;<a class="el" href="tokenizer_8h.html#aab930cd77367e0d0641e6634ef48c3d7">tokenizer.h</a></li>
+<li>grn_tokenizer_build_data_get_lexicon()&#160;:&#160;<a class="el" href="tokenizer_8h.html#ab04aebf554eda44e8d6a15e727788355">tokenizer.h</a></li>
+<li>grn_tokenizer_build_data_get_source_columns()&#160;:&#160;<a class="el" href="tokenizer_8h.html#aa2f7413723c2e2a5ff32beba585dc915">tokenizer.h</a></li>
+<li>grn_tokenizer_build_data_get_source_table()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a6ada6df5f4883893a02ef052f242f2ea">tokenizer.h</a></li>
+<li>grn_tokenizer_build_data_start_record()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a2ae6a993b08f097f7211fd2982ed6806">tokenizer.h</a></li>
+<li>grn_tokenizer_build_data_start_section()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a2d32849b61c2b34358e2fc107c6043e0">tokenizer.h</a></li>
 <li>grn_tokenizer_charlen()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a6e52ea246eee4a6210db3711cc83e6d7">tokenizer.h</a></li>
 <li>grn_tokenizer_create()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a1926b09e167b9931b15fbb197060f756">tokenizer.h</a></li>
 <li>grn_tokenizer_have_tokenized_delimiter()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a3beec8b234a25e061755ae45c060a149">tokenizer.h</a></li>
@@ -1064,6 +1098,7 @@ $(function() {
 <li>grn_tokenizer_query_open()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a1ae2a3183be555024d41da275d4dd105">tokenizer.h</a></li>
 <li>grn_tokenizer_query_set_normalize_flags()&#160;:&#160;<a class="el" href="tokenizer_8h.html#adc543a5f6f49945d2f687cb54c41eb8b">tokenizer.h</a></li>
 <li>grn_tokenizer_register()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a71030d47d403dc24936a37cfcc3e1ec9">tokenizer.h</a></li>
+<li>grn_tokenizer_set_build_func()&#160;:&#160;<a class="el" href="tokenizer_8h.html#ab5bebdafe2ca1846400e54eb3331fc31">tokenizer.h</a></li>
 <li>grn_tokenizer_set_fin_func()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a4b2ffa303ebd0cb0070a7efcc3d46d03">tokenizer.h</a></li>
 <li>grn_tokenizer_set_init_func()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a83816ddc929d347a17ebf4c880f18c52">tokenizer.h</a></li>
 <li>grn_tokenizer_set_next_func()&#160;:&#160;<a class="el" href="tokenizer_8h.html#ac9a1060c7d4d1fb2fd67c83a63f4b82d">tokenizer.h</a></li>
@@ -1072,6 +1107,7 @@ $(function() {
 <li>grn_tokenizer_token_push()&#160;:&#160;<a class="el" href="tokenizer_8h.html#a17e4987b2fd72bc61766bb91209aa3e9">tokenizer.h</a></li>
 <li>grn_tokenizer_tokenized_delimiter_next()&#160;:&#160;<a class="el" href="tokenizer_8h.html#ad7d3818e0203834d7b04003f9b500bf9">tokenizer.h</a></li>
 <li>grn_type_create()&#160;:&#160;<a class="el" href="type_8h.html#a3fd16818b7a47a61002622f5c0fb0ba2">type.h</a></li>
+<li>grn_type_id_is_binary_family()&#160;:&#160;<a class="el" href="type_8h.html#a1baaa1e21f2f4c22b6faf45ff0b97b7f">type.h</a></li>
 <li>grn_type_id_is_builtin()&#160;:&#160;<a class="el" href="type_8h.html#aaf162d1a86d70d0379c018966be41fed">type.h</a></li>
 <li>grn_type_id_is_compatible()&#160;:&#160;<a class="el" href="type_8h.html#a489b411499cbae3a4d52acee8f1fd706">type.h</a></li>
 <li>grn_type_id_is_float_family()&#160;:&#160;<a class="el" href="type_8h.html#af2f6262a3703ce4f253eb33c7f6578aa">type.h</a></li>
