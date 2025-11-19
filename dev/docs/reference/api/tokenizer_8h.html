@@ -242,6 +242,18 @@ Functions</h2></td></tr>
 <tr class="memitem:aab930cd77367e0d0641e6634ef48c3d7" id="r_aab930cd77367e0d0641e6634ef48c3d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a907ed57b4771c954f759a9f0faaf57b2">grn_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#aab930cd77367e0d0641e6634ef48c3d7">grn_tokenizer_build_data_get_index_column</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data)</td></tr>
 <tr class="memdesc:aab930cd77367e0d0641e6634ef48c3d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the index column for this tokenizer.  <br /></td></tr>
 <tr class="separator:aab930cd77367e0d0641e6634ef48c3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa978a2a8386a7b7a6e9c651b5cf52efb" id="r_aa978a2a8386a7b7a6e9c651b5cf52efb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#aa978a2a8386a7b7a6e9c651b5cf52efb">grn_tokenizer_build_data_processed_n_records</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data, uint32_t n_records)</td></tr>
+<tr class="memdesc:aa978a2a8386a7b7a6e9c651b5cf52efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tokenizer may call this when it processed one or more records. This is only for progress report.  <br /></td></tr>
+<tr class="separator:aa978a2a8386a7b7a6e9c651b5cf52efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7291dfdd9bcf1abb3bc7c62dc792d75" id="r_ad7291dfdd9bcf1abb3bc7c62dc792d75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#ad7291dfdd9bcf1abb3bc7c62dc792d75">grn_tokenizer_build_data_start_vectorize</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data, uint32_t n_total_records)</td></tr>
+<tr class="memdesc:ad7291dfdd9bcf1abb3bc7c62dc792d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tokenizer must call this when it starts vectorizing. This is only for progress report.  <br /></td></tr>
+<tr class="separator:ad7291dfdd9bcf1abb3bc7c62dc792d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e88ead7d9968a5c84d07907ba4cc12" id="r_a73e88ead7d9968a5c84d07907ba4cc12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a73e88ead7d9968a5c84d07907ba4cc12">grn_tokenizer_build_data_start_cluster</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data, uint32_t n_total_records)</td></tr>
+<tr class="memdesc:a73e88ead7d9968a5c84d07907ba4cc12"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tokenizer must call this when it starts clustering. This is only for progress report.  <br /></td></tr>
+<tr class="separator:a73e88ead7d9968a5c84d07907ba4cc12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc72b8de85f254458205db78f5d9df90" id="r_abc72b8de85f254458205db78f5d9df90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#abc72b8de85f254458205db78f5d9df90">grn_tokenizer_build_data_start_load</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data, uint32_t n_total_records)</td></tr>
+<tr class="memdesc:abc72b8de85f254458205db78f5d9df90"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tokenizer must call this when it starts loading. This is only for progress report.  <br /></td></tr>
+<tr class="separator:abc72b8de85f254458205db78f5d9df90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ae6a993b08f097f7211fd2982ed6806" id="r_a2ae6a993b08f097f7211fd2982ed6806"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokenizer_8h.html#a2ae6a993b08f097f7211fd2982ed6806">grn_tokenizer_build_data_start_record</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *data, <a class="el" href="groonga_2groonga_8h.html#a4a1a044ec7d98935eed6f3067f520240">grn_id</a> rid)</td></tr>
 <tr class="memdesc:a2ae6a993b08f097f7211fd2982ed6806"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tokenizer must call this when it starts processing a new record.  <br /></td></tr>
 <tr class="separator:a2ae6a993b08f097f7211fd2982ed6806"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -851,6 +863,141 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa978a2a8386a7b7a6e9c651b5cf52efb" name="aa978a2a8386a7b7a6e9c651b5cf52efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa978a2a8386a7b7a6e9c651b5cf52efb">&#9670;&#160;</a></span>grn_tokenizer_build_data_processed_n_records()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> grn_tokenizer_build_data_processed_n_records </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>n_records</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A tokenizer may call this when it processed one or more records. This is only for progress report. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The context object. </td></tr>
+    <tr><td class="paramname">data</td><td>The tokenizer build data. </td></tr>
+    <tr><td class="paramname">n_records</td><td>The number of processed records.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>15.2.1 </dd></dl>
+
+</div>
+</div>
+<a id="a73e88ead7d9968a5c84d07907ba4cc12" name="a73e88ead7d9968a5c84d07907ba4cc12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e88ead7d9968a5c84d07907ba4cc12">&#9670;&#160;</a></span>grn_tokenizer_build_data_start_cluster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> grn_tokenizer_build_data_start_cluster </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>n_total_records</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A tokenizer must call this when it starts clustering. This is only for progress report. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The context object. </td></tr>
+    <tr><td class="paramname">data</td><td>The tokenizer build data. </td></tr>
+    <tr><td class="paramname">n_total_records</td><td>The number of records to be clustered.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>15.2.1 </dd></dl>
+
+</div>
+</div>
+<a id="abc72b8de85f254458205db78f5d9df90" name="abc72b8de85f254458205db78f5d9df90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc72b8de85f254458205db78f5d9df90">&#9670;&#160;</a></span>grn_tokenizer_build_data_start_load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> grn_tokenizer_build_data_start_load </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>n_total_records</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A tokenizer must call this when it starts loading. This is only for progress report. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The context object. </td></tr>
+    <tr><td class="paramname">data</td><td>The tokenizer build data. </td></tr>
+    <tr><td class="paramname">n_total_records</td><td>The number of records to be loaded.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>15.2.1 </dd></dl>
+
+</div>
+</div>
 <a id="a2ae6a993b08f097f7211fd2982ed6806" name="a2ae6a993b08f097f7211fd2982ed6806"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ae6a993b08f097f7211fd2982ed6806">&#9670;&#160;</a></span>grn_tokenizer_build_data_start_record()</h2>
 
@@ -922,6 +1069,51 @@ Functions</h2></td></tr>
 
 <p>A tokenizer must call this when it starts processing a new section. </p>
 <dl class="section since"><dt>Since</dt><dd>15.1.8 </dd></dl>
+
+</div>
+</div>
+<a id="ad7291dfdd9bcf1abb3bc7c62dc792d75" name="ad7291dfdd9bcf1abb3bc7c62dc792d75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7291dfdd9bcf1abb3bc7c62dc792d75">&#9670;&#160;</a></span>grn_tokenizer_build_data_start_vectorize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">GRN_PLUGIN_EXPORT</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a> grn_tokenizer_build_data_start_vectorize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tokenizer_8h.html#aedd1ee45cf26ae3b83a00cab42cf8826">grn_tokenizer_build_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>n_total_records</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A tokenizer must call this when it starts vectorizing. This is only for progress report. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The context object. </td></tr>
+    <tr><td class="paramname">data</td><td>The tokenizer build data. </td></tr>
+    <tr><td class="paramname">n_total_records</td><td>The number of records to be vectorized.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>15.2.1 </dd></dl>
 
 </div>
 </div>

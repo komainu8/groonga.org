@@ -86,12 +86,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="progress_8h__dep__incl.png" border="0" usemap="#ainclude_2groonga_2progress_8hdep" alt=""/></div>
 <map name="ainclude_2groonga_2progress_8hdep" id="ainclude_2groonga_2progress_8hdep">
 <area shape="rect" title=" " alt="" coords="5,5,204,31"/>
-<area shape="rect" href="groonga_8h.html" title=" " alt="" coords="35,79,174,104"/>
-<area shape="poly" title=" " alt="" coords="107,44,107,79,102,79,102,44"/>
-<area shape="rect" href="groonga_8hpp.html" title=" " alt="" coords="27,152,182,177"/>
-<area shape="poly" title=" " alt="" coords="107,118,107,152,102,152,102,118"/>
-<area shape="rect" href="arrow_8hpp.html" title=" " alt="" coords="7,225,202,251"/>
-<area shape="poly" title=" " alt="" coords="107,191,107,225,102,225,102,191"/>
+<area shape="rect" href="groonga_8h.html" title=" " alt="" coords="35,167,174,192"/>
+<area shape="poly" title=" " alt="" coords="87,43,75,60,66,79,62,99,66,118,79,144,95,165,91,168,75,147,61,120,57,99,61,78,70,57,83,40"/>
+<area shape="rect" href="language__model_8h.html" title=" " alt="" coords="76,79,267,119"/>
+<area shape="poly" title=" " alt="" coords="125,39,157,77,153,80,121,43"/>
+<area shape="rect" href="groonga_8hpp.html" title=" " alt="" coords="27,240,182,265"/>
+<area shape="poly" title=" " alt="" coords="107,206,107,240,102,240,102,206"/>
+<area shape="rect" href="arrow_8hpp.html" title=" " alt="" coords="7,313,202,339"/>
+<area shape="poly" title=" " alt="" coords="107,279,107,313,102,313,102,279"/>
+<area shape="poly" title=" " alt="" coords="148,131,117,168,113,165,144,127"/>
 </map>
 </div>
 </div>
@@ -107,6 +110,7 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ad6d3a32ed18cfaf988e74db2da6bad4d" id="r_ad6d3a32ed18cfaf988e74db2da6bad4d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress_8h.html#ad6d3a32ed18cfaf988e74db2da6bad4d">grn_progress_type</a> { <a class="el" href="progress_8h.html#ad6d3a32ed18cfaf988e74db2da6bad4dad38af70d1d847ec8436cefb7dfc857c0">GRN_PROGRESS_INDEX</a>
+, <a class="el" href="progress_8h.html#ad6d3a32ed18cfaf988e74db2da6bad4dae6a3783ee28b1ee32075d0ae4309b98b">GRN_PROGRESS_LANGUAGE_MODEL_INFERENCER</a>
  }</td></tr>
 <tr class="separator:ad6d3a32ed18cfaf988e74db2da6bad4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5525e1136c78a37ca3a5086f946ae560" id="r_a5525e1136c78a37ca3a5086f946ae560"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress_8h.html#a5525e1136c78a37ca3a5086f946ae560">grn_progress_index_phase</a> { <br />
@@ -117,6 +121,8 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="progress_8h.html#a5525e1136c78a37ca3a5086f946ae560a57d753e96c6ed03895c611fabb35e13b">GRN_PROGRESS_INDEX_FINALIZE</a>
 , <a class="el" href="progress_8h.html#a5525e1136c78a37ca3a5086f946ae560a8bb77633095d9aae84c76e61e498210e">GRN_PROGRESS_INDEX_DONE</a>
+, <a class="el" href="progress_8h.html#a5525e1136c78a37ca3a5086f946ae560a3d81d13960f08b08347d41db3d6e46b5">GRN_PROGRESS_INDEX_VECTORIZE</a>
+, <a class="el" href="progress_8h.html#a5525e1136c78a37ca3a5086f946ae560a883da00b2c86627443f0e6c5280c0eba">GRN_PROGRESS_INDEX_CLUSTER</a>
 <br />
  }</td></tr>
 <tr class="separator:a5525e1136c78a37ca3a5086f946ae560"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,6 +141,8 @@ Functions</h2></td></tr>
 <tr class="separator:a23e35d5e1bf64c7f9df13052890ac13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c870d39b2ff1b457a416ea595d75815" id="r_a4c870d39b2ff1b457a416ea595d75815"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress_8h.html#a4c870d39b2ff1b457a416ea595d75815">grn_progress_index_get_n_processed_terms</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="progress_8h.html#aff369a9333c85cb256515ebb9329a221">grn_progress</a> *progress)</td></tr>
 <tr class="separator:a4c870d39b2ff1b457a416ea595d75815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa21696a535de595610dfef34cb286f8" id="r_afa21696a535de595610dfef34cb286f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress_8h.html#afa21696a535de595610dfef34cb286f8">grn_progress_language_model_inferencer_get_n_processed_records</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="progress_8h.html#aff369a9333c85cb256515ebb9329a221">grn_progress</a> *progress)</td></tr>
+<tr class="separator:afa21696a535de595610dfef34cb286f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a4871e7100dcf2c522d762368a071a5" id="r_a2a4871e7100dcf2c522d762368a071a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress_8h.html#a2a4871e7100dcf2c522d762368a071a5">grn_ctx_set_progress_callback</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx, <a class="el" href="progress_8h.html#aeb7a75d5db0d70f89394b1643d9193ef">grn_progress_callback_func</a> func, void *user_data)</td></tr>
 <tr class="separator:a2a4871e7100dcf2c522d762368a071a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedd1ce063585b33a29718f164344879d" id="r_aedd1ce063585b33a29718f164344879d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="progress_8h.html#aeb7a75d5db0d70f89394b1643d9193ef">grn_progress_callback_func</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress_8h.html#aedd1ce063585b33a29718f164344879d">grn_ctx_get_progress_callback</a> (<a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *ctx)</td></tr>
@@ -188,6 +196,8 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a5525e1136c78a37ca3a5086f946ae560a959bd1fc48725d6db7889a0f330fa1dd" name="a5525e1136c78a37ca3a5086f946ae560a959bd1fc48725d6db7889a0f330fa1dd"></a>GRN_PROGRESS_INDEX_COMMIT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a5525e1136c78a37ca3a5086f946ae560a57d753e96c6ed03895c611fabb35e13b" name="a5525e1136c78a37ca3a5086f946ae560a57d753e96c6ed03895c611fabb35e13b"></a>GRN_PROGRESS_INDEX_FINALIZE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a5525e1136c78a37ca3a5086f946ae560a8bb77633095d9aae84c76e61e498210e" name="a5525e1136c78a37ca3a5086f946ae560a8bb77633095d9aae84c76e61e498210e"></a>GRN_PROGRESS_INDEX_DONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5525e1136c78a37ca3a5086f946ae560a3d81d13960f08b08347d41db3d6e46b5" name="a5525e1136c78a37ca3a5086f946ae560a3d81d13960f08b08347d41db3d6e46b5"></a>GRN_PROGRESS_INDEX_VECTORIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5525e1136c78a37ca3a5086f946ae560a883da00b2c86627443f0e6c5280c0eba" name="a5525e1136c78a37ca3a5086f946ae560a883da00b2c86627443f0e6c5280c0eba"></a>GRN_PROGRESS_INDEX_CLUSTER&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -205,6 +215,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad6d3a32ed18cfaf988e74db2da6bad4dad38af70d1d847ec8436cefb7dfc857c0" name="ad6d3a32ed18cfaf988e74db2da6bad4dad38af70d1d847ec8436cefb7dfc857c0"></a>GRN_PROGRESS_INDEX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad6d3a32ed18cfaf988e74db2da6bad4dae6a3783ee28b1ee32075d0ae4309b98b" name="ad6d3a32ed18cfaf988e74db2da6bad4dae6a3783ee28b1ee32075d0ae4309b98b"></a>GRN_PROGRESS_LANGUAGE_MODEL_INFERENCER&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -410,6 +421,34 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> <a class="el" href="progress_8h.html#a5525e1136c78a37ca3a5086f946ae560">grn_progress_index_phase</a> grn_progress_index_get_phase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="progress_8h.html#aff369a9333c85cb256515ebb9329a221">grn_progress</a> *&#160;</td>
+          <td class="paramname"><em>progress</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa21696a535de595610dfef34cb286f8" name="afa21696a535de595610dfef34cb286f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa21696a535de595610dfef34cb286f8">&#9670;&#160;</a></span>grn_progress_language_model_inferencer_get_n_processed_records()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a> uint32_t grn_progress_language_model_inferencer_get_n_processed_records </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="groonga_2groonga_8h.html#a3a7df04544a3349db1b79341b348b40e">grn_ctx</a> *&#160;</td>
           <td class="paramname"><em>ctx</em>, </td>
