@@ -849,6 +849,94 @@ Since you likely need to fetch results in descending order of similarity, you ad
 <h3><span class="section-number">7.15.15.5.2. </span><code class="docutils literal notranslate"><span class="pre">query</span></code><a class="headerlink" href="#query" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">query</span></code> is a search query.</p>
 </section>
+<section id="k">
+<h3><span class="section-number">7.15.15.5.3. </span><code class="docutils literal notranslate"><span class="pre">k</span></code><a class="headerlink" href="#k" title="Link to this heading">#</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.2.1.</span></p>
+</div>
+<p>Specify the number of records to return.
+If you don’t set this option, the upper limit of the number of records to return is <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<p>You can specify a negative value. It means that the number of <strong>matched records + <code class="docutils literal notranslate"><span class="pre">k</span></code> + 1</strong>.
+For example, <code class="docutils literal notranslate"><span class="pre">&quot;{</span> <span class="pre">&quot;k&quot;</span> <span class="pre">:</span> <span class="pre">-1</span> <span class="pre">}&quot;</span></code> outputs all records. It’s a very useful value to show all records.</p>
+<p>Here is a simple negative <code class="docutils literal notranslate"><span class="pre">k</span></code> value usage example.</p>
+<p>Sample data:</p>
+<!-- groonga-command -->
+<p>Execution example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>load<span class="w"> </span>--table<span class="w"> </span>Memos
+<span class="o">[</span>
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;I am a boy.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;This is an apple.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;Groonga is a full text search engine.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;This is an orange.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;This is a banana.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;This is a tomato.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;This is a carrot.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;This is a cucumber.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;This is a pepper.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;This is a potato.&quot;</span><span class="o">}</span>,
+<span class="o">{</span><span class="s2">&quot;content&quot;</span>:<span class="w"> </span><span class="s2">&quot;This is an onion.&quot;</span><span class="o">}</span>
+<span class="o">]</span>
+<span class="c1"># [[0,1337566253.89858,0.000355720520019531],11]</span>
+</pre></div>
+</div>
+<!-- groonga-command -->
+<p>Execution example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span>Memos<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--filter<span class="w"> </span><span class="s1">&#39;language_model_knn(text, &quot;male child&quot;, { &quot;k&quot; : -1 })&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output_columns<span class="w"> </span>content
+<span class="c1"># [</span>
+<span class="c1">#   [</span>
+<span class="c1">#     0,</span>
+<span class="c1">#     1337566253.89858,</span>
+<span class="c1">#     0.000355720520019531</span>
+<span class="c1">#   ],</span>
+<span class="c1">#   [</span>
+<span class="c1">#     [</span>
+<span class="c1">#       [</span>
+<span class="c1">#         11</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         [</span>
+<span class="c1">#           &quot;content&quot;,</span>
+<span class="c1">#           &quot;ShortText&quot;</span>
+<span class="c1">#         ]</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;I am a boy.&quot;</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;This is a pepper.&quot;</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;This is a cucumber.&quot;</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;This is a carrot.&quot;</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;This is a potato.&quot;</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;This is an apple.&quot;</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;This is a banana.&quot;</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;This is a tomato.&quot;</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;This is an orange.&quot;</span>
+<span class="c1">#       ],</span>
+<span class="c1">#       [</span>
+<span class="c1">#         &quot;This is an onion.&quot;</span>
+<span class="c1">#       ]</span>
+<span class="c1">#     ]</span>
+<span class="c1">#   ]</span>
+<span class="c1"># ]</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="return-value">
 <h2><span class="section-number">7.15.15.6. </span>Return value<a class="headerlink" href="#return-value" title="Link to this heading">#</a></h2>
@@ -916,6 +1004,7 @@ Since you likely need to fetch results in descending order of similarity, you ad
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">7.15.15.5. Parameters</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#column">7.15.15.5.1. <code class="docutils literal notranslate"><span class="pre">column</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query">7.15.15.5.2. <code class="docutils literal notranslate"><span class="pre">query</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k">7.15.15.5.3. <code class="docutils literal notranslate"><span class="pre">k</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-value">7.15.15.6. Return value</a></li>
