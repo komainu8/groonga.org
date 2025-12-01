@@ -703,10 +703,17 @@
                       <span class="s2">&quot;code_column&quot;</span><span class="p">,</span> <span class="s2">&quot;column_name&quot;</span><span class="p">,</span> \
                       <span class="s2">&quot;passage_prefix&quot;</span><span class="p">,</span> <span class="s2">&quot;passage: &quot;</span><span class="p">,</span> \
                       <span class="s2">&quot;query_prefix&quot;</span><span class="p">,</span> <span class="s2">&quot;query: &quot;</span><span class="p">)</span>
+
+<span class="n">TokenLanguageModelKNN</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">,</span> <span class="s2">&quot;hf:///path/to&quot;</span><span class="p">,</span> \
+                      <span class="s2">&quot;code_column&quot;</span><span class="p">,</span> <span class="s2">&quot;column_name&quot;</span><span class="p">,</span> \
+                      <span class="s2">&quot;centroid_column&quot;</span><span class="p">,</span> <span class="s2">&quot;centroid_column_name&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 15.1.9: </span><a class="reference internal" href="#tokenizer-language-model-knn-passage-prefix"><span class="std std-ref">passage_prefix</span></a>と<a class="reference internal" href="#tokenizer-language-model-knn-query-prefix"><span class="std std-ref">query_prefix</span></a>を追加。</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.2.1: </span><a class="reference internal" href="#tokenizer-language-model-knn-centroid-column"><span class="std std-ref">centroid_column</span></a>を追加</p>
 </div>
 </section>
 <section id="usage">
@@ -862,13 +869,35 @@ column_create<span class="w"> </span>Centroids<span class="w"> </span>data_conte
 <p>multilingual-e5のような一部のモデルでは、検索対象テキストや検索クエリにプレフィックスが必要です。</p>
 <p><code class="docutils literal notranslate"><span class="pre">query_prefix</span></code>は、検索クエリのプレフィックスを指定するために使います。</p>
 </section>
+<section id="centroid-column">
+<span id="tokenizer-language-model-knn-centroid-column"></span><h4><span class="section-number">7.8.12.4.2.3. </span><code class="docutils literal notranslate"><span class="pre">centroid_column</span></code><a class="headerlink" href="#centroid-column" title="Link to this heading">#</a></h4>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 15.2.1.</span></p>
+</div>
+<p>このオプションは、1025次元（4100バイト）以上の大きなエンベディング向けです。Groongaのテーブルキーは4KiB以下でなければなりません。4KiBを超えるエンベディングはキーとして保存できません。</p>
+<p>このオプションを使うと、大きなエンベディングをテーブルのキーではなく指定したカラムに保存します。</p>
+<p>実行例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table_create</span> <span class="n">LargeCentroids</span> <span class="n">TABLE_HASH_KEY</span> <span class="n">UInt32</span> \
+  <span class="o">--</span><span class="n">default_tokenizer</span> \
+      <span class="s1">&#39;TokenLanguageModelKNN(&quot;model&quot;, &quot;hf:///groonga/multilingual-e5-base-Q4_K_M-GGUF&quot;, </span><span class="se">\</span>
+<span class="s1">                             &quot;centroid_column&quot;, &quot;centroid&quot;, </span><span class="se">\</span>
+<span class="s1">                             &quot;code_column&quot;, &quot;embedding_code&quot;, </span><span class="se">\</span>
+<span class="s1">                             &quot;passage_prefix&quot;, &quot;passage: &quot;, </span><span class="se">\</span>
+<span class="s1">                             &quot;query_prefix&quot;, &quot;query: &quot;)&#39;</span>
+
+<span class="n">column_create</span> <span class="n">LargeCentroids</span> <span class="n">centroid</span> <span class="n">COLUMN_VECTOR</span> <span class="n">Float32</span>
+<span class="n">column_create</span> <span class="n">LargeCentroids</span> <span class="n">data_content</span> <span class="n">COLUMN_INDEX</span> <span class="n">Memos</span> <span class="n">content</span>
+</pre></div>
+</div>
+<p>エンべディングを保存するためのカラムを指定し、インデックス用のテーブルにそれを追加します。</p>
+</section>
 <section id="n-clusters">
-<span id="tokenizer-language-model-knn-n-clusters"></span><h4><span class="section-number">7.8.12.4.2.3. </span><code class="docutils literal notranslate"><span class="pre">n_clusters</span></code><a class="headerlink" href="#n-clusters" title="Link to this heading">#</a></h4>
+<span id="tokenizer-language-model-knn-n-clusters"></span><h4><span class="section-number">7.8.12.4.2.4. </span><code class="docutils literal notranslate"><span class="pre">n_clusters</span></code><a class="headerlink" href="#n-clusters" title="Link to this heading">#</a></h4>
 <p>インデックスとして利用するクラスタ数を指定します。省略すると自動で適切な値を設定します。</p>
 <p>多くの場合、明示的にこのオプションを設定する必要はありません。</p>
 </section>
 <section id="n-gpu-layers">
-<h4><span class="section-number">7.8.12.4.2.4. </span><code class="docutils literal notranslate"><span class="pre">n_gpu_layers</span></code><a class="headerlink" href="#n-gpu-layers" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.8.12.4.2.5. </span><code class="docutils literal notranslate"><span class="pre">n_gpu_layers</span></code><a class="headerlink" href="#n-gpu-layers" title="Link to this heading">#</a></h4>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 15.2.1.</span></p>
 </div>
@@ -947,8 +976,9 @@ column_create<span class="w"> </span>Centroids<span class="w"> </span>data_conte
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-parameter">7.8.12.4.2. 省略可能引数</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#passage-prefix">7.8.12.4.2.1. <code class="docutils literal notranslate"><span class="pre">passage_prefix</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#query-prefix">7.8.12.4.2.2. <code class="docutils literal notranslate"><span class="pre">query_prefix</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-clusters">7.8.12.4.2.3. <code class="docutils literal notranslate"><span class="pre">n_clusters</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-gpu-layers">7.8.12.4.2.4. <code class="docutils literal notranslate"><span class="pre">n_gpu_layers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#centroid-column">7.8.12.4.2.3. <code class="docutils literal notranslate"><span class="pre">centroid_column</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-clusters">7.8.12.4.2.4. <code class="docutils literal notranslate"><span class="pre">n_clusters</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-gpu-layers">7.8.12.4.2.5. <code class="docutils literal notranslate"><span class="pre">n_gpu_layers</span></code></a></li>
 </ul>
 </li>
 </ul>
