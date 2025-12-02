@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.6. Amazon Linux &#8212; Groonga v15.2.0 documentation</title>
+    <title>2.6. Amazon Linux &#8212; Groonga v15.2.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=84a21072"></script>
+    <script src="../_static/documentation_options.js?v=e06dc036"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
@@ -63,7 +63,7 @@
     <link rel="prev" title="2.5. AlmaLinux" href="almalinux.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.2.0" />
+  <meta name="docsearch:version" content="15.2.1" />
   </head>
   
   
@@ -129,8 +129,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.2.0 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.2.0 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.2.1 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.2.1 documentation - Home"/>
   
   
 </a></div>
@@ -433,12 +433,8 @@ additional preconfigured packages.</p>
 </ul>
 <p>See <a class="reference internal" href="../server.html"><span class="doc">Server</span></a> section about details.</p>
 </div>
-<p>If you want to use <a class="reference external" href="https://taku910.github.io/mecab/">MeCab</a> as a
-tokenizer, install groonga-tokenizer-mecab package.</p>
-<p>Install groonga-tokenizer-mecab package:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>groonga-tokenizer-mecab
-</pre></div>
-</div>
+<p>You can’t install groonga-tokenizer-mecab package in Amazon Linux 2023.
+Because Amazon Linux 2023 doesn’t provide <a class="reference external" href="https://taku910.github.io/mecab/">MeCab</a> package.</p>
 <p>If you want to use <a class="reference internal" href="../reference/token_filters/token_filter_stem.html"><span class="doc">TokenFilterStem</span></a>, install groonga-token-filter-stem package.</p>
 <p>Install groonga-token-filter-stem package:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>groonga-token-filter-stem
