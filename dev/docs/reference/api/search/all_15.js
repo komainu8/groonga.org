@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['v_0',['v',['../struct__grn__obj.html#a92333cd47ffa78297bee127ff82e4a29',1,'_grn_obj']]],
-  ['value_1',['value',['../structgrn_1_1CommandArgument.html#a3a42fc1ce899f8dc99a4e97367d3a29b',1,'grn::CommandArgument::value'],['../structgrn__expr__var.html#a5e0845654eb731ff71ee14e3626c5135',1,'grn_expr_var::value'],['../structgrn__raw__string.html#a7bf9ad98bbbb88e3801c94e6ff27db8e',1,'grn_raw_string::value'],['../classgrn_1_1TextBulk.html#acaa73d2451dcb536ac09435e45999612',1,'grn::TextBulk::value()']]],
-  ['variable_2',['Environment Variable',['../cache_8h.html#autotoc_md3',1,'']]],
-  ['vector_2eh_3',['vector.h',['../vector_8h.html',1,'']]],
-  ['vector_5fsize_4',['vector_size',['../struct__grn__search__optarg.html#a2469810a3fa3d3e85ff2b107b91583de',1,'_grn_search_optarg']]]
+  ['u_0',['u',['../struct__grn__obj.html#af095ed738a2a97e2c5eb1d9a1e66325d',1,'_grn_obj']]],
+  ['uniqueobj_1',['uniqueobj',['../classgrn_1_1UniqueObj.html',1,'grn::UniqueObj'],['../classgrn_1_1UniqueObj.html#aefc4feefd5843dac86f2591d6058858c',1,'grn::UniqueObj::UniqueObj(grn_ctx *ctx, grn_obj *obj)'],['../classgrn_1_1UniqueObj.html#a2836ebbdb828166e7877f033ae2328d1',1,'grn::UniqueObj::UniqueObj(UniqueObj &amp;&amp;unique_obj)']]],
+  ['unregister_5ffunc_2',['unregister_func',['../struct__grn__request__timer.html#a4d12f5073954fb8a2c915135ee9c3f7f',1,'_grn_request_timer']]],
+  ['user_5fdata_3',['user_data',['../struct__grn__ctx.html#af46396180edc9ca5df3ccdc4eec14dd9',1,'_grn_ctx::user_data'],['../struct__grn__logger.html#a82a4de4d63f979badb39bb45c721d446',1,'_grn_logger::user_data'],['../struct__grn__query__logger.html#ae364683b4f9d6a5813b881f930d7daf4',1,'_grn_query_logger::user_data'],['../struct__grn__request__timer.html#a554462e4520fea505dd9fe69a0b1a7c4',1,'_grn_request_timer::user_data']]],
+  ['util_2eh_4',['util.h',['../util_8h.html',1,'']]]
 ];

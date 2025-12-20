@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.8-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,10 +10,26 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<!-- doxygen-awesome-css extensions -->
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeParagraphLink.init()
+</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -47,6 +64,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_func_g.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -449,6 +482,16 @@ $(function() {
 <li>grn_inspect_type()&#160;:&#160;<a class="el" href="util_8h.html#ae21a3e9f56afcebbdb42f01815aba04b">util.h</a></li>
 <li>grn_is_back_trace_enable()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#ac69c1779fc7ff04470e9376f1682b909">groonga.h</a></li>
 <li>grn_is_reference_count_enable()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a5f975281e377416a8936d716da9ffeae">groonga.h</a></li>
+<li>grn_json_parser_close()&#160;:&#160;<a class="el" href="json_8h.html#a9bce55ab06d45a10b6f0ebc18c2520ff">json.h</a></li>
+<li>grn_json_parser_open()&#160;:&#160;<a class="el" href="json_8h.html#a0fb19a22e21bc58f5b32ce85cf54938a">json.h</a></li>
+<li>grn_json_parser_parse()&#160;:&#160;<a class="el" href="json_8h.html#a745045ca0fe7af58319ebca16dc4d5c0">json.h</a></li>
+<li>grn_json_reader_close()&#160;:&#160;<a class="el" href="json_8h.html#a13b5bbb2dda6d45bb20eb25f8b998b15">json.h</a></li>
+<li>grn_json_reader_get_size()&#160;:&#160;<a class="el" href="json_8h.html#a3632aa9e0c0508755a4762c99fe2a239">json.h</a></li>
+<li>grn_json_reader_get_type()&#160;:&#160;<a class="el" href="json_8h.html#a3fa0fc61cfe5cf0a54853719828b7d58">json.h</a></li>
+<li>grn_json_reader_get_value()&#160;:&#160;<a class="el" href="json_8h.html#a039eb07a8820e319dcfafb73e68faf20">json.h</a></li>
+<li>grn_json_reader_next()&#160;:&#160;<a class="el" href="json_8h.html#af417f4fe486ff125388d88a2345e336b">json.h</a></li>
+<li>grn_json_reader_open()&#160;:&#160;<a class="el" href="json_8h.html#a1c8bd5ca1958bea352a16217090c09b8">json.h</a></li>
+<li>grn_json_to_string()&#160;:&#160;<a class="el" href="json_8h.html#a9a176bdde4a7656cd71c00afe389a65b">json.h</a></li>
 <li>grn_language_model_close()&#160;:&#160;<a class="el" href="language__model_8h.html#ab966ef0e4392dcde93bb3b23e0dc8a85">language_model.h</a></li>
 <li>grn_language_model_get_n_embedding_dimensions()&#160;:&#160;<a class="el" href="language__model_8h.html#a12c55176f625226f53d47e9ac3be0697">language_model.h</a></li>
 <li>grn_language_model_inferencer_close()&#160;:&#160;<a class="el" href="language__model_8h.html#a63277b3d17d371a8ef927dd2eca4d87f">language_model.h</a></li>
@@ -657,6 +700,7 @@ $(function() {
 <li>grn_output_float32()&#160;:&#160;<a class="el" href="output_8h.html#a315f4b7fe37a12c6f643f4fcd5062270">output.h</a></li>
 <li>grn_output_int32()&#160;:&#160;<a class="el" href="output_8h.html#a21868cb83e93b8374ea274368c4fc1cc">output.h</a></li>
 <li>grn_output_int64()&#160;:&#160;<a class="el" href="output_8h.html#ad5f8a77743836fb0ca74b33a93aa9d35">output.h</a></li>
+<li>grn_output_json()&#160;:&#160;<a class="el" href="output_8h.html#af3e237c334fcfd4566d92773d973f672">output.h</a></li>
 <li>grn_output_map_close()&#160;:&#160;<a class="el" href="output_8h.html#adcfa36dd98ee6e394ac60648e6588b27">output.h</a></li>
 <li>grn_output_map_open()&#160;:&#160;<a class="el" href="output_8h.html#a1c7e95aa7c1cfce591ad6e9835647744">output.h</a></li>
 <li>grn_output_null()&#160;:&#160;<a class="el" href="output_8h.html#ac3980676f28803e512f7fffb519e942a">output.h</a></li>
@@ -735,8 +779,8 @@ $(function() {
 <li>grn_plugin_proc_get_var_string()&#160;:&#160;<a class="el" href="plugin_8h.html#a0b01a4a690631436a65d30f0a0efea31">plugin.h</a></li>
 <li>grn_plugin_proc_get_vars()&#160;:&#160;<a class="el" href="plugin_8h.html#a5970e16f309d71c2532c813e355de135">plugin.h</a></li>
 <li>grn_plugin_realloc()&#160;:&#160;<a class="el" href="plugin_8h.html#abc4a5a23bff12f48d9f406bafba7fa15">plugin.h</a></li>
-<li>GRN_PLUGIN_REGISTER()&#160;:&#160;<a class="el" href="plugin_8h.html#a4ce3bb0afd15ac738c4afa53306f0f01">plugin.h</a></li>
 <li>grn_plugin_register()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a2c6da302dd350eaf6e95429889ca9bac">groonga.h</a></li>
+<li>GRN_PLUGIN_REGISTER()&#160;:&#160;<a class="el" href="plugin_8h.html#a4ce3bb0afd15ac738c4afa53306f0f01">plugin.h</a></li>
 <li>grn_plugin_register_by_path()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a0e8da8658001490424fd1063222a063c">groonga.h</a></li>
 <li>grn_plugin_set_error()&#160;:&#160;<a class="el" href="plugin_8h.html#a0e656791039091281b7d1170c5256b2b">plugin.h</a></li>
 <li>grn_plugin_unregister()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#afed07fb11a9133b51059eb7f2fe25872">groonga.h</a></li>
@@ -1179,9 +1223,12 @@ $(function() {
 <li>grn_windows_event_logger_set()&#160;:&#160;<a class="el" href="windows__event__logger_8h.html#a6d71c23d23889558d63395d99e97aed4">windows_event_logger.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

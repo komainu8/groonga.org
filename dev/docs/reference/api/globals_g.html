@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.8-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,10 +10,26 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<!-- doxygen-awesome-css extensions -->
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeParagraphLink.init()
+</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -47,6 +64,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals_g.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -224,8 +257,8 @@ $(function() {
 <li>GRN_CHAR_NULL&#160;:&#160;<a class="el" href="string_8h.html#a80eb0e1850f0de4575d754957976f3efa225c922a9b75eacb7fafa71d27983753">string.h</a></li>
 <li>GRN_CHAR_OTHERS&#160;:&#160;<a class="el" href="string_8h.html#a80eb0e1850f0de4575d754957976f3efaf54110a99f21b76fa6cbbfc602de5232">string.h</a></li>
 <li>GRN_CHAR_SYMBOL&#160;:&#160;<a class="el" href="string_8h.html#a80eb0e1850f0de4575d754957976f3efa4b7757a27fbc5603e35b100bf1e6ebe7">string.h</a></li>
-<li>grn_char_type&#160;:&#160;<a class="el" href="string_8h.html#a80eb0e1850f0de4575d754957976f3ef">string.h</a></li>
 <li>GRN_CHAR_TYPE&#160;:&#160;<a class="el" href="string_8h.html#a6e7e0ed78dd0392f77ce15b94856b0df">string.h</a></li>
+<li>grn_char_type&#160;:&#160;<a class="el" href="string_8h.html#a80eb0e1850f0de4575d754957976f3ef">string.h</a></li>
 <li>grn_char_type_to_string()&#160;:&#160;<a class="el" href="string_8h.html#a1d7a37fd80b68118e0568bd777cbc599">string.h</a></li>
 <li>grn_charlen()&#160;:&#160;<a class="el" href="string_8h.html#a624325a9c4c02340ffeab8516c666462">string.h</a></li>
 <li>grn_close&#160;:&#160;<a class="el" href="portability_8h.html#ae22443fe65ac02dbad1baf0c4dca5235">portability.h</a></li>
@@ -851,6 +884,33 @@ $(function() {
 <li>grn_is_back_trace_enable()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#ac69c1779fc7ff04470e9376f1682b909">groonga.h</a></li>
 <li>grn_is_reference_count_enable()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a5f975281e377416a8936d716da9ffeae">groonga.h</a></li>
 <li>grn_isatty&#160;:&#160;<a class="el" href="portability_8h.html#ace33e25aa6609a42ecd2e3355afb3057">portability.h</a></li>
+<li>GRN_JSON_INIT&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a7c112ab4939fcbdf919204b41bff5c23">groonga.h</a></li>
+<li>GRN_JSON_LEN&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#af02bbbf5ca994d296b0086ace4ca10bf">groonga.h</a></li>
+<li>grn_json_parser&#160;:&#160;<a class="el" href="json_8h.html#a9f6a2a7dcb15f04e1c13bf6e5bc8e273">json.h</a></li>
+<li>grn_json_parser_close()&#160;:&#160;<a class="el" href="json_8h.html#a9bce55ab06d45a10b6f0ebc18c2520ff">json.h</a></li>
+<li>grn_json_parser_open()&#160;:&#160;<a class="el" href="json_8h.html#a0fb19a22e21bc58f5b32ce85cf54938a">json.h</a></li>
+<li>grn_json_parser_parse()&#160;:&#160;<a class="el" href="json_8h.html#a745045ca0fe7af58319ebca16dc4d5c0">json.h</a></li>
+<li>grn_json_reader&#160;:&#160;<a class="el" href="json_8h.html#a185c424073b3b86adf4bd1e7e4c42bef">json.h</a></li>
+<li>grn_json_reader_close()&#160;:&#160;<a class="el" href="json_8h.html#a13b5bbb2dda6d45bb20eb25f8b998b15">json.h</a></li>
+<li>grn_json_reader_get_size()&#160;:&#160;<a class="el" href="json_8h.html#a3632aa9e0c0508755a4762c99fe2a239">json.h</a></li>
+<li>grn_json_reader_get_type()&#160;:&#160;<a class="el" href="json_8h.html#a3fa0fc61cfe5cf0a54853719828b7d58">json.h</a></li>
+<li>grn_json_reader_get_value()&#160;:&#160;<a class="el" href="json_8h.html#a039eb07a8820e319dcfafb73e68faf20">json.h</a></li>
+<li>grn_json_reader_next()&#160;:&#160;<a class="el" href="json_8h.html#af417f4fe486ff125388d88a2345e336b">json.h</a></li>
+<li>grn_json_reader_open()&#160;:&#160;<a class="el" href="json_8h.html#a1c8bd5ca1958bea352a16217090c09b8">json.h</a></li>
+<li>GRN_JSON_SET&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a7e22369d1cc743474b332ca4145f6dd9">groonga.h</a></li>
+<li>GRN_JSON_SET_REF&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#ad54e0811beb0dcb1cbaa3104e72708b8">groonga.h</a></li>
+<li>grn_json_to_string()&#160;:&#160;<a class="el" href="json_8h.html#a9a176bdde4a7656cd71c00afe389a65b">json.h</a></li>
+<li>GRN_JSON_VALUE&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#aad38a29b6de63f25c92e49a12261c040">groonga.h</a></li>
+<li>GRN_JSON_VALUE_ARRAY&#160;:&#160;<a class="el" href="json_8h.html#a40fc9a399edf2f9014773fbb011a78cca19a6601a56f0ee01d5bf2934285f8982">json.h</a></li>
+<li>GRN_JSON_VALUE_FALSE&#160;:&#160;<a class="el" href="json_8h.html#a40fc9a399edf2f9014773fbb011a78cca77c18d385653821d1545c3822429be69">json.h</a></li>
+<li>GRN_JSON_VALUE_FLOAT&#160;:&#160;<a class="el" href="json_8h.html#a40fc9a399edf2f9014773fbb011a78cca0d4f4c6785ac16cf560cdbd970ac7007">json.h</a></li>
+<li>GRN_JSON_VALUE_INT64&#160;:&#160;<a class="el" href="json_8h.html#a40fc9a399edf2f9014773fbb011a78ccae77bb75b1e3d8436dd2fd68d3821b458">json.h</a></li>
+<li>GRN_JSON_VALUE_NULL&#160;:&#160;<a class="el" href="json_8h.html#a40fc9a399edf2f9014773fbb011a78cca39e3e7f878d0658171413a4e53a25b34">json.h</a></li>
+<li>GRN_JSON_VALUE_OBJECT&#160;:&#160;<a class="el" href="json_8h.html#a40fc9a399edf2f9014773fbb011a78cca1df5647fa655e5cd9e56a0b8c70ac6c0">json.h</a></li>
+<li>GRN_JSON_VALUE_STRING&#160;:&#160;<a class="el" href="json_8h.html#a40fc9a399edf2f9014773fbb011a78cca8a3703d3934cce4585b19e005ab7a41d">json.h</a></li>
+<li>GRN_JSON_VALUE_TRUE&#160;:&#160;<a class="el" href="json_8h.html#a40fc9a399edf2f9014773fbb011a78ccacc8fcc9b037d608b80ef826bfd86d47d">json.h</a></li>
+<li>grn_json_value_type&#160;:&#160;<a class="el" href="json_8h.html#a40fc9a399edf2f9014773fbb011a78cc">json.h</a></li>
+<li>GRN_JSON_VALUE_UNKNOWN&#160;:&#160;<a class="el" href="json_8h.html#a40fc9a399edf2f9014773fbb011a78cca023674672160ea53b0d9b1649e509307">json.h</a></li>
 <li>grn_language_model&#160;:&#160;<a class="el" href="language__model_8h.html#a5e26cd9e6a7bf2a6cbb997362c5425f7">language_model.h</a></li>
 <li>grn_language_model_close()&#160;:&#160;<a class="el" href="language__model_8h.html#ab966ef0e4392dcde93bb3b23e0dc8a85">language_model.h</a></li>
 <li>grn_language_model_get_n_embedding_dimensions()&#160;:&#160;<a class="el" href="language__model_8h.html#a12c55176f625226f53d47e9ac3be0697">language_model.h</a></li>
@@ -889,7 +949,7 @@ $(function() {
 <li>grn_log_level_to_string()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a9322fe2e670af58648af0aeb82ee627d">groonga.h</a></li>
 <li>GRN_LOG_LOCATION&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#abdd0aaf3e7bfcfc2dd7d8e7b48458279">groonga.h</a></li>
 <li>GRN_LOG_MESSAGE&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#aed54006f639895c0bc40ba6816d973d2">groonga.h</a></li>
-<li>GRN_LOG_NONE&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a8dda5231f18477c8b5e8236e7a9429d4a5eadd6e738d8175054e2fcd2aaa5248a">groonga.h</a></li>
+<li>GRN_LOG_NONE&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#af8d4ab808bcc25d35aac143ee8d2c360">groonga.h</a></li>
 <li>GRN_LOG_NOTICE&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a8dda5231f18477c8b5e8236e7a9429d4a541a423f42ac9be6fefd47cf5b61fb2b">groonga.h</a></li>
 <li>GRN_LOG_PID&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#ac491452b45eb0e8f15493a9bd97c8510">groonga.h</a></li>
 <li>GRN_LOG_PROCESS_ID&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#adfa814d53d7b1d3039400224ad9fca4a">groonga.h</a></li>
@@ -1093,8 +1153,8 @@ $(function() {
 <li>grn_obj_is_token_column()&#160;:&#160;<a class="el" href="obj_8h.html#a6e2d0784e2ce05427212b621ec70ad4c">obj.h</a></li>
 <li>grn_obj_is_token_filter_proc()&#160;:&#160;<a class="el" href="obj_8h.html#a9aeecdc50ef74edcac055e769b502db9">obj.h</a></li>
 <li>grn_obj_is_tokenizer_proc()&#160;:&#160;<a class="el" href="obj_8h.html#adc92c99acc8bd2e2e09b05a14ae7a94b">obj.h</a></li>
-<li>grn_obj_is_true()&#160;:&#160;<a class="el" href="obj_8h.html#a8051562814657a3db71733f10c4c918a">obj.h</a></li>
 <li>GRN_OBJ_IS_TRUE&#160;:&#160;<a class="el" href="obj_8h.html#afe007eeef5207f0c396906dc3d1739be">obj.h</a></li>
+<li>grn_obj_is_true()&#160;:&#160;<a class="el" href="obj_8h.html#a8051562814657a3db71733f10c4c918a">obj.h</a></li>
 <li>grn_obj_is_type()&#160;:&#160;<a class="el" href="obj_8h.html#a477396e4ec40bec659c0a9977a5ee6ad">obj.h</a></li>
 <li>grn_obj_is_uvector()&#160;:&#160;<a class="el" href="obj_8h.html#a1e1c651d33982d97031119947ee64d5e">obj.h</a></li>
 <li>grn_obj_is_value_accessor()&#160;:&#160;<a class="el" href="obj_8h.html#a06b9345c7cba55c792656b5babedb237">obj.h</a></li>
@@ -1115,8 +1175,8 @@ $(function() {
 <li>GRN_OBJ_KEY_UINT&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#afc4a3bf0fa7a09aebdc2b1bc205324c7">groonga.h</a></li>
 <li>GRN_OBJ_KEY_VAR_SIZE&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#acfeffa80f6ceeecb4c950a5c694350e8">groonga.h</a></li>
 <li>GRN_OBJ_KEY_WITH_SIS&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a4c7286a95774e3f28a990ba009d6cb74">groonga.h</a></li>
-<li>GRN_OBJ_LOCK&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a67d118763a4f2480642011ff32bcd67e">groonga.h</a></li>
 <li>grn_obj_lock()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a924ff5d1b739bd978be1c540838a00f9">groonga.h</a></li>
+<li>GRN_OBJ_LOCK&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a67d118763a4f2480642011ff32bcd67e">groonga.h</a></li>
 <li>grn_obj_maybe_record_bulk()&#160;:&#160;<a class="el" href="obj_8h.html#ab9e7b279269bff7883ac6cc8f1286f40">obj.h</a></li>
 <li>GRN_OBJ_MISSING_ADD&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a21016aee843ff9b20669685f1035f71e">groonga.h</a></li>
 <li>GRN_OBJ_MISSING_IGNORE&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#ad1f455af2e88f89d9e12f984a1671439">groonga.h</a></li>
@@ -1322,6 +1382,7 @@ $(function() {
 <li>grn_output_float32()&#160;:&#160;<a class="el" href="output_8h.html#a315f4b7fe37a12c6f643f4fcd5062270">output.h</a></li>
 <li>grn_output_int32()&#160;:&#160;<a class="el" href="output_8h.html#a21868cb83e93b8374ea274368c4fc1cc">output.h</a></li>
 <li>grn_output_int64()&#160;:&#160;<a class="el" href="output_8h.html#ad5f8a77743836fb0ca74b33a93aa9d35">output.h</a></li>
+<li>grn_output_json()&#160;:&#160;<a class="el" href="output_8h.html#af3e237c334fcfd4566d92773d973f672">output.h</a></li>
 <li>grn_output_map_close()&#160;:&#160;<a class="el" href="output_8h.html#adcfa36dd98ee6e394ac60648e6588b27">output.h</a></li>
 <li>grn_output_map_open()&#160;:&#160;<a class="el" href="output_8h.html#a1c7e95aa7c1cfce591ad6e9835647744">output.h</a></li>
 <li>grn_output_null()&#160;:&#160;<a class="el" href="output_8h.html#ac3980676f28803e512f7fffb519e942a">output.h</a></li>
@@ -1372,16 +1433,16 @@ $(function() {
 <li>grn_plugin_calloc()&#160;:&#160;<a class="el" href="plugin_8h.html#a7e78de0d2cb3dc30edda59aa2c14833e">plugin.h</a></li>
 <li>GRN_PLUGIN_CALLOC&#160;:&#160;<a class="el" href="plugin_8h.html#a62c1b0e5c5c1742d1a261d1ff7f3e341">plugin.h</a></li>
 <li>grn_plugin_charlen()&#160;:&#160;<a class="el" href="plugin_8h.html#ac784eb67f069af3a26877ad217042eb9">plugin.h</a></li>
-<li>GRN_PLUGIN_CLEAR_ERROR&#160;:&#160;<a class="el" href="plugin_8h.html#ab30b39477080992c2fe7c52f43a2d9a6">plugin.h</a></li>
 <li>grn_plugin_clear_error()&#160;:&#160;<a class="el" href="plugin_8h.html#adc3b468b2e7b922b1610b798245a1ebf">plugin.h</a></li>
+<li>GRN_PLUGIN_CLEAR_ERROR&#160;:&#160;<a class="el" href="plugin_8h.html#ab30b39477080992c2fe7c52f43a2d9a6">plugin.h</a></li>
 <li>grn_plugin_command_create()&#160;:&#160;<a class="el" href="plugin_8h.html#a5cf9ca436a3f6df0720b5124da6eb6f6">plugin.h</a></li>
 <li>GRN_PLUGIN_DECLARE_FUNCTIONS&#160;:&#160;<a class="el" href="plugin_8h.html#a4b75fc77226bfd0dad123290d1980f47">plugin.h</a></li>
-<li>GRN_PLUGIN_ERROR&#160;:&#160;<a class="el" href="plugin_8h.html#a67b57c6c5fb573e9f2e25c19419d5ca9">plugin.h</a>, <a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0ab9e81de269bbfab98c44d6490e95b7cf">groonga.h</a></li>
+<li>GRN_PLUGIN_ERROR&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0ab9e81de269bbfab98c44d6490e95b7cf">groonga.h</a>, <a class="el" href="plugin_8h.html#a67b57c6c5fb573e9f2e25c19419d5ca9">plugin.h</a></li>
 <li>GRN_PLUGIN_EXPORT&#160;:&#160;<a class="el" href="plugin_8h.html#a35a07a3e2de99de6ae85222e030ea0bd">plugin.h</a></li>
 <li>grn_plugin_expr_var_init()&#160;:&#160;<a class="el" href="plugin_8h.html#ada5939c8901597deda7cca8d909d1268">plugin.h</a></li>
 <li>GRN_PLUGIN_FIN&#160;:&#160;<a class="el" href="plugin_8h.html#a1ab36b5bf51924da51750ca833829c97">plugin.h</a></li>
-<li>GRN_PLUGIN_FREE&#160;:&#160;<a class="el" href="plugin_8h.html#a5fece893574ace9abaebc3e52e594a33">plugin.h</a></li>
 <li>grn_plugin_free()&#160;:&#160;<a class="el" href="plugin_8h.html#a879079eaedb857092e5f7f872fccd49f">plugin.h</a></li>
+<li>GRN_PLUGIN_FREE&#160;:&#160;<a class="el" href="plugin_8h.html#a5fece893574ace9abaebc3e52e594a33">plugin.h</a></li>
 <li>grn_plugin_func&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a4894bd27fdc0fff97fe93cc763941f5c">groonga.h</a></li>
 <li>grn_plugin_get_names()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a65a0e79899ddc58e1d76e3740f93148c">groonga.h</a></li>
 <li>grn_plugin_get_ruby_suffix()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#aa2c3a19b1db363b05b95e247b9c937c0">groonga.h</a></li>
@@ -1391,12 +1452,12 @@ $(function() {
 <li>GRN_PLUGIN_IMPL_NAME_RAW&#160;:&#160;<a class="el" href="plugin_8h.html#ac60d4c1305a1e40f08a6552a923fe05e">plugin.h</a></li>
 <li>GRN_PLUGIN_IMPL_NAME_TAGGED&#160;:&#160;<a class="el" href="plugin_8h.html#a220e72c030887b81aa55a1ec2afa2a17">plugin.h</a></li>
 <li>GRN_PLUGIN_IMPL_NAME_TAGGED_EXPANDABLE&#160;:&#160;<a class="el" href="plugin_8h.html#aba3e20562ce5203b7d48bd1692ab9e4e">plugin.h</a></li>
-<li>GRN_PLUGIN_INIT&#160;:&#160;<a class="el" href="plugin_8h.html#adbb24d57f56c2b7edfb07c89a33cfd0d">plugin.h</a></li>
+<li>GRN_PLUGIN_INIT()&#160;:&#160;<a class="el" href="plugin_8h.html#a6b3be684c4afe6f6d8365292f1f88d47">plugin.h</a></li>
 <li>grn_plugin_isspace()&#160;:&#160;<a class="el" href="plugin_8h.html#a111d2c3ecf4755e9862ac5b45a33d366">plugin.h</a></li>
 <li>GRN_PLUGIN_LOG&#160;:&#160;<a class="el" href="plugin_8h.html#a6b0a53590d6c5652f43441b885507124">plugin.h</a></li>
 <li>grn_plugin_logtrace()&#160;:&#160;<a class="el" href="plugin_8h.html#ac1b74b90183029aea4ca1b2346e4c8ec">plugin.h</a></li>
-<li>GRN_PLUGIN_MALLOC&#160;:&#160;<a class="el" href="plugin_8h.html#ae33b9896b7b708c31bf09ca968a6372f">plugin.h</a></li>
 <li>grn_plugin_malloc()&#160;:&#160;<a class="el" href="plugin_8h.html#af0f92ceb18b8fda1a301545c8b7ddf0c">plugin.h</a></li>
+<li>GRN_PLUGIN_MALLOC&#160;:&#160;<a class="el" href="plugin_8h.html#ae33b9896b7b708c31bf09ca968a6372f">plugin.h</a></li>
 <li>GRN_PLUGIN_MALLOCN&#160;:&#160;<a class="el" href="plugin_8h.html#ad32be4687f8642ac7e10a3699eacff95">plugin.h</a></li>
 <li>grn_plugin_mutex&#160;:&#160;<a class="el" href="plugin_8h.html#ac7e83b5bdf1fe790ee6b68ee47060125">plugin.h</a></li>
 <li>grn_plugin_mutex_close()&#160;:&#160;<a class="el" href="plugin_8h.html#a7b3d5ea789124152d2e7b4f089d12e85">plugin.h</a></li>
@@ -1422,14 +1483,13 @@ $(function() {
 <li>grn_plugin_proc_get_var_log_level()&#160;:&#160;<a class="el" href="plugin_8h.html#af4606a782b0d14395b4ded96d327714c">plugin.h</a></li>
 <li>grn_plugin_proc_get_var_string()&#160;:&#160;<a class="el" href="plugin_8h.html#a0b01a4a690631436a65d30f0a0efea31">plugin.h</a></li>
 <li>grn_plugin_proc_get_vars()&#160;:&#160;<a class="el" href="plugin_8h.html#a5970e16f309d71c2532c813e355de135">plugin.h</a></li>
-<li>grn_plugin_realloc()&#160;:&#160;<a class="el" href="plugin_8h.html#abc4a5a23bff12f48d9f406bafba7fa15">plugin.h</a></li>
 <li>GRN_PLUGIN_REALLOC&#160;:&#160;<a class="el" href="plugin_8h.html#a910c2a2f6cb743e9f714496d18ff4168">plugin.h</a></li>
-<li>GRN_PLUGIN_REGISTER&#160;:&#160;<a class="el" href="plugin_8h.html#a4063159956a2e7fee0f49be72261fb7b">plugin.h</a></li>
+<li>grn_plugin_realloc()&#160;:&#160;<a class="el" href="plugin_8h.html#abc4a5a23bff12f48d9f406bafba7fa15">plugin.h</a></li>
 <li>grn_plugin_register()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a2c6da302dd350eaf6e95429889ca9bac">groonga.h</a></li>
-<li>GRN_PLUGIN_REGISTER()&#160;:&#160;<a class="el" href="plugin_8h.html#a4ce3bb0afd15ac738c4afa53306f0f01">plugin.h</a></li>
+<li>GRN_PLUGIN_REGISTER&#160;:&#160;<a class="el" href="plugin_8h.html#a4063159956a2e7fee0f49be72261fb7b">plugin.h</a></li>
 <li>grn_plugin_register_by_path()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a0e8da8658001490424fd1063222a063c">groonga.h</a></li>
-<li>GRN_PLUGIN_SET_ERROR&#160;:&#160;<a class="el" href="plugin_8h.html#a2f789ad3c0097beb2fd051ec09d000c3">plugin.h</a></li>
 <li>grn_plugin_set_error()&#160;:&#160;<a class="el" href="plugin_8h.html#a0e656791039091281b7d1170c5256b2b">plugin.h</a></li>
+<li>GRN_PLUGIN_SET_ERROR&#160;:&#160;<a class="el" href="plugin_8h.html#a2f789ad3c0097beb2fd051ec09d000c3">plugin.h</a></li>
 <li>grn_plugin_unregister()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#afed07fb11a9133b51059eb7f2fe25872">groonga.h</a></li>
 <li>grn_plugin_unregister_by_path()&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#ac0eb57bce8856c071b602fefb84f247d">groonga.h</a></li>
 <li>grn_plugin_win32_base_dir()&#160;:&#160;<a class="el" href="plugin_8h.html#a642e8faa6d534fa87bdb2ed073299d8f">plugin.h</a></li>
@@ -2227,9 +2287,12 @@ $(function() {
 <li>GRN_ZSTD_ERROR&#160;:&#160;<a class="el" href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0ab864ae22fdf4e3425e3ed0495bec2572">groonga.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

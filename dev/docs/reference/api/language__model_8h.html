@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.8-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,10 +10,26 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<!-- doxygen-awesome-css extensions -->
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeParagraphLink.init()
+</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,6 +63,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('language__model_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +101,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_cc25d3033fcb37530d48c335bde6c20f.html">groonga</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
@@ -659,7 +688,7 @@ Functions</h2></td></tr>
 <div class="line"><a class="code hl_define" href="groonga_2groonga_8h.html#a6241d141a94520921276738389bc90b8">GRN_OBJ_FIN</a>(ctx, &amp;embedding_set);</div>
 <div class="line"><a class="code hl_function" href="memory__map_8h.html#a384fce5c70fbed5475b4f2b0b0dc8349">grn_memory_map_close</a>(ctx, embeddings_set_map);</div>
 <div class="ttc" id="agroonga_2groonga_8h_html_a1839e8cb5c8f43987aebc4f4b12db4bb"><div class="ttname"><a href="groonga_2groonga_8h.html#a1839e8cb5c8f43987aebc4f4b12db4bb">GRN_OBJ_VECTOR</a></div><div class="ttdeci">#define GRN_OBJ_VECTOR</div><div class="ttdef"><b>Definition</b> groonga.h:2732</div></div>
-<div class="ttc" id="agroonga_2groonga_8h_html_a4200c7b73521ad502a3ae46b26cee3af"><div class="ttname"><a href="groonga_2groonga_8h.html#a4200c7b73521ad502a3ae46b26cee3af">GRN_FLOAT32_INIT</a></div><div class="ttdeci">#define GRN_FLOAT32_INIT(obj, flags)</div><div class="ttdef"><b>Definition</b> groonga.h:2838</div></div>
+<div class="ttc" id="agroonga_2groonga_8h_html_a4200c7b73521ad502a3ae46b26cee3af"><div class="ttname"><a href="groonga_2groonga_8h.html#a4200c7b73521ad502a3ae46b26cee3af">GRN_FLOAT32_INIT</a></div><div class="ttdeci">#define GRN_FLOAT32_INIT(obj, flags)</div><div class="ttdef"><b>Definition</b> groonga.h:2860</div></div>
 <div class="ttc" id="agroonga_2groonga_8h_html_a6241d141a94520921276738389bc90b8"><div class="ttname"><a href="groonga_2groonga_8h.html#a6241d141a94520921276738389bc90b8">GRN_OBJ_FIN</a></div><div class="ttdeci">#define GRN_OBJ_FIN(ctx, obj)</div><div class="ttdef"><b>Definition</b> groonga.h:957</div></div>
 <div class="ttc" id="agroonga_2groonga_8h_html_a66bcb208f727365b7dadbcd9a2bb7ae5"><div class="ttname"><a href="groonga_2groonga_8h.html#a66bcb208f727365b7dadbcd9a2bb7ae5">GRN_BULK_REWIND</a></div><div class="ttdeci">#define GRN_BULK_REWIND(bulk)</div><div class="ttdef"><b>Definition</b> groonga.h:2597</div></div>
 <div class="ttc" id="agroonga_2groonga_8h_html_a6d4342880c6a49135bc3685e37d15492"><div class="ttname"><a href="groonga_2groonga_8h.html#a6d4342880c6a49135bc3685e37d15492">GRN_BINARY_SET_REF</a></div><div class="ttdeci">#define GRN_BINARY_SET_REF(obj, data, len)</div><div class="ttdef"><b>Definition</b> groonga.h:2796</div></div>
@@ -935,9 +964,13 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_cc25d3033fcb37530d48c335bde6c20f.html">groonga</a></li><li class="navelem"><a class="el" href="language__model_8h.html">language_model.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>
