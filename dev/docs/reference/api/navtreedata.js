@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Groonga", "index.html", [
+    [ "Introduction", "index.html", "index" ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -61,15 +62,15 @@ var NAVTREEINDEX =
 [
 "accessor_8h.html",
 "column_8h.html#af3bbe24fc3216c265e6f76489fb027b4",
-"groonga_2groonga_8h.html#a09c3b8a18fe15be1e4c4ceac04dfc01da287cee37648ba9b577e752719c456597",
-"groonga_2groonga_8h.html#a4627f4136301cfb223c304186f1fce4b",
-"groonga_2groonga_8h.html#a88381126445a8570b1118eebdcfdd579",
-"groonga_2groonga_8h.html#ad50cd4a6b1205535308c437a279dd35a",
-"memory__map_8h.html#a384fce5c70fbed5475b4f2b0b0dc8349",
-"pat_8h_source.html",
-"sorter_8h.html#a2440d040443a2760e34e426ba6dc38e9",
-"structgrn__str.html#aac433888a90ded2d9eff8d8398e66783",
-"token__cursor_8h.html#a3d5f94901479a602a9f1ab79e934b7f8"
+"groonga_2groonga_8h.html#a09c3b8a18fe15be1e4c4ceac04dfc01da26871607e9a03cad02ae090c659a087c",
+"groonga_2groonga_8h.html#a44dfb286859f77dbb6297e53550f5d2f",
+"groonga_2groonga_8h.html#a85f9fd03220b11f716f2f073b9c1664f",
+"groonga_2groonga_8h.html#ad39d3130f603f7eeef2be92f2e7cdf7e",
+"memory__map_8h.html#a081a16fd501cd7ff90723585247aea5a",
+"pat_8h.html#ae83ea4fea5b176c14ee930452a3c0fca",
+"smart__obj_8hpp.html",
+"structgrn__str.html#a60788fef73a97669b882c3f95fd142d4",
+"token_8h.html#afe9d153d76b21a87d1ae7c328bf542b3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

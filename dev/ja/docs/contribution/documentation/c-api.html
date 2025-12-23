@@ -238,6 +238,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -423,10 +427,31 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="c-api">
+  <section class="tex2jax_ignore mathjax_ignore" id="c-api">
 <h1><span class="section-number">12.2.3. </span>C API<a class="headerlink" href="#c-api" title="Link to this heading">#</a></h1>
-<p>今のところ、C APIのドキュメントはinclude/groonga.hにありますが、これをdoc/source/c-api/*.txtに移動したいと思っています。C APIのドキュメントを移動して、パッチを送ってくれるととても喜びます。</p>
-<p>Sphinxの <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/domains/c.html">the C domain markup</a> を使う予定です。</p>
+<p>C APIのドキュメントは、ヘッダーファイルから<a class="reference external" href="https://www.doxygen.nl/">Doxygen</a>を用いて自動生成しています。生成されたドキュメントは<a class="reference external" href="https://groonga.org/docs/reference/api/index.html">C API Reference</a>で確認できます。</p>
+<section id="how-to-write">
+<h2><span class="section-number">12.2.3.1. </span>書き方<a class="headerlink" href="#how-to-write" title="Link to this heading">#</a></h2>
+<p>C API のドキュメントに貢献するには、<code class="docutils literal notranslate"><span class="pre">include/groonga/</span></code>配下のヘッダーファイルにDoxygen形式のコメントを追加してください。</p>
+<p>例：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * \brief Short description of the function</span>
+<span class="cm"> *</span>
+<span class="cm"> * Detailed description here.</span>
+<span class="cm"> *</span>
+<span class="cm"> * \param ctx The context</span>
+<span class="cm"> * \param arg Description of the argument</span>
+<span class="cm"> * \return Description of the return value</span>
+<span class="cm"> */</span>
+<span class="n">GRN_API</span><span class="w"> </span><span class="n">grn_rc</span><span class="w"> </span><span class="n">grn_function</span><span class="p">(</span><span class="n">grn_ctx</span><span class="w"> </span><span class="o">*</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">arg</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-preview">
+<h2><span class="section-number">12.2.3.2. </span>プレビュー方法<a class="headerlink" href="#how-to-preview" title="Link to this heading">#</a></h2>
+<p>ドキュメントの生成方法およびプレビュー方法については、<a class="reference internal" href="introduction.html"><span class="doc">導入</span></a>を参照してください。</p>
+<p>生成されたC APIのHTMLドキュメントは、次の<code class="docutils literal notranslate"><span class="pre">../groonga.doc/doc/en/html/reference/api/</span></code>ディレクトリに出力されます。</p>
+</section>
 </section>
 
 
@@ -463,6 +488,25 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-write">12.2.3.1. 書き方</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-preview">12.2.3.2. プレビュー方法</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

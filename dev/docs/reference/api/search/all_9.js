@@ -8,5 +8,6 @@ var searchData=
   ['index_5',['index',['../struct__grn__index__datum.html#a2204600df5d21630a0f4ec5d482e23f2',1,'_grn_index_datum']]],
   ['index_5fcolumn_2eh_6',['index_column.h',['../index__column_8h.html',1,'']]],
   ['int_5fvalue_7',['int_value',['../uniongrn__user__data.html#a6514ff41ac9ced72bb60be01d86138e4',1,'grn_user_data']]],
-  ['is_5fzero_8',['is_zero',['../namespacegrn_1_1numeric.html#a8df7f5fdbb5ec5d699e200db77b476f1',1,'grn::numeric::is_zero(TYPE value)'],['../namespacegrn_1_1numeric.html#a5d29aefcf270e4826c91992baeef6c52',1,'grn::numeric::is_zero(TYPE value)']]]
+  ['introduction_8',['Introduction',['../index.html',1,'']]],
+  ['is_5fzero_9',['is_zero',['../namespacegrn_1_1numeric.html#a8df7f5fdbb5ec5d699e200db77b476f1',1,'grn::numeric::is_zero(TYPE value)'],['../namespacegrn_1_1numeric.html#a5d29aefcf270e4826c91992baeef6c52',1,'grn::numeric::is_zero(TYPE value)']]]
 ];

@@ -522,11 +522,37 @@
 <h2><span class="section-number">12.2.1.8. </span>パッチを送る<a class="headerlink" href="#send-patch" title="Link to this heading">#</a></h2>
 <p>GitHub上のGroongaリポジトリに対してプルリクエストを通じてパッチを送ることができます。次の手順で、気軽にプルリクエストを作ってみましょう。</p>
 <ul class="simple">
+<li><p>フォーク先リポジトリでプレビューを有効にする（任意）</p></li>
 <li><p>プルリクエストの準備をする</p></li>
 <li><p>プルリクエストを送る</p></li>
 </ul>
+<section id="enable-preview-on-your-fork-optional">
+<h3><span class="section-number">12.2.1.8.1. </span>フォーク先リポジトリでプレビューを有効にする（任意）<a class="headerlink" href="#enable-preview-on-your-fork-optional" title="Link to this heading">#</a></h3>
+<p>コミットをプッシュする前に、次の手順を実行することでフォークしたリポジトリ上でプレビューを有効にできます。</p>
+<ol class="arabic simple">
+<li><p>フォークしたリポジトリで GitHub Pages を有効にする。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">https://github.com/${YOUR_GITHUB_ACCOUNT}/groonga/settings/pages</span></code>を開く</p></li>
+<li><p>&quot;Source&quot;に&quot;GitHub Actions&quot;を選択する</p></li>
+</ul>
+</li>
+<li><p>フォークしたリポジトリのすべてのブランチからGitHub Pagesの公開を許可する。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">https://github.com/${YOUR_GITHUB_ACCOUNT}/groonga/settings/environments</span></code>を開く</p></li>
+<li><p>&quot;github-pages&quot;環境を選択する</p></li>
+<li><p>デフォルトの&quot;Deployment branches and tags&quot;ルールを変更する</p>
+<ul>
+<li><p>&quot;Edit&quot;ボタンを押す</p></li>
+<li><p>&quot;Name pattern&quot;を<code class="docutils literal notranslate"><span class="pre">main</span></code>から<code class="docutils literal notranslate"><span class="pre">*</span></code>に変更する</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">https://${YOUR_GITHUB_ACCOUNT}.github.io/groonga/{ja/docs/,docs/}</span></code>にアクセスすると、変更内容をプレビューできます。</p>
+</section>
 <section id="prepare-your-pull-request">
-<h3><span class="section-number">12.2.1.8.1. </span>プルリクエストの準備をする<a class="headerlink" href="#prepare-your-pull-request" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.2.1.8.2. </span>プルリクエストの準備をする<a class="headerlink" href="#prepare-your-pull-request" title="Link to this heading">#</a></h3>
 <p>次のコマンドで、変更をコミットし、その変更をGitHubにある自分のフォークリポジトリにプッシュします。</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">% </span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>your-working-branch
 <span class="gp">% </span>git<span class="w"> </span>add<span class="w"> </span>doc
@@ -536,7 +562,7 @@
 </div>
 </section>
 <section id="submit-your-pull-request">
-<h3><span class="section-number">12.2.1.8.2. </span>プルリクエストを送る<a class="headerlink" href="#submit-your-pull-request" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.2.1.8.3. </span>プルリクエストを送る<a class="headerlink" href="#submit-your-pull-request" title="Link to this heading">#</a></h3>
 <p>これで、アップストリームのGroongaリポジトリにプルリクエストを送る準備ができました。次のステップに従い実際にプルリクエストを送ってみましょう。</p>
 <ol class="arabic simple">
 <li><p>GitHubで自分のフォークリポジトリにアクセスします</p></li>
@@ -651,8 +677,9 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#send-patch">12.2.1.8. パッチを送る</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-pull-request">12.2.1.8.1. プルリクエストの準備をする</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-your-pull-request">12.2.1.8.2. プルリクエストを送る</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-preview-on-your-fork-optional">12.2.1.8.1. フォーク先リポジトリでプレビューを有効にする（任意）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-pull-request">12.2.1.8.2. プルリクエストの準備をする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-your-pull-request">12.2.1.8.3. プルリクエストを送る</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-translate-documentation">12.2.1.9. 任意: ドキュメントを翻訳する</a><ul class="nav section-nav flex-column">

@@ -529,13 +529,40 @@ For example, if you have edited this <a class="reference internal" href="#"><spa
 <section id="send-patch">
 <h2><span class="section-number">12.2.1.8. </span>Send patch<a class="headerlink" href="#send-patch" title="Link to this heading">#</a></h2>
 <p>You can submit your patch to the Groonga repository on GitHub via a pull request.
-Feel free to send a pull request by following two steps.</p>
+Feel free to send a pull request by following these steps.</p>
 <ul class="simple">
+<li><p>Enable preview on your fork (optional)</p></li>
 <li><p>Prepare your pull request</p></li>
 <li><p>Submit your pull request</p></li>
 </ul>
+<section id="enable-preview-on-your-fork-optional">
+<h3><span class="section-number">12.2.1.8.1. </span>Enable preview on your fork (optional)<a class="headerlink" href="#enable-preview-on-your-fork-optional" title="Link to this heading">#</a></h3>
+<p>You can enable preview on your fork by following the steps below before pushing your commits:</p>
+<ol class="arabic simple">
+<li><p>Enable GitHub Pages on your fork:</p>
+<ul class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">https://github.com/${YOUR_GITHUB_ACCOUNT}/groonga/settings/pages</span></code></p></li>
+<li><p>Select “GitHub Actions” as “Source”</p></li>
+</ul>
+</li>
+<li><p>Accept publishing GitHub Pages from all branches on your fork:</p>
+<ul class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">https://github.com/${YOUR_GITHUB_ACCOUNT}/groonga/settings/environments</span></code></p></li>
+<li><p>Select the “github-pages” environment</p></li>
+<li><p>Change the default “Deployment branches and tags” rule:</p>
+<ul>
+<li><p>Press the “Edit” button</p></li>
+<li><p>Change the “Name pattern” to <code class="docutils literal notranslate"><span class="pre">*</span></code> from <code class="docutils literal notranslate"><span class="pre">main</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>You can preview your changes at <code class="docutils literal notranslate"><span class="pre">https://${YOUR_GITHUB_ACCOUNT}.github.io/groonga/{ja/docs/,docs/}</span></code>
+after pushing your changes.</p>
+</section>
 <section id="prepare-your-pull-request">
-<h3><span class="section-number">12.2.1.8.1. </span>Prepare your pull request<a class="headerlink" href="#prepare-your-pull-request" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.2.1.8.2. </span>Prepare your pull request<a class="headerlink" href="#prepare-your-pull-request" title="Link to this heading">#</a></h3>
 <p>Ensure your changes are committed and then push your changes to your fork repository on GitHub.
 Follow these commands:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">% </span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>your-working-branch
@@ -546,7 +573,7 @@ Follow these commands:</p>
 </div>
 </section>
 <section id="submit-your-pull-request">
-<h3><span class="section-number">12.2.1.8.2. </span>Submit your pull request<a class="headerlink" href="#submit-your-pull-request" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.2.1.8.3. </span>Submit your pull request<a class="headerlink" href="#submit-your-pull-request" title="Link to this heading">#</a></h3>
 <p>Now you’re ready to submit a pull request to the upstream Groonga repository.
 Follow these steps:</p>
 <ol class="arabic simple">
@@ -666,8 +693,9 @@ Therefore, there’s no need to memorize different commands for generating trans
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#send-patch">12.2.1.8. Send patch</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-pull-request">12.2.1.8.1. Prepare your pull request</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-your-pull-request">12.2.1.8.2. Submit your pull request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-preview-on-your-fork-optional">12.2.1.8.1. Enable preview on your fork (optional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-pull-request">12.2.1.8.2. Prepare your pull request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-your-pull-request">12.2.1.8.3. Submit your pull request</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-translate-documentation">12.2.1.9. Optional: Translate documentation</a><ul class="nav section-nav flex-column">
