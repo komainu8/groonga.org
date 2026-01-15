@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['pat_2eh_0',['pat.h',['../pat_8h.html',1,'']]],
-  ['plugin_2eh_1',['plugin.h',['../plugin_8h.html',1,'']]],
-  ['portability_2eh_2',['portability.h',['../portability_8h.html',1,'']]],
-  ['pos_3',['pos',['../structgrn__posting.html#a0b3a6e5cc631ddaa0b458b6c81ddf150',1,'grn_posting']]],
-  ['posting_2eh_4',['posting.h',['../posting_8h.html',1,'']]],
-  ['prefix_5flength_5',['prefix_length',['../struct__grn__fuzzy__search__optarg.html#ad34f2e77c9acc121d21ebf9b0af8adec',1,'_grn_fuzzy_search_optarg']]],
-  ['prefix_5fmatch_5fsize_6',['prefix_match_size',['../struct__grn__fuzzy__search__optarg.html#a8b173db83b221f36b9f73ef27b2df4de',1,'_grn_fuzzy_search_optarg']]],
-  ['prev_7',['prev',['../struct__grn__ctx.html#af7d13f08637943430222c6f2137f9ee1',1,'_grn_ctx']]],
-  ['proc_8',['proc',['../struct__grn__search__optarg.html#ab7bb8c68232cffc7703990aa4d42e567',1,'_grn_search_optarg']]],
-  ['proc_2eh_9',['proc.h',['../proc_8h.html',1,'']]],
-  ['progress_2eh_10',['progress.h',['../progress_8h.html',1,'']]],
-  ['ptr_11',['ptr',['../uniongrn__user__data.html#a7fc3621b5f26d910c5871492f410850c',1,'grn_user_data::ptr'],['../struct__grn__tokenizer__query__deprecated.html#a9c7609c69e425886547b728690bf84e5',1,'_grn_tokenizer_query_deprecated::ptr']]],
-  ['put_12',['put',['../namespacegrn_1_1bulk.html#aa3f359f2c2e06ab6c753a9704141a8ca',1,'grn::bulk']]]
+  ['obj_2eh_0',['obj.h',['../obj_8h.html',1,'']]],
+  ['object_1',['Object',['../groonga_2groonga_8h.html#autotoc_md6',1,'']]],
+  ['offset_2',['offset',['../struct__grn__section.html#a520887922c0880aa1e9779a346d5e052',1,'_grn_section::offset'],['../struct__grn__table__scan__hit.html#afe0ffa9d0e9c70f72ed24d0e718d5792',1,'_grn_table_scan_hit::offset'],['../struct__grn__obj__format.html#aab6fe8e87f8d4630108a6a9e44650972',1,'_grn_obj_format::offset'],['../struct__grn__table__sort__key.html#a8b03a9f25b6e7b892f41124c58a9e85c',1,'_grn_table_sort_key::offset']]],
+  ['op_3',['op',['../struct__grn__table__group__result.html#a754c30d7fac93d0144012ce28086040d',1,'_grn_table_group_result']]],
+  ['operator_2a_4',['operator*',['../classgrn_1_1TextBulk.html#ad7377547c916ed12d3d0558c4e2fca96',1,'grn::TextBulk']]],
+  ['operator_2eh_5',['operator.h',['../operator_8h.html',1,'']]],
+  ['option_6',['Server/Daemon Option',['../cache_8h.html#autotoc_md2',1,'']]],
+  ['option_2eh_7',['option.h',['../option_8h.html',1,'']]],
+  ['orig_8',['orig',['../structgrn__str.html#ab6c2338e8e37e623a8cd8f20437f3fef',1,'grn_str']]],
+  ['orig_5fblen_9',['orig_blen',['../structgrn__str.html#a60788fef73a97669b882c3f95fd142d4',1,'grn_str']]],
+  ['outbuf_10',['outbuf',['../struct__grn__ctx__info.html#ae20094ce76244115857c7d1c333a06cd',1,'_grn_ctx_info']]],
+  ['output_2eh_11',['output.h',['../output_8h.html',1,'']]],
+  ['output_5fcolumns_2eh_12',['output_columns.h',['../output__columns_8h.html',1,'']]]
 ];

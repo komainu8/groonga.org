@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.8-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -9,10 +10,26 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<!-- doxygen-awesome-css extensions -->
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeParagraphLink.init()
+</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -51,6 +68,23 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('table__module_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,11 +106,6 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_cc25d3033fcb37530d48c335bde6c20f.html">groonga</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">table_module.h</div></div>
 </div><!--header-->
@@ -242,9 +271,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="agroonga_2groonga_8h_html_a277a68a6f6f9499ce5d85ae3409606c0"><div class="ttname"><a href="groonga_2groonga_8h.html#a277a68a6f6f9499ce5d85ae3409606c0">grn_rc</a></div><div class="ttdeci">grn_rc</div><div class="ttdef"><b>Definition</b> groonga.h:61</div></div>
 <div class="ttc" id="agroonga_2groonga_8h_html_a59073ec23d7ea71ce357eb39f8f5966d"><div class="ttname"><a href="groonga_2groonga_8h.html#a59073ec23d7ea71ce357eb39f8f5966d">GRN_API</a></div><div class="ttdeci">#define GRN_API</div><div class="ttdef"><b>Definition</b> groonga.h:39</div></div>
-<div class="ttc" id="agroonga_2groonga_8h_html_a9e389714093e724a28eb975621bf2357"><div class="ttname"><a href="groonga_2groonga_8h.html#a9e389714093e724a28eb975621bf2357">grn_close_func</a></div><div class="ttdeci">void(* grn_close_func)(grn_ctx *ctx, void *data)</div><div class="ttdef"><b>Definition</b> groonga.h:335</div></div>
-<div class="ttc" id="astruct__grn__ctx_html"><div class="ttname"><a href="struct__grn__ctx.html">_grn_ctx</a></div><div class="ttdef"><b>Definition</b> groonga.h:349</div></div>
-<div class="ttc" id="astruct__grn__obj_html"><div class="ttname"><a href="struct__grn__obj.html">_grn_obj</a></div><div class="ttdef"><b>Definition</b> groonga.h:910</div></div>
+<div class="ttc" id="agroonga_2groonga_8h_html_a9e389714093e724a28eb975621bf2357"><div class="ttname"><a href="groonga_2groonga_8h.html#a9e389714093e724a28eb975621bf2357">grn_close_func</a></div><div class="ttdeci">void(* grn_close_func)(grn_ctx *ctx, void *data)</div><div class="ttdef"><b>Definition</b> groonga.h:336</div></div>
+<div class="ttc" id="astruct__grn__ctx_html"><div class="ttname"><a href="struct__grn__ctx.html">_grn_ctx</a></div><div class="ttdef"><b>Definition</b> groonga.h:350</div></div>
+<div class="ttc" id="astruct__grn__obj_html"><div class="ttname"><a href="struct__grn__obj.html">_grn_obj</a></div><div class="ttdef"><b>Definition</b> groonga.h:918</div></div>
 <div class="ttc" id="atable__module_8h_html_a29146aab651348914d748f5d8d9d99fa"><div class="ttname"><a href="table__module_8h.html#a29146aab651348914d748f5d8d9d99fa">grn_table_get_default_tokenizer_options</a></div><div class="ttdeci">GRN_API grn_rc grn_table_get_default_tokenizer_options(grn_ctx *ctx, grn_obj *table, grn_obj *options)</div></div>
 <div class="ttc" id="atable__module_8h_html_a2ca7190bd570eefd8cbe56b07c1afff6"><div class="ttname"><a href="table__module_8h.html#a2ca7190bd570eefd8cbe56b07c1afff6">grn_tokenizer_open_options_func</a></div><div class="ttdeci">grn_table_module_open_options_func grn_tokenizer_open_options_func</div><div class="ttdef"><b>Definition</b> table_module.h:31</div></div>
 <div class="ttc" id="atable__module_8h_html_a309b9ef42b1b185606af67eb39f69242"><div class="ttname"><a href="table__module_8h.html#a309b9ef42b1b185606af67eb39f69242">grn_table_set_token_filter_options</a></div><div class="ttdeci">GRN_API grn_rc grn_table_set_token_filter_options(grn_ctx *ctx, grn_obj *table, unsigned int i, grn_obj *options)</div></div>
@@ -268,9 +297,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="atable__module_8h_html_af363e53005751aab76132e360289c359"><div class="ttname"><a href="table__module_8h.html#af363e53005751aab76132e360289c359">grn_table_get_normalizers_string</a></div><div class="ttdeci">GRN_API grn_rc grn_table_get_normalizers_string(grn_ctx *ctx, grn_obj *table, grn_obj *output)</div></div>
 <div class="ttc" id="atable__module_8h_html_af86b5e9e963b816adc175d5d24431242"><div class="ttname"><a href="table__module_8h.html#af86b5e9e963b816adc175d5d24431242">grn_table_set_token_filters_options</a></div><div class="ttdeci">GRN_API grn_rc grn_table_set_token_filters_options(grn_ctx *ctx, grn_obj *table, uint32_t i, grn_obj *options)</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_cc25d3033fcb37530d48c335bde6c20f.html">groonga</a></li><li class="navelem"><a class="el" href="table__module_8h.html">table_module.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>
