@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>お知らせ - 4系 &#8212; Groonga v15.2.3 documentation</title>
+    <title>お知らせ - 4系 &#8212; Groonga v15.2.4 documentation</title>
   
   
   
@@ -38,9 +38,9 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=1805f4ea"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/documentation_options.js?v=fd1bc377"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/translations.js?v=4755f45a"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
     <script>
@@ -62,7 +62,7 @@
     <link rel="search" title="検索" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
-  <meta name="docsearch:version" content="15.2.3" />
+  <meta name="docsearch:version" content="15.2.4" />
   </head>
   
   
@@ -128,8 +128,8 @@
       
     
     
-    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.2.3 documentation - Home"/>
-    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.2.3 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.2.4 documentation - Home"/>
+    <img src="../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.2.4 documentation - Home"/>
   
   
 </a></div>
@@ -533,7 +533,7 @@
 <li><p>[実験的] <a class="reference internal" href="../reference/commands/range_filter.html"><span class="doc">range_filter</span></a> コマンドを追加しました。たいていの場合、特定の範囲のレコードを取得するなら <a class="reference internal" href="../reference/commands/select.html"><span class="doc">select</span></a> コマンドよりも速いです。これはマッチしたレコード数を返さないので、そのためのレコードの走査が不要なためです。ただし、ドリルダウンをサポートしていないなどの制限があります。 <code class="docutils literal notranslate"><span class="pre">range_filter</span></code> は特定の範囲の最初の <code class="docutils literal notranslate"><span class="pre">N</span></code> レコードを必要とするランキングなどの用途に向いています。</p></li>
 <li><p>[windows] Windows上でも <code class="docutils literal notranslate"><span class="pre">groonga-httpd</span></code> が使えるようになりました。</p></li>
 <li><p>ドリルダウンでベクター型のカラムをサポートしました。</p></li>
-<li><p>[deb] デフォルトのHTTPサーバーパッケージを <code class="docutils literal notranslate"><span class="pre">groonga-httpd</span></code> にしました。 <code class="docutils literal notranslate"><span class="pre">groonga-server-http</span></code> は非推奨です。ただし、 <a class="reference internal" href="../reference/executables/groonga.html"><span class="doc">groonga 実行ファイル</span></a> のHTTPサーバー機能自体はまだ使えます。もし従来のような簡易HTTPサーバーを使いたいなら、適宜引数を <a class="reference internal" href="../reference/executables/groonga.html"><span class="doc">groonga 実行ファイル</span></a> へとコマンドライン経由で渡します。</p></li>
+<li><p>[deb] デフォルトのHTTPサーバーパッケージを <code class="docutils literal notranslate"><span class="pre">groonga-httpd</span></code> にしました。 <code class="docutils literal notranslate"><span class="pre">groonga-server-http</span></code> は非推奨です。ただし、 <a class="reference internal" href="../reference/executables/groonga-server-http.html"><span class="doc">Groonga HTTPサーバー</span></a> のHTTPサーバー機能自体はまだ使えます。もし従来のような簡易HTTPサーバーを使いたいなら、適宜引数を <a class="reference internal" href="../reference/executables/groonga.html"><span class="doc">groonga 実行ファイル</span></a> へとコマンドライン経由で渡します。</p></li>
 <li><p>WindowsのCI環境であるAppVeyor向けの設定ファイルを追加しました。 [groonga-dev,02970,02981] [畑ケさんがパッチ提供]</p></li>
 </ul>
 </section>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.13.2. Script syntax &#8212; Groonga v15.2.3 documentation</title>
+    <title>7.13.2. Script syntax &#8212; Groonga v15.2.4 documentation</title>
   
   
   
@@ -38,9 +38,9 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=29f260be"></script>
-    <script src="../../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/documentation_options.js?v=ccec5723"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-7532323-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -63,7 +63,7 @@
     <link rel="prev" title="7.13.1. Query syntax" href="query_syntax.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="15.2.3" />
+  <meta name="docsearch:version" content="15.2.4" />
   </head>
   
   
@@ -129,8 +129,8 @@
       
     
     
-    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.2.3 documentation - Home"/>
-    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.2.3 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-light" alt="Groonga v15.2.4 documentation - Home"/>
+    <img src="../../_static/groonga.png" class="logo__image only-dark pst-js-only" alt="Groonga v15.2.4 documentation - Home"/>
   
   
 </a></div>
@@ -3812,7 +3812,7 @@ intervals of each phrase.</p>
 phrase product search is similar to
 <a class="reference internal" href="#script-syntax-near-phrase-product-search-operator"><span class="std std-ref">Near phrase product search operator</span></a> but ordered
 near phrase product search checks phrases order like
-<a class="reference internal" href="#script-syntax-ordered-near-phrase-search-operator"><span class="std std-ref">Ordered near phrase search operator</span></a>. For example,
+<a class="reference internal" href="query_syntax.html#query-syntax-ordered-near-phrase-search-condition"><span class="std std-ref">Ordered near phrase search condition</span></a>. For example,
 <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">*ONPP</span> <span class="pre">&quot;(a</span> <span class="pre">b</span> <span class="pre">c)</span> <span class="pre">(d</span> <span class="pre">e)&quot;</span></code> matches <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">1</span> <span class="pre">d</span></code> but doesn’t match
 <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">1</span> <span class="pre">a</span></code>. Because the latter uses different order.</p>
 <p>Here is a simple example:</p>
